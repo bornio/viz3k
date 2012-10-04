@@ -1,0 +1,527 @@
+{
+  "factions":
+  [
+    {"id":0,"name":"Han","color":"#66bbff"},
+    {"id":1,"name":"Yellow Turbans","color":"#ccbb00"},
+    {"id":2,"name":"Liu Yan","color":"#0000aa"},
+    {"id":3,"name":"Shu","color":"#22aa00"},
+    {"id":4,"name":"Gongsun Zan","color":"#ff9900"},
+    {"id":5,"name":"Wei","color":"#0000ff"},
+    {"id":6,"name":"Dong Zhuo","color":"#444444"},
+    {"id":7,"name":"Wu","color":"#ff0000"}
+  ],
+  "people":
+  [
+    {
+      "id":0,
+      "name":"Emperor Gao","faction":0,"note":"Usually referred to as the Supreme Ancestor.",
+      "appearances":
+      [
+        {"chapter":1,"page":5}
+      ]
+    },
+    {
+      "id":1,
+      "name":"Wang Mang","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":5}
+      ]
+    },
+    {
+      "id":2,
+      "name":"Emperor Guanwu","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":5}
+      ]
+    },
+    {
+      "id":3,
+      "name":"Emperor Xian","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":5}
+      ]
+    },
+    {
+      "id":4,
+      "name":"Emperor Huan","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":5}
+      ]
+    },
+    {
+      "id":5,
+      "name":"Emperor Ling","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":5},
+        {"chapter":1,"page":6},
+        {"chapter":1,"page":9},
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":6,
+      "name":"Dou Wu","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":5}
+      ]
+    },
+    {
+      "id":7,
+      "name":"Chen Fan","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":5}
+      ]
+    },
+    {
+      "id":8,
+      "name":"Cao Jie","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":5},
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":9,
+      "name":"Cai Yong","faction":0,"appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":10,
+      "name":"Zhang Rang","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":11,
+      "name":"Zhao Zhong","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":12,
+      "name":"Feng Xu","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6},
+        {"chapter":1,"page":9},
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":13,
+      "name":"Duan Gui","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":14,
+      "name":"Hou Lan","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":15,
+      "name":"Jian Shuo","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6},
+        {"chapter":1,"page":17}
+      ]
+    },
+    {
+      "id":16,
+      "name":"Chen Kuang","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":17,
+      "name":"Xia Yun","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":18,
+      "name":"Guo Sheng","faction":0,"note":"One of the Ten Regular Attendants.",
+      "appearances":
+      [
+        {"chapter":1,"page":6}
+      ]
+    },
+    {
+      "id":19,
+      "name":"Zhang Jue","faction":1,"note":"Also known as Zhang Jiao.",
+      "appearances":
+      [
+        {"chapter":1,"page":6},
+        {"chapter":1,"page":9},
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17},
+        {"chapter":1,"page":18}
+      ]
+    },
+    {
+      "id":20,
+      "name":"Zhang Bao","faction":1,
+      "appearances":
+      [
+        {"chapter":1,"page":6},
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17}
+      ]
+    },
+    {
+      "id":21,
+      "name":"Zhang Liang","faction":1,
+      "appearances":
+      [
+        {"chapter":1,"page":6},
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17}
+      ]
+    },
+    {
+      "id":22,
+      "name":"Zhuang Zi","faction":1,"note":"The Taoist sage known as The Old Hermit From Mount Hua Summit.",
+      "appearances":
+      [
+        {"chapter":1,"page":6},
+        {"chapter":1,"page":9}
+      ]
+    },
+    {
+      "id":23,
+      "name":"Ma Yuanyi","faction":1,
+      "appearances":
+      [
+        {"chapter":1,"page":9},
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":24,
+      "name":"Tang Zhou","faction":1,
+      "appearances":
+      [
+        {"chapter":1,"page":9}
+      ]
+    },
+    {
+      "id":25,
+      "name":"He Jin","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":26,
+      "name":"Lu Zhi","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":11},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17},
+        {"chapter":1,"page":18}
+      ]
+    },
+    {
+      "id":27,
+      "name":"Huangfu Song","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17}
+      ]
+    },
+    {
+      "id":28,
+      "name":"Zhu Jun","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17}
+      ]
+    },
+    {
+      "id":29,
+      "name":"Liu Yan","faction":2,
+      "appearances":
+      [
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":11},
+        {"chapter":1,"page":13},
+        {"chapter":1,"page":14}
+      ]
+    },
+    {
+      "id":30,
+      "name":"Prince Gong","faction":0,"note":"Prince Gong of Lu, ancestor of Liu Yan.",
+      "appearances":
+      [
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":31,
+      "name":"Zou Jing","faction":2,
+      "appearances":
+      [
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":13},
+        {"chapter":1,"page":14},
+        {"chapter":1,"page":15}
+      ]
+    },
+    {
+      "id":32,
+      "name":"Liu Bei","faction":3,
+      "appearances":
+      [
+        {"chapter":1,"page":10},
+        {"chapter":1,"page":11},
+        {"chapter":1,"page":12},
+        {"chapter":1,"page":13},
+        {"chapter":1,"page":14},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17},
+        {"chapter":1,"page":18}
+      ]
+    },
+    {
+      "id":33,
+      "name":"Liu Sheng","faction":0,"note":"Prince Jing of Zhongshan. Ancestor of Liu Bei.",
+      "appearances":
+      [
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":34,
+      "name":"Emperor Jing","faction":0,"note":"Fourth Han emperor. Ancestor of Liu Sheng, Prince Jing of Zhongshan.",
+      "appearances":
+      [
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":35,
+      "name":"Emperor Wu","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":36,
+      "name":"Liu Zhen","faction":0,"note":"Son of Liu Sheng, Prince Jing of Zhongshan.",
+      "appearances":
+      [
+        {"chapter":1,"page":10}
+      ]
+    },
+    {
+      "id":37,
+      "name":"Liu Xiong","faction":0,"note":"Father of Liu Bei.",
+      "appearances":
+      [
+        {"chapter":1,"page":11}
+      ]
+    },
+    {
+      "id":38,
+      "name":"Liu Hong","faction":0,"note":"Father of Liu Xiong. Grandfather of Liu Bei.",
+      "appearances":
+      [
+        {"chapter":1,"page":11}
+      ]
+    },
+    {
+      "id":39,
+      "name":"Liu Yuanqi","faction":0,"note":"Uncle of Liu Bei.",
+      "appearances":
+      [
+        {"chapter":1,"page":11}
+      ]
+    },
+    {
+      "id":40,
+      "name":"Zheng Xuan","faction":0,"note":"One of Liu Bei's teachers, along with Lu Zhi.",
+      "appearances":
+      [
+        {"chapter":1,"page":11}
+      ]
+    },
+    {
+      "id":41,
+      "name":"Gongsun Zan","faction":4,
+      "appearances":
+      [
+        {"chapter":1,"page":11}
+      ]
+    },
+    {
+      "id":42,
+      "name":"Zhang Fei","faction":3,
+      "appearances":
+      [
+        {"chapter":1,"page":11},
+        {"chapter":1,"page":12},
+        {"chapter":1,"page":13},
+        {"chapter":1,"page":14},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17},
+        {"chapter":1,"page":18}
+      ]
+    },
+    {
+      "id":43,
+      "name":"Guan Yu","faction":3,
+      "appearances":
+      [
+        {"chapter":1,"page":12},
+        {"chapter":1,"page":13},
+        {"chapter":1,"page":14},
+        {"chapter":1,"page":15},
+        {"chapter":1,"page":17},
+        {"chapter":1,"page":18}
+      ]
+    },
+    {
+      "id":44,
+      "name":"Zhang Shiping","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":13}
+      ]
+    },
+    {
+      "id":45,
+      "name":"Su Shuang","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":13}
+      ]
+    },
+    {
+      "id":46,
+      "name":"Cheng Yuanzhi","faction":1,
+      "appearances":
+      [
+        {"chapter":1,"page":13},
+        {"chapter":1,"page":14}
+      ]
+    },
+    {
+      "id":47,
+      "name":"Deng Mao","faction":1,
+      "appearances":
+      [
+        {"chapter":1,"page":14}
+      ]
+    },
+    {
+      "id":48,
+      "name":"Gong Jing","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":14},
+        {"chapter":1,"page":15}
+      ]
+    },
+    {
+      "id":49,
+      "name":"Cao Cao","faction":5,
+      "appearances":
+      [
+        {"chapter":1,"page":16},
+        {"chapter":1,"page":17}
+      ]
+    },
+    {
+      "id":50,
+      "name":"Cao Song","faction":0,"note":"Father of Cao Cao.",
+      "appearances":
+      [
+        {"chapter":1,"page":16}
+      ]
+    },
+    {
+      "id":51,
+      "name":"Cao Teng","faction":0,"note":"Adopted father of Cao Song.",
+      "appearances":
+      [
+        {"chapter":1,"page":16}
+      ]
+    },
+    {
+      "id":52,
+      "name":"Qiao Xuan","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":16}
+      ]
+    },
+    {
+      "id":53,
+      "name":"He Yu","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":16}
+      ]
+    },
+    {
+      "id":54,
+      "name":"Xu Shao","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":16}
+      ]
+    },
+    {
+      "id":55,
+      "name":"Zuo Feng","faction":0,
+      "appearances":
+      [
+        {"chapter":1,"page":17}
+      ]
+    },
+    {
+      "id":56,
+      "name":"Dong Zhuo","faction":6,
+      "appearances":
+      [
+        {"chapter":1,"page":17},
+        {"chapter":1,"page":18}
+      ]
+    }
+  ]
+}
