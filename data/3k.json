@@ -8,16 +8,18 @@
     {"id":4,"name":"Gongsun Zan","color":"#ff9900"},
     {"id":5,"name":"Wei","color":"#0000ff"},
     {"id":6,"name":"Dong Zhuo","color":"#444444"},
-    {"id":7,"name":"Wu","color":"#ff0000"}
+    {"id":7,"name":"Wu","color":"#ff0000"},
+    {"id":99,"name":"Other","color":"#cccccc"}
   ],
   "people":
   [
     {
       "id":0,
-      "name":"Emperor Gao","faction":0,"note":"Usually referred to as the Supreme Ancestor.",
+      "name":"Emperor Gao","faction":0,"note":"Liu Bang. Also known as Gao Zu. Usually referred to as the Supreme Ancestor.",
       "appearances":
       [
-        {"chapter":1,"page":5}
+        {"chapter":1,"page":5},
+        {"chapter":2,"page":21}
       ]
     },
     {
@@ -183,7 +185,8 @@
         {"chapter":1,"page":15},
         {"chapter":1,"page":17},
         {"chapter":1,"page":18},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":2,"page":21}
       ]
     },
     {
@@ -196,7 +199,8 @@
         {"chapter":1,"page":15},
         {"chapter":1,"page":17},
         {"chapter":2,"page":19},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":2,"page":21}
       ]
     },
     {
@@ -280,7 +284,9 @@
         {"chapter":1,"page":15},
         {"chapter":1,"page":17},
         {"chapter":2,"page":19},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":2,"page":21},
+        {"chapter":2,"page":22}
       ]
     },
     {
@@ -327,7 +333,9 @@
         {"chapter":1,"page":17},
         {"chapter":1,"page":18},
         {"chapter":2,"page":19},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":2,"page":21},
+        {"chapter":2,"page":22}
       ]
     },
     {
@@ -415,7 +423,9 @@
         {"chapter":1,"page":17},
         {"chapter":1,"page":18},
         {"chapter":2,"page":19},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":2,"page":21},
+        {"chapter":2,"page":22}
       ]
     },
     {
@@ -430,7 +440,9 @@
         {"chapter":1,"page":17},
         {"chapter":1,"page":18},
         {"chapter":2,"page":19},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":2,"page":21},
+        {"chapter":2,"page":22}
       ]
     },
     {
@@ -551,6 +563,84 @@
       "appearances":
       [
         {"chapter":2,"page":19}
+      ]
+    },
+    {
+      "id":58,
+      "name":"Yan Zheng","faction":1,
+      "appearances":
+      [
+        {"chapter":2,"page":21}
+      ]
+    },
+    {
+      "id":59,
+      "name":"Zhao Hong","faction":1,
+      "appearances":
+      [
+        {"chapter":2,"page":21},
+        {"chapter":2,"page":22}
+      ]
+    },
+    {
+      "id":60,
+      "name":"Han Zhong","faction":1,
+      "appearances":
+      [
+        {"chapter":2,"page":21},
+        {"chapter":2,"page":22}
+      ]
+    },
+    {
+      "id":61,
+      "name":"Sun Zhong","faction":1,
+      "appearances":
+      [
+        {"chapter":2,"page":21},
+        {"chapter":2,"page":22}
+      ]
+    },
+    {
+      "id":62,
+      "name":"Sun Jian","faction":7,
+      "appearances":
+      [
+        {"chapter":2,"page":22}
+      ]
+    },
+    {
+      "id":63,
+      "name":"Sunzi","faction":0,
+      "note":"Also known as Sun Wu. More famously known as Sun Tsu, author of The Art of War. Ancestor of Sun Jian.",
+      "appearances":
+      [
+        {"chapter":2,"page":22}
+      ]
+    },
+    {
+      "id":64,
+      "name":"Xu Chang","faction":99,
+      "note":"A rebel defeated by Sun Jian.",
+      "appearances":
+      [
+        {"chapter":2,"page":22}
+      ]
+    },
+    {
+      "id":65,
+      "name":"Xu Shao","faction":99,
+      "note":"Son of Xu Chang.",
+      "appearances":
+      [
+        {"chapter":2,"page":22}
+      ]
+    },
+    {
+      "id":66,
+      "name":"Zang Min","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":22}
       ]
     }
   ]
