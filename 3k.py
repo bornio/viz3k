@@ -101,18 +101,26 @@ def read_json_data():
 
     return (factions, people)
 
-def appearances_by_page(people):
+def appearances_by_page(people, chapters):
     appearances = defaultdict(list)
     for person in people:
         for appearance in person.appearances:
-            appearances[appearance.page].append(person.id)
-
+            # count an appearance only if it is from one of the selected chapters
+            if (appearance.chapter in chapters):
+                appearances[appearance.page].append(person.id)
     return appearances
 
+def people_chapters(people):
+    chapters = defaultdict(bool)
+    for person in people:
+        for appearance in person.appearances:
+            chapters[appearance.chapter] = True
+    # return array of all the chapters in which any character appearances occurred
+    return chapters.keys()
+
 def compute_coappearances(appearances, people):
-    # create nodes from people -- each person must be at same index in nodes array as that person's unique id number!
+    # create nodes from people and links from coappearances of pairs of people
     nodes = []
-    # create links from coappearances
     links = []
     num_links = defaultdict(int)
     for person in people:
@@ -137,21 +145,21 @@ def compute_coappearances(appearances, people):
                         num_links[other_id] += 1
                 # remove this id from the page so we don't get duplicate edges
                 appearances[page].remove(person.id)
-        # save this person as a node
-        nodes.append({"index":person.id,"name":person.name,"group":person.faction.id,"color":person.faction.color,
-                      "links":num_links[person.id]})
+        # save this person as a node, if the person has any links
+        if (num_links[person.id] > 0):
+            nodes.append({"id":person.id,"name":person.name,"group":person.faction.id,"color":person.faction.color,
+                          "links":num_links[person.id]})
+
+    # re-index link source and target using node indices rather than person ids, since they will not be identical
+    for node in nodes:
+        for link in links:
+            if (link["source"] == node["id"]):
+                link["source"] = nodes.index(node)
+            if (link["target"] == node["id"]):
+                link["target"] = nodes.index(node)
 
     # the complete JSON representation with nodes + links together
-    coappearances = {"nodes":nodes,"links":links}
-
-    # write to file
-    try:
-        output_file = open("data/3k-coappear.json", "w")
-    except IOError, (errno, strerror):
-        print "I/O error(%s): %s" % (errno, strerror)
-        sys.exit()
-    coappearances_json = json.dump(coappearances, output_file)
-    output_file.close()
+    return {"nodes":nodes,"links":links}
 
 if __name__ == "__main__":
     from optparse import OptionParser
@@ -169,7 +177,34 @@ if __name__ == "__main__":
     
     # get data from JSON
     factions, people = read_json_data()
+    all_chapters = people_chapters(people)
+    all_appearances = appearances_by_page(people, all_chapters)
 
-    # compute coappearances
-    appearances = appearances_by_page(people)
-    compute_coappearances(appearances, people)
+    print "Found %d characters in %d chapters." % (len(people), len(all_chapters))
+
+    # compute coappearances for the entire book combined
+    coappear_json = compute_coappearances(all_appearances, people)
+
+    # write to file
+    try:
+        output_file = open("data/3k-coappear.json", "w")
+    except IOError, (errno, strerror):
+        print "I/O error(%s): %s" % (errno, strerror)
+        sys.exit()
+    json.dump(coappear_json, output_file)
+    output_file.close()
+
+    # compute coappearances for each chapter separately
+    for chapter in all_chapters:
+        chapter_appearances = appearances_by_page(people, [chapter])
+        coappear_json = compute_coappearances(chapter_appearances, people)
+
+        # write to file
+        output_path = "data/3k-coappear-" + str(chapter) + ".json"
+        try:
+            output_file = open(output_path, "w")
+        except IOError, (errno, strerror):
+            print "I/O error(%s): %s" % (errno, strerror)
+            sys.exit()
+        json.dump(coappear_json, output_file)
+        output_file.close()
