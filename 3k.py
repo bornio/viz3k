@@ -151,12 +151,15 @@ def compute_coappearances(appearances, people):
                           "links":num_links[person.id]})
 
     # re-index link source and target using node indices rather than person ids, since they will not be identical
-    for node in nodes:
-        for link in links:
-            if (link["source"] == node["id"]):
+    for link in links:
+        for node in nodes:
+            if (node["id"] == link["source"]):
                 link["source"] = nodes.index(node)
-            if (link["target"] == node["id"]):
+                break
+        for node in nodes:
+            if (node["id"] == link["target"]):
                 link["target"] = nodes.index(node)
+                break
 
     # the complete JSON representation with nodes + links together
     return {"nodes":nodes,"links":links}

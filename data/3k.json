@@ -66,7 +66,8 @@
         {"chapter":1,"page":12},
         {"chapter":2,"page":20},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -93,7 +94,8 @@
         {"chapter":1,"page":5},
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -110,7 +112,8 @@
       [
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -120,7 +123,8 @@
       [
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -132,7 +136,8 @@
         {"chapter":1,"page":9},
         {"chapter":1,"page":10},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -142,7 +147,8 @@
       [
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -152,7 +158,8 @@
       [
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -163,7 +170,8 @@
         {"chapter":1,"page":6},
         {"chapter":1,"page":17},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -173,7 +181,8 @@
       [
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -183,7 +192,8 @@
       [
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -193,7 +203,8 @@
       [
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -364,7 +375,8 @@
         {"chapter":2,"page":23},
         {"chapter":2,"page":24},
         {"chapter":2,"page":25},
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -644,7 +656,8 @@
       "appearances":
       [
         {"chapter":2,"page":22},
-        {"chapter":2,"page":23}
+        {"chapter":2,"page":23},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -713,7 +726,8 @@
       "name":"Liu Hui","faction":0,
       "appearances":
       [
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -721,7 +735,8 @@
       "name":"Ou Xing","faction":99,"note":"Staged an uprising in Changsha.",
       "appearances":
       [
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -729,7 +744,8 @@
       "name":"Zhang Ju","faction":99,"note":"Staged an uprising in Yuyang, along with Zhang Chun.",
       "appearances":
       [
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -737,7 +753,8 @@
       "name":"Zhang Chun","faction":99,"note":"Staged an uprising in Yuyang, along with Zhang Ju.",
       "appearances":
       [
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
       ]
     },
     {
@@ -745,7 +762,24 @@
       "name":"Liu Tao","faction":0,
       "appearances":
       [
-        {"chapter":2,"page":26}
+        {"chapter":2,"page":26},
+        {"chapter":2,"page":27}
+      ]
+    },
+    {
+      "id":75,
+      "name":"Chen Dan","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":27}
+      ]
+    },
+    {
+      "id":76,
+      "name":"Liu Yu","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":27}
       ]
     }
   ]
