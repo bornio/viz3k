@@ -40,10 +40,11 @@
     },
     {
       "id":3,
-      "name":"Emperor Xian","faction":0,
+      "name":"Emperor Xian","faction":0,"note":"Liu Xie.",
       "appearances":
       [
-        {"chapter":1,"page":5}
+        {"chapter":1,"page":5},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -51,7 +52,8 @@
       "name":"Emperor Huan","faction":0,
       "appearances":
       [
-        {"chapter":1,"page":5}
+        {"chapter":1,"page":5},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -67,7 +69,8 @@
         {"chapter":2,"page":20},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -171,7 +174,8 @@
         {"chapter":1,"page":17},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -280,7 +284,8 @@
       "name":"He Jin","faction":0,
       "appearances":
       [
-        {"chapter":1,"page":10}
+        {"chapter":1,"page":10},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -376,7 +381,8 @@
         {"chapter":2,"page":24},
         {"chapter":2,"page":25},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -449,7 +455,8 @@
       "name":"Gongsun Zan","faction":4,
       "appearances":
       [
-        {"chapter":1,"page":11}
+        {"chapter":1,"page":11},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -543,7 +550,8 @@
         {"chapter":1,"page":16},
         {"chapter":1,"page":17},
         {"chapter":2,"page":19},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -709,7 +717,8 @@
       "appearances":
       [
         {"chapter":2,"page":24},
-        {"chapter":2,"page":25}
+        {"chapter":2,"page":25},
+        {"chapter":2,"page":28}
       ]
     },
     {
@@ -779,7 +788,57 @@
       "name":"Liu Yu","faction":0,
       "appearances":
       [
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":28}
+      ]
+    },
+    {
+      "id":77,
+      "name":"Empress He","faction":0,"note":"Mother of Liu Bian (Emperor Shao).",
+      "appearances":
+      [
+        {"chapter":2,"page":28}
+      ]
+    },
+    {
+      "id":78,
+      "name":"Emperor Shao","faction":0,"note":"Liu Bian.",
+      "appearances":
+      [
+        {"chapter":2,"page":28}
+      ]
+    },
+    {
+      "id":79,
+      "name":"Lady Wang","faction":0,
+      "note":"Also known as Beauty Wang or Consort Wang. Mother of Liu Xie (Emperor Xian).",
+      "appearances":
+      [
+        {"chapter":2,"page":28}
+      ]
+    },
+    {
+      "id":80,
+      "name":"Empress Dowager Dong","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":28}
+      ]
+    },
+    {
+      "id":81,
+      "name":"Liu Chang","faction":0,"note":"Lord of Jiedu. Father of Emperor Ling.",
+      "appearances":
+      [
+        {"chapter":2,"page":28}
+      ]
+    },
+    {
+      "id":82,
+      "name":"Pan Yin","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":28}
       ]
     }
   ]
