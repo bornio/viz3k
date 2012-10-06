@@ -2,13 +2,14 @@
   "factions":
   [
     {"id":0,"name":"Han","color":"#66bbff"},
-    {"id":1,"name":"Yellow Turbans","color":"#ccbb00"},
-    {"id":2,"name":"Liu Yan","color":"#0000aa"},
-    {"id":3,"name":"Shu","color":"#22aa00"},
-    {"id":4,"name":"Gongsun Zan","color":"#ff9900"},
-    {"id":5,"name":"Wei","color":"#0000ff"},
-    {"id":6,"name":"Dong Zhuo","color":"#444444"},
-    {"id":7,"name":"Wu","color":"#ff0000"},
+    {"id":1,"name":"Yellow Turbans","color":"#f89820"},
+    {"id":2,"name":"Liu Yan","color":"#200070"},
+    {"id":3,"name":"Shu","color":"#387800"},
+    {"id":4,"name":"Gongsun Zan","color":"#f36b20"},
+    {"id":5,"name":"Wei","color":"#2828e9"},
+    {"id":6,"name":"Dong Zhuo","color":"#5a5a5a"},
+    {"id":7,"name":"Wu","color":"#d10028"},
+    {"id":8,"name":"Yuan Shao","color":"#dbd33a"},
     {"id":99,"name":"Other","color":"#cccccc"}
   ],
   "people":
@@ -44,7 +45,9 @@
       "appearances":
       [
         {"chapter":1,"page":5},
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":30}
       ]
     },
     {
@@ -70,7 +73,10 @@
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
         {"chapter":2,"page":27},
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -78,7 +84,8 @@
       "name":"Dou Wu","faction":0,
       "appearances":
       [
-        {"chapter":1,"page":5}
+        {"chapter":1,"page":5},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -98,7 +105,10 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -116,7 +126,10 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -127,7 +140,10 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -140,7 +156,10 @@
         {"chapter":1,"page":10},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -151,7 +170,10 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -162,7 +184,10 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -175,7 +200,9 @@
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
         {"chapter":2,"page":27},
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":30}
       ]
     },
     {
@@ -186,7 +213,10 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -197,7 +227,10 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -208,7 +241,11 @@
         {"chapter":1,"page":6},
         {"chapter":2,"page":23},
         {"chapter":2,"page":26},
-        {"chapter":2,"page":27}
+        {"chapter":2,"page":27},
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -285,7 +322,12 @@
       "appearances":
       [
         {"chapter":1,"page":10},
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32},
+        {"chapter":2,"page":33}
       ]
     },
     {
@@ -551,7 +593,9 @@
         {"chapter":1,"page":17},
         {"chapter":2,"page":19},
         {"chapter":2,"page":20},
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":33}
       ]
     },
     {
@@ -797,7 +841,10 @@
       "name":"Empress He","faction":0,"note":"Mother of Liu Bian (Emperor Shao).",
       "appearances":
       [
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -805,7 +852,11 @@
       "name":"Emperor Shao","faction":0,"note":"Liu Bian.",
       "appearances":
       [
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
       ]
     },
     {
@@ -814,7 +865,8 @@
       "note":"Also known as Beauty Wang or Consort Wang. Mother of Liu Xie (Emperor Xian).",
       "appearances":
       [
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":31}
       ]
     },
     {
@@ -822,7 +874,9 @@
       "name":"Empress Dowager Dong","faction":0,
       "appearances":
       [
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31}
       ]
     },
     {
@@ -838,7 +892,118 @@
       "name":"Pan Yin","faction":0,
       "appearances":
       [
-        {"chapter":2,"page":28}
+        {"chapter":2,"page":28},
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":83,
+      "name":"Emperor Chong","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":84,
+      "name":"Emperor Zhi","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":85,
+      "name":"Yuan Shao","faction":8,
+      "appearances":
+      [
+        {"chapter":2,"page":29},
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":32}
+      ]
+    },
+    {
+      "id":86,
+      "name":"Yuan Feng","faction":0,"note":"Father of Yuan Shao.",
+      "appearances":
+      [
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":87,
+      "name":"Yuan Wei","faction":0,"note":"Uncle of Yuan Shao.",
+      "appearances":
+      [
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":88,
+      "name":"He Yu","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":89,
+      "name":"Xun You","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":90,
+      "name":"Zheng Tai","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":29}
+      ]
+    },
+    {
+      "id":91,
+      "name":"Dong Chong","faction":0,"note":"Brother of Empress Dong.",
+      "appearances":
+      [
+        {"chapter":2,"page":30},
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
+      ]
+    },
+    {
+      "id":92,
+      "name":"Empress Lü","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":31}
+      ]
+    },
+    {
+      "id":93,
+      "name":"He Miao","faction":0,"note":"Brother of He Jin.",
+      "appearances":
+      [
+        {"chapter":2,"page":31},
+        {"chapter":2,"page":32}
+      ]
+    },
+    {
+      "id":94,
+      "name":"Lady Wuyang","faction":0,"note":"Mother of He Miao.",
+      "appearances":
+      [
+        {"chapter":2,"page":31}
+      ]
+    },
+    {
+      "id":95,
+      "name":"Chen Lin","faction":0,
+      "appearances":
+      [
+        {"chapter":2,"page":32},
+        {"chapter":2,"page":33}
       ]
     }
   ]
