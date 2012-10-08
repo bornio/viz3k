@@ -10,6 +10,8 @@
     {"id":6,"name":"Dong Zhuo","color":"#5a5a5a"},
     {"id":7,"name":"Wu","color":"#d10028"},
     {"id":8,"name":"Yuan Shao","color":"#dbd33a"},
+    {"id":9,"name":"Yuan Shu","color":"#f69cb2"},
+    {"id":10,"name":"Lü Bu","color":"#1e1e1e"},
     {"id":99,"name":"Other","color":"#cccccc"}
   ],
   "people":
@@ -36,7 +38,8 @@
       "name":"Emperor Guanwu","faction":0,
       "appearances":
       [
-        {"chapter":1,"page":5}
+        {"chapter":1,"page":5},
+        {"chapter":3,"page":34}
       ]
     },
     {
@@ -47,7 +50,12 @@
         {"chapter":1,"page":5},
         {"chapter":2,"page":28},
         {"chapter":2,"page":29},
-        {"chapter":2,"page":30}
+        {"chapter":2,"page":30},
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":38},
+        {"chapter":3,"page":39},
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":45}
       ]
     },
     {
@@ -108,14 +116,18 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37}
       ]
     },
     {
       "id":9,
       "name":"Cai Yong","faction":0,"appearances":
       [
-        {"chapter":1,"page":6}
+        {"chapter":1,"page":6},
+        {"chapter":3,"page":41}
       ]
     },
     {
@@ -129,7 +141,11 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":36},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -143,7 +159,10 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -159,7 +178,10 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -173,7 +195,13 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":36},
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":38},
+        {"chapter":3,"page":39}
       ]
     },
     {
@@ -187,7 +215,10 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -202,7 +233,9 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":28},
         {"chapter":2,"page":29},
-        {"chapter":2,"page":30}
+        {"chapter":2,"page":30},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -216,7 +249,10 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -230,7 +266,10 @@
         {"chapter":2,"page":27},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -245,7 +284,10 @@
         {"chapter":2,"page":29},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -327,7 +369,11 @@
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
         {"chapter":2,"page":32},
-        {"chapter":2,"page":33}
+        {"chapter":2,"page":33},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":36},
+        {"chapter":3,"page":40}
       ]
     },
     {
@@ -340,7 +386,10 @@
         {"chapter":1,"page":15},
         {"chapter":1,"page":17},
         {"chapter":1,"page":18},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":41}
       ]
     },
     {
@@ -595,7 +644,11 @@
         {"chapter":2,"page":20},
         {"chapter":2,"page":28},
         {"chapter":2,"page":29},
-        {"chapter":2,"page":33}
+        {"chapter":2,"page":33},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":36},
+        {"chapter":3,"page":37}
       ]
     },
     {
@@ -654,7 +707,16 @@
         {"chapter":1,"page":17},
         {"chapter":1,"page":18},
         {"chapter":2,"page":19},
-        {"chapter":2,"page":20}
+        {"chapter":2,"page":20},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":39},
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":41},
+        {"chapter":3,"page":42},
+        {"chapter":3,"page":43},
+        {"chapter":3,"page":44},
+        {"chapter":3,"page":45}
       ]
     },
     {
@@ -844,7 +906,11 @@
         {"chapter":2,"page":28},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":36},
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":39}
       ]
     },
     {
@@ -856,7 +922,14 @@
         {"chapter":2,"page":29},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":38},
+        {"chapter":3,"page":39},
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":41},
+        {"chapter":3,"page":45}
       ]
     },
     {
@@ -876,7 +949,8 @@
       [
         {"chapter":2,"page":28},
         {"chapter":2,"page":30},
-        {"chapter":2,"page":31}
+        {"chapter":2,"page":31},
+        {"chapter":3,"page":36}
       ]
     },
     {
@@ -919,7 +993,14 @@
       [
         {"chapter":2,"page":29},
         {"chapter":2,"page":30},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":35},
+        {"chapter":3,"page":36},
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":38},
+        {"chapter":3,"page":39},
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":45}
       ]
     },
     {
@@ -935,7 +1016,8 @@
       "name":"Yuan Wei","faction":0,"note":"Uncle of Yuan Shao.",
       "appearances":
       [
-        {"chapter":2,"page":29}
+        {"chapter":2,"page":29},
+        {"chapter":3,"page":45}
       ]
     },
     {
@@ -986,7 +1068,9 @@
       "appearances":
       [
         {"chapter":2,"page":31},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":40}
       ]
     },
     {
@@ -1003,7 +1087,240 @@
       "appearances":
       [
         {"chapter":2,"page":32},
-        {"chapter":2,"page":33}
+        {"chapter":2,"page":33},
+        {"chapter":3,"page":35}
+      ]
+    },
+    {
+      "id":96,
+      "name":"Niu Fu","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":34}
+      ]
+    },
+    {
+      "id":97,
+      "name":"Li Jue","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":34}
+      ]
+    },
+    {
+      "id":98,
+      "name":"Guo Si","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":34}
+      ]
+    },
+    {
+      "id":99,
+      "name":"Zhang Ji","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":34}
+      ]
+    },
+    {
+      "id":100,
+      "name":"Fan Chou","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":34}
+      ]
+    },
+    {
+      "id":101,
+      "name":"Li Ru","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":34},
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":41},
+        {"chapter":3,"page":42},
+        {"chapter":3,"page":45}
+      ]
+    },
+    {
+      "id":102,
+      "name":"Zheng Tai","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":35}
+      ]
+    },
+    {
+      "id":103,
+      "name":"Yuan Shu","faction":9,
+      "appearances":
+      [
+        {"chapter":3,"page":36}
+      ]
+    },
+    {
+      "id":104,
+      "name":"Wu Kuang","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":36},
+        {"chapter":3,"page":37}
+      ]
+    },
+    {
+      "id":105,
+      "name":"Min Gong","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":37},
+        {"chapter":3,"page":38}
+      ]
+    },
+    {
+      "id":106,
+      "name":"Cui Yi","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":38}
+      ]
+    },
+    {
+      "id":107,
+      "name":"Cui Lie","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":38}
+      ]
+    },
+    {
+      "id":108,
+      "name":"Wang Yun","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":38},
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":41}
+      ]
+    },
+    {
+      "id":109,
+      "name":"Yang Biao","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":38}
+      ]
+    },
+    {
+      "id":110,
+      "name":"Chunyu Qiong","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":38}
+      ]
+    },
+    {
+      "id":111,
+      "name":"Zhao Meng","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":38}
+      ]
+    },
+    {
+      "id":112,
+      "name":"Bao Xin","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":38},
+        {"chapter":3,"page":39},
+        {"chapter":3,"page":40}
+      ]
+    },
+    {
+      "id":113,
+      "name":"Ding Yuan","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":41},
+        {"chapter":3,"page":42},
+        {"chapter":3,"page":43},
+        {"chapter":3,"page":44},
+        {"chapter":3,"page":45}
+      ]
+    },
+    {
+      "id":114,
+      "name":"Lü Bu","faction":10,
+      "appearances":
+      [
+        {"chapter":3,"page":40},
+        {"chapter":3,"page":41},
+        {"chapter":3,"page":42},
+        {"chapter":3,"page":43},
+        {"chapter":3,"page":44},
+        {"chapter":3,"page":45}
+      ]
+    },
+    {
+      "id":115,
+      "name":"Yi Yin","faction":99,"note":"A minister of the Shang dynasty.",
+      "appearances":
+      [
+        {"chapter":3,"page":41},
+        {"chapter":3,"page":45}
+      ]
+    },
+    {
+      "id":116,
+      "name":"Tai Jia","faction":99,"note":"A sovereign of the Shang dynasty.",
+      "appearances":
+      [
+        {"chapter":3,"page":41}
+      ]
+    },
+    {
+      "id":117,
+      "name":"Huo Guang","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":41},
+        {"chapter":3,"page":45}
+      ]
+    },
+    {
+      "id":118,
+      "name":"Prince of Changyi","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":41}
+      ]
+    },
+    {
+      "id":119,
+      "name":"Peng Bo","faction":0,
+      "appearances":
+      [
+        {"chapter":3,"page":41}
+      ]
+    },
+    {
+      "id":120,
+      "name":"Li Su","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":42},
+        {"chapter":3,"page":43},
+        {"chapter":3,"page":44}
+      ]
+    },
+    {
+      "id":121,
+      "name":"Dong Min","faction":6,
+      "appearances":
+      [
+        {"chapter":3,"page":45}
       ]
     }
   ]
