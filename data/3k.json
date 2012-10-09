@@ -55,7 +55,11 @@
         {"chapter":3,"page":38},
         {"chapter":3,"page":39},
         {"chapter":3,"page":40},
-        {"chapter":3,"page":45}
+        {"chapter":3,"page":45},
+        {"chapter":4,"page":48},
+        {"chapter":4,"page":49},
+        {"chapter":4,"page":51},
+        {"chapter":4,"page":54}
       ]
     },
     {
@@ -84,7 +88,9 @@
         {"chapter":2,"page":28},
         {"chapter":2,"page":29},
         {"chapter":2,"page":30},
-        {"chapter":2,"page":32}
+        {"chapter":2,"page":32},
+        {"chapter":4,"page":48},
+        {"chapter":4,"page":49}
       ]
     },
     {
@@ -127,7 +133,8 @@
       "name":"Cai Yong","faction":0,"appearances":
       [
         {"chapter":1,"page":6},
-        {"chapter":3,"page":41}
+        {"chapter":3,"page":41},
+        {"chapter":4,"page":49}
       ]
     },
     {
@@ -373,7 +380,8 @@
         {"chapter":3,"page":34},
         {"chapter":3,"page":35},
         {"chapter":3,"page":36},
-        {"chapter":3,"page":40}
+        {"chapter":3,"page":40},
+        {"chapter":4,"page":50}
       ]
     },
     {
@@ -648,7 +656,12 @@
         {"chapter":3,"page":34},
         {"chapter":3,"page":35},
         {"chapter":3,"page":36},
-        {"chapter":3,"page":37}
+        {"chapter":3,"page":37},
+        {"chapter":4,"page":52},
+        {"chapter":4,"page":53},
+        {"chapter":4,"page":54},
+        {"chapter":4,"page":55},
+        {"chapter":4,"page":56}
       ]
     },
     {
@@ -656,7 +669,8 @@
       "name":"Cao Song","faction":0,"note":"Father of Cao Cao.",
       "appearances":
       [
-        {"chapter":1,"page":16}
+        {"chapter":1,"page":16},
+        {"chapter":4,"page":55}
       ]
     },
     {
@@ -716,7 +730,16 @@
         {"chapter":3,"page":42},
         {"chapter":3,"page":43},
         {"chapter":3,"page":44},
-        {"chapter":3,"page":45}
+        {"chapter":3,"page":45},
+        {"chapter":4,"page":46},
+        {"chapter":4,"page":48},
+        {"chapter":4,"page":49},
+        {"chapter":4,"page":50},
+        {"chapter":4,"page":51},
+        {"chapter":4,"page":52},
+        {"chapter":4,"page":53},
+        {"chapter":4,"page":54},
+        {"chapter":4,"page":56}
       ]
     },
     {
@@ -910,7 +933,10 @@
         {"chapter":3,"page":35},
         {"chapter":3,"page":36},
         {"chapter":3,"page":37},
-        {"chapter":3,"page":39}
+        {"chapter":3,"page":39},
+        {"chapter":4,"page":48},
+        {"chapter":4,"page":49},
+        {"chapter":4,"page":50}
       ]
     },
     {
@@ -929,7 +955,12 @@
         {"chapter":3,"page":39},
         {"chapter":3,"page":40},
         {"chapter":3,"page":41},
-        {"chapter":3,"page":45}
+        {"chapter":3,"page":45},
+        {"chapter":4,"page":46},
+        {"chapter":4,"page":48},
+        {"chapter":4,"page":49},
+        {"chapter":4,"page":50},
+        {"chapter":4,"page":52}
       ]
     },
     {
@@ -950,7 +981,8 @@
         {"chapter":2,"page":28},
         {"chapter":2,"page":30},
         {"chapter":2,"page":31},
-        {"chapter":3,"page":36}
+        {"chapter":3,"page":36},
+        {"chapter":4,"page":48}
       ]
     },
     {
@@ -1000,7 +1032,9 @@
         {"chapter":3,"page":38},
         {"chapter":3,"page":39},
         {"chapter":3,"page":40},
-        {"chapter":3,"page":45}
+        {"chapter":3,"page":45},
+        {"chapter":4,"page":46},
+        {"chapter":4,"page":52}
       ]
     },
     {
@@ -1017,7 +1051,8 @@
       "appearances":
       [
         {"chapter":2,"page":29},
-        {"chapter":3,"page":45}
+        {"chapter":3,"page":45},
+        {"chapter":4,"page":46}
       ]
     },
     {
@@ -1140,7 +1175,12 @@
         {"chapter":3,"page":40},
         {"chapter":3,"page":41},
         {"chapter":3,"page":42},
-        {"chapter":3,"page":45}
+        {"chapter":3,"page":45},
+        {"chapter":4,"page":46},
+        {"chapter":4,"page":48},
+        {"chapter":4,"page":49},
+        {"chapter":4,"page":50},
+        {"chapter":4,"page":54}
       ]
     },
     {
@@ -1200,7 +1240,9 @@
       [
         {"chapter":3,"page":38},
         {"chapter":3,"page":40},
-        {"chapter":3,"page":41}
+        {"chapter":3,"page":41},
+        {"chapter":4,"page":52},
+        {"chapter":4,"page":53}
       ]
     },
     {
@@ -1260,7 +1302,10 @@
         {"chapter":3,"page":42},
         {"chapter":3,"page":43},
         {"chapter":3,"page":44},
-        {"chapter":3,"page":45}
+        {"chapter":3,"page":45},
+        {"chapter":4,"page":51},
+        {"chapter":4,"page":53},
+        {"chapter":4,"page":54}
       ]
     },
     {
@@ -1321,6 +1366,66 @@
       "appearances":
       [
         {"chapter":3,"page":45}
+      ]
+    },
+    {
+      "id":122,
+      "name":"Zhou Bi","faction":6,
+      "appearances":
+      [
+        {"chapter":4,"page":46}
+      ]
+    },
+    {
+      "id":123,
+      "name":"Wu Qiong","faction":6,
+      "appearances":
+      [
+        {"chapter":4,"page":46}
+      ]
+    },
+    {
+      "id":124,
+      "name":"Ding Guan","faction":0,
+      "appearances":
+      [
+        {"chapter":4,"page":48}
+      ]
+    },
+    {
+      "id":125,
+      "name":"Lady Tang","faction":0,
+      "appearances":
+      [
+        {"chapter":4,"page":49},
+        {"chapter":4,"page":50}
+      ]
+    },
+    {
+      "id":126,
+      "name":"Wu Fu","faction":0,
+      "appearances":
+      [
+        {"chapter":4,"page":51}
+      ]
+    },
+    {
+      "id":127,
+      "name":"Chen Gong","faction":10,
+      "appearances":
+      [
+        {"chapter":4,"page":54},
+        {"chapter":4,"page":55},
+        {"chapter":4,"page":56}
+      ]
+    },
+    {
+      "id":128,
+      "name":"Lü Boshe","faction":0,
+      "appearances":
+      [
+        {"chapter":4,"page":55},
+        {"chapter":4,"page":56}
       ]
     }
   ]
