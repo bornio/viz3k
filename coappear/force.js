@@ -56,9 +56,11 @@ function appear_force(nodes, links)
     node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
     text.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
   });
+
+  return force;
 }
 
-function appear_stack(characters)
+function appear_stack(characters, force)
 {
   // style
   var width = 256;
@@ -109,21 +111,21 @@ function appear_stack(characters)
     .attr("font-size", label_size);
 
   // set mouseover and mouseout events for each bar area and the bars themselves
-  function stack_mouseover(i_mouse)
+  function stack_mouseover(d_mouse)
   {
-    bar_areas.filter(function(d, i) { return (i == i_mouse) ? this : null; })
+    bar_areas.filter(function(d) { return (d.id == d_mouse.id) ? this : null; })
       .style("fill", "#aaeeff")
       .style("opacity", 1.0);
   }
 
-  function stack_mouseout(i_mouse)
+  function stack_mouseout(d_mouse)
   {
-    bar_areas.filter(function(d, i) { return (i == i_mouse) ? this : null; })
+    bar_areas.filter(function(d) { return (d.id == d_mouse.id) ? this : null; })
       .style("opacity", 0.0);
   }
 
-  stack_items.on("mouseover", function(d, i) { stack_mouseover(i); });
-  stack_items.on("mouseout", function(d, i) { stack_mouseout(i); });
+  stack_items.on("mouseover", function(d) { stack_mouseover(d); });
+  stack_items.on("mouseout", function(d) { stack_mouseout(d); });
 }
 
 function coappear(data_file_path)
@@ -141,9 +143,9 @@ function coappear(data_file_path)
     console.log("number of links:", links.length);
 
     // render the coappearance graph
-    appear_force(nodes, links);
+    var force = appear_force(nodes, links);
 
     // render the character stack
-    appear_stack(nodes);
+    appear_stack(nodes, force);
   });
 }
