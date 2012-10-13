@@ -57,7 +57,46 @@ function appear_force(data_nodes, data_links)
     g_texts.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
   });
 
-  return { force : force, nodes : nodes, links : links, circles : circles, texts : texts };
+  // functions to highlight characters on mouseover and mouseout
+  // note that these are made accessible to other events as well, outside the graph
+  var circles_highlight_in = function(d_mouse)
+  {
+    // gray out all other circles in the graph
+    circles.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
+      .transition()
+      .style("fill", "#cccccc");
+
+    // gray out all other texts in the graph
+    texts.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
+      .transition()
+      .style("fill", "#aaaaaa");
+  }
+
+  var circles_highlight_out = function(d_mouse)
+  {
+    // return graph circles to their standard styles
+    circles.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
+      .transition()
+      .style("fill", function(d) { return d3.rgb(d.color); });
+
+    // return graph texts to their standard styles
+    texts.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
+      .transition()
+      .style("fill", "#000000");
+  }
+
+  circles.on("mouseover", function(d) { circles_highlight_in(d); });
+  circles.on("mouseout", function(d) { circles_highlight_out(d); });
+
+  return {
+    force : force,
+    nodes : nodes,
+    links : links,
+    circles : circles,
+    texts : texts,
+    circles_highlight_in : circles_highlight_in,
+    circles_highlight_out : circles_highlight_out
+  };
 }
 
 function appear_stack(characters, graph)
@@ -118,15 +157,8 @@ function appear_stack(characters, graph)
       .style("fill", "#aaeeff")
       .style("opacity", 1.0);
 
-    // gray out all other circles in the graph
-    graph.circles.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
-      .style("fill", "#cccccc");
-
-    // gray out all other texts in the graph
-    graph.texts.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
-      .style("fill", "#aaaaaa");
+    // highlight this person's circle in the graph
+    graph.circles_highlight_in(d_mouse);
   }
 
   function stack_mouseout(d_mouse)
@@ -135,15 +167,8 @@ function appear_stack(characters, graph)
     bar_areas.filter(function(d) { return (d.id == d_mouse.id) ? this : null; })
       .style("opacity", 0.0);
 
-    // return graph circles to their standard styles
-    graph.circles.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
-      .style("fill", function(d) { return d3.rgb(d.color); });
-
-    // return graph texts to their standard styles
-    graph.texts.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
-      .style("fill", "#000000");
+    // unhighlight this person's circle in the graph
+    graph.circles_highlight_out(d_mouse);
   }
 
   stack_items.on("mouseover", function(d) { stack_mouseover(d); });
