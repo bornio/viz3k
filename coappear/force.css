@@ -1,12 +1,28 @@
-body {
-  background-color: #eee;
-}
-
-text {
+text.node {
   pointer-events: none;
   font-family: sans-serif;
   font-weight: bold;
   stroke: #fff;
+}
+
+text.stack {
+  font-family: sans-serif;
+  /*font-size: 12px;*/
+}
+
+/* float the character stack on the left */
+#stack {
+  float: left;
+  width: 256px;
+  background-color: #ddd;
+}
+
+/* put the coappearance graph on the right */
+#chart {
+  margin-left: 256px;
+  width: 1024px;
+  height: 1024px;
+  background-color: #eee;
 }
 
 circle.node {
