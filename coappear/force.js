@@ -1,8 +1,11 @@
 function appear_force(data_nodes, data_links)
 {
-  var width = 1024, height = 1024;
-  var force = d3.layout.force().charge(-360).linkDistance(200).size([width, height]);
-  var svg = d3.select("#chart").append("svg").attr("width", width).attr("height", height);
+  var width = 1024, height = 800;
+  var force = d3.layout.force().charge(-800).linkDistance(180).gravity(0.2).size([width, height]);
+  var svg = d3.select("#chart").append("svg");
+
+  var viewbox_size = "0 0 " + String(width) + " " + String(height);
+  svg.attr("viewBox", viewbox_size).attr("width", "100%").attr("height", "96%");
 
   force
       .nodes(data_nodes)
@@ -33,7 +36,7 @@ function appear_force(data_nodes, data_links)
   g_texts.each(function(d) { if (d.links > max_links) { max_links = d.links; } })
 
   circles
-      .attr("r", function(d) { return 20*Math.sqrt(d.links/max_links) + 2; })
+      .attr("r", function(d) { return 32*Math.sqrt(d.links/max_links) + 2; })
       .style("fill", function(d) { return d3.rgb(d.color); })
 
   var texts = g_texts.append("text")
@@ -43,8 +46,8 @@ function appear_force(data_nodes, data_links)
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "central")
       .text(function(d) { return d.name })
-      .attr("font-size", function(d) { return (String(20*(d.links/max_links) + 8) + "px")})
-      .attr("stroke-width", function(d) { return (String(d.links/max_links) + "px")});
+      .attr("font-size", function(d) { return (String(20*(d.links/max_links) + 12) + "px")})
+      .attr("stroke-width", function(d) { return (String(1.2*(d.links/max_links) + 0.2) + "px")});
 
   force.on("tick", function()
   {
@@ -175,6 +178,17 @@ function appear_stack(characters, graph)
   stack_items.on("mouseout", function(d) { stack_mouseout(d); });
 }
 
+function coappear_draw(nodes, links)
+{
+  // render the coappearance graph
+  var graph = appear_force(nodes, links);
+
+  // render the character stack
+  var stack = appear_stack(nodes, graph);
+
+  return { graph : graph, stack : stack };
+}
+
 function coappear(data_file_path)
 {
   var nodes;
@@ -189,10 +203,7 @@ function coappear(data_file_path)
     console.log("number of nodes:", nodes.length);
     console.log("number of links:", links.length);
 
-    // render the coappearance graph
-    var graph = appear_force(nodes, links);
-
-    // render the character stack
-    appear_stack(nodes, graph);
+    // create the d3 visualization(s)
+    var viz = coappear_draw(nodes, links);
   });
 }

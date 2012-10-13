@@ -20,14 +20,12 @@ text.stack {
 /* put the coappearance graph on the right */
 #chart {
   margin-left: 256px;
-  width: 1024px;
-  height: 1024px;
   background-color: #eee;
 }
 
 circle.node {
   stroke: #fff;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
 
 line.link {
