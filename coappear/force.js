@@ -5,7 +5,7 @@ function appear_force(data_nodes, data_links)
   var svg = d3.select("#chart").append("svg");
 
   var viewbox_size = "0 0 " + String(width) + " " + String(height);
-  svg.attr("viewBox", viewbox_size).attr("width", "100%").attr("height", "96%");
+  svg.attr("viewBox", viewbox_size).attr("width", "100%").attr("height", "100%");
 
   force
       .nodes(data_nodes)
@@ -203,7 +203,19 @@ function coappear(data_file_path)
     console.log("number of nodes:", nodes.length);
     console.log("number of links:", links.length);
 
+    var chart = document.getElementById("chart");
+    var stack = document.getElementById("stack");
+
+    chart.style.width = String(window.innerWidth - stack.clientWidth) + "px";
+
     // create the d3 visualization(s)
     var viz = coappear_draw(nodes, links);
+
+    var coappear_resize = function()
+    {
+      chart.style.width = String(window.innerWidth - stack.clientWidth) + "px";
+    }
+
+    window.addEventListener("resize", coappear_resize, false);
   });
 }
