@@ -20,35 +20,42 @@ class Faction:
         desc = "faction(" + str(self.id) + "," + str(self.name) + str(self.color) + ")"
         return desc
 
-class Appearance:
-    def __init__(self, chapter, page):
-        self.chapter = chapter
-        self.page = page
-
-    def __str__(self):
-        desc = "appearance(" + str(self.chapter) + "," + str(self.page) + ")"
-        return desc
-
 class Person:
-    def __init__(self, id, name, faction, appearances, note = ""):
+    def __init__(self, id, name, faction, note = ""):
         self.id = id
         self.name = name
         self.faction = faction
-        self.appearances = appearances
         self.note = note
 
     def __str__(self):
-        desc_appearances = "appearances("
-        for appearance in self.appearances:
-            desc_appearances += str(appearance) + ","
-        if (desc_appearances[-1] == ","):
-            desc_appearances = desc_appearances[:-1]
-        desc_appearances += ")"
-
-        desc = "person(" + str(self.id) + "," + str(self.name) + "," + str(self.faction) + "," + desc_appearances
+        desc = "person(" + str(self.id) + "," + str(self.name) + "," + str(self.faction)
         if (self.note != ""):
             desc += "," + str(self.note) + ")"
         
+        return desc
+
+class Page:
+    def __init__(self, page, ids):
+        self.page = page
+        self.ids = ids
+
+    def __str__(self):
+        desc = "page(" + str(self.page) + "," + str(self.ids) + ")"
+        return desc
+
+class Chapter:
+    def __init__(self, chapter, pages):
+        self.chapter = chapter
+        self.pages = pages
+
+    def __str__(self):
+        desc_pages = ""
+        for page in self.pages:
+            desc_pages += str(page) + ","
+        if (desc_pages[-1] == ","):
+            desc_pages = desc_pages[:-1]
+
+        desc = "chapter(" + str(self.chapter) + "," + "[" + desc_pages + "])"
         return desc
 
 def read_factions(factions_json):
@@ -57,12 +64,15 @@ def read_factions(factions_json):
         factions.append(Faction(faction_json["id"],faction_json["name"],faction_json["color"]))
     return factions
 
-def read_appearances(appearances_json):
-    appearances = []
-    for appearance_json in appearances_json:
-        appearances.append(Appearance(appearance_json["chapter"],appearance_json["page"]))
-    appearances.sort(key = operator.attrgetter("page"))
-    return appearances
+def read_chapters(chapters_json):
+    chapters = []
+    for chapter_json in chapters_json:
+        pages = []
+        pages_json = chapter_json["pages"]
+        for page_json in pages_json:
+            pages.append(Page(page_json["page"],page_json["ids"]))
+        chapters.append(Chapter(chapter_json["chapter"],pages))
+    return chapters
 
 def read_people(people_json, factions):
     people = []
@@ -73,14 +83,11 @@ def read_people(people_json, factions):
             if (faction.id == faction_id):
                 person_faction = faction
 
-        # get the list of this person's appearances in the novel
-        appearances = read_appearances(person_json["appearances"])
-
         # create the Person object
         if (person_json.has_key("note")):
-            people.append(Person(person_json["id"],person_json["name"],person_faction,appearances,person_json["note"]))
+            people.append(Person(person_json["id"],person_json["name"],person_faction,person_json["note"]))
         else:
-            people.append(Person(person_json["id"],person_json["name"],person_faction,appearances))
+            people.append(Person(person_json["id"],person_json["name"],person_faction))
     people.sort(key = operator.attrgetter("id"))
     return people
 
@@ -98,68 +105,67 @@ def read_json_data():
     # parse the JSON for the list of factions and list of characters
     factions = read_factions(input_json["factions"])
     people = read_people(input_json["people"], factions)
+    chapters = read_chapters(input_json["chapters"])
 
-    return (factions, people)
+    return (factions, people, chapters)
 
-def appearances_by_page(people, chapters):
-    appearances = defaultdict(list)
-    for person in people:
-        for appearance in person.appearances:
-            # count an appearance only if it is from one of the selected chapters
-            if (appearance.chapter in chapters):
-                appearances[appearance.page].append(person.id)
-    return appearances
-
-def people_chapters(people):
-    chapters = defaultdict(bool)
-    for person in people:
-        for appearance in person.appearances:
-            chapters[appearance.chapter] = True
-    # return array of all the chapters in which any character appearances occurred
-    return chapters.keys()
-
-def compute_coappearances(appearances, people):
-    # create nodes from people and links from coappearances of pairs of people
+def compute_coappearances(chapters, people):
     nodes = []
     links = []
+    node_indices = defaultdict(int)
     num_links = defaultdict(int)
-    for person in people:
-        for page in appearances:
-            if (person.id in appearances[page]):
-                # create links to all other persons who appear on the same page
-                for other_id in appearances[page]:
-                    if (person.id != other_id):
-                        # if a link already exists between two people, increment the value of the link
-                        exists = False
-                        for link in links:
-                            if (link["source"] == person.id and link["target"] == other_id):
-                                link["value"] = link["value"] + 1
-                                exists = True
-                                break
-                        # otherwise, add a new link
-                        if (exists == False):
-                            links.append({"source":person.id,"target":other_id,"value":1})
 
-                        # increment the count of links for this person AS WELL AS the other person
-                        num_links[person.id] += 1
-                        num_links[other_id] += 1
-                # remove this id from the page so we don't get duplicate edges
-                appearances[page].remove(person.id)
-        # save this person as a node, if the person has any links
-        if (num_links[person.id] > 0):
-            nodes.append({"id":person.id,"name":person.name,"group":person.faction.id,"color":person.faction.color,
-                          "links":num_links[person.id]})
+    # create nodes for every person who shares a page with any other person
+    for chapter in chapters:
+        for page in chapter.pages:
+            if (len(page.ids) > 1):
+                for person_id in page.ids:
+                    # get the corresponding person object
+                    for person in people:
+                        if (person.id == person_id):
+                            # number of links for this person on this page
+                            num_links = len(page.ids) - 1
+                            # append new node if one doesn't exist for this person, otherwise increment node links
+                            found = False
+                            for node in nodes:
+                                if (node["id"] == person_id):
+                                    node["links"] += num_links
+                                    found = True
+                                    break
+                            if (found == False):
+                                nodes.append({"id":person.id,"name":person.name,"group":person.faction.id,
+                                                  "color":person.faction.color,"links":num_links})
+                            break
 
-    # re-index link source and target using node indices rather than person ids, since they will not be identical
-    for link in links:
-        for node in nodes:
-            if (node["id"] == link["source"]):
-                link["source"] = nodes.index(node)
-                break
-        for node in nodes:
-            if (node["id"] == link["target"]):
-                link["target"] = nodes.index(node)
-                break
+    # sort nodes in order of id BEFORE creating links, as links must be based on node ordering
+    nodes.sort(key=lambda item: (item["id"]))
+
+    for n in range(len(nodes)):
+        node = nodes[n]
+        node_indices[node["id"]] = n
+
+    # now create links for every pair of nodes representing people who appear on the same page
+    for chapter in chapters:
+        for page in chapter.pages:
+            for i in range(len(page.ids)):
+                for j in range(i + 1, len(page.ids)):
+                    id0 = page.ids[i]
+                    id1 = page.ids[j]
+
+                    #print "page %d: found link between %d and %d" % (page.page, id0, id1)
+
+                    # if a link already exists between two people, increment the value of the link
+                    exists = False
+                    for link in links:
+                        if (link["source"] == node_indices[id0] and link["target"] == node_indices[id1]):
+                            link["value"] = link["value"] + 1
+                            exists = True
+                            break
+                    # otherwise, add a new link
+                    if (exists == False):
+                        links.append({"source":node_indices[id0],"target":node_indices[id1],"value":1})
+
+    links.sort(key=lambda item: (item['source'], item['target']))
 
     # the complete JSON representation with nodes + links together
     return {"nodes":nodes,"links":links}
@@ -179,14 +185,12 @@ if __name__ == "__main__":
         exit()
     
     # get data from JSON
-    factions, people = read_json_data()
-    all_chapters = people_chapters(people)
-    all_appearances = appearances_by_page(people, all_chapters)
+    factions, people, chapters = read_json_data()
 
-    print "Found %d characters in %d chapters." % (len(people), len(all_chapters))
+    print "Found %d characters in %d chapters." % (len(people), len(chapters))
 
     # compute coappearances for the entire book combined
-    coappear_json = compute_coappearances(all_appearances, people)
+    coappear_json = compute_coappearances(chapters, people)
 
     # write to file
     try:
@@ -198,12 +202,12 @@ if __name__ == "__main__":
     output_file.close()
 
     # compute coappearances for each chapter separately
-    for chapter in all_chapters:
-        chapter_appearances = appearances_by_page(people, [chapter])
-        coappear_json = compute_coappearances(chapter_appearances, people)
+    for chapter in chapters:
+        print "processing coappearances for chapter %d..." % (chapter.chapter)
+        coappear_json = compute_coappearances([chapter], people)
 
         # write to file
-        output_path = "data/3k-coappear-" + str(chapter) + ".json"
+        output_path = "data/3k-coappear-" + str(chapter.chapter) + ".json"
         try:
             output_file = open(output_path, "w")
         except IOError, (errno, strerror):
