@@ -3,7 +3,7 @@
   [
     {"id":0,"name":"Han","color":"#66bbff"},
     {"id":1,"name":"Yellow Turbans","color":"#f89820"},
-    {"id":2,"name":"Liu Yan","color":"#200070"},
+    {"id":2,"name":"Liu Yan/Liu Zhang","color":"#200070"},
     {"id":3,"name":"Shu","color":"#387800"},
     {"id":4,"name":"Gongsun Zan","color":"#f36b20"},
     {"id":5,"name":"Wei","color":"#2828e9"},
@@ -12,6 +12,13 @@
     {"id":8,"name":"Yuan Shao","color":"#dbd33a"},
     {"id":9,"name":"Yuan Shu","color":"#f69cb2"},
     {"id":10,"name":"Lü Bu","color":"#1e1e1e"},
+    {"id":11,"name":"Han Fu","color":"#b96f0c"},
+    {"id":12,"name":"Kong Zhou","color":"#e020df"},
+    {"id":13,"name":"Liu Dai","color":"#8592ba"},
+    {"id":14,"name":"Kong Rong","color":"#c5437a"},
+    {"id":15,"name":"Tao Qian","color":"#c3e087"},
+    {"id":16,"name":"Ma Teng","color":"#8d6529"},
+    {"id":17,"name":"Ding Yuan/Zhang Yang","color":"#942b77"},
     {"id":99,"name":"Other","color":"#cccccc"}
   ],
   "people":
@@ -498,7 +505,7 @@
     },
     {
       "id":113,
-      "name":"Ding Yuan","faction":0
+      "name":"Ding Yuan","faction":17
     },
     {
       "id":114,
@@ -561,6 +568,86 @@
     {
       "id":128,
       "name":"Lü Boshe","faction":0
+    },
+    {
+      "id":129,
+      "name":"Wei Hong","faction":5
+    },
+    {
+      "id":130,
+      "name":"Yue Jin","faction":5
+    },
+    {
+      "id":131,
+      "name":"Li Dian","faction":5
+    },
+    {
+      "id":132,
+      "name":"Xiahou Dun","faction":5
+    },
+    {
+      "id":133,
+      "name":"Xiahou Ying","faction":0
+    },
+    {
+      "id":134,
+      "name":"Xiahou Yuan","faction":5
+    },
+    {
+      "id":135,
+      "name":"Cao Ren","faction":5
+    },
+    {
+      "id":136,
+      "name":"Cao Hong","faction":5
+    },
+    {
+      "id":137,
+      "name":"Han Fu","faction":11
+    },
+    {
+      "id":138,
+      "name":"Kong Zhou","faction":12
+    },
+    {
+      "id":139,
+      "name":"Liu Dai","faction":13
+    },
+    {
+      "id":140,
+      "name":"Wang Kuang","faction":0
+    },
+    {
+      "id":141,
+      "name":"Zhang Miao","faction":0
+    },
+    {
+      "id":142,
+      "name":"Qiao Mao","faction":0
+    },
+    {
+      "id":143,
+      "name":"Yuan Yi","faction":0
+    },
+    {
+      "id":144,
+      "name":"Kong Rong","faction":14
+    },
+    {
+      "id":145,
+      "name":"Zhang Chao","faction":0
+    },
+    {
+      "id":146,
+      "name":"Tao Qian","faction":15
+    },
+    {
+      "id":147,
+      "name":"Ma Teng","faction":16
+    },
+    {
+      "id":148,
+      "name":"Zhang Yang","faction":17
     }
   ],
   "chapters":
@@ -636,6 +723,15 @@
         {"page":54,"ids":[3,49,56,101,114,127]},
         {"page":55,"ids":[49,50,127,128]},
         {"page":56,"ids":[49,56,127,128]}
+      ]
+    },
+    {
+      "chapter":5,
+      "pages":
+      [
+        {"page":57,"ids":[127,49,3,50,129,56]},
+        {"page":58,"ids":[130,131,49,132,133,134,135,136,129,85,56,3,103,137]},
+        {"page":60,"ids":[138,139,140,141,142,143,112,144,145,146,147,41,148,62,85,32,43,42,56]}
       ]
     }
   ]
