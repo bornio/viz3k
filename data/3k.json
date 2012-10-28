@@ -19,7 +19,8 @@
     {"id":15,"name":"Tao Qian","color":"#c3e087"},
     {"id":16,"name":"Ma Teng","color":"#8d6529"},
     {"id":17,"name":"Ding Yuan/Zhang Yang","color":"#942b77"},
-    {"id":99,"name":"Other","color":"#cccccc"}
+    {"id":18,"name":"Liu Biao","color":"#20dfe0"},
+    {"id":99,"name":"Other","color":"#aaaaaa"}
   ],
   "people":
   [
@@ -30,11 +31,12 @@
     },
     {
       "id":1,
-      "name":"Wang Mang","faction":0
+      "name":"Wang Mang","faction":99
     },
     {
       "id":2,
-      "name":"Emperor Guanwu","faction":0
+      "name":"Emperor Guangwu","faction":0,
+      "note":"Liu Xiu."
     },
     {
       "id":3,
@@ -708,6 +710,107 @@
     {
       "id":163,
       "name":"Wu Anguo","faction":14
+    },
+    {
+      "id":164,
+      "name":"Huang Wan","faction":0
+    },
+    {
+      "id":165,
+      "name":"Xun Shuang","faction":0,
+      "note":"Minister of Works during Dong Zhuo's occupation."
+    },
+    {
+      "id":166,
+      "name":"Xu Rong","faction":6,
+      "note":"Governor of Yingyang under Dong Zhuo."
+    },
+    {
+      "id":167,
+      "name":"Bian He","faction":99,
+      "note":"Presented a rock to the King of Chu. The jade inside was made into the imperial seal."
+    },
+    {
+      "id":168,
+      "name":"King of Chu","faction":99
+    },
+    {
+      "id":169,
+      "name":"The First Emperor","faction":99,
+      "note":"Qin Shi Huang, personal name Zhao Zheng. Unified China under the Qin Dynasty."
+    },
+    {
+      "id":170,
+      "name":"Li Si","faction":99,
+      "note":"Prime minister of Qin Shi Huang, the First Emperor."
+    },
+    {
+      "id":171,
+      "name":"Ziying","faction":99,
+      "note":"Last ruler of Qin."
+    },
+    {
+      "id":172,
+      "name":"Wang Xun","faction":99,
+      "note":"Follower of Wang Mang."
+    },
+    {
+      "id":173,
+      "name":"Su Xian","faction":99,
+      "note":"Follower of Wang Mang."
+    },
+    {
+      "id":174,
+      "name":"Liu Biao","faction":18,
+      "note":"Imperial inspector of Jingzhou. One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":175,
+      "name":"Chen Xiang","faction":0,
+      "note":"One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":176,
+      "name":"Fan Pang","faction":0,
+      "note":"One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":177,
+      "name":"Kong Yu","faction":0,
+      "note":"One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":178,
+      "name":"Fan Kang","faction":0,
+      "note":"One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":179,
+      "name":"Tan Fu","faction":0,
+      "note":"One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":180,
+      "name":"Zhang Jian","faction":0,
+      "note":"One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":181,
+      "name":"Cen Zhi","faction":0,
+      "note":"One of the Eight Paragons of Jiangxia."
+    },
+    {
+      "id":182,
+      "name":"Kuai Liang","faction":18
+    },
+    {
+      "id":183,
+      "name":"Kuai Yue","faction":18
+    },
+    {
+      "id":184,
+      "name":"Cai Mao","faction":18,
+      "note":"Naval officer under Liu Biao who surrendered to Cao Cao."
     }
   ],
   "chapters":
@@ -802,6 +905,23 @@
         {"page":68,"ids":[114,140,142,143,112,144,148,146,41,162,56,42,43]},
         {"page":69,"ids":[114,42,43,32,56,78,3,49,85]},
         {"page":70,"ids":[43,32,42,114,56]}
+      ]
+    },
+    {
+      "chapter":6,
+      "pages":
+      [
+        {"page":71,"ids":[42,140,142,112,143,144,148,146,41,85,62,153,154,103,56,97]},
+        {"page":72,"ids":[97,56,62,101,114,3,0,2,109,164,1]},
+        {"page":73,"ids":[164,56,165,122,123,85,101,97,98]},
+        {"page":74,"ids":[56,114,3,151,62,32,42,43,49,85,132,134,135,136,131,130,166]},
+        {"page":75,"ids":[101,56,166,85,114,49,3,132,97,134,98,135,136]},
+        {"page":76,"ids":[136,49,114,166,132,134,135,131,130,56,85,62]},
+        {"page":77,"ids":[62,153,167,168,169,170,171,0,1,172,173,2,78,8,10,11,12,13,14,15,16,17,18]},
+        {"page":78,"ids":[153,62,85,56,159,160,154,155]},
+        {"page":79,"ids":[62,85,174,49,56,103,3,41,32,42,43,142,139]},
+        {"page":80,"ids":[62,174,175,176,177,178,179,180,181,182,183,184,154,85]},
+        {"page":81,"ids":[183,184,62]}
       ]
     }
   ]
