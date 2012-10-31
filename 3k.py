@@ -109,10 +109,10 @@ def read_json_data():
 
     return (factions, people, chapters)
 
-def compute_coappearances(chapters, people):
+def coappearances(chapters, people, min_links = 0):
     nodes = []
     links = []
-    node_indices = defaultdict(int)
+    node_indices = {}
     num_links = defaultdict(int)
 
     # create nodes for every person who shares a page with any other person
@@ -140,6 +140,10 @@ def compute_coappearances(chapters, people):
     # sort nodes in order of id BEFORE creating links, as links must be based on node ordering
     nodes.sort(key=lambda item: (item["id"]))
 
+    # filter out nodes with fewer than min_links links
+    if (min_links > 0):
+        nodes = [node for node in nodes if (node["links"] >= min_links)]
+
     for n in range(len(nodes)):
         node = nodes[n]
         node_indices[node["id"]] = n
@@ -152,7 +156,9 @@ def compute_coappearances(chapters, people):
                     id0 = page.ids[i]
                     id1 = page.ids[j]
 
-                    #print "page %d: found link between %d and %d" % (page.page, id0, id1)
+                    # only create links between nodes that haven't been filtered out
+                    if (((id0 in node_indices) and (id1 in node_indices)) == False):
+                        break
 
                     # if a link already exists between two people, increment the value of the link
                     exists = False
@@ -161,6 +167,7 @@ def compute_coappearances(chapters, people):
                             link["value"] = link["value"] + 1
                             exists = True
                             break
+
                     # otherwise, add a new link
                     if (exists == False):
                         links.append({"source":node_indices[id0],"target":node_indices[id1],"value":1})
@@ -190,7 +197,7 @@ if __name__ == "__main__":
     print "Found %d characters in %d chapters." % (len(people), len(chapters))
 
     # compute coappearances for the entire book combined
-    coappear_json = compute_coappearances(chapters, people)
+    coappear_json = coappearances(chapters, people, 50)
 
     # write to file
     try:
@@ -204,7 +211,7 @@ if __name__ == "__main__":
     # compute coappearances for each chapter separately
     for chapter in chapters:
         print "processing coappearances for chapter %d..." % (chapter.chapter)
-        coappear_json = compute_coappearances([chapter], people)
+        coappear_json = coappearances([chapter], people)
 
         # write to file
         output_path = "data/3k-coappear-" + str(chapter.chapter) + ".json"
