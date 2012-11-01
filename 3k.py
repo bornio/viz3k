@@ -92,20 +92,29 @@ def read_people(people_json, factions):
     return people
 
 def read_json_data():
-    # read 3k.json file (hard-coded path!)
+    # read characters.json file (hard-coded path!)
     try:
-        input_file = open("data/3k.json", "r")
+        characters_file = open("data/characters.json", "r")
     except IOError, (errno, strerror):
         print "I/O error(%s): %s" % (errno, strerror)
         sys.exit()
 
-    input_json = json.load(input_file)
-    input_file.close()
+    # read chapters.json file (hard-coded path!)
+    try:
+        chapters_file = open("data/chapters.json", "r")
+    except IOError, (errno, strerror):
+        print "I/O error(%s): %s" % (errno, strerror)
+        sys.exit()
+
+    characters_json = json.load(characters_file)
+    characters_file.close()
+    chapters_json = json.load(chapters_file)
+    chapters_file.close()
 
     # parse the JSON for the list of factions and list of characters
-    factions = read_factions(input_json["factions"])
-    people = read_people(input_json["people"], factions)
-    chapters = read_chapters(input_json["chapters"])
+    factions = read_factions(characters_json["factions"])
+    people = read_people(characters_json["people"], factions)
+    chapters = read_chapters(chapters_json["chapters"])
 
     return (factions, people, chapters)
 
