@@ -811,6 +811,47 @@
       "id":184,
       "name":"Cai Mao","faction":18,
       "note":"Naval officer under Liu Biao who surrendered to Cao Cao."
+    },
+    {
+      "id":185,
+      "name":"Peng Ji","faction":8,
+      "note":"Advisor to Yuan Shao. Proposed attacking Han Fu."
+    },
+    {
+      "id":186,
+      "name":"Xun Chan","faction":11,
+      "note":"Advisor to Han Fu."
+    },
+    {
+      "id":187,
+      "name":"Xin Ping","faction":11,
+      "note":"Advisor to Han Fu."
+    },
+    {
+      "id":188,
+      "name":"Guan Chun","faction":11
+    },
+    {
+      "id":189,
+      "name":"Geng Wu","faction":11
+    },
+    {
+      "id":190,
+      "name":"Tian Feng","faction":8
+    },
+    {
+      "id":191,
+      "name":"Ju Shou","faction":8
+    },
+    {
+      "id":192,
+      "name":"Xu You","faction":8,
+      "note":"Advisor to Yuan Shao. Defected to Cao Cao at the battle of Guandu."
+    },
+    {
+      "id":193,
+      "name":"Gongsun Yue","faction":4,
+      "note":"Brother of Gongsun zan."
     }
   ]
 }
