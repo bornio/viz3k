@@ -15,8 +15,7 @@ function appear_force(data_nodes, data_links)
   var links = svg.selectAll("line.link")
       .data(data_links)
       .enter().append("line")
-      .attr("class", "link")
-      .style("stroke-width", function(d) { return 0.5*Math.sqrt(d.value); });
+      .attr("class", "link");
 
   var nodes = svg.selectAll("g")
       .data(data_nodes)
@@ -30,6 +29,15 @@ function appear_force(data_nodes, data_links)
   var g_texts = svg.append("g").selectAll("g")
       .data(force.nodes())
       .enter().append("g");
+
+  // scale all links relative to highest-value link
+  var max_link_value = 0.0;
+  links.each(function(d) { if (d.value > max_link_value) { max_link_value = d.value; } })
+  var max_line_w = 8;
+  var min_line_w = 0.25;
+  var line_w_range = max_line_w - min_line_w;
+  var line_w_factor = line_w_range/max_link_value;
+  links.style("stroke-width", function(d) { return d.value*line_w_factor + min_line_w; });
 
   // scale all circles and text labels relative to most heavily-linked node
   var max_links = 0.0;
