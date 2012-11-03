@@ -5,13 +5,11 @@ body {
 text.node {
   pointer-events: none;
   font-family: sans-serif;
-  font-weight: bold;
-  stroke: #fff;
+  text-shadow: 0em 0em 0.15em #fff, 0em 0em 0.15em #fff, 0em 0em 0.15em #fff;
 }
 
 text.stack {
   font-family: sans-serif;
-  /*font-size: 12px;*/
 }
 
 /* float the character stack on the left */

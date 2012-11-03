@@ -1,4 +1,4 @@
-function appear_force(data_nodes, data_links)
+function appear_force(data_nodes, data_links, coappear_ids)
 {
   var width = 1024, height = 800;
   var force = d3.layout.force().charge(-800).linkDistance(180).gravity(0.2).size([width, height]);
@@ -6,6 +6,12 @@ function appear_force(data_nodes, data_links)
 
   var viewbox_size = "0 0 " + String(width) + " " + String(height);
   svg.attr("viewBox", viewbox_size).attr("width", "100%").attr("height", "100%");
+
+  // standard colors
+  var circle_color_faded = "#cccccc";
+  var text_color = "#000000";
+  var text_color_faded = "#aaaaaa";
+  var text_color_interpol = d3.interpolateRgb(text_color_faded, text_color);
 
   force
       .nodes(data_nodes)
@@ -55,7 +61,8 @@ function appear_force(data_nodes, data_links)
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "central")
       .text(function(d) { return d.name })
-      .attr("font-size", function(d) { return (String(20*(d.links/max_links) + 12) + "px")})
+      .attr("font-size", function(d) { return (String(18*(d.links/max_links) + 10) + "px")})
+      .style("color", text_color)
       .attr("stroke-width", function(d) { return (String(1.2*(d.links/max_links) + 0.2) + "px")});
 
   force.on("tick", function()
@@ -69,17 +76,27 @@ function appear_force(data_nodes, data_links)
     g_texts.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
   });
 
+  // returns true if a node is directly connected to another node by a link
+  var connected_node = function(i, other_i)
+  {
+    return (coappear_ids[i].indexOf(other_i) >= 0) ? true : false;
+  }
+
   // functions to highlight characters on mouseover and mouseout
   // note that these are made accessible to other events as well, outside the graph
-  var highlight_i = function(node)
+  var highlight_i = function(node, node_index)
   {
-    // gray out all other circles in the graph
-    circles.filter(function(d) { return (d.id != node.id) ? this : null; })
-      .style("fill", "#cccccc");
+    // partly gray out nodes that are directly linked to this one
+    circles.filter(function(d, i) { return connected_node(node_index, i) ? this : null; })
+      .style("fill", function(d) { color = d3.interpolateRgb(circle_color_faded, d.color); return color(0.3); });
+    texts.filter(function(d, i) { return connected_node(node_index, i) ? this : null; })
+      .style("fill", text_color_interpol(0.3));
 
-    // gray out all other texts in the graph
-    texts.filter(function(d) { return (d.id != node.id) ? this : null; })
-      .style("fill", "#aaaaaa");
+    // fully gray out all other nodes in the graph
+    circles.filter(function(d, i) { return (!connected_node(node_index, i) && (d.id != node.id)) ? this : null; })
+      .style("fill", circle_color_faded);
+    texts.filter(function(d, i) { return (!connected_node(node_index, i) && (d.id != node.id)) ? this : null; })
+      .style("fill", text_color_faded);
 
     // reduce opacity of all links that do not have this node as a source or target
     links.filter(function(d) { return (d.source.id != node.id && d.target.id != node.id) ? this : null; })
@@ -90,22 +107,20 @@ function appear_force(data_nodes, data_links)
       .style("stroke-opacity", 1);
   }
 
-  var highlight_o = function(node)
+  var highlight_o = function(node, node_index)
   {
-    // return graph circles to their standard styles
-    circles.filter(function(d) { return (d.id != node.id) ? this : null; })
-      .style("fill", function(d) { return d3.rgb(d.color); });
+    // return all graph circles to their standard styles
+    circles.style("fill", function(d) { return d3.rgb(d.color); });
 
-    // return graph texts to their standard styles
-    texts.filter(function(d) { return (d.id != node.id) ? this : null; })
-      .style("fill", "#000000");
+    // return all graph texts to their standard styles
+    texts.style("fill", text_color);
 
     // restore opacity of all links
     links.style("stroke-opacity", 0.2);
   }
 
-  circles.on("mouseover", function(d) { highlight_i(d); });
-  circles.on("mouseout", function(d) { highlight_o(d); });
+  circles.on("mouseover", function(d, i) { highlight_i(d, i); });
+  circles.on("mouseout", function(d, i) { highlight_o(d, i); });
 
   return {
     force : force,
@@ -169,35 +184,60 @@ function appear_stack(characters, graph)
     .attr("font-size", label_size);
 
   // set mouseover and mouseout events for each bar area and the bars themselves
-  function stack_mouseover(d_mouse)
+  function stack_mouseover(node, node_index)
   {
     // highlight this person's bar in the stack
-    bar_areas.filter(function(d) { return (d.id == d_mouse.id) ? this : null; })
+    bar_areas.filter(function(d) { return (d.id == node.id) ? this : null; })
       .style("fill", "#aaeeff")
       .style("opacity", 1.0);
 
     // highlight this person's circle in the graph
-    graph.highlight_i(d_mouse);
+    graph.highlight_i(node, node_index);
   }
 
-  function stack_mouseout(d_mouse)
+  function stack_mouseout(node, node_index)
   {
     // unhighlight this person's bar in the stack
-    bar_areas.filter(function(d) { return (d.id == d_mouse.id) ? this : null; })
+    bar_areas.filter(function(d) { return (d.id == node.id) ? this : null; })
       .style("opacity", 0.0);
 
     // unhighlight this person's circle in the graph
-    graph.highlight_o(d_mouse);
+    graph.highlight_o(node, node_index);
   }
 
-  stack_items.on("mouseover", function(d) { stack_mouseover(d); });
-  stack_items.on("mouseout", function(d) { stack_mouseout(d); });
+  stack_items.on("mouseover", function(d, i) { stack_mouseover(d, i); });
+  stack_items.on("mouseout", function(d, i) { stack_mouseout(d, i); });
+}
+
+function get_coappearances(nodes, links)
+{
+  var coappear_ids = new Array(nodes.length);
+  for (n = 0; n < nodes.length; n++)
+  {
+    coappear_ids[n] = new Array();
+    for (l = 0; l < links.length; l++)
+    { 
+      if (links[l].source == n)
+      {
+        coappear_ids[n].push(links[l].target);
+      }
+      else if (links[l].target == n)
+      {
+        coappear_ids[n].push(links[l].source);
+      }
+    }
+  }
+
+  return coappear_ids;
 }
 
 function coappear_draw(nodes, links)
 {
+  // create a data structure to remember which nodes are connected to which others
+  var coappear_ids = get_coappearances(nodes, links);
+
   // render the coappearance graph
-  var graph = appear_force(nodes, links);
+  var graph = appear_force(nodes, links, coappear_ids);
 
   // render the character stack
   var stack = appear_stack(nodes, graph);
