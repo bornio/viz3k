@@ -37,7 +37,8 @@ function appear_force(data_nodes, data_links)
   var min_line_w = 0.25;
   var line_w_range = max_line_w - min_line_w;
   var line_w_factor = line_w_range/max_link_value;
-  links.style("stroke-width", function(d) { return d.value*line_w_factor + min_line_w; });
+  links.style("stroke-width", function(d) { return d.value*line_w_factor + min_line_w; })
+    .style("stroke-opacity", 0.2);
 
   // scale all circles and text labels relative to most heavily-linked node
   var max_links = 0.0;
@@ -70,34 +71,41 @@ function appear_force(data_nodes, data_links)
 
   // functions to highlight characters on mouseover and mouseout
   // note that these are made accessible to other events as well, outside the graph
-  var circles_highlight_in = function(d_mouse)
+  var highlight_i = function(node)
   {
     // gray out all other circles in the graph
-    circles.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
+    circles.filter(function(d) { return (d.id != node.id) ? this : null; })
       .style("fill", "#cccccc");
 
     // gray out all other texts in the graph
-    texts.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
+    texts.filter(function(d) { return (d.id != node.id) ? this : null; })
       .style("fill", "#aaaaaa");
+
+    // reduce opacity of all links that do not have this node as a source or target
+    links.filter(function(d) { return (d.source.id != node.id && d.target.id != node.id) ? this : null; })
+      .style("stroke-opacity", 0.1);
+
+    // maximize opacity of all links in or out of this node
+    links.filter(function(d) { return (d.source.id == node.id || d.target.id == node.id) ? this : null; })
+      .style("stroke-opacity", 1);
   }
 
-  var circles_highlight_out = function(d_mouse)
+  var highlight_o = function(node)
   {
     // return graph circles to their standard styles
-    circles.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
+    circles.filter(function(d) { return (d.id != node.id) ? this : null; })
       .style("fill", function(d) { return d3.rgb(d.color); });
 
     // return graph texts to their standard styles
-    texts.filter(function(d) { return (d.id != d_mouse.id) ? this : null; })
-      .transition()
+    texts.filter(function(d) { return (d.id != node.id) ? this : null; })
       .style("fill", "#000000");
+
+    // restore opacity of all links
+    links.style("stroke-opacity", 0.2);
   }
 
-  circles.on("mouseover", function(d) { circles_highlight_in(d); });
-  circles.on("mouseout", function(d) { circles_highlight_out(d); });
+  circles.on("mouseover", function(d) { highlight_i(d); });
+  circles.on("mouseout", function(d) { highlight_o(d); });
 
   return {
     force : force,
@@ -105,8 +113,8 @@ function appear_force(data_nodes, data_links)
     links : links,
     circles : circles,
     texts : texts,
-    circles_highlight_in : circles_highlight_in,
-    circles_highlight_out : circles_highlight_out
+    highlight_i : highlight_i,
+    highlight_o : highlight_o
   };
 }
 
@@ -169,7 +177,7 @@ function appear_stack(characters, graph)
       .style("opacity", 1.0);
 
     // highlight this person's circle in the graph
-    graph.circles_highlight_in(d_mouse);
+    graph.highlight_i(d_mouse);
   }
 
   function stack_mouseout(d_mouse)
@@ -179,7 +187,7 @@ function appear_stack(characters, graph)
       .style("opacity", 0.0);
 
     // unhighlight this person's circle in the graph
-    graph.circles_highlight_out(d_mouse);
+    graph.highlight_o(d_mouse);
   }
 
   stack_items.on("mouseover", function(d) { stack_mouseover(d); });
