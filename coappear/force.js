@@ -40,11 +40,11 @@ function appear_force(data_nodes, data_links, coappear_ids)
   var max_link_value = 0.0;
   links.each(function(d) { if (d.value > max_link_value) { max_link_value = d.value; } })
   var max_line_w = 8;
-  var min_line_w = 0.25;
+  var min_line_w = 0.5;
   var line_w_range = max_line_w - min_line_w;
-  var line_w_factor = line_w_range/max_link_value;
-  links.style("stroke-width", function(d) { return d.value*line_w_factor + min_line_w; })
-    .style("stroke-opacity", 0.2);
+  var line_w_factor = line_w_range/(max_link_value - 1);
+  links.style("stroke-width", function(d) { return (d.value - 1)*line_w_factor + min_line_w; })
+    .style("stroke-opacity", 0.5);
 
   // scale all circles and text labels relative to most heavily-linked node
   var max_links = 0.0;
@@ -116,7 +116,7 @@ function appear_force(data_nodes, data_links, coappear_ids)
     texts.style("fill", text_color);
 
     // restore opacity of all links
-    links.style("stroke-opacity", 0.2);
+    links.style("stroke-opacity", 0.5);
   }
 
   circles.on("mouseover", function(d, i) { highlight_i(d, i); });
