@@ -165,6 +165,11 @@ def coappearances(chapters, people, min_links = 0):
                     id0 = page.ids[i]
                     id1 = page.ids[j]
 
+                    # lower id is always the link source, higher id always the target
+                    if (id0 > id1):
+                        id0 = page.ids[j]
+                        id1 = page.ids[i]
+
                     # only create links between nodes that haven't been filtered out
                     if (((id0 in node_indices) and (id1 in node_indices)) == False):
                         break

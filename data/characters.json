@@ -852,6 +852,102 @@
       "id":193,
       "name":"Gongsun Yue","faction":4,
       "note":"Brother of Gongsun zan."
+    },
+    {
+      "id":194,
+      "name":"Zhao Yun","style":"Zilong","faction":3
+    },
+    {
+      "id":195,
+      "name":"Qu Yi","faction":8
+    },
+    {
+      "id":196,
+      "name":"Yan Gang","faction":4
+    },
+    {
+      "id":197,
+      "name":"Ma Midi","faction":6
+    },
+    {
+      "id":198,
+      "name":"Zhao Qi","faction":6
+    },
+    {
+      "id":199,
+      "name":"Huang Zu","faction":18
+    },
+    {
+      "id":200,
+      "name":"Lady Wu","faction":7,
+      "note":"Wife of Sun Jian. Mother of Sun Ce, Sun Quan, Sun Yi, and Sun Kuang."
+    },
+    {
+      "id":201,
+      "name":"Sun Ce","style":"Bofu","faction":7,
+      "note":"Eldest son of Sun Jian."
+    },
+    {
+      "id":202,
+      "name":"Sun Quan","style":"Zhongmou","faction":7,
+      "note":"Second son of Sun Jian. Founder of Wu."
+    },
+    {
+      "id":203,
+      "name":"Sun Yi","style":"Shubi","faction":7,
+      "note":"Third son of Sun Jian."
+    },
+    {
+      "id":204,
+      "name":"Sun Kuang","style":"Jizuo","faction":7,
+      "note":"Fourth son of Sun Jian."
+    },
+    {
+      "id":205,
+      "name":"Lady Wu's sister","faction":7,
+      "note":"Second wife of Sun Jian. Mother of Sun Lang and Sun Ren (Sun Shangxiang)."
+    },
+    {
+      "id":206,
+      "name":"Sun Lang","style":"Zao'an","faction":7,
+      "note":"Son of Sun Jian by his second wife."
+    },
+    {
+      "id":207,
+      "name":"Sun Shangxiang","faction":7,
+      "note":"Daughter of Sun Jian by his second wife. Also known as Lady Sun or Sun Ren."
+    },
+    {
+      "id":208,
+      "name":"Sun Shao","style":"Gongli","faction":7,
+      "note":"Adopted son of Sun Jian."
+    },
+    {
+      "id":209,
+      "name":"Sun Jing","style":"Youtai","faction":7,
+      "note":"Younger brother of Sun Jian."
+    },
+    {
+      "id":210,
+      "name":"Zhang Hu","faction":18
+    },
+    {
+      "id":211,
+      "name":"Chen Sheng","faction":18
+    },
+    {
+      "id":212,
+      "name":"Lady Cai","faction":18,
+      "note":"Second wife of Liu Biao. Sister of Cai Mao."
+    },
+    {
+      "id":213,
+      "name":"Lü Gong","faction":18
+    },
+    {
+      "id":214,
+      "name":"Huan Jie","faction":7,
+      "note":"Retrieved Sun Jian's body from Liu Biao in exchange for the prisoner Huang Zu."
     }
   ]
 }
