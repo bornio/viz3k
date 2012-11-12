@@ -42,7 +42,7 @@ function appear_force(data_nodes, data_links, coappear_ids)
   var max_line_w = 8;
   var min_line_w = 0.5;
   var line_w_range = max_line_w - min_line_w;
-  var line_w_factor = line_w_range/(max_link_value - 1);
+  var line_w_factor = (max_link_value > 1) ? line_w_range/(max_link_value - 1) : 0;
   links.style("stroke-width", function(d) { return (d.value - 1)*line_w_factor + min_line_w; })
     .style("stroke-opacity", 0.5);
 
