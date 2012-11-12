@@ -541,7 +541,8 @@
     },
     {
       "id":121,
-      "name":"Dong Min","faction":6
+      "name":"Dong Min","faction":6,
+      "note":"Brother of Dong Zhuo."
     },
     {
       "id":122,
@@ -948,6 +949,31 @@
       "id":214,
       "name":"Huan Jie","faction":7,
       "note":"Retrieved Sun Jian's body from Liu Biao in exchange for the prisoner Huang Zu."
+    },
+    {
+      "id":215,
+      "name":"Dong Huang","faction":6,
+      "note":"Nephew of Dong Zhuo."
+    },
+    {
+      "id":216,
+      "name":"Zhang Wen","faction":0,
+      "note":"Minister of Public Works during Dong Zhuo's usurpation."
+    },
+    {
+      "id":217,
+      "name":"Diaochan","faction":0,
+      "note":"Also written as Diao Chan. Daughter of Wang Yun."
+    },
+    {
+      "id":218,
+      "name":"Yi Yin","faction":99,
+      "note":"Preceptor of the Shang dynasty."
+    },
+    {
+      "id":219,
+      "name":"Zhougong","faction":99,
+      "note":"Duke of Zhou. Regent for the child emperor Chengwang."
     }
   ]
 }
