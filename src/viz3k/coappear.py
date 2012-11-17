@@ -1,120 +1,22 @@
-#!/usr/bin/python
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
 #
-# Processes a JSON file containing character appearances from Romance of the Three Kingdoms.
+# Processes JSON files containing character appearances from Romance of the Three Kingdoms.
 
-"""3k"""
+"""coappear"""
 
 import os
 import sys
 import json
-import operator
 from collections import defaultdict
 
-class Faction:
-    def __init__(self, id, name, color):
-        self.id = id
-        self.name = name
-        self.color = color
+import data.characters
+import data.chapters
 
-    def __str__(self):
-        desc = "faction(" + str(self.id) + "," + str(self.name) + str(self.color) + ")"
-        return desc
-
-class Person:
-    def __init__(self, id, name, faction, note = ""):
-        self.id = id
-        self.name = name
-        self.faction = faction
-        self.note = note
-
-    def __str__(self):
-        desc = "person(" + str(self.id) + "," + str(self.name) + "," + str(self.faction)
-        if (self.note != ""):
-            desc += "," + str(self.note) + ")"
-        
-        return desc
-
-class Page:
-    def __init__(self, page, ids):
-        self.page = page
-        self.ids = ids
-
-    def __str__(self):
-        desc = "page(" + str(self.page) + "," + str(self.ids) + ")"
-        return desc
-
-class Chapter:
-    def __init__(self, chapter, pages):
-        self.chapter = chapter
-        self.pages = pages
-
-    def __str__(self):
-        desc_pages = ""
-        for page in self.pages:
-            desc_pages += str(page) + ","
-        if (desc_pages[-1] == ","):
-            desc_pages = desc_pages[:-1]
-
-        desc = "chapter(" + str(self.chapter) + "," + "[" + desc_pages + "])"
-        return desc
-
-def read_factions(factions_json):
-    factions = []
-    for faction_json in factions_json:
-        factions.append(Faction(faction_json["id"],faction_json["name"],faction_json["color"]))
-    return factions
-
-def read_chapters(chapters_json):
-    chapters = []
-    for chapter_json in chapters_json:
-        pages = []
-        pages_json = chapter_json["pages"]
-        for page_json in pages_json:
-            pages.append(Page(page_json["page"],page_json["ids"]))
-        chapters.append(Chapter(chapter_json["chapter"],pages))
-    return chapters
-
-def read_people(people_json, factions):
-    people = []
-    for person_json in people_json:
-        # find the relevant faction for this person
-        faction_id = person_json["faction"]
-        for faction in factions:
-            if (faction.id == faction_id):
-                person_faction = faction
-
-        # create the Person object
-        if (person_json.has_key("note")):
-            people.append(Person(person_json["id"],person_json["name"],person_faction,person_json["note"]))
-        else:
-            people.append(Person(person_json["id"],person_json["name"],person_faction))
-    people.sort(key = operator.attrgetter("id"))
-    return people
-
-def read_json_data():
-    # read characters.json file (hard-coded path!)
-    try:
-        characters_file = open("data/characters.json", "r")
-    except IOError, (errno, strerror):
-        print "I/O error(%s): %s" % (errno, strerror)
-        sys.exit()
-
-    # read chapters.json file (hard-coded path!)
-    try:
-        chapters_file = open("data/chapters.json", "r")
-    except IOError, (errno, strerror):
-        print "I/O error(%s): %s" % (errno, strerror)
-        sys.exit()
-
-    characters_json = json.load(characters_file)
-    characters_file.close()
-    chapters_json = json.load(chapters_file)
-    chapters_file.close()
-
-    # parse the JSON for the list of factions and list of characters
-    factions = read_factions(characters_json["factions"])
-    people = read_people(characters_json["people"], factions)
-    chapters = read_chapters(chapters_json["chapters"])
+def read_json_data(data_path):
+    # parse the data files for the lists of factions, characters, and chapters
+    factions, people = data.characters.from_json(data_path + "/characters.json")
+    chapters = data.chapters.from_json(data_path + "/chapters.json")
 
     return (factions, people, chapters)
 
@@ -200,13 +102,14 @@ if __name__ == "__main__":
     (opts, args) = parser.parse_args()
     
     # check arguments
-    if (len(args) != 0):
+    if (len(args) != 1):
         # too few or too many args
         parser.print_help()
         exit()
     
     # get data from JSON
-    factions, people, chapters = read_json_data()
+    data_path = args[0]
+    factions, people, chapters = read_json_data(data_path)
 
     print "Found %d characters in %d chapters." % (len(people), len(chapters))
 
@@ -215,7 +118,7 @@ if __name__ == "__main__":
 
     # write to file
     try:
-        output_file = open("data/3k-coappear.json", "w")
+        output_file = open(data_path + "/3k-coappear.json", "w")
     except IOError, (errno, strerror):
         print "I/O error(%s): %s" % (errno, strerror)
         sys.exit()
@@ -228,7 +131,7 @@ if __name__ == "__main__":
         coappear_json = coappearances([chapter], people)
 
         # write to file
-        output_path = "data/3k-coappear-" + str(chapter.chapter) + ".json"
+        output_path = data_path + "/3k-coappear-" + str(chapter.chapter) + ".json"
         try:
             output_file = open(output_path, "w")
         except IOError, (errno, strerror):
