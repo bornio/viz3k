@@ -37,9 +37,9 @@ function appear_force(data_nodes, data_links, coappear_ids)
       .enter().append("g");
 
   // scale all links relative to highest-value link
-  var max_link_value = 0.0;
+  var max_link_value = 1;
   links.each(function(d) { if (d.value > max_link_value) { max_link_value = d.value; } })
-  var max_line_w = 7;
+  var max_line_w = (max_link_value < 7) ? max_link_value : 7;
   var min_line_w = 1;
   var line_w_range = max_line_w - min_line_w;
   var line_w_factor = (max_link_value > 1) ? line_w_range/(max_link_value - 1) : 0;
