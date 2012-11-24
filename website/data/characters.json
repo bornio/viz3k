@@ -66,7 +66,8 @@
     },
     {
       "id":9,
-      "name":"Cai Yong","faction":0
+      "name":"Cai Yong","faction":0,
+      "note:":"Privy Counselor of the Late Han court."
     },
     {
       "id":10,
@@ -483,7 +484,8 @@
     },
     {
       "id":107,
-      "name":"Cui Lie","faction":0
+      "name":"Cui Lie","faction":0,
+      "note":"Commandant of the Capital Gates."
     },
     {
       "id":108,
@@ -537,7 +539,8 @@
     },
     {
       "id":120,
-      "name":"Li Su","faction":6
+      "name":"Li Su","faction":6,
+      "note":"Persuaded Lü Bu to join Dong Zhuo and kill Ding Yuan. Later joined Wang Yun's plot against Dong Zhuo."
     },
     {
       "id":121,
@@ -714,7 +717,8 @@
     },
     {
       "id":164,
-      "name":"Huang Wan","faction":0
+      "name":"Huang Wan","faction":0,
+      "note":"Commander of the Capital Districts. Participated in Wang Yun's plot against Dong Zhuo."
     },
     {
       "id":165,
@@ -868,7 +872,8 @@
     },
     {
       "id":197,
-      "name":"Ma Midi","faction":6
+      "name":"Ma Midi","faction":0,
+      "note":"Imperial Guardian of the Han court during Dong Zhuo's usurpation."
     },
     {
       "id":198,
@@ -974,6 +979,84 @@
       "id":219,
       "name":"Zhougong","faction":99,
       "note":"Duke of Zhou. Regent for the child emperor Chengwang."
+    },
+    {
+      "id":220,
+      "name":"King Zhuang of Chu","faction":99
+    },
+    {
+      "id":221,
+      "name":"Jiang Xiong","faction":99,
+      "note":"Saved King Zhuang of Chu from Qin soldiers."
+    },
+    {
+      "id":222,
+      "name":"Shisun Rui","faction":0,
+      "note":"A supervisor in the Secretariat. Participated in Wang Yun's plot against Dong Zhuo."
+    },
+    {
+      "id":223,
+      "name":"Dong Zhuo's mother","faction":6
+    },
+    {
+      "id":224,
+      "name":"Taoist priest","faction":0,
+      "note":"A mysterious Taoist priest who appeared at Dong Zhuo's coronation ceremony."
+    },
+    {
+      "id":225,
+      "name":"Sima Qian","faction":0,
+      "note":"Author of the Records of the Grand Historian."
+    },
+    {
+      "id":226,
+      "name":"Zhuge Liang","style":"Kongming","faction":3,
+      "note":"Brilliant strategist of Shu."
+    },
+    {
+      "id":227,
+      "name":"Jia Xu","faction":6,
+      "note":"Advisor to Dong Zhuo's remnants under Li Jue, Guo Si, Zhang Ji, and Fan Chou."
+    },
+    {
+      "id":228,
+      "name":"Hu Chi'er","faction":6,
+      "note":"Officer of Niu Fu. Murdered Niu Fu and presented his head to Lü Bu, but was executed when Lü Bu learned of his treachery."
+    },
+    {
+      "id":229,
+      "name":"Peng Yue","faction":0,
+      "note":"General of Liu Bang who fought Chu using reverse signaling tactics -- advancing at the gong and retreating at the drum."
+    },
+    {
+      "id":230,
+      "name":"Li Meng","faction":6,
+      "note":"Adherent of Dong Zhuo. After Dong Zhuo's death, he and Wang Fang opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces."
+    },
+    {
+      "id":231,
+      "name":"Wang Fang","faction":6,
+      "note":"Adherent of Dong Zhuo. After Dong Zhuo's death, he and Li Meng opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces."
+    },
+    {
+      "id":232,
+      "name":"Chong Fu","faction":0,
+      "note":"Minister of Ritual in the imperial Han court. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+    },
+    {
+      "id":233,
+      "name":"Lu Kui","faction":0,
+      "note":"Court Steward of the imperial Han court. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+    },
+    {
+      "id":234,
+      "name":"Zhou Huan","faction":0,
+      "note":"Minister of Protocol in the imperial Han court. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+    },
+    {
+      "id":235,
+      "name":"Wang Qi","faction":0,
+      "note":"Commandant of the Exemplary Cavalry. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
     }
   ]
 }
