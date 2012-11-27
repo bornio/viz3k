@@ -20,6 +20,7 @@
     {"id":16,"name":"Ma Teng","color":"#8d6529"},
     {"id":17,"name":"Ding Yuan/Zhang Yang","color":"#942b77"},
     {"id":18,"name":"Liu Biao","color":"#20dfe0"},
+    {"id":19,"name":"Han Sui","color":"#7fa6cc"},
     {"id":99,"name":"Other","color":"#aaaaaa"}
   ],
   "people":
@@ -67,7 +68,7 @@
     {
       "id":9,
       "name":"Cai Yong","faction":0,
-      "note:":"Privy Counselor of the Late Han court."
+      "note:":"Privy Counselor of the Late Han court. Executed by Wang Yun for mourning the death of Dong Zhuo."
     },
     {
       "id":10,
@@ -206,7 +207,8 @@
     },
     {
       "id":41,
-      "name":"Gongsun Zan","faction":4
+      "name":"Gongsun Zan","faction":4,
+      "note":"Governor of Beiping. Joined the alliance against Dong Zhuo."
     },
     {
       "id":42,
@@ -393,7 +395,8 @@
     },
     {
       "id":85,
-      "name":"Yuan Shao","faction":8
+      "name":"Yuan Shao","faction":8,
+      "note":"Lord of Qixiang and governor of Bohai. Led the alliance against Dong Zhuo."
     },
     {
       "id":86,
@@ -440,23 +443,28 @@
     },
     {
       "id":96,
-      "name":"Niu Fu","faction":6
+      "name":"Niu Fu","faction":6,
+      "note":"Son-in-law of Dong Zhuo."
     },
     {
       "id":97,
-      "name":"Li Jue","faction":6
+      "name":"Li Jue","faction":6,
+      "note":"One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
     },
     {
       "id":98,
-      "name":"Guo Si","faction":6
+      "name":"Guo Si","faction":6,
+      "note":"One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
     },
     {
       "id":99,
-      "name":"Zhang Ji","faction":6
+      "name":"Zhang Ji","faction":6,
+      "note":"One of Dong Zhuo's generals who later served Li Jue and Guo Si."
     },
     {
       "id":100,
-      "name":"Fan Chou","faction":6
+      "name":"Fan Chou","faction":6,
+      "note":"One of Dong Zhuo's generals who later served Li Jue and Guo Si. Executed by Li Jue after failing to pursue Han Sui."
     },
     {
       "id":101,
@@ -468,7 +476,8 @@
     },
     {
       "id":103,
-      "name":"Yuan Shu","faction":9
+      "name":"Yuan Shu","faction":9,
+      "note":"Governor of Nanyang and General of the Rear. Joined the alliance against Dong Zhuo."
     },
     {
       "id":104,
@@ -505,7 +514,8 @@
     },
     {
       "id":112,
-      "name":"Bao Xin","faction":0
+      "name":"Bao Xin","faction":0,
+      "note":"Lord of Jibei. Joined the alliance against Dong Zhuo. Killed later while fighting the Yellow Turbans."
     },
     {
       "id":113,
@@ -609,51 +619,63 @@
     },
     {
       "id":137,
-      "name":"Han Fu","faction":11
+      "name":"Han Fu","faction":11,
+      "note":"Imperial inspector of Jizhou. Joined the alliance against Dong Zhuo."
     },
     {
       "id":138,
-      "name":"Kong Zhou","faction":12
+      "name":"Kong Zhou","faction":12,
+      "note":"Imperial inspector of Yuzhou. Joined the alliance against Dong Zhuo."
     },
     {
       "id":139,
-      "name":"Liu Dai","faction":13
+      "name":"Liu Dai","faction":13,
+      "note":"Imperial inspector of Yanzhou. Joined the alliance against Dong Zhuo."
     },
     {
       "id":140,
-      "name":"Wang Kuang","faction":0
+      "name":"Wang Kuang","faction":0,
+      "note":"Governor of Henei. Joined the alliance against Dong Zhuo."
     },
     {
       "id":141,
-      "name":"Zhang Miao","faction":0
+      "name":"Zhang Miao","faction":0,
+      "note":"Governor of Chenliu. Joined the alliance against Dong Zhuo."
     },
     {
       "id":142,
-      "name":"Qiao Mao","faction":0
+      "name":"Qiao Mao","faction":0,
+      "note":"Governor of Dongjun. Joined the alliance against Dong Zhuo."
     },
     {
       "id":143,
-      "name":"Yuan Yi","faction":0
+      "name":"Yuan Yi","faction":0,
+      "note":"Governor of Shanyang. Joined the alliance against Dong Zhuo."
     },
     {
       "id":144,
-      "name":"Kong Rong","faction":14
+      "name":"Kong Rong","faction":14,
+      "note":"Governor of Beihai. Joined the alliance against Dong Zhuo."
     },
     {
       "id":145,
-      "name":"Zhang Chao","faction":0
+      "name":"Zhang Chao","faction":0,
+      "note":"Governor of Guangling. Joined the alliance against Dong Zhuo."
     },
     {
       "id":146,
-      "name":"Tao Qian","faction":15
+      "name":"Tao Qian","faction":15,
+      "note":"Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo."
     },
     {
       "id":147,
-      "name":"Ma Teng","faction":16
+      "name":"Ma Teng","faction":16,
+      "note":"Governor of Xiliang. Joined the alliance against Dong Zhuo. Appointed Conqueror of the West by Emperor Xian."
     },
     {
       "id":148,
-      "name":"Zhang Yang","faction":17
+      "name":"Zhang Yang","faction":17,
+      "note":"Governor of Shangdang. Joined the alliance against Dong Zhuo."
     },
     {
       "id":149,
@@ -1031,12 +1053,12 @@
     {
       "id":230,
       "name":"Li Meng","faction":6,
-      "note":"Adherent of Dong Zhuo. After Dong Zhuo's death, he and Wang Fang opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces."
+      "note":"After Dong Zhuo's death, he and Wang Fang opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces. Captured by Ma Chao after failing to heed Jia Xu's advice."
     },
     {
       "id":231,
       "name":"Wang Fang","faction":6,
-      "note":"Adherent of Dong Zhuo. After Dong Zhuo's death, he and Li Meng opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces."
+      "note":"After Dong Zhuo's death, he and Li Meng opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces. Killed in battle by Ma Chao after failing to heed Jia Xu's advice."
     },
     {
       "id":232,
@@ -1057,6 +1079,96 @@
       "id":235,
       "name":"Wang Qi","faction":0,
       "note":"Commandant of the Exemplary Cavalry. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+    },
+    {
+      "id":236,
+      "name":"Han Sui","faction":19,
+      "note":"Imperial inspector of Bingzhou. Ally of Ma Teng. Appointed Queller of the West by Emperor Xian."
+    },
+    {
+      "id":237,
+      "name":"Ma Yu","faction":16,
+      "note":"Privy Counselor of the Han court after the death of Cai Yong. Assisted Ma Teng and Han Sui's rebellion against Li Jue and Guo Si, but was caught and executed."
+    },
+    {
+      "id":238,
+      "name":"Chong Shao","faction":16,
+      "note":"Assisted Ma Teng and Han Sui's rebellion against Li Jue and Guo Si, but was caught and executed."
+    },
+    {
+      "id":239,
+      "name":"Liu Fan","faction":16,
+      "note":"Assisted Ma Teng and Han Sui's rebellion against Li Jue and Guo Si, but was caught and executed."
+    },
+    {
+      "id":240,
+      "name":"Ma Chao","style":"Mengqi","faction":16,
+      "note":"Son of Ma Teng. After Ma Teng's death, served Zhang Lu. Submitted to Liu Bei after two inconclusive duels with Zhang Fei."
+    },
+    {
+      "id":241,
+      "name":"Xun Yu","style":"Wenruo","faction":5,
+      "note":"Son of Xun Gun. Uncle of Xun You. First served Yuan Shao before becoming Cao Cao's chief advisor."
+    },
+    {
+      "id":242,
+      "name":"Xun Gun","faction":0,
+      "note":"Father of Xun Yu."
+    },
+    {
+      "id":243,
+      "name":"Zhang Liang","style":"Zifang","faction":0,
+      "note":"Advisor to Emperor Gao. Cao Cao referred to Xun Yu as his Zifang."
+    },
+    {
+      "id":244,
+      "name":"Xun You","style":"Gongda","faction":5,
+      "note":"Nephew of Xun Yu. An officer of Cao Cao."
+    },
+    {
+      "id":245,
+      "name":"Cheng Yu","style":"Zhongde","faction":5,
+      "note":"Advisor of Cao Cao, recommended by Xun Yu."
+    },
+    {
+      "id":246,
+      "name":"Guo Jia","style":"Fengxiao","faction":5,
+      "note":"Advisor of Cao Cao, recommended by Cheng Yu and Xun Yu."
+    },
+    {
+      "id":247,
+      "name":"Liu Ye","style":"Ziyang","faction":5,
+      "note":"An officer of Cao Cao, recommended by Guo Jia. Descendant of the imperial family."
+    },
+    {
+      "id":248,
+      "name":"Man Chong","style":"Boning","faction":5,
+      "note":"An officer of Cao Cao."
+    },
+    {
+      "id":249,
+      "name":"Lü Qian","style":"Zike","faction":5,
+      "note":"An officer of Cao Cao."
+    },
+    {
+      "id":250,
+      "name":"Mao Jie","style":"Xiaoxian","faction":5,
+      "note":"An officer of Cao Cao."
+    },
+    {
+      "id":251,
+      "name":"Yu Jin","style":"Wenze","faction":5,
+      "note":"An officer of Cao Cao known for his archery skills."
+    },
+    {
+      "id":252,
+      "name":"Dian Wei","faction":5,
+      "note":"An officer of Cao Cao. A large man of great strength who previously had served Zhang Miao. Wielded dual steel spears."
+    },
+    {
+      "id":253,
+      "name":"Elai","faction":99,
+      "note":"An officer of the Shang dynasty whose strength was legendary."
     }
   ]
 }
