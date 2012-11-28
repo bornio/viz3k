@@ -244,8 +244,8 @@
     },
     {
       "id":50,
-      "name":"Cao Song","faction":0,
-      "note":"Father of Cao Cao."
+      "name":"Cao Song","faction":5,
+      "note":"Father of Cao Cao. Originally a Xiahou, he was adopted by the eunuch Cao Teng."
     },
     {
       "id":51,
@@ -579,7 +579,8 @@
     },
     {
       "id":127,
-      "name":"Chen Gong","faction":10
+      "name":"Chen Gong","faction":10,
+      "note":"County official who helped Cao Cao escape after he failed to assassinate Dong Zhuo, but left after Cao Cao murdered Lü Boshe. Later became Lü Bu's strategist."
     },
     {
       "id":128,
@@ -664,8 +665,8 @@
     },
     {
       "id":146,
-      "name":"Tao Qian","faction":15,
-      "note":"Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo."
+      "name":"Tao Qian","style":"Gongzu","faction":15,
+      "note":"Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo. Cao Cao's father Cao Song was murdered by Tao Qian's officer Zhang Kai, giving Cao Cao cause to invade. Died of illness during the invasion, leaving his territory to Liu Bei."
     },
     {
       "id":147,
@@ -1169,6 +1170,36 @@
       "id":253,
       "name":"Elai","faction":99,
       "note":"An officer of the Shang dynasty whose strength was legendary."
+    },
+    {
+      "id":254,
+      "name":"Ying Shao","faction":5,
+      "note":"Governor of Taishan. Sent by Cao Cao to bring back his father Cao Song."
+    },
+    {
+      "id":255,
+      "name":"Cao De","faction":5,
+      "note":"Younger brother of Cao Song."
+    },
+    {
+      "id":256,
+      "name":"Zhang Kai","faction":15,
+      "note":"Former Yellow Turban assigned by Tao Qian to escort Cao Cao's father Cao Song through Tao Qian's territory. Instead, he killed Cao Song and looted his belongings, bringing Cao Cao's wrath upon Tao Qian."
+    },
+    {
+      "id":257,
+      "name":"Bian Rang","faction":15,
+      "note":"Governor of Jiujiang. Brought an army to aid Tao Qian when Cao Cao invaded Xuzhou."
+    },
+    {
+      "id":258,
+      "name":"Cao Bao","faction":15,
+      "note":"Officer of Tao Qian."
+    },
+    {
+      "id":259,
+      "name":"Mi Zhu","faction":15,
+      "note":"Officer of Tao Qian."
     }
   ]
 }
