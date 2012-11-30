@@ -17,14 +17,18 @@ class Faction:
         return desc
 
 class Person:
-    def __init__(self, id, name, faction, note = ""):
+    def __init__(self, id, name, style, faction, note = ""):
         self.id = id
         self.name = name
+        self.style = style
         self.faction = faction
         self.note = note
 
     def __str__(self):
-        desc = "person(" + str(self.id) + "," + str(self.name) + "," + str(self.faction)
+        desc = "person(" + str(self.id) + "," + str(self.name)
+        if (self.style != ""):
+            desc += "," + str(self.style)
+        desc += "," + str(self.faction)
         if (self.note != ""):
             desc += "," + str(self.note) + ")"
         
@@ -54,10 +58,14 @@ def from_json(characters_json_path):
                 person_faction = faction
 
         # create the Person object
+        style = ""
+        note = ""
+        if (person_json.has_key("style")):
+            style = person_json["style"]
         if (person_json.has_key("note")):
-            people.append(Person(person_json["id"],person_json["name"],person_faction,person_json["note"]))
-        else:
-            people.append(Person(person_json["id"],person_json["name"],person_faction))
+            note = person_json["note"]
+
+        people.append(Person(person_json["id"],person_json["name"],style,person_faction,note))
     people.sort(key = operator.attrgetter("id"))
     
     return factions, people
