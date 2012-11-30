@@ -36,14 +36,8 @@ def from_json(characters_json_path):
     of Person objects.
     """
     # read JSON file containing chapter info
-    try:
-        characters_file = open(characters_json_path, "r")
-    except IOError, (errno, strerror):
-        print "I/O error(%s): %s" % (errno, strerror)
-        sys.exit()
-
-    characters_json = json.load(characters_file)
-    characters_file.close()
+    with open(characters_json_path, "r") as characters_file:
+        characters_json = json.load(characters_file)
 
     # parse the factions
     factions = []

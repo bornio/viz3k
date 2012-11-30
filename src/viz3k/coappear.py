@@ -15,8 +15,27 @@ import data.chapters
 
 def read_json_data(data_path):
     # parse the data files for the lists of factions, characters, and chapters
-    factions, people = data.characters.from_json(data_path + "/characters.json")
-    chapters = data.chapters.from_json(data_path + "/chapters.json")
+    try:
+        factions, people = data.characters.from_json(data_path + "/characters.json")
+    except IOError as ioe:
+        print "Failed to open characters file %s :" % ("'characters.json'")
+        print "  %s" % (ioe)
+        sys.exit()
+    except ValueError as ve:
+        print "Failed to parse characters file %s :" % ("'characters.json'")
+        print "  %s" % (ve)
+        sys.exit()
+    
+    try:
+        chapters = data.chapters.from_json(data_path + "/chapters.json")
+    except IOError as ioe:
+        print "Failed to open chapters file %s :" % ("'chapters.json'")
+        print "  %s" % (ioe)
+        sys.exit()
+    except ValueError as ve:
+        print "Failed to parse chapters file %s :" % ("'chapters.json'")
+        print "  %s" % (ve)
+        sys.exit()
 
     return (factions, people, chapters)
 

@@ -34,14 +34,8 @@ def from_json(chapters_json_path):
     Parses the JSON file at chapters_json_path and returns a list of Chapter objects.
     """
     # read JSON file containing chapter info
-    try:
-        chapters_file = open(chapters_json_path, "r")
-    except IOError, (errno, strerror):
-        print "I/O error(%s): %s" % (errno, strerror)
-        sys.exit()
-
-    chapters_json = json.load(chapters_file)
-    chapters_file.close()
+    with open(chapters_json_path, "r") as chapters_file:
+        chapters_json = json.load(chapters_file)
 
     # parse the JSON
     chapters = []
