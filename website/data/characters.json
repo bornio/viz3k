@@ -414,7 +414,8 @@
     },
     {
       "id":89,
-      "name":"Xun You","faction":0
+      "name":"Xun You","style":"Gongda","faction":5,
+      "note":"Nephew of Xun Yu. Left the Inner Bureau during Dong Zhuo's usurpation, later becoming an officer of Cao Cao."
     },
     {
       "id":90,
@@ -1123,81 +1124,76 @@
     },
     {
       "id":244,
-      "name":"Xun You","style":"Gongda","faction":5,
-      "note":"Nephew of Xun Yu. An officer of Cao Cao."
-    },
-    {
-      "id":245,
       "name":"Cheng Yu","style":"Zhongde","faction":5,
       "note":"Advisor of Cao Cao, recommended by Xun Yu."
     },
     {
-      "id":246,
+      "id":245,
       "name":"Guo Jia","style":"Fengxiao","faction":5,
       "note":"Advisor of Cao Cao, recommended by Cheng Yu and Xun Yu."
     },
     {
-      "id":247,
+      "id":246,
       "name":"Liu Ye","style":"Ziyang","faction":5,
       "note":"An officer of Cao Cao, recommended by Guo Jia. Descendant of the imperial family."
     },
     {
-      "id":248,
+      "id":247,
       "name":"Man Chong","style":"Boning","faction":5,
       "note":"An officer of Cao Cao."
     },
     {
-      "id":249,
+      "id":248,
       "name":"Lü Qian","style":"Zike","faction":5,
       "note":"An officer of Cao Cao."
     },
     {
-      "id":250,
+      "id":249,
       "name":"Mao Jie","style":"Xiaoxian","faction":5,
       "note":"An officer of Cao Cao."
     },
     {
-      "id":251,
+      "id":250,
       "name":"Yu Jin","style":"Wenze","faction":5,
       "note":"An officer of Cao Cao known for his archery skills."
     },
     {
-      "id":252,
+      "id":251,
       "name":"Dian Wei","faction":5,
       "note":"An officer of Cao Cao. A large man of great strength who previously had served Zhang Miao. Wielded dual steel spears."
     },
     {
-      "id":253,
+      "id":252,
       "name":"Elai","faction":99,
       "note":"An officer of the Shang dynasty whose strength was legendary."
     },
     {
-      "id":254,
+      "id":253,
       "name":"Ying Shao","faction":5,
       "note":"Governor of Taishan. Sent by Cao Cao to bring back his father Cao Song."
     },
     {
-      "id":255,
+      "id":254,
       "name":"Cao De","faction":5,
       "note":"Younger brother of Cao Song."
     },
     {
-      "id":256,
+      "id":255,
       "name":"Zhang Kai","faction":15,
       "note":"Former Yellow Turban assigned by Tao Qian to escort Cao Cao's father Cao Song through Tao Qian's territory. Instead, he killed Cao Song and looted his belongings, bringing Cao Cao's wrath upon Tao Qian."
     },
     {
-      "id":257,
+      "id":256,
       "name":"Bian Rang","faction":15,
       "note":"Governor of Jiujiang. Brought an army to aid Tao Qian when Cao Cao invaded Xuzhou."
     },
     {
-      "id":258,
+      "id":257,
       "name":"Cao Bao","faction":15,
       "note":"Officer of Tao Qian."
     },
     {
-      "id":259,
+      "id":258,
       "name":"Mi Zhu","faction":15,
       "note":"Officer of Tao Qian."
     }
