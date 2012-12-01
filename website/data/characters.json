@@ -142,7 +142,7 @@
     },
     {
       "id":25,
-      "name":"He Jin","faction":0
+      "name":"He Jin","style":"Suigao","faction":0
     },
     {
       "id":26,
@@ -150,7 +150,7 @@
     },
     {
       "id":27,
-      "name":"Huangfu Song","faction":0
+      "name":"Huangfu Song","style":"Yizhen","faction":0
     },
     {
       "id":28,
@@ -158,7 +158,7 @@
     },
     {
       "id":29,
-      "name":"Liu Yan","faction":2
+      "name":"Liu Yan","style":"Junlang","faction":2
     },
     {
       "id":30,
@@ -170,7 +170,7 @@
     },
     {
       "id":32,
-      "name":"Liu Bei","faction":3
+      "name":"Liu Bei","style":"Xuande","faction":3
     },
     {
       "id":33,
@@ -212,11 +212,11 @@
     },
     {
       "id":42,
-      "name":"Zhang Fei","faction":3
+      "name":"Zhang Fei","style":"Yide","faction":3
     },
     {
       "id":43,
-      "name":"Guan Yu","faction":3
+      "name":"Guan Yu","style":"Yunchang","faction":3
     },
     {
       "id":44,
@@ -240,7 +240,7 @@
     },
     {
       "id":49,
-      "name":"Cao Cao","faction":5
+      "name":"Cao Cao","style":"Mengde","faction":5
     },
     {
       "id":50,
@@ -293,7 +293,7 @@
     },
     {
       "id":62,
-      "name":"Sun Jian","faction":7
+      "name":"Sun Jian","style":"Wentai","faction":7
     },
     {
       "id":63,
@@ -395,7 +395,7 @@
     },
     {
       "id":85,
-      "name":"Yuan Shao","faction":8,
+      "name":"Yuan Shao","style":"Benchu","faction":8,
       "note":"Lord of Qixiang and governor of Bohai. Led the alliance against Dong Zhuo."
     },
     {
@@ -476,7 +476,7 @@
     },
     {
       "id":103,
-      "name":"Yuan Shu","faction":9,
+      "name":"Yuan Shu","style":"Gonglu","faction":9,
       "note":"Governor of Nanyang and General of the Rear. Joined the alliance against Dong Zhuo."
     },
     {
