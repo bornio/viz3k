@@ -38,7 +38,7 @@
     {
       "id":2,
       "name":"Emperor Guangwu","faction":0,
-      "note":"Liu Xiu."
+      "note":"Liu Xiu. Founder of the Later Han after Wang Mang's usurpation."
     },
     {
       "id":3,
@@ -645,7 +645,7 @@
     {
       "id":141,
       "name":"Zhang Miao","faction":0,
-      "note":"Governor of Chenliu. Joined the alliance against Dong Zhuo."
+      "note":"Governor of Chenliu. Joined the alliance against Dong Zhuo. Allied with Lü Bu for a time, but was defeated by Cao Cao and went over to Yuan Shu."
     },
     {
       "id":142,
@@ -665,7 +665,7 @@
     {
       "id":145,
       "name":"Zhang Chao","faction":0,
-      "note":"Governor of Guangling. Joined the alliance against Dong Zhuo."
+      "note":"Governor of Guangling. Joined the alliance against Dong Zhuo. Brother of Zhang Miao. Committed suicide after his ally Lü Bu was defeated at Dingtao."
     },
     {
       "id":146,
@@ -1293,7 +1293,7 @@
     {
       "id":277,
       "name":"Cheng Lian","faction":10,
-      "note":"Officer of Lü Bu."
+      "note":"Officer of Lü Bu. Shot to death by Yue Jin at Dingtao."
     },
     {
       "id":278,
@@ -1319,6 +1319,46 @@
       "id":282,
       "name":"Gao Shun","faction":10,
       "note":"Officer of Lü Bu."
+    },
+    {
+      "id":283,
+      "name":"Lord Tian","faction":10,
+      "note":"Wealthy householder of Puyang who helped Lü Bu to trick Cao Cao into an ambush there, only to surrender the city to Cao Cao later."
+    },
+    {
+      "id":284,
+      "name":"Tao Shang","faction":15,
+      "note":"Elder son of Tao Qian."
+    },
+    {
+      "id":285,
+      "name":"Tao Ying","faction":15,
+      "note":"Younger son of Tao Qian."
+    },
+    {
+      "id":286,
+      "name":"Sun Qian","style":"Gongyou","faction":3,
+      "note":"Joined Liu Bei's service at the recommendation of Tao Qian."
+    },
+    {
+      "id":287,
+      "name":"He Yi","faction":1,
+      "note":"Co-commander of a Yellow Turbans remnant force in the Chen area."
+    },
+    {
+      "id":288,
+      "name":"Huang Shao","faction":1,
+      "note":"Co-commander of a Yellow Turbans remnant force in the Chen area."
+    },
+    {
+      "id":289,
+      "name":"He Man","faction":1,
+      "note":"Yellow Turban under He Yi and Huang Shao."
+    },
+    {
+      "id":290,
+      "name":"Xu Chu","style":"Zhongkang","faction":5,
+      "note":"Came into Cao Cao's service after capturing some Yellow Turbans and dueling Dian Wei to a draw."
     }
   ]
 }
