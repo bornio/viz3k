@@ -155,7 +155,8 @@
     },
     {
       "id":28,
-      "name":"Zhu Jun","faction":0
+      "name":"Zhu Jun","style":"Gongwei","faction":0,
+      "note":"Veteran of the war against the Yellow Turbans. Appointed treasurer and court steward of the Han court by Li Jue and Guo Si."
     },
     {
       "id":29,
@@ -461,7 +462,7 @@
     {
       "id":99,
       "name":"Zhang Ji","faction":6,
-      "note":"One of Dong Zhuo's generals who later served Li Jue and Guo Si."
+      "note":"One of Dong Zhuo's generals who later served Li Jue and Guo Si. Appointed General of the Flying Cavalry for mediating when fighting broke out between Li Jue and Guo Si."
     },
     {
       "id":100,
@@ -500,11 +501,13 @@
     },
     {
       "id":108,
-      "name":"Wang Yun","faction":0
+      "name":"Wang Yun","style":"Zishi","faction":0,
+      "note":"Minister of the Interior in the imperial court during Dong Zhuo's usurpation. Gave Cao Cao the Seven Star Sword in a failed plot to kill Dong Zhuo. Later used his daughter Diaochan to turn Lü Bu against Dong and kill him. Died when Dong's remnant forces under Li Jue and Guo Si captured the capital."
     },
     {
       "id":109,
-      "name":"Yang Biao","faction":0
+      "name":"Yang Biao","faction":0,
+      "note":"Grand Commandant of the Han. Conspired with Emperor Xian to turn Li Jue and Guo Si against one another."
     },
     {
       "id":110,
@@ -724,11 +727,13 @@
     },
     {
       "id":159,
-      "name":"Yan Liang","faction":8
+      "name":"Yan Liang","faction":8,
+      "note":"One of Yuan Shao's most powerful generals, along with Wen Chou. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
       "id":160,
-      "name":"Wen Chou","faction":8
+      "name":"Wen Chou","faction":8,
+      "note":"One of Yuan Shao's most powerful generals, along with Yan Liang. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
       "id":161,
@@ -994,7 +999,7 @@
     },
     {
       "id":217,
-      "name":"Diaochan","faction":0,
+      "name":"Diaochan","faction":10,
       "note":"Also written as Diao Chan. Daughter of Wang Yun."
     },
     {
@@ -1042,8 +1047,8 @@
     },
     {
       "id":227,
-      "name":"Jia Xu","faction":6,
-      "note":"Advisor to Dong Zhuo's remnants under Li Jue, Guo Si, Zhang Ji, and Fan Chou."
+      "name":"Jia Xu","style":"Wenhe","faction":6,
+      "note":"Advisor to Dong Zhuo's remnants under Li Jue and Guo Si, but turned against them to serve Emperor Xian."
     },
     {
       "id":228,
@@ -1198,7 +1203,7 @@
     {
       "id":258,
       "name":"Mi Zhu","style":"Zizhong","faction":15,
-      "note":"Officer of Tao Qian."
+      "note":"Officer of Tao Qian, who entered Liu Bei's service when Liu accepted Tao's invitation to take over Xuzhou."
     },
     {
       "id":259,
@@ -1359,6 +1364,134 @@
       "id":290,
       "name":"Xu Chu","style":"Zhongkang","faction":5,
       "note":"Came into Cao Cao's service after capturing some Yellow Turbans and dueling Dian Wei to a draw."
+    },
+    {
+      "id":291,
+      "name":"Shen Pei","style":"Zhengnan","faction":8,
+      "note":"Advisor to Yuan Shao. Advised Yuan Shao to side with Cao Cao during the standoff between Cao and Lü Bu."
+    },
+    {
+      "id":292,
+      "name":"Lü Bu's daughter","faction":10,
+      "note":"The novel does not mention her name. In the Koei games she is called Lü Lingqi."
+    },
+    {
+      "id":293,
+      "name":"Lady Guo","faction":6,
+      "note":"Wife of Guo Si. Tricked into sowing discord between her husband and Li Jue, resulting in their falling out."
+    },
+    {
+      "id":294,
+      "name":"Lady Yang","faction":0,
+      "note":"Wife of Yang Biao. Participated in her husband's plot to use Guo Si's wife to discord between Guo Si and Li Jue."
+    },
+    {
+      "id":295,
+      "name":"Lady Li","faction":6,
+      "note":"Wife of Li Jue."
+    },
+    {
+      "id":296,
+      "name":"Li Xian","faction":6,
+      "note":"Nephew of Li Jue. Kidnapped Emperor Xian and his wife during the in-fighting between Li Jue and Guo Si."
+    },
+    {
+      "id":297,
+      "name":"Empress Fu","faction":0,
+      "note":"Emperor Xian's wife early in the novel. Daughter of Fu Wan."
+    },
+    {
+      "id":298,
+      "name":"Zuo Ling","faction":6
+    },
+    {
+      "id":299,
+      "name":"Yang Qi","faction":0,
+      "note":"Privy Counselor of the imperial court during Li Jue and Guo Si's occupation of the capital. Brough Jia Xu over to the Emperor's service."
+    },
+    {
+      "id":300,
+      "name":"Yang Mi","faction":0
+    },
+    {
+      "id":301,
+      "name":"Huangfu Li","faction":0,
+      "note":"Townsman of Li Jue from Xiliang. Tasked by the Emperor with making peace between Li Jue and Guo Si. After failing to convince Li Jue, returned to Xiliang and spread rumors against him."
+    },
+    {
+      "id":302,
+      "name":"Hou Yi","faction":99,
+      "note":"King of the Youqiong during the Xia era. Mentioned by Huangfu Li as part of a parable to convince Li Jue to make peace with Guo Si."
+    },
+    {
+      "id":303,
+      "name":"Yang Feng","faction":0,
+      "note":"Cavalry Commander under Li Jue. Turned against Li Jue to serve Emperor Xian. Escorted the Emperor to Hongnong from Chang'an."
+    },
+    {
+      "id":304,
+      "name":"Hu Miao","faction":0,
+      "note":"Privy Counselor of the imperial court during Li Jue and Guo Si's occupation of the capital."
+    },
+    {
+      "id":305,
+      "name":"Wang Chang","faction":0,
+      "note":"Officer of the Imperial Tiger Escort. Tasked by Li Jue with bringing Huangfu Li back to Chang'an from Xiliang, but purposely failed to find him."
+    },
+    {
+      "id":306,
+      "name":"Song Guo","faction":0,
+      "note":"Officer of Li Jue who advised Yang Feng to betray Li Jue to serve the Emperor, but was discovered and executed."
+    },
+    {
+      "id":307,
+      "name":"Cui Yong","faction":6,
+      "note":"Officer of Guo Si. Killed by Xu Huang while trying to capture the Emperor."
+    },
+    {
+      "id":308,
+      "name":"Xu Huang","style":"Gongming","faction":5,
+      "note":"Officer of Yang Feng who was later recruited by Man Chong to serve Cao Cao."
+    },
+    {
+      "id":309,
+      "name":"Duan Wei","faction":0,
+      "note":"General who provided food and clothing to the Emperor's party when they passed through Huayin."
+    },
+    {
+      "id":310,
+      "name":"Dong Cheng","faction":0,
+      "note":"An imperial in-law. Uncle of Emperor Xian. Nephew of Emperor Ling's mother."
+    },
+    {
+      "id":311,
+      "name":"Han Xian","faction":1,
+      "note":"Officer of the White Wave rebels, an offshoot of the Yellow Turbans."
+    },
+    {
+      "id":312,
+      "name":"Li Yue","faction":1,
+      "note":"Leader of the White Wave rebels, an offshoot of the Yellow Turbans. Defended Emperor Xian against Li Jue and Guo Si, but later switched sides."
+    },
+    {
+      "id":313,
+      "name":"Hu Cai","faction":1,
+      "note":"Officer of the White Wave rebels, an offshoot of the Yellow Turbans."
+    },
+    {
+      "id":314,
+      "name":"Fu De","faction":0,
+      "note":"Brother of Empress Fu."
+    },
+    {
+      "id":315,
+      "name":"Han Rong","faction":0,
+      "note":"Court Steward of the late Han. Persuaded Li Jue and Guo Si to release the captive courtiers and palace women to the Emperor."
+    },
+    {
+      "id":316,
+      "name":"Wang Yi","faction":0,
+      "note":"Governor of Hedong."
     }
   ]
 }
