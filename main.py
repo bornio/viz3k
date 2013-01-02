@@ -13,7 +13,7 @@ def serve_static(filepath):
 @route('/coappear/chapter<chapter:int>')
 def index(chapter=1):
     # for now, hard-code a 404 response for chapters that don't exist
-    if (chapter <= 13):
+    if (chapter <= 14):
         return template('coappear/chapter', chapter = chapter)
     else:
         abort(404, "Chapter " + str(chapter) + " does not exist.")

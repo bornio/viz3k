@@ -1213,7 +1213,7 @@
     {
       "id":260,
       "name":"Chen Deng","style":"Yuanlong","faction":15,
-      "note":"Officer of Tao Qian."
+      "note":"Officer of Tao Qian who joined Liu Bei after Tao's death."
     },
     {
       "id":261,
@@ -1492,6 +1492,83 @@
       "id":316,
       "name":"Wang Yi","faction":0,
       "note":"Governor of Hedong."
+    },
+    {
+      "id":317,
+      "name":"Xiang Yu","faction":99,
+      "note":"Warrior of Chu who fought Liu Bang, founder of the Han dynasty. Mentioned in a poem."
+    },
+    {
+      "id":318,
+      "name":"Lord-Patriarch Wen","faction":99,
+      "note":"Leader of Jin who protected King Xiang of Zhou."
+    },
+    {
+      "id":319,
+      "name":"King Xiang","faction":99,
+      "note":"King of the Zhou dynasty."
+    },
+    {
+      "id":320,
+      "name":"Emperor Yi","faction":99,
+      "note":"King Huai of Chu, also called the Righteous Emperor."
+    },
+    {
+      "id":321,
+      "name":"Li Bie","faction":6,
+      "note":"Nephew of Li Jue."
+    },
+    {
+      "id":322,
+      "name":"Fan Kuai","faction":0,
+      "note":"A general who saved Liu Bang's wife. Alluded to by Cao Cao."
+    },
+    {
+      "id":323,
+      "name":"Dong Zhao","style":"Gongren","faction":5,
+      "note":"Advised Cao Cao to move the capital from Luoyang to Xuchang."
+    },
+    {
+      "id":324,
+      "name":"Wang Li","faction":0,
+      "note":"Privy counselor and Historian-Astrologer of the imperial court."
+    },
+    {
+      "id":325,
+      "name":"Liu Ai","faction":0,
+      "note":"Director of the Imperial Clan."
+    },
+    {
+      "id":326,
+      "name":"Ren Jun","faction":5
+    },
+    {
+      "id":327,
+      "name":"Fan Cheng","faction":5
+    },
+    {
+      "id":328,
+      "name":"Ji Ling","faction":9,
+      "note":"Yuan Shu's top general."
+    },
+    {
+      "id":329,
+      "name":"Xun Zheng","faction":9
+    },
+    {
+      "id":330,
+      "name":"Cao Bao","faction":10,
+      "note":"A relative of Lü Bu. After being beaten by Zhang Fei for refusing to drink alcohol, he conspired with Lü Bu to mount a surprise attack on Xuzhou. Though the attack was successful, Cao Bao was killed by Zhang Fei."
+    },
+    {
+      "id":331,
+      "name":"Lady Gan","faction":3,
+      "note":"A wife of Liu Bei."
+    },
+    {
+      "id":332,
+      "name":"Lady Mi","faction":3,
+      "note":"A wife of Liu Bei."
     }
   ]
 }
