@@ -10,7 +10,7 @@
     <div id="stack"></div>
     <div id="chart"></div>
     <script type="text/javascript">
-      coappear("/static/data/3k-coappear-{{chapter}}.json");
+      coappear("./data/chapter{{chapter}}.json");
     </script>
   </body>
 </html>
