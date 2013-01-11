@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Chapter {{chapter}}</title>
-    <script type="text/javascript" src="/static/d3/d3.v2.min.js"></script>
-    <script type="text/javascript" src="/static/coappear/force.js"></script>
-    <link type="text/css" rel="stylesheet" href="/static/coappear/force.css"/>
+    <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/coappear/force.js"></script>
+    <link type="text/css" rel="stylesheet" href="/assets/css/coappear/force.css"/>
   </head>
   <body>
     <div id="stack"></div>
