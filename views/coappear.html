@@ -49,13 +49,19 @@
 
     <!-- content goes here -->
     <div class="container">
-      <h1>Chapters</h1>
-      <ul>
-        <li ng-repeat="chapter in chapters | orderBy:orderProp">
-          <a href="/coappear/chapter{{chapter.chapter}}">{{chapter.chapter}} : {{chapter.title}}</a>
-        </li>
-      </ul>
-      <p>More to come...</p>
+      <div class="page-header">
+        <h1>
+          <p>Coappearances</p>
+          <p><small>See which characters appear most frequently together in each chapter.</small></p>
+        </h1>
+      </div>
+      <h3>Chapters</h3>
+      <table class="table table-striped">
+        <tr ng-repeat="chapter in chapters | orderBy:orderProp">
+          <td class="lead">{{chapter.chapter}}</td> <td><a href="/coappear/chapter{{chapter.chapter}}">{{chapter.title}}</a></td>
+        </tr>
+      </table>
+      <p>More chapters to come...</p>
     </div>
 
     <!-- load javascript last for speed -->
