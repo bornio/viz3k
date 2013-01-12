@@ -2,9 +2,11 @@
 <html lang="en" ng-app ng-controller="Chapter">
   <head>
     <meta charset="utf-8">
-    <title>Chapter {{chapter}}</title>
+    <title>Chapter {{chapter.chapter}}</title>
     <!-- use Twitter Bootstrap for styling -->
     <link href="/lib/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
     <!-- styling for the visualization -->
     <link type="text/css" rel="stylesheet" href="/assets/css/coappear/force.css"/>
     <!-- add some padding to the page body -->
@@ -12,8 +14,6 @@
       body {
         padding-top: 60px;
         padding-bottom: 40px;
-        padding-left: 40px;
-        padding-right: 40px;
       }
     </style>
   </head>
@@ -46,13 +46,23 @@
     </div>
 
     <!-- content goes here -->
-    <div class="container-fluid">
+    <div class="container">
+      <div id="container-header" class="page-header">
+        <h1>
+          <p>Coappearances</p>
+          <small>Chapter {{chapter.chapter}} : {{chapter.title}}</small>
+        </h1>
+      </div>
       <div class="row">
-        <div id="stack-area" class="span4 well">
-          <div id="stack"></div>
+        <div id="stack-area" class="span3">
+          <div id="stack-well" class="well well-small">
+            <div id="stack"></div>
+          </div>
         </div>
-        <div id="chart-area" class="span8">
-          <div id="chart" class="well"></div>
+        <div id="chart-area" class="span9">
+          <div id="chart-well" class="well well-small">
+            <div id="chart"></div>
+          </div>
         </div>
       </div>
     </div>

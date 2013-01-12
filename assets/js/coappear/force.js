@@ -1,8 +1,8 @@
 function appear_force(data_nodes, data_links, coappear_ids)
 {
   var chartArea = document.getElementById("chart-area");
-  var width = 1000, height = 800;
-  var force = d3.layout.force().charge(-800).linkDistance(180).gravity(0.3).size([width, height]);
+  var width = 800, height = 720;
+  var force = d3.layout.force().charge(-800).linkDistance(180).gravity(0.4).size([width, height]);
   var svg = d3.select("#chart").append("svg");
   
   var viewbox_size = "0 0 " + String(width) + " " + String(height);
@@ -137,7 +137,7 @@ function appear_force(data_nodes, data_links, coappear_ids)
 function appear_stack(characters, graph)
 {
   // style
-  var bar_height = 30;
+  var bar_height = 22;
   var bar_width = 24;
   var label_size = "13px";
   var height = bar_height * characters.length;
@@ -168,7 +168,7 @@ function appear_stack(characters, graph)
 
   // create the colored bars, one for each element of data
   var bars = stack_items.append("rect").attr("class","stack_bar")
-    .attr("x", bar_width/2)
+    .attr("x", bar_width*0.25)
     .attr("y", 0)
     .attr("width", bar_width)
     .attr("height", function(d) { return bar_height; })
@@ -176,7 +176,7 @@ function appear_stack(characters, graph)
 
   // create text labels for each bar
   var bar_texts = stack_items.append("text").attr("class","stack")
-    .attr("x", bar_width*2)
+    .attr("x", bar_width*1.75)
     .attr("y", function(d) { return bar_height/2; })
     .attr("dominant-baseline", "central")
     .text(function(d) { return d.name })
@@ -260,8 +260,8 @@ function coappear(data_file_path)
 
     var coappear_resize = function()
     {
-      chart.style.width = "1000px";
-      chart.style.height = "800px";
+      chart.style.width = "800px";
+      chart.style.height = "720px";
     }
 
     // set initial size
