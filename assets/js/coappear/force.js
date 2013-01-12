@@ -1,9 +1,10 @@
 function appear_force(data_nodes, data_links, coappear_ids)
 {
-  var width = 1024, height = 800;
-  var force = d3.layout.force().charge(-800).linkDistance(180).gravity(0.2).size([width, height]);
+  var chartArea = document.getElementById("chart-area");
+  var width = 1000, height = 800;
+  var force = d3.layout.force().charge(-800).linkDistance(180).gravity(0.3).size([width, height]);
   var svg = d3.select("#chart").append("svg");
-
+  
   var viewbox_size = "0 0 " + String(width) + " " + String(height);
   svg.attr("viewBox", viewbox_size).attr("width", "100%").attr("height", "100%");
 
@@ -136,14 +137,12 @@ function appear_force(data_nodes, data_links, coappear_ids)
 function appear_stack(characters, graph)
 {
   // style
-  var width = 256;
   var bar_height = 30;
-  var bar_width = width / 10;
-  var bar_text_width = width - (bar_width * 1.5);
+  var bar_width = 24;
   var label_size = "13px";
   var height = bar_height * characters.length;
 
-  var svg = d3.select("#stack").append("svg").attr("width", width).attr("height", height);
+  var svg = d3.select("#stack").append("svg").attr("height", height);
   
   // get baselines
   var baselines = new Array(characters.length);
@@ -162,7 +161,7 @@ function appear_stack(characters, graph)
   var bar_areas = stack_items.append("rect").attr("class","stack_bar_area")
     .attr("x", 0)
     .attr("y", 0)
-    .attr("width", width)
+    .attr("width", "100%")
     .attr("height", function(d) { return bar_height; })
     .style("fill", "#ffffff")
     .style("opacity", 0.0);
@@ -259,18 +258,17 @@ function coappear(data_file_path)
     console.log("number of nodes:", nodes.length);
     console.log("number of links:", links.length);
 
-    var chart = document.getElementById("chart");
-    var stack = document.getElementById("stack");
+    var coappear_resize = function()
+    {
+      chart.style.width = "1000px";
+      chart.style.height = "800px";
+    }
 
-    chart.style.width = String(window.innerWidth - stack.clientWidth) + "px";
+    // set initial size
+    coappear_resize();
 
     // create the d3 visualization(s)
     var viz = coappear_draw(nodes, links);
-
-    var coappear_resize = function()
-    {
-      chart.style.width = String(window.innerWidth - stack.clientWidth) + "px";
-    }
 
     window.addEventListener("resize", coappear_resize, false);
   });

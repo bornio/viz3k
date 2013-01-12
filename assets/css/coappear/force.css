@@ -1,5 +1,6 @@
-body {
-  margin: 0;
+#stack-area {
+  height: 800px;
+  overflow-y: auto;
 }
 
 text.node {
@@ -10,21 +11,6 @@ text.node {
 
 text.stack {
   font-family: sans-serif;
-}
-
-/* float the character stack on the left */
-#stack {
-  float: left;
-  width: 256px;
-  background-color: #ddd;
-}
-
-/* put the coappearance graph on the right */
-#chart {
-  position: fixed;
-  left: 256px;
-  height: 100%;
-  background-color: #eee;
 }
 
 circle.node {

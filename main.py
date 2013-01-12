@@ -29,10 +29,10 @@ def index():
     return static_file('coappear.html', root='./views')
 
 # route for coappearance graphs
-@route('/coappear/chapter<chapter_num:int>')
+@route('/coappear/chapter/<chapter_num:int>')
 def index(chapter_num=1):
     if (valid_chapter(chapter_num)):
-        return template('coappear/chapter', chapter = chapter_num)
+        return static_file('coappear/chapter.html', root='./views')
     else:
         abort(404, "Chapter " + str(chapter_num) + " does not exist, or has not been added yet.")
 

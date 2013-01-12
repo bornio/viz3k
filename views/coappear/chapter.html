@@ -1,21 +1,23 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app ng-controller="Chapter">
   <head>
     <meta charset="utf-8">
-    <title>Coappearances</title>
+    <title>Chapter {{chapter}}</title>
     <!-- use Twitter Bootstrap for styling -->
     <link href="/lib/bootstrap.min.css" rel="stylesheet">
-    <!-- controller for this view -->
-    <script type="text/javascript" src="/assets/js/coappear.js"></script>
+    <!-- styling for the visualization -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/coappear/force.css"/>
     <!-- add some padding to the page body -->
     <style type="text/css">
       body {
         padding-top: 60px;
         padding-bottom: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
       }
     </style>
   </head>
-  <body ng-controller="ChapterList">
+  <body>
 
     <!-- navbar based on sample template on Twitter Bootstrap site -->
     <div class="navbar navbar-fixed-top">
@@ -44,25 +46,28 @@
     </div>
 
     <!-- content goes here -->
-    <div class="container">
-      <div class="page-header">
-        <h1>
-          <p>Coappearances</p>
-          <p><small>See which characters appear most frequently together in each chapter.</small></p>
-        </h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div id="stack-area" class="span4 well">
+          <div id="stack"></div>
+        </div>
+        <div id="chart-area" class="span8">
+          <div id="chart" class="well"></div>
+        </div>
       </div>
-      <h3>Chapters</h3>
-      <table class="table table-striped">
-        <tr ng-repeat="chapter in chapters | orderBy:orderProp">
-          <td class="lead">{{chapter.chapter}}</td> <td><a href="/coappear/chapter/{{chapter.chapter}}">{{chapter.title}}</a></td>
-        </tr>
-      </table>
-      <p>More chapters to come...</p>
     </div>
 
-    <!-- load 3rd party javascripts last for speed -->
+    <!-- load javascripts last for speed -->
+    <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/coappear/force.js"></script>
+
+    <!-- third party javascript -->
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
+
+    <!-- controller for this view -->
+    <script type="text/javascript" src="/assets/js/coappear/chapter.js"></script>
   </body>
 </html>
+
