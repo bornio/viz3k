@@ -254,7 +254,9 @@ function coappear(data_file_path, data_callback)
   {
     nodes = json.nodes;
     links = json.links;
-    data_callback(nodes,links);
+
+    // return a copy of the nodes and links (use a copy to ensure they can be modified without affecting originals)
+    data_callback(nodes.slice(),links.slice());
 
     console.log("number of nodes:", nodes.length);
     console.log("number of links:", links.length);
