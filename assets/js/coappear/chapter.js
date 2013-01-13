@@ -35,7 +35,9 @@ function Chapter($scope, $http)
 
       // enable or disable prev and next chapter links depending on whether linked-to chapter exists
       $scope.prev_chapter = ($scope.chapter.chapter - 1 < 1) ? [] : [$scope.chapter.chapter - 1];
+      $scope.prev_chapter_ = ($scope.chapter.chapter - 1 < 1) ? [0] : [];
       $scope.next_chapter = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [] : [$scope.chapter.chapter + 1];
+      $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
     }
   );
 

@@ -55,6 +55,7 @@
             <!-- only show a link to the previous chapter if there is one -->
             <li ng-class="{ disabled: chapter.chapter - 1 < 1 }">
               <a ng-repeat="prev_href in prev_chapter" href="{{prev_href}}">&laquo;</a>
+              <span ng-repeat="prev_href in prev_chapter_">&laquo;</span>
             </li>
             <li ng-repeat="nav_chapter in nav_chapters" ng-class="{ active: nav_chapter.chapter == chapter.chapter }">
               <a href="{{nav_chapter.chapter}}" ng-bind="nav_chapter.chapter"></a>
@@ -62,6 +63,7 @@
             <!-- only show a link to the next chapter if there is one -->
             <li ng-class="{ disabled: chapter.chapter + 1 > last_chapter }">
               <a ng-repeat="next_href in next_chapter" href="{{next_href}}">&raquo;</a>
+              <span ng-repeat="next_href in next_chapter_">&raquo;</span>
             </li>
           </ul>
         </div>
