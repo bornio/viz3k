@@ -38,5 +38,15 @@ class TestChapters(TestCase):
                 assert_not_in(page.page, page_nums, "Page number " + str(page.page) + " is not unique")
                 page_nums.append(page.page)
 
+    def test_unique_person_ids_per_page(self):
+        '''Each person should appear at most once per page'''
+        for chapter in self.chapters:
+            for page in chapter.pages:
+                person_ids = []
+                for person_id in page.ids:
+                    assert_not_in(person_id, person_ids, "Page " + str(page.page) + " : person " + str(person_id) +
+                                  " appears more than once")
+                    person_ids.append(person_id)
+
 if __name__ == "__main__":
     run()
