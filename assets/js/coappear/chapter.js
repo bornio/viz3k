@@ -48,8 +48,24 @@ function Chapter($scope, $http)
   // callback to get data back from asynchronous load
   var compute_stats = function(nodes, links) {
     // calculate importance by sorting nodes by decreasing number of links
-    nodes.sort(function(a,b) { return b.links - a.links; });
-    console.log(nodes);
+    nodes.sort(function(a,b)
+      {
+        // use alphabetical name sorting as tie-breaker
+        if (b.links == a.links)
+        {
+          if (a.name < b.name)
+          {
+            return -1;
+          }
+          else if (a.name > b.name)
+          {
+            return 1;
+          }
+          return 0;          
+        }
+
+        return b.links - a.links;
+      });
 
     // get the top five
     $scope.people_by_importance = nodes.slice(0,5);
