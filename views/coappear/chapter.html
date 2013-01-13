@@ -7,6 +7,8 @@
     <link href="/lib/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- styling for this page -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/coappear/chapter.css"/>
     <!-- styling for the visualization -->
     <link type="text/css" rel="stylesheet" href="/assets/css/coappear/force.css"/>
     <!-- add some padding to the page body -->
@@ -70,6 +72,7 @@
           <small>{{chapter_title}}</small>
         </h1>
       </div>
+      <!-- row for character list and coappearance visualization -->
       <div class="row">
         <div id="stack-area" class="span3">
           <div id="stack-well" class="well well-small">
@@ -82,6 +85,49 @@
           </div>
         </div>
       </div>
+      <!-- info and stats down here -->
+      <div class="row">
+        <div class="span7 offset3" style="min-height: 600px;">
+          <h3>Character statistics</h3>
+          <div class="tabbable">
+            <ul class="nav nav-tabs">
+              <li class="active">
+                <a href="#characters-importance" data-toggle="tab">Importance</a>
+              </li>
+              <!--<li><a href="#characters-centrality" data-toggle="tab">Centrality</a></li>-->
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="characters-importance">
+                <table class="table table-condensed ng-cloak">
+                  <thead>
+                    <tr>
+                    <th style="text-align: center;">Ranking</th>
+                    <th></th>
+                    <th>Name</th>
+                    <th style="text-align: center;">Connections</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="person in people_by_importance">
+                    <td width="8%" style="text-align: center;">{{$index + 1}}</td>
+                    <td width="4%"></td>
+                    <td>{{person.name}}</td>
+                    <td width="16%" style="text-align: center;">{{person.links}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+                The more connections a character has to others, the more important that character is.
+              </div>
+              <!--<div class="tab-pane" id="characters-centrality"></div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+      </footer>
     </div>
 
     <!-- load javascripts last for speed -->

@@ -3,13 +3,15 @@ function Chapter($scope, $http)
   // use the number at the end of the URL to determine which chapter's data to load
   chapter_num = document.URL.split("/").pop();
 
+  // initial values of scope variables
+  $scope.nav_chapters = [];
+  $scope.last_chapter = 1;
+  $scope.people_by_importance = [];
+
   // issue an http get to grab the chapter descriptions and populate the navigation links
   $http.get("/data/chapters.json").success(
     function(data)
     {
-      $scope.nav_chapters = [];
-      $scope.last_chapter = 1;
-
       for (index in data.chapters)
       {
         var other_num = data.chapters[index].chapter
@@ -41,6 +43,21 @@ function Chapter($scope, $http)
     }
   );
 
+  // issue an http get to grab the info on each character
+
+  // callback to get data back from asynchronous load
+  var compute_stats = function(nodes, links) {
+    // calculate importance by sorting nodes by decreasing number of links
+    nodes.sort(function(a,b) { return b.links - a.links; });
+    console.log(nodes);
+
+    // get the top five
+    $scope.people_by_importance = nodes.slice(0,5);
+
+    // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
+    $scope.$apply();
+  };
+
   // generate the coappearance visualization for the selected chapter
-  coappear("/coappear/data/chapter" + chapter_num + ".json");
+  coappear("/coappear/data/chapter" + chapter_num + ".json", compute_stats);
 }

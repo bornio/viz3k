@@ -244,7 +244,7 @@ function coappear_draw(nodes, links)
   return { graph : graph, stack : stack };
 }
 
-function coappear(data_file_path)
+function coappear(data_file_path, data_callback)
 {
   var nodes;
   var links;
@@ -254,6 +254,7 @@ function coappear(data_file_path)
   {
     nodes = json.nodes;
     links = json.links;
+    data_callback(nodes,links);
 
     console.log("number of nodes:", nodes.length);
     console.log("number of links:", links.length);
