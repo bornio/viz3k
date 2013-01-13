@@ -1,0 +1,70 @@
+/* styles for jumbotron/masthead based on the CSS from the Twitter Bootstrap site */
+
+.jumbotron {
+  position: relative;
+  padding: 40px 0;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+  background: #387800; /* Old browsers */
+  /* these gradients use the RTK XI colors of the kingdoms Wu, Shu, and Wei (from left to right) */
+  background: -moz-linear-gradient(45deg,  #d10028 0%, #387800 50%, #2828e9 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#d10028), color-stop(50%,#387800), color-stop(100%,#2828e9)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #d10028 0%, #387800 50%, #2828e9 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #d10028 0%, #387800 50%, #2828e9 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #d10028 0%, #387800 50%, #2828e9 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #d10028 0%, #387800 50%, #2828e9 100%); /* W3C */
+}
+
+/* masthead buttons */
+.masthead .btn {
+  margin-top: 40px;
+  padding: 19px 24px;
+  font-size: 24px;
+  font-weight: 200;
+  color: #fff; /* redeclare to override the `.jumbotron a` */
+  border: 0;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+  -webkit-transition: none;
+     -moz-transition: none;
+          transition: none;
+}
+.masthead .btn:hover {
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 5px rgba(0,0,0,.25);
+}
+.masthead .btn:active {
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+     -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+          box-shadow: inset 0 2px 4px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+}
+
+.masthead {
+  padding: 70px 0 30px;
+  margin-bottom: 0;
+  color: #fff;
+}
+.masthead h1 {
+  font-size: 120px;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.masthead h2 {
+  color: #ddd;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.masthead p {
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 1.25;
+}

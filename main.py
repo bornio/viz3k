@@ -23,12 +23,17 @@ def serve_static(filepath):
 def serve_static(filepath):
     return static_file(filepath, root='./lib')
 
-# route for coappearance main page
+# main page for whole site
+@route('/')
+def index():
+    return static_file('index.html', root='./views')
+
+# coappearance main page
 @route('/coappear')
 def index():
     return static_file('coappear.html', root='./views')
 
-# route for coappearance graphs
+# coappearance graphs
 @route('/coappear/chapter/<chapter_num:int>')
 def index(chapter_num=1):
     if (valid_chapter(chapter_num)):

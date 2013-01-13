@@ -1,21 +1,15 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Coappearances - Viz3k</title>
+    <title>Viz3k - Visualizing Romance of the Three Kingdoms</title>
     <!-- use Twitter Bootstrap for styling -->
     <link href="/lib/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
-    <!-- controller for this view -->
-    <script type="text/javascript" src="/assets/js/coappear.js"></script>
+    <link href="/assets/css/site.css" rel="stylesheet">
     <!-- add some padding to the page body -->
     <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-
       [ng\:cloak], [ng-cloak], .ng-cloak {
         display: none !important;
       }
@@ -48,21 +42,27 @@
       </div>
     </div>
 
-    <!-- content goes here -->
-    <div class="container">
-      <div class="page-header">
-        <h1>
-          <p>Coappearances</p>
-          <small>Find out at a glance which characters are most important in each chapter, and see how strongly associated the characters are with one another.</small>
-        </h1>
+    <!-- main banner description for the site -->
+    <div class="jumbotron masthead">
+      <div class="container">
+      <h1>Viz3k</h1>
+      <h2>Visualizing Romance of the Three Kingdoms</h2>
+      <p><a class="btn btn-primary btn-large" href="/coappear">Get started &raquo;</a></p>
       </div>
-      <h3>Chapters</h3>
-      <table class="table table-striped ng-cloak">
-        <tr ng-repeat="chapter in chapters | orderBy:orderProp">
-          <td class="lead">{{chapter.chapter}}</td> <td><a href="/coappear/chapter/{{chapter.chapter}}">{{chapter.title}}</a></td>
-        </tr>
-      </table>
-      <p>More chapters to come...</p>
+    </div>
+
+    <!-- text content -->
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+          <h2>About the novel</h2>
+          <p style="text-align: justify;"><a href="http://en.wikipedia.org/wiki/Romance_of_the_Three_Kingdoms"><em>Romance of the Three Kingdoms</em></a> is a historical novel written in the 14th century by Luo Guanzhong. It is one of the Four Great Classical Novels of China, and the basis of Koei's popular video game franchises <a href="http://en.wikipedia.org/wiki/Romance_of_the_Three_Kingdoms_(video_game_series)"><em>Romance of the Three Kingdoms</em></a> and <a href="http://en.wikipedia.org/wiki/Dynasty_Warriors"><em>Dynasty Warriors</em></a>.</p>
+        </div>
+        <div class="span6">
+          <h2>Don't just read it, see it</h2>
+          <p style="text-align: justify;">The novel contains 120 chapters and around 1000 named characters. Hundreds of characters from the novel appear as officers in the Koei games. The number of characters and the complexity of their relationships makes visualization a great tool to help the reader or student understand the novel and its various adaptations.</p>
+        </div>
+      </div>
     </div>
 
     <!-- load 3rd party javascripts last for speed -->
