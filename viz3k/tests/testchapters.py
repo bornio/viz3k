@@ -11,7 +11,7 @@ class TestChapters(TestCase):
     @setup
     def setup(self):
         # load the chapters.json data file
-        self.chapters = data.chapters.from_json("../static/data/chapters.json")
+        self.chapters = data.chapters.from_json("../data/chapters.json")
 
     def test_unique_chapter_numbers(self):
         '''Each chapter should have a unique chapter number'''

@@ -11,7 +11,7 @@ class TestCharacters(TestCase):
     @setup
     def setup(self):
         # load the characters.json data file
-        self.factions, self.people = data.characters.from_json("../static/data/characters.json")
+        self.factions, self.people = data.characters.from_json("../data/characters.json")
 
     def test_ids(self):
         '''Each person should have a unique id'''
