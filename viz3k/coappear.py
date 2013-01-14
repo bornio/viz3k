@@ -83,7 +83,7 @@ class Coappear:
                                     if (found == False):
                                         faction = data.faction_for_person(self.factions, person)
                                         nodes.append({"id":person.id,"name":person.name,"group":faction.id,
-                                                          "color":faction.color,"links":num_links})
+                                                      "faction":faction.name,"color":faction.color,"links":num_links})
                                     break
 
         # sort nodes in order of id BEFORE creating links, as links must be based on node ordering

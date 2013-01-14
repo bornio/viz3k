@@ -81,7 +81,7 @@
       </div>
       <!-- info and stats down here -->
       <div class="row">
-        <div class="span7 offset3" style="min-height: 600px;">
+        <div id="char-stats-area" class="span8 offset3">
           <h3>Character statistics</h3>
           <div class="tabbable">
             <ul class="nav nav-tabs">
@@ -95,22 +95,28 @@
                 <table class="table table-condensed ng-cloak">
                   <thead>
                     <tr>
-                      <th style="text-align: center;">Ranking</th>
-                      <th></th>
+                      <th class="table-char-ranking">Rank</th>
                       <th>Name</th>
-                      <th style="text-align: center;">Connections</th>
+                      <th class="table-char-faction-badge"></th>
+                      <th class="table-char-faction">Faction</th>
+                      <th class="table-char-links">Links</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr ng-repeat="person in people_by_importance">
-                      <td width="8%" style="text-align: center;">{{$index + 1}}</td>
-                      <td width="4%"></td>
+                      <td class="table-char-ranking">{{$index + 1}}</td>
                       <td>{{person.name}}</td>
-                      <td width="16%" style="text-align: center;">{{person.links}}</td>
+                      <td class="table-char-faction-badge">
+                        <div class="faction-badge" style="{{'background: ' + person.color + ';'}}"></div>
+                      </td>
+                      <td class="table-char-faction">
+                        {{person.faction}}
+                      </td>
+                      <td class="table-char-links">{{person.links}}</td>
                     </tr>
                   </tbody>
                 </table>
-                The more connections a character has to others, the more important that character is.
+                <p class="muted">The more links a character has to others, the more important that character is.</p>
               </div>
               <!--<div class="tab-pane" id="characters-centrality"></div>-->
             </div>
