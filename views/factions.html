@@ -55,7 +55,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="faction in factions | orderBy:'size':true">
+          <tr ng-repeat="faction in factions">
             <td class="faction faction-color">
               <svg class="faction-badge">
                 <rect x="0" y="0" width="100%" height="100%" style="{{'fill: ' + faction.color + ';'}}"></rect>
@@ -65,7 +65,7 @@
             <td class="lead faction faction-size">{{faction.size}}</td>
           </tr>
           <!-- display the catch-all "Other" faction last regardless of its size -->
-          <tr ng-repeat="faction in factions_other | orderBy:'size':true">
+          <tr ng-repeat="faction in factions_other">
             <td class="faction faction-color">
               <svg class="faction-badge">
                 <rect x="0" y="0" width="100%" height="100%" style="{{'fill: ' + faction.color + ';'}}"></rect>
