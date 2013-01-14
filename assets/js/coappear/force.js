@@ -134,8 +134,10 @@ function appear_force(data_nodes, data_links, coappear_ids)
   };
 }
 
-function appear_stack(characters, graph)
+function appear_stack(nodes, graph)
 {
+  var characters = nodes_sort_by_links(nodes);
+
   // style
   var bar_height = 22;
   var bar_width = 24;
@@ -275,4 +277,29 @@ function coappear(data_file_path, data_callback)
 
     window.addEventListener("resize", coappear_resize, false);
   });
+}
+
+function nodes_sort_by_links(nodes)
+{
+  // sort the characters by decreasing number of links
+  var sorted = nodes.slice();
+  sorted.sort(function(a,b)
+  {
+    // use alphabetical name sorting as tie-breaker
+    if (b.links == a.links)
+    {
+      if (a.name < b.name)
+      {
+        return -1;
+      }
+      else if (a.name > b.name)
+      {
+        return 1;
+      }
+      return 0;          
+    }
+
+    return b.links - a.links;
+  });
+  return sorted;
 }
