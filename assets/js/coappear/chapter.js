@@ -75,5 +75,5 @@ function Chapter($scope, $http)
   };
 
   // generate the coappearance visualization for the selected chapter
-  coappear("/coappear/data/chapter" + chapter_num + ".json", compute_stats);
+  coappear("/coappear/data/chapter" + chapter_num, compute_stats);
 }

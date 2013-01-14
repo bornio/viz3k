@@ -4,14 +4,14 @@
 import json
 from testify import *
 
-import data.factions
+import data
 
 class TestFactions(TestCase):
     '''Tests for correctness of factions.json.'''
     @setup
     def setup(self):
         # load the factions.json data file
-        self.factions = data.factions.from_json("../data/factions.json")
+        self.factions = data.Faction.from_json("../data/factions.json")
 
     def test_ids(self):
         '''Each faction should have a unique id'''

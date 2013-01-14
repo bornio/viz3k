@@ -11,13 +11,6 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/coappear/chapter.css"/>
     <!-- styling for the visualization -->
     <link type="text/css" rel="stylesheet" href="/assets/css/coappear/force.css"/>
-    <!-- add some padding to the page body -->
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    </style>
   </head>
   <body>
 
@@ -38,6 +31,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Visualize <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                   <li><a href="/coappear">Coappearances</a></li>
+                  <li><a href="/factions">Factions</a></li>
                 </ul>
               </li>
             </ul>
@@ -101,19 +95,19 @@
                 <table class="table table-condensed ng-cloak">
                   <thead>
                     <tr>
-                    <th style="text-align: center;">Ranking</th>
-                    <th></th>
-                    <th>Name</th>
-                    <th style="text-align: center;">Connections</th>
-                  </tr>
+                      <th style="text-align: center;">Ranking</th>
+                      <th></th>
+                      <th>Name</th>
+                      <th style="text-align: center;">Connections</th>
+                    </tr>
                   </thead>
                   <tbody>
                     <tr ng-repeat="person in people_by_importance">
-                    <td width="8%" style="text-align: center;">{{$index + 1}}</td>
-                    <td width="4%"></td>
-                    <td>{{person.name}}</td>
-                    <td width="16%" style="text-align: center;">{{person.links}}</td>
-                  </tr>
+                      <td width="8%" style="text-align: center;">{{$index + 1}}</td>
+                      <td width="4%"></td>
+                      <td>{{person.name}}</td>
+                      <td width="16%" style="text-align: center;">{{person.links}}</td>
+                    </tr>
                   </tbody>
                 </table>
                 The more connections a character has to others, the more important that character is.
@@ -125,7 +119,6 @@
       </div>
 
       <hr>
-
       <footer>
       </footer>
     </div>

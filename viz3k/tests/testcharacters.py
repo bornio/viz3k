@@ -4,14 +4,14 @@
 import json
 from testify import *
 
-import data.characters
+import data
 
 class TestCharacters(TestCase):
     '''Tests for correctness of characters.json.'''
     @setup
     def setup(self):
         # load the characters.json data file
-        self.people = data.characters.from_json("../data/characters.json")
+        self.people = data.Person.from_json("../data/characters.json")
 
     def test_ids(self):
         '''Each person should have a unique id'''

@@ -4,14 +4,14 @@
 import json
 from testify import *
 
-import data.chapters
+import data
 
 class TestChapters(TestCase):
     '''Tests for correctness of chapters.json.'''
     @setup
     def setup(self):
         # load the chapters.json data file
-        self.chapters = data.chapters.from_json("../data/chapters.json")
+        self.chapters = data.Chapter.from_json("../data/chapters.json")
 
     def test_unique_chapter_numbers(self):
         '''Each chapter should have a unique chapter number'''

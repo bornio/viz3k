@@ -10,15 +10,13 @@ import sys
 import json
 from collections import defaultdict
 
-import data.characters
-import data.chapters
-import data.factions
+import data
 
 class Coappear:
     def __init__(self, data_path):
         # parse the data files for the lists of factions, characters, and chapters
         try:
-            self.factions = data.factions.from_json(data_path + "/factions.json")
+            self.factions = data.Faction.from_json(data_path + "/factions.json")
         except IOError as ioe:
             # rethrow exception with additional info
             raise IOError("Failed to open factions file '" + data_path + "/factions.json' : " + ioe)
@@ -27,7 +25,7 @@ class Coappear:
             raise ValueError("Failed to parse factions file '" + data_path + "/factions.json' : " + ve)
 
         try:
-            self.people = data.characters.from_json(data_path + "/characters.json")
+            self.people = data.Person.from_json(data_path + "/characters.json")
         except IOError as ioe:
             # rethrow exception with additional info
             raise IOError("Failed to open characters file '" + data_path + "/characters.json' : " + ioe)
@@ -36,7 +34,7 @@ class Coappear:
             raise ValueError("Failed to parse characters file '" + data_path + "/characters.json' : " + ve)
         
         try:
-            self.chapters = data.chapters.from_json(data_path + "/chapters.json")
+            self.chapters = data.Chapter.from_json(data_path + "/chapters.json")
         except IOError as ioe:
             # rethrow exception with additional info
             raise IOError("Failed to open chapters file '" + data_path + "/chapters.json' : " + ioe)
@@ -51,13 +49,6 @@ class Coappear:
             if (chapter.chapter == chapter_num):
                 return True
         return False
-
-    def faction_for_person(self, person):
-        for faction in self.factions:
-            if (faction.id == person.faction):
-                return faction
-        # raise exception if faction not found
-        raise ValueError("Could not find faction for person " + str(person))
 
     def coappearances(self, chapter_nums, min_links = 0):
         nodes = []
@@ -90,7 +81,7 @@ class Coappear:
                                             found = True
                                             break
                                     if (found == False):
-                                        faction = self.faction_for_person(person)
+                                        faction = data.faction_for_person(self.factions, person)
                                         nodes.append({"id":person.id,"name":person.name,"group":faction.id,
                                                           "color":faction.color,"links":num_links})
                                     break
