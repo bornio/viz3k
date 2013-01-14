@@ -1,0 +1,27 @@
+{
+  "factions":
+  [
+    {"id":0,"name":"Han","color":"#66bbff"},
+    {"id":1,"name":"Yellow Turbans","color":"#f89820"},
+    {"id":2,"name":"Liu Yan/Liu Zhang","color":"#200070"},
+    {"id":3,"name":"Shu","color":"#387800"},
+    {"id":4,"name":"Gongsun Zan","color":"#f36b20"},
+    {"id":5,"name":"Wei","color":"#2828e9"},
+    {"id":6,"name":"Dong Zhuo","color":"#5a5a5a"},
+    {"id":7,"name":"Wu","color":"#d10028"},
+    {"id":8,"name":"Yuan Shao","color":"#dbd33a"},
+    {"id":9,"name":"Yuan Shu","color":"#f69cb2"},
+    {"id":10,"name":"Lü Bu","color":"#1e1e1e"},
+    {"id":11,"name":"Han Fu","color":"#b96f0c"},
+    {"id":12,"name":"Kong Zhou","color":"#e020df"},
+    {"id":13,"name":"Liu Dai","color":"#8592ba"},
+    {"id":14,"name":"Kong Rong","color":"#c5437a"},
+    {"id":15,"name":"Tao Qian","color":"#c3e087"},
+    {"id":16,"name":"Ma Teng","color":"#8d6529"},
+    {"id":17,"name":"Ding Yuan/Zhang Yang","color":"#942b77"},
+    {"id":18,"name":"Liu Biao","color":"#20dfe0"},
+    {"id":19,"name":"Han Sui","color":"#7fa6cc"},
+    {"id":20,"name":"Liu Yao","color":"#00538f"},
+    {"id":99,"name":"Other","color":"#aaaaaa"}
+  ]
+}

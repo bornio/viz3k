@@ -12,12 +12,22 @@ from collections import defaultdict
 
 import data.characters
 import data.chapters
+import data.factions
 
 class Coappear:
     def __init__(self, data_path):
         # parse the data files for the lists of factions, characters, and chapters
         try:
-            self.factions, self.people = data.characters.from_json(data_path + "/characters.json")
+            self.factions = data.factions.from_json(data_path + "/factions.json")
+        except IOError as ioe:
+            # rethrow exception with additional info
+            raise IOError("Failed to open factions file '" + data_path + "/factions.json' : " + ioe)
+        except ValueError as ve:
+            # rethrow exception with additional info
+            raise ValueError("Failed to parse factions file '" + data_path + "/factions.json' : " + ve)
+
+        try:
+            self.people = data.characters.from_json(data_path + "/characters.json")
         except IOError as ioe:
             # rethrow exception with additional info
             raise IOError("Failed to open characters file '" + data_path + "/characters.json' : " + ioe)
@@ -41,6 +51,13 @@ class Coappear:
             if (chapter.chapter == chapter_num):
                 return True
         return False
+
+    def faction_for_person(self, person):
+        for faction in self.factions:
+            if (faction.id == person.faction):
+                return faction
+        # raise exception if faction not found
+        raise ValueError("Could not find faction for person " + str(person))
 
     def coappearances(self, chapter_nums, min_links = 0):
         nodes = []
@@ -73,8 +90,9 @@ class Coappear:
                                             found = True
                                             break
                                     if (found == False):
-                                        nodes.append({"id":person.id,"name":person.name,"group":person.faction.id,
-                                                          "color":person.faction.color,"links":num_links})
+                                        faction = self.faction_for_person(person)
+                                        nodes.append({"id":person.id,"name":person.name,"group":faction.id,
+                                                          "color":faction.color,"links":num_links})
                                     break
 
         # sort nodes in order of id BEFORE creating links, as links must be based on node ordering

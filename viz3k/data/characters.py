@@ -6,16 +6,6 @@ import sys
 import json
 import operator
 
-class Faction:
-    def __init__(self, id, name, color):
-        self.id = id
-        self.name = name
-        self.color = color
-
-    def __str__(self):
-        desc = "faction(" + str(self.id) + "," + str(self.name) + str(self.color) + ")"
-        return desc
-
 class Person:
     def __init__(self, id, name, style, faction, note = ""):
         self.id = id
@@ -36,27 +26,16 @@ class Person:
 
 def from_json(characters_json_path):
     """
-    Parses the JSON file at characters_json_path and returns a tuple consisting of a list of Faction objects and a list
+    Parses the JSON file at characters_json_path and returns a tuple consisting of a list of a list
     of Person objects.
     """
-    # read JSON file containing chapter info
+    # read JSON file containing character info
     with open(characters_json_path, "r") as characters_file:
         characters_json = json.load(characters_file)
-
-    # parse the factions
-    factions = []
-    for faction_json in characters_json["factions"]:
-        factions.append(Faction(faction_json["id"],faction_json["name"],faction_json["color"]))
     
     # parse the people
     people = []
     for person_json in characters_json["people"]:
-        # find the relevant faction for this person
-        faction_id = person_json["faction"]
-        for faction in factions:
-            if (faction.id == faction_id):
-                person_faction = faction
-
         # create the Person object
         style = ""
         note = ""
@@ -65,7 +44,7 @@ def from_json(characters_json_path):
         if (person_json.has_key("note")):
             note = person_json["note"]
 
-        people.append(Person(person_json["id"],person_json["name"],style,person_faction,note))
+        people.append(Person(person_json["id"],person_json["name"],style,person_json["faction"],note))
     people.sort(key = operator.attrgetter("id"))
     
-    return factions, people
+    return people
