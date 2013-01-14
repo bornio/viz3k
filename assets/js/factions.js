@@ -15,7 +15,6 @@ function Factions($scope, $http)
           $scope.factions.splice(i,1);
         }
       }
-      scope.$apply();
     }
   );
 }
