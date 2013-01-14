@@ -138,6 +138,19 @@ function appear_stack(nodes, graph)
 {
   var characters = nodes_sort_by_links(nodes);
 
+  // map new (sorted) indices back to the ones used by D3 to draw the graph
+  //var indices = new Array(nodes.length);
+  for (c = 0; c < characters.length; c++)
+  {
+    for (n = 0; n < nodes.length; n++)
+    {
+      if (characters[c].id == nodes[n].id)
+      {
+        characters[c].node_index = n;
+      }
+    }
+  }
+
   // style
   var bar_height = 22;
   var bar_width = 24;
@@ -185,25 +198,25 @@ function appear_stack(nodes, graph)
     .attr("font-size", label_size);
 
   // set mouseover and mouseout events for each bar area and the bars themselves
-  function stack_mouseover(node, node_index)
+  function stack_mouseover(character, character_index)
   {
     // highlight this person's bar in the stack
-    bar_areas.filter(function(d) { return (d.id == node.id) ? this : null; })
+    bar_areas.filter(function(d) { return (d.id == character.id) ? this : null; })
       .style("fill", "#aaeeff")
       .style("opacity", 1.0);
 
     // highlight this person's circle in the graph
-    graph.highlight_i(node, node_index);
+    graph.highlight_i(character, character.node_index);
   }
 
-  function stack_mouseout(node, node_index)
+  function stack_mouseout(character, character_index)
   {
     // unhighlight this person's bar in the stack
-    bar_areas.filter(function(d) { return (d.id == node.id) ? this : null; })
+    bar_areas.filter(function(d) { return (d.id == character.id) ? this : null; })
       .style("opacity", 0.0);
 
     // unhighlight this person's circle in the graph
-    graph.highlight_o(node, node_index);
+    graph.highlight_o(character, character.node_index);
   }
 
   stack_items.on("mouseover", function(d, i) { stack_mouseover(d, i); });
