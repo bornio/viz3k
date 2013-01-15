@@ -1,4 +1,4 @@
-/* cloack dynamically-loaded angular.js elements until they're ready */
+/* cloak dynamically-loaded angular.js elements until they're ready */
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none !important;
 }
@@ -6,6 +6,25 @@
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
+}
+
+#stack-well {
+  height: 720px;
+  overflow-y: auto;
+}
+
+/* on screens below 768px-wide, hide the coappearance graph altogether*/
+@media(max-width:767px) {
+  #chart-area {
+    visibility: hidden;
+    width: 0px;
+    height: 0px;
+  }
+}
+@media(min-width:768px) {
+  #chart-area {
+    visibility: visible;
+  }
 }
 
 #char-stats-area {

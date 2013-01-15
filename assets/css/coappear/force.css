@@ -1,12 +1,7 @@
-#stack-well {
-  height: 720px;
-  overflow-y: auto;
-}
-
 #chart {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  width: 800;
 }
 
 text.node {
