@@ -107,10 +107,12 @@
                       <td class="table-char-ranking">{{$index + 1}}</td>
                       <td>{{person.name}} <span class="muted">{{person.style_paren}}</span></td>
                       <td class="table-char-faction-badge">
-                        <div class="faction-badge" style="{{'background: ' + person.color + ';'}}"></div>
+                        <a href="/factions/{{person.group}}">
+                          <div class="faction-badge" style="{{'background: ' + person.color + ';'}}"></div>
+                        </a>
                       </td>
                       <td class="table-char-faction">
-                        {{person.faction}}
+                        <a href="/factions/{{person.group}}">{{person.faction}}</a>
                       </td>
                       <td class="table-char-links">{{person.links}}</td>
                     </tr>

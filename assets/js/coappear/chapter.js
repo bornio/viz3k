@@ -65,8 +65,6 @@ function Chapter($scope, $http)
       }
     }
 
-    console.log(top_five);
-
     $scope.people_by_importance = top_five;
 
     // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
