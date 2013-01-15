@@ -10,37 +10,14 @@ import sys
 import json
 from collections import defaultdict
 
-import data
+import api
 
 class Coappear:
-    def __init__(self, data_path):
+    def __init__(self):
         # parse the data files for the lists of factions, characters, and chapters
-        try:
-            self.factions = data.Faction.from_json(data_path + "/factions.json")
-        except IOError as ioe:
-            # rethrow exception with additional info
-            raise IOError("Failed to open factions file '" + data_path + "/factions.json' : " + ioe)
-        except ValueError as ve:
-            # rethrow exception with additional info
-            raise ValueError("Failed to parse factions file '" + data_path + "/factions.json' : " + ve)
-
-        try:
-            self.people = data.Person.from_json(data_path + "/characters.json")
-        except IOError as ioe:
-            # rethrow exception with additional info
-            raise IOError("Failed to open characters file '" + data_path + "/characters.json' : " + ioe)
-        except ValueError as ve:
-            # rethrow exception with additional info
-            raise ValueError("Failed to parse characters file '" + data_path + "/characters.json' : " + ve)
-        
-        try:
-            self.chapters = data.Chapter.from_json(data_path + "/chapters.json")
-        except IOError as ioe:
-            # rethrow exception with additional info
-            raise IOError("Failed to open chapters file '" + data_path + "/chapters.json' : " + ioe)
-        except ValueError as ve:
-            # rethrow exception with additional info
-            raise ValueError("Failed to parse chapters file '" + data_path + "/chapters.json' : " + ve)
+        self.factions = api.all_factions()
+        self.people = api.all_people()
+        self.chapters = api.all_chapters()
 
         print "Found %d characters in %d chapters." % (len(self.people), len(self.chapters))
 
@@ -81,9 +58,12 @@ class Coappear:
                                             found = True
                                             break
                                     if (found == False):
-                                        faction = data.faction_for_person(self.factions, person)
-                                        nodes.append({"id":person.id,"name":person.name,"group":faction.id,
-                                                      "faction":faction.name,"color":faction.color,"links":num_links})
+                                        faction = api.faction_for_person(person)
+                                        person_json = {"id":person.id,"name":person.name,"group":faction.id,
+                                                      "faction":faction.name,"color":faction.color,"links":num_links}
+                                        if (person.style != ""):
+                                            person_json["style"] = person.style
+                                        nodes.append(person_json)
                                     break
 
         # sort nodes in order of id BEFORE creating links, as links must be based on node ordering

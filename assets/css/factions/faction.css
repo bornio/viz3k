@@ -1,0 +1,14 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+svg.faction-badge {
+	width: 80%;
+	height: 32px;
+	vertical-align: middle;
+}

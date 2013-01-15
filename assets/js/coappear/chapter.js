@@ -51,12 +51,28 @@ function Chapter($scope, $http)
     nodes = nodes_sort_by_links(nodes);
 
     // get the top five
-    $scope.people_by_importance = nodes.slice(0,5);
+    top_five = nodes.slice(0,5);
+
+    for (var i in top_five)
+    {
+      if ("style" in top_five[i])
+      {
+        top_five[i].style_paren = "(" + top_five[i].style + ")";
+      }
+      else
+      {
+        top_five[i].style_paren = "";
+      }
+    }
+
+    console.log(top_five);
+
+    $scope.people_by_importance = top_five;
 
     // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
     $scope.$apply();
   };
 
   // generate the coappearance visualization for the selected chapter
-  coappear("/coappear/data/chapter" + chapter_num, compute_stats);
+  coappear("/coappear/data/chapter/" + chapter_num, compute_stats);
 }
