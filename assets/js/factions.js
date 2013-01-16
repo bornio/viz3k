@@ -1,5 +1,9 @@
 function Factions($scope, $http)
 {
+  // navbar settings
+  $scope.navbar_url = "/navbar";
+  $scope.navbar_selected = 1;
+
   // issue an http get to grab the data file
   $http.get("/factions/data/all-factions").success(
     function(data)

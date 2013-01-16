@@ -7,6 +7,10 @@ function Chapter($scope, $http)
   $scope.nav_chapters = [];
   $scope.last_chapter = 1;
   $scope.people_by_importance = [];
+  
+  // navbar settings
+  $scope.navbar_url = "/navbar";
+  $scope.navbar_selected = 1;
 
   // issue an http get to grab the chapter descriptions and populate the navigation links
   $http.get("/data/chapters.json").success(

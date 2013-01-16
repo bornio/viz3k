@@ -3,6 +3,10 @@ function Faction($scope, $http)
   // use the number at the end of the URL to determine which faction's data to load
   faction_num = document.URL.split("/").pop();
 
+  // navbar settings
+  $scope.navbar_url = "/navbar";
+  $scope.navbar_selected = 1;
+
   var populate_faction_info = function(faction)
   {
     $scope.faction = faction;

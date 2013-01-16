@@ -1,5 +1,9 @@
 function People($scope, $http)
 {
+  // navbar settings
+  $scope.navbar_url = "/navbar";
+  $scope.navbar_selected = 1;
+
   // issue an http get to grab the data file
   $http.get("/data/characters.json").success(
     function(data)
@@ -20,29 +24,4 @@ function People($scope, $http)
       $scope.people = data.people;
     }
   );
-}
-
-function factions_sort_by_size(factions)
-{
-  var sorted = factions.slice();
-  sorted.sort(function(a,b)
-  {
-    // use alphabetical name sorting as tie-breaker
-    if (b.size == a.size)
-    {
-      if (a.name < b.name)
-      {
-        return -1;
-      }
-      else if (a.name > b.name)
-      {
-        return 1;
-      }
-      return 0;          
-    }
-
-    return b.size - a.size;
-  });
-
-  return sorted;
 }

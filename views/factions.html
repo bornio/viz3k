@@ -11,33 +11,8 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/factions.css"/>
   </head>
   <body ng-controller="Factions">
-
-    <!-- navbar based on sample template on Twitter Bootstrap site -->
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="/">Viz3k</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li><a href="/">Home</a></li>
-              <li class="dropdown active">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Visualize <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="/coappear">Coappearances</a></li>
-                  <li><a href="/factions">Factions</a></li>
-                  <li><a href="/people">People</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- include the navbar at the top -->
+    <div ng-include src="navbar_url"></div>
 
     <!-- content goes here -->
     <div class="container">
