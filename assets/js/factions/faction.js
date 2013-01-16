@@ -32,8 +32,6 @@ function Faction($scope, $http)
   $http.get("/factions/data/" + faction_num + "/members").success(populate_member_info);
 }
 
-
-
 function factions_sort_by_size(factions)
 {
   var sorted = factions.slice();

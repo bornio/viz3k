@@ -2,7 +2,7 @@
 <html lang="en" ng-app>
   <head>
     <meta charset="utf-8">
-    <title>Factions - Viz3k</title>
+    <title>People - Viz3k</title>
     <!-- use Twitter Bootstrap for styling -->
     <link href="/lib/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <!-- styling for this page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/factions.css"/>
   </head>
-  <body ng-controller="Factions">
+  <body ng-controller="People">
 
     <!-- navbar based on sample template on Twitter Bootstrap site -->
     <div class="navbar navbar-fixed-top">
@@ -43,37 +43,19 @@
     <div class="container">
       <div class="page-header">
         <h1>
-          <p>Factions</p>
-          <small>Get information and statistics for every faction in the novel.</small>
+          <p>People</p>
+          <small>Get information and statistics for every character in the novel.</small>
         </h1>
       </div>
       <table class="table table-striped table-condensed ng-cloak">
         <thead>
           <tr>
-            <th class="faction-color"></th>
-            <th class="lead">Faction</th>
-            <th class="lead faction-size">Size</th>
+            <th>Name</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="faction in factions">
-            <td class="faction faction-color">
-              <svg class="faction-badge">
-                <rect x="0" y="0" width="100%" height="100%" style="{{'fill: ' + faction.color + ';'}}"></rect>
-              </svg>
-            </td>
-            <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
-            <td class="lead faction faction-size">{{faction.size}}</td>
-          </tr>
-          <!-- display the catch-all "Other" faction last regardless of its size -->
-          <tr ng-repeat="faction in factions_other">
-            <td class="faction faction-color">
-              <svg class="faction-badge">
-                <rect x="0" y="0" width="100%" height="100%" style="{{'fill: ' + faction.color + ';'}}"></rect>
-              </svg>
-            </td>
-            <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
-            <td class="lead faction faction-size">{{faction.size}}</td>
+          <tr ng-repeat="person in people">
+            <td>{{person.name}} <span class="muted">{{person.style_paren}}</span></td>
           </tr>
         </tbody>
       </table>
@@ -91,6 +73,6 @@
     <script type="text/javascript" src="/lib/angular.min.js"></script>
 
     <!-- controller for this view -->
-    <script type="text/javascript" src="/assets/js/factions.js"></script>
+    <script type="text/javascript" src="/assets/js/people.js"></script>
   </body>
 </html>

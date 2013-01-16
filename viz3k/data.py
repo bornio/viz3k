@@ -113,6 +113,11 @@ class Page:
         desc = "page(" + str(self.page) + "," + str(self.ids) + ")"
         return desc
 
+    def has_person(self, person_id):
+        if (person_id in self.ids):
+            return True
+        return False
+
 class Chapter:
     def __init__(self, chapter, pages):
         self.chapter = chapter
@@ -154,3 +159,10 @@ class Chapter:
                 pages.append(Page(page_json["page"],page_json["ids"]))
             chapters.append(Chapter(chapter_json["chapter"],pages))
         return chapters
+
+    def num_appearances(self, person_id):
+        total_appearances = 0
+        for page in self.pages:
+            if (page.has_person(person_id)):
+                total_appearances += 1
+        return total_appearances

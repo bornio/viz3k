@@ -3,7 +3,10 @@
 
 # we use bottle as the web framework
 from bottle import abort, route, run, static_file, template
-from viz3k import api, coappear
+from viz3k.api import Api
+
+# initialize the api to access the backend
+api = Api()
 
 # route for static asset files (e.g. *.js, *.css)
 @route('/assets/<filepath:path>')
@@ -43,7 +46,7 @@ def index(chapter_num=1):
 def index(chapter_num=1):
     # catch the exception if the chapter number is invalid
     try:
-        coappear_json = coappear.Coappear().coappearances([chapter_num])
+        coappear_json = api.coappearances([chapter_num])
         return coappear_json
     except ValueError as ve:
         abort(404, str(ve))
