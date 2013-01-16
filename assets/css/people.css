@@ -1,0 +1,33 @@
+/* cloak dynamically-loaded angular.js elements until they're ready */
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
+body {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+td.table-person-faction-badge {
+	width: 48px;
+	text-align: center;
+}
+
+td.table-person-faction {
+	width: 20%;
+}
+
+td.table-person-num-appearances {
+	width: 16%;
+}
+
+/* rounded badges for factions */
+div.faction-badge {
+	margin-left: auto;
+	margin-right: auto;
+    width: 40px;
+    height: 20px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px; 
+}

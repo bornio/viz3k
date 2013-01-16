@@ -77,14 +77,28 @@ class Api:
                 people_for_faction.append(person.to_json())
         return {"people":people_for_faction}
 
-    def people_appearance_counts(self):
-        counts = []
+    def people_info(self, options=[]):
+        # prepare the results as a list of JSON objects
+        results = []
         for person in self.people:
-            num_appearances = 0
-            for chapter in self.chapters:
-                num_appearances += chapter.num_appearances(person.id)
-                counts.append({"id":person.id,"count":num_appearances})
-        return {"appearance counts":counts}
+            results.append(person.to_json())
+
+        # clear the options of duplicates
+        options = list(set(options))
+
+        # add to the results whatever optional info was requested
+        for option in options:
+            if (option == "num-appearances"):
+                counts = []
+                for person_result in results:
+                    num_appearances = 0
+                    for chapter in self.chapters:
+                        num_appearances += chapter.num_appearances(person_result["id"])
+                        person_result["num_appearances"] = num_appearances
+            else:
+                # unrecognized option
+                raise ValueError("Unrecognized option '" + option + "'.")
+        return {"people":results}
 
     def coappearances(self, chapter_nums, min_links = 0):
         nodes = []

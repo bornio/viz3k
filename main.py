@@ -84,5 +84,14 @@ def index(faction_num, query):
         # abort if query is not recognized
         abort(404, "Invalid request : '" + query + "'")
 
+# people-related queries
+@route('/people/data/<query>')
+def index(query):
+    try:
+        return api.people_info([query])
+    except ValueError as ve:
+        # abort if query is not recognized
+        abort(404, "Invalid request : '" + query + "'")
+
 # for development purposes, just run the dev server on localhost:8080
 run(host='localhost', port=8080)
