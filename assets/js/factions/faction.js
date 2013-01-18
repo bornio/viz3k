@@ -14,26 +14,26 @@ function Faction($scope, $http)
 
   var populate_member_info = function(members)
   {
-    for (var i in members.people)
+    for (var i in members.members)
     {
-      if ("style" in members.people[i])
+      if ("style" in members.members[i])
       {
-        members.people[i].style_paren = "(" + members.people[i].style + ")";
+        members.members[i].style_paren = "(" + members.members[i].style + ")";
       }
       else
       {
-        members.people[i].style_paren = "";
+        members.members[i].style_paren = "";
       }
     }
 
-    $scope.faction_members = members.people;
+    $scope.faction_members = members.members;
   }
 
   // issue an http get to grab the info for this faction
-  $http.get("/factions/data/" + faction_num + "/info").success(populate_faction_info);
+  $http.get("/data/factions/" + faction_num).success(populate_faction_info);
 
   // issue an http get to grab the member info for this faction
-  $http.get("/factions/data/" + faction_num + "/members").success(populate_member_info);
+  $http.get("/data/factions/" + faction_num + "/members").success(populate_member_info);
 }
 
 function factions_sort_by_size(factions)
@@ -42,7 +42,7 @@ function factions_sort_by_size(factions)
   sorted.sort(function(a,b)
   {
     // use alphabetical name sorting as tie-breaker
-    if (b.size == a.size)
+    if (b.members.length == a.members.length)
     {
       if (a.name < b.name)
       {
@@ -55,7 +55,7 @@ function factions_sort_by_size(factions)
       return 0;          
     }
 
-    return b.size - a.size;
+    return b.members.length - a.members.length;
   });
 
   return sorted;

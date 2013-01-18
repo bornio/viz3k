@@ -16,72 +16,36 @@ class Api:
     def __init__(self):
         # parse the data files for the lists of factions, characters, and chapters
         data_path = "./data"
-        self.factions = data.Faction.from_json(data_path + "/factions.json")
-        self.people = data.Person.from_json(data_path + "/characters.json")
-        self.chapters = data.Chapter.from_json(data_path + "/chapters.json")
+        self.factions = data.Factions(data_path + "/factions.json")
+        self.people = data.People(data_path + "/characters.json")
+        self.chapters = data.Chapters(data_path + "/chapters.json")
+
+        # define relationships
+        self.factions.set_members(self.people.people)
 
     def faction_exists(self, faction_id):
-        for faction in self.factions:
-            if (faction.id == faction_id):
-                return True
-        return False
+        return self.factions.exists(faction_id)
 
     def person_exists(self, person_id):
-        for person in self.people:
-            if (person.id == person_id):
-                return True
-        return False
+        return self.people.exists(person_id)
 
     def chapter_exists(self, chapter_id):
-        for chapter in self.chapters:
-            if (chapter.chapter == chapter_id):
-                return True
-        return False
-
-    def faction_for_person(self, person):
-        # always query for fresh data in case it's been updated
-        for faction in self.factions:
-            if (faction.id == person.faction):
-                return faction
-        # raise exception if faction not found
-        raise ValueError("Could not find faction for person " + str(person))
+        return self.chapters.exists(chapter_id)
 
     # functions that return JSON responses
-    def factions_people_info(self):
-        """
-        For each faction, return the ids of people who belong to that faction.
-        """
-        info = []
-        for faction in self.factions:
-            people_ids = []
-            for person in self.people:
-                if (person.faction == faction.id):
-                    people_ids.append(person.id)
-            info.append({"id":faction.id,"name":faction.name,"color":faction.color,"size":len(people_ids),
-                         "people":people_ids})
-        return {"factions":info}
+    def faction_json(self, faction_id):
+        return self.factions.get(faction_id).to_json()
 
-    def faction_info(self, faction_id):
-        for faction in self.factions:
-            if (faction.id == faction_id):
-                return faction.to_json()
-        raise ValueError("Faction " + str(faction_id) + " does not exist, or has not been added yet.")
-
-    def faction_people(self, faction_id):
+    def faction_members_json(self, faction_id):
         """
-        Find out which people belong to the faction with the given id.
+        Get JSON representations of every person in a faction.
         """
-        people_for_faction = []
-        for person in self.people:
-            if (person.faction == faction_id):
-                people_for_faction.append(person.to_json())
-        return {"people":people_for_faction}
+        members = self.factions.get(faction_id).members
+        return {"members":[member.to_json() for member in members]}
 
-    def people_info(self, options=[]):
+    def people_json(self, options=[]):
         # prepare the results as a list of JSON objects
-        results = []
-        for person in self.people:
-            results.append(person.to_json())
+        results = self.people.to_json()
 
         # clear the options of duplicates
         options = list(set(options))
@@ -90,15 +54,15 @@ class Api:
         for option in options:
             if (option == "num-appearances"):
                 counts = []
-                for person_result in results:
+                for person_result in results["people"]:
                     num_appearances = 0
-                    for chapter in self.chapters:
+                    for chapter in self.chapters.chapters:
                         num_appearances += chapter.num_appearances(person_result["id"])
                         person_result["num_appearances"] = num_appearances
             else:
                 # unrecognized option
                 raise ValueError("Unrecognized option '" + option + "'.")
-        return {"people":results}
+        return results
 
     def coappearances(self, chapter_nums, min_links = 0):
         nodes = []
@@ -112,13 +76,13 @@ class Api:
                 raise ValueError("Chapter " + str(chapter_num) + " does not exist, or has not been added yet.")
 
         # create nodes for every person who shares a page with any other person
-        for chapter in self.chapters:
+        for chapter in self.chapters.chapters:
             if chapter.chapter in chapter_nums:
                 for page in chapter.pages:
                     if (len(page.ids) > 1):
                         for person_id in page.ids:
                             # get the corresponding person object
-                            for person in self.people:
+                            for person in self.people.people:
                                 if (person.id == person_id):
                                     # number of links for this person on this page
                                     num_links = len(page.ids) - 1
@@ -131,7 +95,7 @@ class Api:
                                             found = True
                                             break
                                     if (found == False):
-                                        faction = self.faction_for_person(person)
+                                        faction = self.factions.get(person.faction)
                                         person_json = {"id":person.id,"name":person.name,"group":faction.id,
                                                       "faction":faction.name,"color":faction.color,"links":num_links}
                                         if (person.style != ""):
@@ -151,7 +115,7 @@ class Api:
             node_indices[node["id"]] = n
 
         # now create links for every pair of nodes representing people who appear on the same page
-        for chapter in self.chapters:
+        for chapter in self.chapters.chapters:
             if chapter.chapter in chapter_nums:
                 for page in chapter.pages:
                     for i in range(len(page.ids)):

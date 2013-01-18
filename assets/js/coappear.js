@@ -5,7 +5,7 @@ function ChapterList($scope, $http)
   $scope.navbar_selected = 1;
   
   // issue an http get to grab the data file
-  $http.get("/data/chapters.json").success(
+  $http.get("/data/chapters").success(
     function(data)
     {
       $scope.chapters = data.chapters;

@@ -13,7 +13,7 @@ function Chapter($scope, $http)
   $scope.navbar_selected = 1;
 
   // issue an http get to grab the chapter descriptions and populate the navigation links
-  $http.get("/data/chapters.json").success(
+  $http.get("/data/chapters").success(
     function(data)
     {
       for (index in data.chapters)
@@ -76,5 +76,5 @@ function Chapter($scope, $http)
   };
 
   // generate the coappearance visualization for the selected chapter
-  coappear("/coappear/data/chapter/" + chapter_num, compute_stats);
+  coappear("/data/coappear/chapter/" + chapter_num, compute_stats);
 }

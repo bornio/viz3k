@@ -40,13 +40,14 @@ function People($scope, $http)
           }
         }
       }
+
+      // set the scope variable after data is populated from both http queries
+      $scope.people = people;
     }
 
-    $http.get("/data/factions.json").success(populate_factions);
-
-    $scope.people = people;
+    $http.get("/data/factions").success(populate_factions);
   }
 
   // get our data from the backend
-  $http.get("/people/data/num-appearances").success(populate_people);
+  $http.get("/data/people/num-appearances").success(populate_people);
 }

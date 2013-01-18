@@ -38,7 +38,7 @@
               </svg>
             </td>
             <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
-            <td class="lead faction faction-size">{{faction.size}}</td>
+            <td class="lead faction faction-size">{{faction.members.length}}</td>
           </tr>
           <!-- display the catch-all "Other" faction last regardless of its size -->
           <tr ng-repeat="faction in factions_other">
@@ -48,7 +48,7 @@
               </svg>
             </td>
             <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
-            <td class="lead faction faction-size">{{faction.size}}</td>
+            <td class="lead faction faction-size">{{faction.members.length}}</td>
           </tr>
         </tbody>
       </table>

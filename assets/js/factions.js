@@ -5,7 +5,7 @@ function Factions($scope, $http)
   $scope.navbar_selected = 1;
 
   // issue an http get to grab the data file
-  $http.get("/factions/data/all-factions").success(
+  $http.get("/data/factions").success(
     function(data)
     {
       $scope.factions = data.factions;
@@ -32,7 +32,7 @@ function factions_sort_by_size(factions)
   sorted.sort(function(a,b)
   {
     // use alphabetical name sorting as tie-breaker
-    if (b.size == a.size)
+    if (b.members.length == a.members.length)
     {
       if (a.name < b.name)
       {
@@ -45,7 +45,7 @@ function factions_sort_by_size(factions)
       return 0;          
     }
 
-    return b.size - a.size;
+    return b.members.length - a.members.length;
   });
 
   return sorted;
