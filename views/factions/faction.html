@@ -23,13 +23,26 @@
           <small>({{faction.type}})</small>
         </h1>
       </div>
+
+      <!-- filter and sort options for list of people below -->
+      <div class="row">
+        <div class="span3">
+          <form class="form-inline">
+            <fieldset>
+              <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
+            </fieldset>
+          </form>
+        </div>
+      </div>
       
       <!-- list of faction members -->
-      <table class="table table-striped ng-cloak">
-        <tr ng-repeat="member in faction_members | orderBy:'name'">
-          <td>{{member.name}} <span class="muted">{{member.style_paren}}</span></td>
-        </tr>
-      </table>
+      <div style="height: 600px; overflow: auto;">
+        <table class="table table-hover table-condensed ng-cloak">
+          <tr ng-repeat="member in faction_members | filter:query | orderBy:'name'">
+            <td>{{member.name}} <span class="muted">{{member.style_paren}}</span></td>
+          </tr>
+        </table>
+      </div>
 
       <hr>
       <footer>
