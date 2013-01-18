@@ -1,38 +1,29 @@
-[ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none !important;
-}
-
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-}
-
 td.faction {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 td.faction-color {
-	width: 16%;
-	text-align: center;
+  width: 16%;
+  text-align: center;
 }
 
 th.faction-color {
-	width: 16%;
-	text-align: center;
+  width: 16%;
+  text-align: center;
 }
 
 td.faction-size {
-	width: 24%;
-	text-align: center;
+  width: 24%;
+  text-align: center;
 }
 
 th.faction-size {
-	width: 24%;
-	text-align: center;
+  width: 24%;
+  text-align: center;
 }
 
 svg.faction-badge {
-	width: 80%;
-	height: 32px;
-	vertical-align: middle;
+  width: 80%;
+  height: 32px;
+  vertical-align: middle;
 }

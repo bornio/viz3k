@@ -7,8 +7,13 @@ body {
 	padding-bottom: 40px;
 }
 
-svg.faction-badge {
-	width: 80%;
-	height: 32px;
-	vertical-align: middle;
+/* large rounded-corner badges for factions */
+div.faction-badge-lg {
+	margin-left: auto;
+	margin-right: auto;
+    width: 64px;
+    height: 64px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px; 
 }

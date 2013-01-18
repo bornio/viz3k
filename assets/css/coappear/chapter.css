@@ -1,13 +1,3 @@
-/* cloak dynamically-loaded angular.js elements until they're ready */
-[ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none !important;
-}
-
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-}
-
 #stack-well {
   height: 720px;
   overflow-y: auto;
@@ -28,35 +18,24 @@ body {
 }
 
 #char-stats-area {
-	min-height: 600px;
+  min-height: 600px;
 }
 
 th.table-char-ranking, td.table-char-ranking {
-	width: 8%;
-	text-align: center;
+  width: 8%;
+  text-align: center;
 }
 
 th.table-char-faction-badge, td.table-char-faction-badge {
-	width: 48px;
-	text-align: center;
+  width: 48px;
+  text-align: center;
 }
 
 th.table-char-faction, td.table-char-faction {
-	width: 24%;
+  width: 24%;
 }
 
 th.table-char-links, td.table-char-links {
-	width: 12%;
-	text-align: center;
-}
-
-/* rounded badges for factions */
-div.faction-badge {
-	margin-left: auto;
-	margin-right: auto;
-    width: 40px;
-    height: 20px;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    border-radius: 25px; 
+  width: 12%;
+  text-align: center;
 }
