@@ -11,19 +11,19 @@ class TestCharacters(TestCase):
     @setup
     def setup(self):
         # load the characters.json data file
-        self.people = data.Person.from_json("../data/characters.json")
+        self.people = data.People("../data/characters.json")
 
     def test_ids(self):
         '''Each person should have a unique id'''
         ids = []
-        for person in self.people:
+        for person in self.people.people:
             assert_not_in(person.id, ids, "Id " + str(person.id) + " is not unique")
             ids.append(person.id)
 
     def test_contiguous_ids(self):
         '''When sorted, the list of ids should be {0,1,2,...,num_ids-1}.'''
         ids = []
-        for person in self.people:
+        for person in self.people.people:
             ids.append(person.id)
 
         ids.sort()
