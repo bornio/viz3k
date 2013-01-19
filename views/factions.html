@@ -38,11 +38,13 @@
 
       <!-- scrollable list of factions -->
       <div style="height: 600px; overflow: auto;">
-        <table class="table table-hover table-condensed ng-cloak">
+        <table class="table table-condensed ng-cloak">
           <tbody>
             <tr ng-repeat="faction in factions | filter:query">
               <td class="faction-color">
-                <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
+                <a href="/factions/{{faction.id}}">
+                  <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
+                </a>
               </td>
               <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
               <td class="lead faction faction-size">{{faction.members.length}}</td>
