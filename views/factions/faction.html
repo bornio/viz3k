@@ -2,7 +2,7 @@
 <html lang="en" ng-app ng-controller="Faction">
   <head>
     <meta charset="utf-8">
-    <title>{{faction.name}} - Viz3k</title>
+    <title>{{faction.name}} {{faction_type}} - Viz3k</title>
     <!-- use Twitter Bootstrap for styling -->
     <link href="/lib/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
           </td>
           <td style="padding-left: 12px;">
             <p class="lead" style="margin-bottom: 0px;">{{faction.name}}</p>
-            <span class="muted">({{faction.type}})</span>
+            <span class="muted">{{faction_type}}</span>
           </td>
         </tr>
       </table>

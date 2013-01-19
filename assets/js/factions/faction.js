@@ -10,6 +10,9 @@ function Faction($scope, $http)
   var populate_faction_info = function(faction)
   {
     $scope.faction = faction;
+
+    // this is so we don't momentarily see "()" by itself before the text loads asynchronously
+    $scope.faction_type = "(" + faction.type + ")";
   }
 
   var populate_member_info = function(members)
