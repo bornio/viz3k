@@ -14,9 +14,9 @@ div.faction-badge-lg {
   margin-right: auto;
   width: 64px;
   height: 64px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px; 
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px; 
 }
 
 /* rounded badges for factions */

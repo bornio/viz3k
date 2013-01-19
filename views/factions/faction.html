@@ -19,12 +19,19 @@
     <!-- content goes here -->
     <div class="container">
       <!-- page header with faction info -->
-      <div class="page-header ng-cloak">
-        <h1>
-          <p>{{faction.name}}</p>
-          <small>({{faction.type}})</small>
-        </h1>
-      </div>
+      <table class="ng-cloak">
+        <tr>
+          <td>
+            <div class="faction-badge-lg" style="{{'background: ' + faction.color + ';'}}"></div>
+          </td>
+          <td style="padding-left: 12px;">
+            <p class="lead" style="margin-bottom: 0px;">{{faction.name}}</p>
+            <span class="muted">({{faction.type}})</span>
+          </td>
+        </tr>
+      </table>
+
+      <hr>
 
       <!-- filter and sort options for list of people below -->
       <div class="row">
