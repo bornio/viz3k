@@ -1,6 +1,6 @@
-function Index($scope, $http)
+function Index($scope)
 {
-    // navbar settings
+  // navbar settings
   $scope.navbar_url = "/navbar";
   $scope.navbar_selected = 0;
 }
