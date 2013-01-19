@@ -3,27 +3,11 @@ td.faction {
 }
 
 td.faction-color {
-  width: 16%;
-  text-align: center;
-}
-
-th.faction-color {
-  width: 16%;
+  width: 8%;
   text-align: center;
 }
 
 td.faction-size {
   width: 24%;
   text-align: center;
-}
-
-th.faction-size {
-  width: 24%;
-  text-align: center;
-}
-
-svg.faction-badge {
-  width: 80%;
-  height: 32px;
-  vertical-align: middle;
 }

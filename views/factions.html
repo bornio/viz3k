@@ -24,36 +24,40 @@
           <small>Get information and statistics for every faction in the novel.</small>
         </h1>
       </div>
-      <table class="table table-striped table-condensed ng-cloak">
-        <thead>
-          <tr>
-            <th class="faction-color"></th>
-            <th class="lead">Faction</th>
-            <th class="lead faction-size">Size</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="faction in factions">
-            <td class="faction faction-color">
-              <svg class="faction-badge">
-                <rect x="0" y="0" width="100%" height="100%" style="{{'fill: ' + faction.color + ';'}}"></rect>
-              </svg>
-            </td>
-            <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
-            <td class="lead faction faction-size">{{faction.members.length}}</td>
-          </tr>
-          <!-- display the catch-all "Other" faction last regardless of its size -->
-          <tr ng-repeat="faction in factions_other">
-            <td class="faction faction-color">
-              <svg class="faction-badge">
-                <rect x="0" y="0" width="100%" height="100%" style="{{'fill: ' + faction.color + ';'}}"></rect>
-              </svg>
-            </td>
-            <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
-            <td class="lead faction faction-size">{{faction.members.length}}</td>
-          </tr>
-        </tbody>
-      </table>
+
+      <!-- filter and sort options for list of factions below -->
+      <div class="row">
+        <div class="span3">
+          <form class="form-inline">
+            <fieldset>
+              <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <!-- scrollable list of factions -->
+      <div style="height: 600px; overflow: auto;">
+        <table class="table table-hover table-condensed ng-cloak">
+          <tbody>
+            <tr ng-repeat="faction in factions | filter:query">
+              <td class="faction-color">
+                <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
+              </td>
+              <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
+              <td class="lead faction faction-size">{{faction.members.length}}</td>
+            </tr>
+            <!-- display the catch-all "Other" faction last regardless of its size -->
+            <tr ng-repeat="faction in factions_other | filter:query">
+              <td class="faction-color">
+                <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
+              </td>
+              <td class="lead faction"><a href="/factions/{{faction.id}}">{{faction.name}}</a></td>
+              <td class="lead faction faction-size">{{faction.members.length}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <hr>
       <footer>
