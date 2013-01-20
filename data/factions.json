@@ -22,6 +22,8 @@
     {"id":18,"name":"Liu Biao","color":"#20dfe0","type":"faction"},
     {"id":19,"name":"Han Sui","color":"#7fa6cc","type":"faction"},
     {"id":20,"name":"Liu Yao","color":"#00538f","type":"faction"},
-    {"id":99,"name":"Other","color":"#aaaaaa","type":"faction"}
+    {"id":21,"name":"Yan Baihu","color":"#736441","type":"faction"},
+    {"id":22,"name":"Wang Lang","color":"#9d9d9d","type":"faction"},
+    {"id":99,"name":"Other","color":"#cccccc","type":"faction"}
   ]
 }

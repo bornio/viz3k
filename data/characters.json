@@ -613,7 +613,7 @@
     {
       "id":139,
       "name":"Liu Dai","faction":13,
-      "note":"Imperial inspector of Yanzhou. Joined the alliance against Dong Zhuo."
+      "note":"Imperial inspector of Yanzhou. Elder brother of Liu Yao. Joined the alliance against Dong Zhuo."
     },
     {
       "id":140,
@@ -678,19 +678,20 @@
     },
     {
       "id":153,
-      "name":"Cheng Pu","faction":7
+      "name":"Cheng Pu","style":"Demou","faction":7
     },
     {
       "id":154,
-      "name":"Huang Gai","faction":7
+      "name":"Huang Gai","style":"Gongfu","faction":7
     },
     {
       "id":155,
-      "name":"Han Dang","faction":7
+      "name":"Han Dang","style":"Yigong","faction":7
     },
     {
       "id":156,
-      "name":"Zu Mao","faction":7
+      "name":"Zu Mao","style":"Darong","faction":7,
+      "note":"His style name is given by the novel, and was not recorded historically."
     },
     {
       "id":157,
@@ -1228,7 +1229,7 @@
     {
       "id":268,
       "name":"Liu Yao","style":"Zhengli","faction":20,
-      "note":"Governor of Yangzhou."
+      "note":"Governor of Yangzhou. Younger brother of Liu Dai."
     },
     {
       "id":269,
@@ -1544,6 +1545,144 @@
       "id":332,
       "name":"Lady Mi","faction":3,
       "note":"A wife of Liu Bei."
+    },
+    {
+      "id":333,
+      "name":"Lu Kang","faction":99
+    },
+    {
+      "id":334,
+      "name":"Wu Jing","faction":7,
+      "note":"Brother of Lady Wu."
+    },
+    {
+      "id":335,
+      "name":"Zu Lang","faction":99
+    },
+    {
+      "id":336,
+      "name":"Zhu Zhi","style":"Junli","faction":7
+    },
+    {
+      "id":337,
+      "name":"Lü Fan","style":"Ziheng","faction":7
+    },
+    {
+      "id":338,
+      "name":"Zhou Yu","style":"Gongjin","faction":7
+    },
+    {
+      "id":339,
+      "name":"Zhou Shang","faction":7,
+      "note":"Governor of Danyang. Uncle of Zhou Yu."
+    },
+    {
+      "id":340,
+      "name":"Zhang Zhao","style":"Zibu","faction":7
+    },
+    {
+      "id":341,
+      "name":"Zhang Hong","style":"Ziwang","faction":7
+    },
+    {
+      "id":342,
+      "name":"Liu Chong","faction":0,
+      "note":"Grand Commandant of the Han. Uncle of Liu Yao and Liu Dai."
+    },
+    {
+      "id":343,
+      "name":"Zhang Ying","faction":20
+    },
+    {
+      "id":344,
+      "name":"Jiang Qin","style":"Gongyi","faction":7
+    },
+    {
+      "id":345,
+      "name":"Zhou Tai","style":"Youping","faction":7
+    },
+    {
+      "id":346,
+      "name":"Chen Wu","style":"Zilie","faction":7
+    },
+    {
+      "id":347,
+      "name":"Xue Li","faction":20
+    },
+    {
+      "id":348,
+      "name":"Ze Rong","faction":20
+    },
+    {
+      "id":349,
+      "name":"Yu Mi","faction":20
+    },
+    {
+      "id":350,
+      "name":"Fan Neng","faction":20
+    },
+    {
+      "id":351,
+      "name":"Cheng Heng","faction":20
+    },
+    {
+      "id":352,
+      "name":"Yan Baihu","faction":21,
+      "note":"Killed by Dong Xi."
+    },
+    {
+      "id":353,
+      "name":"Yan Yu","faction":21,
+      "note":"Younger brother of Yan Baihu."
+    },
+    {
+      "id":354,
+      "name":"Ling Cao","faction":7
+    },
+    {
+      "id":355,
+      "name":"Ling Tong","faction":7
+    },
+    {
+      "id":356,
+      "name":"Wang Lang","faction":22
+    },
+    {
+      "id":357,
+      "name":"Yu Fan","style":"Zhongxiang","faction":7
+    },
+    {
+      "id":358,
+      "name":"Zhou Xin","faction":22,
+      "note":"Killed by Sun Ce."
+    },
+    {
+      "id":359,
+      "name":"Dong Xi","style":"Yuandai","faction":7
+    },
+    {
+      "id":360,
+      "name":"Hua Tuo","style":"Yuanhua","faction":99
+    },
+    {
+      "id":361,
+      "name":"Yang Dajiang","faction":9
+    },
+    {
+      "id":362,
+      "name":"Zhang Xun","faction":9
+    },
+    {
+      "id":363,
+      "name":"Qiao Rui","faction":9
+    },
+    {
+      "id":364,
+      "name":"Lei Bo","faction":9
+    },
+    {
+      "id":365,
+      "name":"Yuan Shu","faction":9
     }
   ]
 }
