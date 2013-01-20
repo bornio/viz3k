@@ -1,14 +1,14 @@
 {
   "factions":
   [
-    {"id":0,"name":"Han","color":"#66bbff","type":"dynasty"},
-    {"id":1,"name":"Yellow Turbans","color":"#f89820","type":"faction"},
+    {"id":0,"name":"Han","color":"#66bbff","type":"dynasty","wiki":"Han_Dynasty"},
+    {"id":1,"name":"Yellow Turbans","color":"#f89820","type":"faction","wiki":"Yellow_Turban_Rebellion"},
     {"id":2,"name":"Liu Yan/Liu Zhang","color":"#200070","type":"faction"},
-    {"id":3,"name":"Shu","color":"#387800","type":"kingdom"},
+    {"id":3,"name":"Shu","color":"#387800","type":"kingdom","wiki":"Shu_Han"},
     {"id":4,"name":"Gongsun Zan","color":"#f36b20","type":"faction"},
-    {"id":5,"name":"Wei","color":"#2828e9","type":"kingdom"},
+    {"id":5,"name":"Wei","color":"#2828e9","type":"kingdom","wiki":"Cao_Wei"},
     {"id":6,"name":"Dong Zhuo","color":"#5a5a5a","type":"faction"},
-    {"id":7,"name":"Wu","color":"#d10028","type":"kingdom"},
+    {"id":7,"name":"Wu","color":"#d10028","type":"kingdom","wiki":"Eastern_Wu"},
     {"id":8,"name":"Yuan Shao","color":"#dbd33a","type":"faction"},
     {"id":9,"name":"Yuan Shu","color":"#f69cb2","type":"faction"},
     {"id":10,"name":"Lü Bu","color":"#1e1e1e","type":"faction"},
