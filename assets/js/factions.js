@@ -52,10 +52,11 @@ function Factions($scope, $http)
       }
       
       // display a stacked bar chart of faction appearances per chapter
-      chart_appearances(factions, chapters.length, max_people);
+      chart_appearances(factions, chapters, max_people);
 
       // assign data to the scope
       $scope.factions = factions;
+      $scope.factions_other = factions_other;
     }
 
     // issue an http get to grab the data file
@@ -106,7 +107,7 @@ function factions_sort_by_size(factions)
   return sorted;
 }
 
-function chart_appearances(factions, num_chapters, max_people)
+function chart_appearances(factions, chapters, max_people)
 {
   // append the svg element for drawing the chart on
   var svg = d3.select("#chart-appearances").append("svg").attr("class", "chart-appearances");
@@ -117,22 +118,20 @@ function chart_appearances(factions, num_chapters, max_people)
     .range([0, svg_height]);
 
   // create a bar group for every faction
-  var bar_groups = new Array(factions.length);
   for (var f = 0; f < factions.length; f++)
   {
     var faction = factions[f];
-    bar_groups[f] = svg.append("g")
-      .attr("id", "faction" + String(faction.id));
+    svg.append("g").attr("id", "faction" + String(faction.id));
   }
 
-  // recompute chart bar widths and x values
+  // render or resize the chart as needed
   var chart_resize = function()
   {
     var svg_width = document.getElementById("chart-appearances").clientWidth;
-    var bar_width = svg_width/num_chapters;
+    var bar_width = svg_width/chapters.length;
 
-    var y_offsets = new Array(num_chapters);
-    for (var c = 0; c < num_chapters; c++)
+    var y_offsets = new Array(chapters.length);
+    for (var c = 0; c < chapters.length; c++)
     {
       y_offsets[c] = 0;
     }
@@ -141,31 +140,21 @@ function chart_appearances(factions, num_chapters, max_people)
     for (var f = 0; f < factions.length; f++)
     {
       var faction = factions[f];
-      var bar_group = svg.select("#faction" + String(faction.id));
-      if (chart_initialized)
+      var bars = svg.select("#faction" + String(faction.id)).selectAll("rect").data(faction.chapters);
+
+      if (!chart_initialized)
       {
-        bar_group.selectAll("rect")
-          .data(faction.chapters)
-          .attr("x", function(d, i) { return bar_width*i; })
-          .attr("y", function(d, i) { return svg_height - y_range(d) - y_offsets[i]; })
-          .attr("width", bar_width)
-          .attr("height", y_range)
-          .style("fill", function(d) { return faction.color; });
-      }
-      else
-      {        
-        bar_group.selectAll("rect")
-          .data(faction.chapters)
-          .enter().append("rect")
-          .attr("x", function(d, i) { return bar_width*i; })
-          .attr("y", function(d, i) { return svg_height - y_range(d) - y_offsets[i]; })
-          .attr("width", bar_width)
-          .attr("height", y_range)
-          .style("fill", function(d) { return faction.color; });
+        bars.enter().append("rect");
       }
 
+      bars.attr("x", function(d, i) { return bar_width*i; })
+          .attr("y", function(d, i) { return svg_height - y_range(d) - y_offsets[i]; })
+          .attr("width", bar_width)
+          .attr("height", y_range)
+          .style("fill", function(d) { return faction.color; });
+
       // update offsets
-      for (var c = 0; c < num_chapters; c++)
+      for (var c = 0; c < chapters.length; c++)
       {
         y_offsets[c] += y_range(faction.chapters[c]);
       }
