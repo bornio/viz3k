@@ -9,8 +9,6 @@
     <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
     <!-- styling common to all pages except splash page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
-    <!-- styling for this page -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/factions/faction.css"/>
   </head>
   <body>
     <!-- include the navbar at the top -->
@@ -19,19 +17,19 @@
     <!-- content goes here -->
     <div class="container">
       <!-- page header with faction info -->
-      <table class="ng-cloak">
-        <tr>
-          <td>
-            <div class="faction-badge-lg" style="{{'background: ' + faction.color + ';'}}"></div>
-          </td>
-          <td style="padding-left: 12px;">
-            <p class="lead" style="margin-bottom: 0px;">{{faction.name}}</p>
-            <span class="muted">{{faction_type}}</span>
-          </td>
-        </tr>
-      </table>
-
-      <hr>
+      <div class="page-header">
+        <table class="ng-cloak">
+          <tr>
+            <td>
+              <div class="faction-badge-lg" style="{{'background: ' + faction.color + ';'}}"></div>
+            </td>
+            <td style="padding-left: 12px;">
+              <p class="lead" style="margin-bottom: 0px;">{{faction.name}}</p>
+              <span class="muted">{{faction_type}}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
 
       <!-- filter and sort options for list of people below -->
       <div class="row">
