@@ -8,9 +8,19 @@ function Factions($scope, $http)
   {
     factions = factions_data.factions;
 
-    // keep the "Other" faction (id = 99) separate
     for (var i = 0; i < factions.length; i++)
     {
+      // for non-generic faction types, label the type in parentheses
+      if (factions[i].type != "faction")
+      {
+        factions[i].type_label = "(" + factions[i].type + ")";
+      }
+      else
+      {
+        factions[i].type_label = "";
+      }
+
+      // keep the "Other" faction (id = 99) separate
       if (factions[i].id == 99)
       {
         factions_other = [factions[i]];
