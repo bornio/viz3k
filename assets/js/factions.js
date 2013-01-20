@@ -136,7 +136,8 @@ function chart_appearances(factions, chapters, max_people)
 
   // create link anchors for every chapter
   var anchors = svg.selectAll("a").data(chapters).enter().append("a")
-    .attr("xlink:href", function(d) { return "/coappear/chapter/" + String(d.chapter); });
+    .attr("xlink:href", function(d) { return "/coappear/chapter/" + d.chapter; });
+  anchors.append("title").text(function(d) { return "Chapter " + d.chapter; });
   var anchor_rects = anchors.append("rect");
 
   // render or resize the chart as needed
