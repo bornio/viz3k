@@ -584,7 +584,7 @@
     },
     {
       "id":133,
-      "name":"Xiahou Ying","faction":0
+      "name":"Xiahou Ying","faction":5
     },
     {
       "id":134,
@@ -617,22 +617,22 @@
     },
     {
       "id":140,
-      "name":"Wang Kuang","faction":0,
+      "name":"Wang Kuang","faction":99,
       "note":"Governor of Henei. Joined the alliance against Dong Zhuo."
     },
     {
       "id":141,
-      "name":"Zhang Miao","faction":0,
+      "name":"Zhang Miao","faction":99,
       "note":"Governor of Chenliu. Joined the alliance against Dong Zhuo. Allied with Lü Bu for a time, but was defeated by Cao Cao and went over to Yuan Shu."
     },
     {
       "id":142,
-      "name":"Qiao Mao","faction":0,
+      "name":"Qiao Mao","faction":99,
       "note":"Governor of Dongjun. Joined the alliance against Dong Zhuo."
     },
     {
       "id":143,
-      "name":"Yuan Yi","faction":0,
+      "name":"Yuan Yi","faction":99,
       "note":"Governor of Shanyang. Joined the alliance against Dong Zhuo."
     },
     {
@@ -642,7 +642,7 @@
     },
     {
       "id":145,
-      "name":"Zhang Chao","faction":0,
+      "name":"Zhang Chao","faction":99,
       "note":"Governor of Guangling. Joined the alliance against Dong Zhuo. Brother of Zhang Miao. Committed suicide after his ally Lü Bu was defeated at Dingtao."
     },
     {
@@ -674,7 +674,7 @@
     },
     {
       "id":152,
-      "name":"Bao Zhong","faction":0
+      "name":"Bao Zhong","faction":99
     },
     {
       "id":153,
@@ -713,7 +713,7 @@
     },
     {
       "id":161,
-      "name":"Fang Yue","faction":0
+      "name":"Fang Yue","faction":99
     },
     {
       "id":162,
@@ -779,32 +779,32 @@
     },
     {
       "id":175,
-      "name":"Chen Xiang","faction":0,
+      "name":"Chen Xiang","faction":99,
       "note":"One of the Eight Paragons of Jiangxia."
     },
     {
       "id":176,
-      "name":"Fan Pang","faction":0,
+      "name":"Fan Pang","faction":99,
       "note":"One of the Eight Paragons of Jiangxia."
     },
     {
       "id":177,
-      "name":"Kong Yu","faction":0,
+      "name":"Kong Yu","faction":99,
       "note":"One of the Eight Paragons of Jiangxia."
     },
     {
       "id":178,
-      "name":"Fan Kang","faction":0,
+      "name":"Fan Kang","faction":99,
       "note":"One of the Eight Paragons of Jiangxia."
     },
     {
       "id":179,
-      "name":"Tan Fu","faction":0,
+      "name":"Tan Fu","faction":99,
       "note":"One of the Eight Paragons of Jiangxia."
     },
     {
       "id":180,
-      "name":"Zhang Jian","faction":0,
+      "name":"Zhang Jian","faction":99,
       "note":"One of the Eight Paragons of Jiangxia."
     },
     {
@@ -1008,7 +1008,7 @@
     },
     {
       "id":224,
-      "name":"Taoist priest","faction":0,
+      "name":"Taoist priest","faction":99,
       "note":"A mysterious Taoist priest who appeared at Dong Zhuo's coronation ceremony."
     },
     {
@@ -1023,7 +1023,7 @@
     },
     {
       "id":227,
-      "name":"Jia Xu","style":"Wenhe","faction":6,
+      "name":"Jia Xu","style":"Wenhe","faction":5,
       "note":"Advisor to Dong Zhuo's remnants under Li Jue and Guo Si, but turned against them to serve Emperor Xian."
     },
     {
@@ -1098,7 +1098,7 @@
     },
     {
       "id":242,
-      "name":"Xun Gun","faction":0,
+      "name":"Xun Gun","faction":5,
       "note":"Father of Xun Yu."
     },
     {
@@ -1173,22 +1173,21 @@
     },
     {
       "id":257,
-      "name":"Cao Bao","faction":15,
-      "note":"Officer of Tao Qian."
+      "name":"Cao Bao","faction":15
     },
     {
       "id":258,
-      "name":"Mi Zhu","style":"Zizhong","faction":15,
+      "name":"Mi Zhu","style":"Zizhong","faction":3,
       "note":"Officer of Tao Qian, who entered Liu Bei's service when Liu accepted Tao's invitation to take over Xuzhou."
     },
     {
       "id":259,
-      "name":"Tian Kai","faction":0,
+      "name":"Tian Kai","faction":4,
       "note":"Imperial inspector of Qingzhou."
     },
     {
       "id":260,
-      "name":"Chen Deng","style":"Yuanlong","faction":15,
+      "name":"Chen Deng","style":"Yuanlong","faction":3,
       "note":"Officer of Tao Qian who joined Liu Bei after Tao's death."
     },
     {
@@ -1401,7 +1400,7 @@
     },
     {
       "id":303,
-      "name":"Yang Feng","faction":0,
+      "name":"Yang Feng","faction":99,
       "note":"Cavalry Commander under Li Jue. Turned against Li Jue to serve Emperor Xian. Escorted the Emperor to Hongnong from Chang'an."
     },
     {
@@ -1411,12 +1410,12 @@
     },
     {
       "id":305,
-      "name":"Wang Chang","faction":0,
+      "name":"Wang Chang","faction":6,
       "note":"Officer of the Imperial Tiger Escort. Tasked by Li Jue with bringing Huangfu Li back to Chang'an from Xiliang, but purposely failed to find him."
     },
     {
       "id":306,
-      "name":"Song Guo","faction":0,
+      "name":"Song Guo","faction":6,
       "note":"Officer of Li Jue who advised Yang Feng to betray Li Jue to serve the Emperor, but was discovered and executed."
     },
     {
