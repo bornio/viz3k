@@ -92,8 +92,16 @@ class Chapter:
                 total_appearances += 1
         return total_appearances
 
+    def people(self):
+        people_ids = []
+        for page in self.pages:
+            for person_id in page.ids:
+                if not(person_id in people_ids):
+                    people_ids.append(person_id)
+        return people_ids
+
     def to_json(self):
-        return {"chapter":self.chapter,"title":self.title,"pages":[page.page for page in self.pages]}
+        return {"chapter":self.chapter,"title":self.title,"pages":[page.page for page in self.pages],"people":self.people()}
 
 class Factions:
     def __init__(self, factions_json_path):
