@@ -134,6 +134,11 @@ function chart_appearances(factions, chapters, max_people)
     svg.append("g").attr("id", "faction" + String(faction.id));
   }
 
+  // create link anchors for every chapter
+  var anchors = svg.selectAll("a").data(chapters).enter().append("a")
+    .attr("xlink:href", function(d) { return "/coappear/chapter/" + String(d.chapter); });
+  var anchor_rects = anchors.append("rect");
+
   // render or resize the chart as needed
   var chart_resize = function()
   {
@@ -146,7 +151,15 @@ function chart_appearances(factions, chapters, max_people)
       y_offsets[c] = 0;
     }
 
-    // create color-coded bars for every faction
+    // set or update dimensions of chapter anchors
+    anchor_rects
+      .attr("x", function(d, i) { return bar_width*i; })
+      .attr("y", 0)
+      .attr("width", bar_width)
+      .attr("height", svg_height)
+      .style("fill-opacity", 0);
+
+    // set or update color-coded bars for every faction
     for (var f = 0; f < factions.length; f++)
     {
       var faction = factions[f];
