@@ -11,3 +11,7 @@ td.faction-size {
   width: 24%;
   text-align: center;
 }
+
+#chart-appearances {
+  height: 80px;
+}
