@@ -189,7 +189,7 @@ module Viz3k
 
     # Returns a JSON representation of the Faction object.
     def to_json()
-      faction_json = {"id"=>@id,"name"=>@name,"color"=>@color}
+      faction_json = {"id"=>@id,"name"=>@name,"color"=>@color,"type"=>@type}
       if (@members.length > 0)
         member_ids = []
         @members.each do |member|
@@ -300,7 +300,7 @@ module Viz3k
 
     # Returns a JSON representation of the Chapter object.
     def to_json()
-      return {"chapter"=>@chapter,"title"=>@title,"pages"=>@pages.map{|page| page.page}}
+      return {"chapter"=>@chapter,"title"=>@title,"pages"=>@pages.map{|page| page.page},"people"=>people()}
     end
 
     # Computes the number of times the person with id person_id appears in this chapter.
@@ -324,6 +324,7 @@ module Viz3k
           end
         end
       end
+      return people_ids
     end
   end
 end

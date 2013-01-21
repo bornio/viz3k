@@ -11,11 +11,14 @@ module Viz3k
     attr_reader :chapters
 
     def initialize()
-      puts "initializing api"
+      # parse the data files for the lists of factions, characters, and chapters
       data_path = "./data"
       @factions = Factions.new(data_path + "/factions.json")
       @people = People.new(data_path + "/characters.json")
       @chapters = Chapters.new(data_path + "/chapters.json")
+
+      # define relationships
+      @factions.set_members(@people.people)
     end
   end
 end
