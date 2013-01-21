@@ -218,3 +218,9 @@ class Chapters:
 
     def to_json(self):
         return {"chapters":[chapter.to_json() for chapter in self.chapters]}
+
+    def num_appearances(self, person_id):
+        total_appearances = 0
+        for chapter in self.chapters:
+            total_appearances += chapter.num_appearances(person_id)
+        return total_appearances
