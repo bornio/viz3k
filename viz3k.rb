@@ -16,15 +16,33 @@ get '/' do
   File.read("views/index.html")
 end
 
-# coappearance graphs
+# chapter pages
 get '/coappear/chapter/:chapter_num' do
   File.read("views/coappear/chapter.html")
+end
+
+# faction pages
+get '/factions/:faction_num' do
+  File.read("views/factions/faction.html")
 end
 
 # faction data
 get '/data/factions' do
   content_type :json
   api.factions.to_json()
+end
+
+get '/data/factions/:faction_num' do
+  content_type :json
+  faction_num = Integer(params[:faction_num])
+  api.factions_json(faction_num).to_json()
+end
+
+get '/data/factions/:faction_num/:query' do
+  content_type :json
+  faction_num = Integer(params[:faction_num])
+  query = params[:query]
+  api.faction_members_json(faction_num).to_json()
 end
 
 # people data

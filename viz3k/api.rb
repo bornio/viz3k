@@ -20,5 +20,14 @@ module Viz3k
       # define relationships
       @factions.set_members(@people.people)
     end
+
+    def factions_json(faction_id)
+      return @factions.get(faction_id).to_json()
+    end
+
+    def faction_members_json(faction_id)
+      members = @factions.get(faction_id).members
+      return {"members"=>members.map{|member| member.to_json()}}
+    end
   end
 end
