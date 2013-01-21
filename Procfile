@@ -1,1 +1,1 @@
-web: bundle exec ruby -Ilib lib/viz3k.rb -p $PORT
+web: bundle exec ruby viz3k.rb -p $PORT
