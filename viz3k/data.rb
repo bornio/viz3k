@@ -151,7 +151,7 @@ module Viz3k
       @chapters.each do |chapter|
         total_appearances += chapter.num_appearances(person_id)
       end
-      return total_chapters
+      return total_appearances
     end
   end
 
