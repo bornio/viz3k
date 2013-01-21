@@ -27,6 +27,12 @@ get '/data/factions' do
   api.factions.to_json()
 end
 
+# people data
+get '/data/people' do
+  content_type :json
+  api.people.to_json()
+end
+
 # chapter data
 get '/data/chapters' do
   content_type :json
