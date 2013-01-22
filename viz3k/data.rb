@@ -35,7 +35,7 @@ module Viz3k
       end
     end
 
-    # Returns the Faction with the requested id if found. Raises RangeError otherwise.
+    # Returns the Faction with the requested id if found. Raises StandardError otherwise.
     def get(faction_id)
       @factions.each do |faction|
         if (faction.id == faction_id)
@@ -101,6 +101,16 @@ module Viz3k
     def to_json()
       people_json = @people.map{|person| person.to_json()}
       return {"people"=>people_json}.to_json()
+    end
+
+    # Returns the Person with the requested id if found. Raises StandardError otherwise.
+    def get(person_id)
+      @people.each do |person|
+        if (person.id == person_id)
+          return person
+        end
+      end
+      raise StandardError.new("No person found with specified id")
     end
   end
 

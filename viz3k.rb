@@ -57,6 +57,13 @@ get '/data/chapters' do
   api.chapters.to_json()
 end
 
+# coappearances data
+get '/data/coappear/chapter/:chapter_num' do
+  content_type :json
+  chapter_num = Integer(params[:chapter_num])
+  return api.coappearances([chapter_num]).to_json()
+end
+
 # root level routes
 get '/:feature' do
   File.read("views/#{params[:feature]}.html")
