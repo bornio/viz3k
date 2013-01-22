@@ -45,10 +45,10 @@ module Viz3k
       raise StandardError.new("No faction found with specified id")
     end
 
-    # Returns a JSON representation of the collection of Faction objects.
-    def to_json()
-      factions_json = @factions.map{|faction| faction.to_json()}
-      return {"factions"=>factions_json}.to_json()
+    # Returns a hash representation of the collection of Faction objects.
+    def to_hash()
+      factions_hash = @factions.map{|faction| faction.to_hash()}
+      return {"factions"=>factions_hash}
     end
 
     # Sets the members of all Faction objects in this collection from the ids of an array of Person objects.
@@ -97,10 +97,10 @@ module Viz3k
       end
     end
 
-    # Returns a JSON representation of the collection of Faction objects.
-    def to_json()
-      people_json = @people.map{|person| person.to_json()}
-      return {"people"=>people_json}.to_json()
+    # Returns a hash representation of the collection of Faction objects.
+    def to_hash()
+      people_hash = @people.map{|person| person.to_hash()}
+      return {"people"=>people_hash}
     end
 
     # Returns the Person with the requested id if found. Raises StandardError otherwise.
@@ -139,10 +139,10 @@ module Viz3k
       end
     end
 
-    # Returns a JSON representation of the collection of Chapter objects.
-    def to_json()
-      chapters_json = @chapters.map{|chapter| chapter.to_json()}
-      return {"chapters"=>chapters_json}.to_json()
+    # Returns a hash representation of the collection of Chapter objects.
+    def to_hash()
+      chapters_hash = @chapters.map{|chapter| chapter.to_hash()}
+      return {"chapters"=>chapters_hash}
     end
 
     # Returns true if the Chapter with the given chapter number was found, false otherwise.
@@ -197,17 +197,17 @@ module Viz3k
       return "faction(" + @id.to_s() + "," + @name + "," + @color + "," + @type + ")"
     end
 
-    # Returns a JSON representation of the Faction object.
-    def to_json()
-      faction_json = {"id"=>@id,"name"=>@name,"color"=>@color,"type"=>@type}
+    # Returns a hash representation of the Faction object.
+    def to_hash()
+      faction_hash = {"id"=>@id,"name"=>@name,"color"=>@color,"type"=>@type}
       if (@members.length > 0)
         member_ids = []
         @members.each do |member|
           member_ids.push(member.id)
         end
-        return faction_json.merge("members"=>member_ids)
+        return faction_hash.merge("members"=>member_ids)
       end
-      return faction_json
+      return faction_hash
     end
   end
 
@@ -250,16 +250,16 @@ module Viz3k
       return desc
     end
 
-    # Returns a JSON representation of the Person object.
-    def to_json()
-      person_json = {"id"=>@id,"name"=>@name,"faction"=>@faction}
+    # Returns a hash representation of the Person object.
+    def to_hash()
+      person_hash = {"id"=>@id,"name"=>@name,"faction"=>@faction}
       if (@style != "")
-        person_json = person_json.merge("style"=>@style)
+        person_hash.merge!("style"=>@style)
       end
       if (@note != "")
-        person_json = person_json.merge("note"=>@note)
+        person_hash.merge!("note"=>@note)
       end
-      return person_json
+      return person_hash
     end
   end
 
@@ -308,8 +308,8 @@ module Viz3k
       return "chapter(" + @chapter.to_s() + "," + @title + "," + "[" + desc_pages + "])"
     end
 
-    # Returns a JSON representation of the Chapter object.
-    def to_json()
+    # Returns a hash representation of the Chapter object.
+    def to_hash()
       return {"chapter"=>@chapter,"title"=>@title,"pages"=>@pages.map{|page| page.page},"people"=>people()}
     end
 
@@ -320,8 +320,8 @@ module Viz3k
         if (page.has_person(person_id))
           total_appearances += 1
         end
-      return total_appearances
       end
+      return total_appearances
     end
 
     # Returns an array of ids of all people who appear in this chapter.

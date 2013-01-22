@@ -47,14 +47,14 @@ end
 # faction data
 get '/data/factions' do
   content_type :json
-  api.factions.to_json()
+  api.factions.to_hash().to_json()
 end
 
 get '/data/factions/:faction_num' do
   content_type :json
   begin
     faction_num = Integer(params[:faction_num])
-    api.factions_json(faction_num).to_json()
+    api.factions_json(faction_num)
   rescue ArgumentError => e
     raise Sinatra::NotFound.new()
   end
@@ -69,7 +69,7 @@ get '/data/factions/:faction_num/:query' do
   end
   query = params[:query]
   if (api.factions.exists(faction_num) && query == "members")
-    api.faction_members_json(faction_num).to_json()
+    api.faction_members_json(faction_num)
   else
     raise Sinatra::NotFound.new()
   end
@@ -78,13 +78,23 @@ end
 # people data
 get '/data/people' do
   content_type :json
-  api.people.to_json()
+  api.people.to_hash().to_json()
+end
+
+get '/data/people/:query' do
+  content_type :json
+  query = params[:query]
+  begin
+    api.people_json([query])
+  rescue StandardError => e
+    halt 400
+  end
 end
 
 # chapter data
 get '/data/chapters' do
   content_type :json
-  api.chapters.to_json()
+  api.chapters.to_hash().to_json()
 end
 
 # coappearances data
@@ -96,7 +106,7 @@ get '/data/coappear/chapter/:chapter_num' do
     raise Sinatra::NotFound.new()
   end
   if (api.chapters.exists(chapter_num))
-    return api.coappearances([chapter_num]).to_json()
+    return api.coappearances([chapter_num])
   else
     raise Sinatra::NotFound.new()
   end

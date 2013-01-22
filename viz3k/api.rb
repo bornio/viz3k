@@ -21,13 +21,42 @@ module Viz3k
       @factions.set_members(@people.people)
     end
 
+    # get a JSON representation of the faction with the requested id
     def factions_json(faction_id)
-      return @factions.get(faction_id).to_json()
+      return @factions.get(faction_id).to_hash().to_json()
     end
 
+    # get a JSON representation of all characters who are members of the faction with the requested id
     def faction_members_json(faction_id)
       members = @factions.get(faction_id).members
-      return {"members"=>members.map{|member| member.to_json()}}
+      return {"members"=>members.map{|member| member.to_hash()}}.to_json()
+    end
+
+    # get a JSON representation of all people along with any additional data being asked for
+    def people_json(queries)
+      # prepare the results as a hash
+      results = @people.to_hash()
+
+      # clear the query list of duplicates
+      queries.uniq!
+
+      # add to the results whatever info was requested
+      queries.each do |query|
+        if (query == "num-appearances")
+          results["people"].each do |person_result|
+            num_appearances = 0
+            @chapters.chapters.each do |chapter|
+              num_appearances += chapter.num_appearances(person_result["id"])
+            end
+            person_result.merge!("num_appearances"=>num_appearances)
+          end
+        else
+          # unrecognized query
+          raise StandardError.new("Unrecognized query '" + query.to_s() + "'.")
+        end
+      end
+
+      return results.to_json()
     end
 
     # generates a coappearance graph using data from the specified chapters
@@ -68,12 +97,12 @@ module Viz3k
                 # otherwise append new node if there isn't one yet for this person
                 if (!found)
                   faction = @factions.get(person.faction)
-                  person_json = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
+                  person_hash = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
                                  "color"=>faction.color,"links"=>num_links}
                   if (person.style != "")
-                    person_json.merge!("style"=>person.style)
+                    person_hash.merge!("style"=>person.style)
                   end
-                  nodes.push(person_json)
+                  nodes.push(person_hash)
                 end
               end
             end
@@ -125,8 +154,8 @@ module Viz3k
       # sort the links by source, with target as tie-breaker
       links.sort!(){|a,b| [a["source"],a["target"]] <=> [b["source"],b["target"]]}
 
-      # the complete hash representation with nodes + links together
-      return {"nodes"=>nodes,"links"=>links}
+      # the complete JSON representation with nodes + links together
+      return {"nodes"=>nodes,"links"=>links}.to_json()
     end
   end
 end
