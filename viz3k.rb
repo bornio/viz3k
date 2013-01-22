@@ -18,12 +18,30 @@ end
 
 # chapter pages
 get '/coappear/chapter/:chapter_num' do
-  File.read("views/coappear/chapter.html")
+  begin
+    chapter_num = Integer(params[:chapter_num])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  if (api.chapters.exists(chapter_num))
+    File.read("views/coappear/chapter.html")
+  else
+    raise Sinatra::NotFound.new()
+  end
 end
 
 # faction pages
 get '/factions/:faction_num' do
-  File.read("views/factions/faction.html")
+  begin
+    faction_num = Integer(params[:faction_num])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  if (api.factions.exists(faction_num))
+    File.read("views/factions/faction.html")
+  else
+    raise Sinatra::NotFound.new()
+  end
 end
 
 # faction data
@@ -34,15 +52,27 @@ end
 
 get '/data/factions/:faction_num' do
   content_type :json
-  faction_num = Integer(params[:faction_num])
-  api.factions_json(faction_num).to_json()
+  begin
+    faction_num = Integer(params[:faction_num])
+    api.factions_json(faction_num).to_json()
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
 end
 
 get '/data/factions/:faction_num/:query' do
   content_type :json
-  faction_num = Integer(params[:faction_num])
+  begin
+    faction_num = Integer(params[:faction_num])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
   query = params[:query]
-  api.faction_members_json(faction_num).to_json()
+  if (api.factions.exists(faction_num) && query == "members")
+    api.faction_members_json(faction_num).to_json()
+  else
+    raise Sinatra::NotFound.new()
+  end
 end
 
 # people data
@@ -60,11 +90,24 @@ end
 # coappearances data
 get '/data/coappear/chapter/:chapter_num' do
   content_type :json
-  chapter_num = Integer(params[:chapter_num])
-  return api.coappearances([chapter_num]).to_json()
+  begin
+    chapter_num = Integer(params[:chapter_num])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  if (api.chapters.exists(chapter_num))
+    return api.coappearances([chapter_num]).to_json()
+  else
+    raise Sinatra::NotFound.new()
+  end
 end
 
 # root level routes
 get '/:feature' do
-  File.read("views/#{params[:feature]}.html")
+  file_path = "views/#{params[:feature]}.html"
+  if (File.exists?(file_path))
+    File.read("views/#{params[:feature]}.html")
+  else
+    raise Sinatra::NotFound.new()
+  end
 end
