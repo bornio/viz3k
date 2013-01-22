@@ -31,8 +31,8 @@ module Viz3k
         if (faction.id == faction_id)
           return true
         end
-        return false
       end
+      return false
     end
 
     # Returns the Faction with the requested id if found. Raises StandardError otherwise.
