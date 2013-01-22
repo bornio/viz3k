@@ -42,7 +42,7 @@ module Viz3k
           return faction
         end
       end
-      raise RangeError.new("No faction found with specified id")
+      raise StandardError.new("No faction found with specified id")
     end
 
     # Returns a JSON representation of the collection of Faction objects.
@@ -135,14 +135,14 @@ module Viz3k
       return {"chapters"=>chapters_json}.to_json()
     end
 
-    # Returns true if the Chapter with the given id was found, false otherwise.
-    def exists(chapter_id)
-      @chapter.each do |chapter|
-        if (chapter.id == chapter_id)
+    # Returns true if the Chapter with the given chapter number was found, false otherwise.
+    def exists(chapter_num)
+      @chapters.each do |chapter|
+        if (chapter.chapter == chapter_num)
           return true
         end
-        return false
       end
+      return false
     end
 
     # Returns the total number of times the person with the given id appears among all the chapters contained.
