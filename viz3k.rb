@@ -54,8 +54,12 @@ get '/data/factions/:faction_num' do
   content_type :json
   begin
     faction_num = Integer(params[:faction_num])
-    api.factions_json(faction_num)
   rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  if (api.factions.exists(faction_num))
+    api.factions_json(faction_num)
+  else
     raise Sinatra::NotFound.new()
   end
 end
