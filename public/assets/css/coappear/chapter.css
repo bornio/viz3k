@@ -1,19 +1,14 @@
-#stack-well {
-  height: 720px;
-  overflow-y: auto;
-}
-
-/* on screens below 768px-wide, hide the coappearance graph altogether*/
+/* on screens below 768px-wide, make the stack well shorter */
 @media(max-width:767px) {
-  #chart-area {
-    visibility: hidden;
-    width: 0px;
-    height: 0px;
+  #stack-well {
+    height: 300px;
+    overflow-y: auto;
   }
 }
 @media(min-width:768px) {
-  #chart-area {
-    visibility: visible;
+  #stack-well {
+    height: 720px;
+    overflow-y: auto;
   }
 }
 
@@ -28,6 +23,7 @@ th.table-char-ranking, td.table-char-ranking {
 
 th.table-char-faction-badge, td.table-char-faction-badge {
   width: 48px;
+  vertical-align: middle;
   text-align: center;
 }
 

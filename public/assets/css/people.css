@@ -1,5 +1,6 @@
 td.table-person-faction-badge {
   width: 48px;
+  vertical-align: middle;
   text-align: center;
 }
 

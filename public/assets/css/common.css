@@ -20,7 +20,76 @@ div.faction-badge {
   margin-right: auto;
   width: 40px;
   height: 20px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px; 
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px; 
+}
+
+/* use smaller sizes on mobile devices */
+@media(max-width:767px) {
+  body{
+    font-size: 10px;
+    line-height: 12px;
+  }
+  h5 {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  h4 {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  h3 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  h1 {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  small {
+    font-size: 8px;
+  }
+
+  .lead {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+  }
+
+  th, td {
+    font-size: 9px;
+  }
+
+  input.input-block-level {
+    font-size: 10px;
+  }
+
+  div.page-header {
+    padding-bottom: 6px;
+    margin: 12px 0 16px;
+  }
+
+  hr {
+    margin: 12px 0;
+  }
+
+  div.well {
+    margin-bottom: 8px;
+  }
+
+  /* make faction badges 3/4 size */
+  div.faction-badge {
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+    height: 15px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px; 
+  }
 }

@@ -6,12 +6,13 @@
 
 text.node {
   pointer-events: none;
-  font-family: sans-serif;
   text-shadow: 0em 0em 0.15em #fff, 0em 0em 0.15em #fff, 0em 0em 0.15em #fff;
 }
 
-text.stack {
-  font-family: sans-serif;
+@media(max-width:767px) {
+  text.stack {
+    font-size: 9px;
+  }
 }
 
 circle.node {

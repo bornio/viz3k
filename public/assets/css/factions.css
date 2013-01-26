@@ -4,6 +4,7 @@ td.faction {
 
 td.faction-color {
   width: 8%;
+  vertical-align: middle;
   text-align: center;
 }
 
