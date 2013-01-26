@@ -46,19 +46,19 @@
 }
 
 .masthead {
-  padding: 70px 0 30px;
+  padding: 70px 12px 30px;
   margin-bottom: 0;
   color: #fff;
 }
 .masthead h1 {
-  font-size: 120px;
+  font-size: 64px;
   font-weight: 200;
   line-height: 1;
   letter-spacing: -2px;
 }
 .masthead h2 {
   color: #ddd;
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 300;
   letter-spacing: -1px;
   line-height: 1;
@@ -67,4 +67,8 @@
   font-size: 32px;
   font-weight: 200;
   line-height: 1.25;
+}
+
+.blurb h2 {
+  font-size: 24px;
 }
