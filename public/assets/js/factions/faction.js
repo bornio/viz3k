@@ -13,6 +13,11 @@ function Faction($scope, $http)
 
     // this is so we don't momentarily see "()" by itself before the text loads asynchronously
     $scope.faction_type = "(" + faction.type + ")";
+    $scope.faction_links = [];
+    if ("wiki" in faction)
+    {
+      $scope.faction_links.push({text:"wiki",href:faction.wiki});
+    }
   }
 
   var populate_member_info = function(members)

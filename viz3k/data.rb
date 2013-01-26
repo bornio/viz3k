@@ -20,7 +20,11 @@ module Viz3k
 
       @factions = []
       factions_json["factions"].each do |faction_json|
-        faction = Faction.new(faction_json["id"],faction_json["name"],faction_json["color"],faction_json["type"])
+        wiki = ""
+        if (faction_json.has_key?("wiki"))
+          wiki = "http://en.wikipedia.org/wiki/" + faction_json["wiki"]
+        end
+        faction = Faction.new(faction_json["id"],faction_json["name"],faction_json["color"],faction_json["type"],wiki:wiki)
         @factions.push(faction)
       end
     end
@@ -179,10 +183,15 @@ module Viz3k
       @name = name
       @color = color
       @type = type
+      @wiki = ""
       @members = []
       @chapters = []
 
-      # optional relationship attributes: members and chapters
+      # optional attributes: wiki, members, and chapters
+      if (options[:wiki])
+        @wiki = options[:wiki]
+      end
+
       if (options[:members])
         @members = options[:members]
       end
@@ -200,12 +209,15 @@ module Viz3k
     # Returns a hash representation of the Faction object.
     def to_hash()
       faction_hash = {"id"=>@id,"name"=>@name,"color"=>@color,"type"=>@type}
+      if (@wiki != "")
+        faction_hash.merge!("wiki"=>@wiki)
+      end
       if (@members.length > 0)
         member_ids = []
         @members.each do |member|
           member_ids.push(member.id)
         end
-        return faction_hash.merge("members"=>member_ids)
+        faction_hash.merge!("members"=>member_ids)
       end
       return faction_hash
     end

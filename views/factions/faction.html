@@ -31,6 +31,16 @@
         </table>
       </div>
 
+      <div class="row">
+        <div class="span12 ng-cloak">
+          <p><small>{{faction_members.length}} members</small></p>
+          <p><small>
+            <span ng-repeat="link in faction_links">(<a href="{{link.href}}">{{link.text}}</a>)<span>
+          </small></p>
+        </div>
+      </div>
+      <hr>
+
       <!-- filter and sort options for list of people below -->
       <div class="row">
         <div class="span3">
