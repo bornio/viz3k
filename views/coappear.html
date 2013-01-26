@@ -24,7 +24,7 @@
 
       <!-- main content area -->
       <h3>Chapters</h3>
-      <div style="height: 600px; overflow: auto;">
+      <div class="scroll-list">
         <table class="table table-condensed ng-cloak">
           <tr ng-repeat="chapter in chapters | orderBy:orderProp">
             <td class="lead">{{chapter.chapter}}</td> <td><a href="/coappear/chapter/{{chapter.chapter}}">{{chapter.title}}</a></td>

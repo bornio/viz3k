@@ -25,6 +25,11 @@ div.faction-badge {
   border-radius: 12px; 
 }
 
+div.scroll-list {
+  overflow: auto;
+  height: 400px;
+}
+
 /* use smaller sizes on mobile devices */
 @media(max-width:767px) {
   body{
@@ -82,6 +87,10 @@ div.faction-badge {
     margin-bottom: 8px;
   }
 
+  div.scroll-list {
+    height: 240px;
+  }
+
   /* make faction badges 3/4 size */
   div.faction-badge {
     margin-left: auto;
@@ -91,5 +100,14 @@ div.faction-badge {
     -webkit-border-radius: 9px;
     -moz-border-radius: 9px;
     border-radius: 9px; 
+  }
+
+  /* make large faction badges 1/2 size */
+  div.faction-badge-lg {
+    width: 32px;
+    height: 32px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px; 
   }
 }

@@ -43,7 +43,7 @@
       </div>
       
       <!-- list of faction members -->
-      <div style="height: 600px; overflow: auto;">
+      <div  class="scroll-list">
         <table class="table table-condensed ng-cloak">
           <tr ng-repeat="member in faction_members | filter:query | orderBy:'name'">
             <td>{{member.name}} <span class="muted">{{member.style_paren}}</span></td>
