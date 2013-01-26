@@ -47,7 +47,30 @@ function Chapter($scope, $http)
     }
   );
 
-  // issue an http get to grab the info on each character
+  var chart_area = document.getElementById("chart-area");
+  var stack_area = document.getElementById("stack-area");
+  var stats_area = document.getElementById("char-stats-area");
+
+  var window_resize = function()
+  {
+    if (document.body.clientWidth < 979)
+    {
+      
+      chart_area.className = "hidden-phone span12";
+      stack_area.className = "visible-desktop";
+      stats_area.className = "span12";
+    }
+    else
+    {
+      chart_area.className = "hidden-phone span9";
+      stack_area.className = "visible-desktop span3";
+      stats_area.className = "span8 offset3";
+    }
+  }
+
+  window_resize();
+
+  window.addEventListener("resize", window_resize, false);
 
   // callback to get data back from asynchronous load
   var compute_stats = function(nodes, links) {

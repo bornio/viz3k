@@ -19,7 +19,7 @@
     <div ng-include src="navbar_url"></div>
 
     <!-- content goes here -->
-    <div class="container">
+    <div id="container" class="container">
       <div id="container-header" class="page-header">
         <h2>Coappearances</h2>
         <!-- let user navigate to nearby chapters from here -->
@@ -46,12 +46,12 @@
       </div>
       <!-- row for character list and coappearance visualization -->
       <div class="row">
-        <div id="stack-area" class="span3">
+        <div id="stack-area" class="visible-desktop">
           <div id="stack-well" class="well well-small">
             <div id="stack"></div>
           </div>
         </div>
-        <div id="chart-area" class="span9 hidden-phone">
+        <div id="chart-area" class="hidden-phone">
           <div id="chart-well" class="well well-small">
             <div id="chart"></div>
           </div>

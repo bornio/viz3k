@@ -7,7 +7,7 @@
 }
 @media(min-width:768px) {
   #stack-well {
-    height: 720px;
+    height: 680px;
     overflow-y: auto;
   }
 }
