@@ -1,3 +1,8 @@
+td.table-person-name {
+  vertical-align: middle;
+}
+
+
 td.table-person-faction-badge {
   width: 48px;
   vertical-align: middle;
@@ -6,8 +11,10 @@ td.table-person-faction-badge {
 
 td.table-person-faction {
   width: 20%;
+  vertical-align: middle;
 }
 
 td.table-person-num-appearances {
+  vertical-align: middle;
   width: 16%;
 }
