@@ -40,7 +40,11 @@
             <table class="table table-condensed ng-cloak">
               <tbody>
                 <tr ng-repeat="person in people | filter:query | orderBy:people_order:people_order_invert">
-                  <td class="table-person-name">{{person.name}} <span class="muted">{{person.style_paren}}</span></td>
+                  <td class="table-person-name">
+                    {{person.name}}
+                    <span class="muted"> {{person.style_paren}}</span>
+                    <small ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )<small>
+                  </td>
                   
                   <td class="table-person-faction-badge">
                     <a href="/factions/{{person.faction}}">

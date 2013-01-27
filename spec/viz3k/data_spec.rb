@@ -64,6 +64,17 @@ describe "data" do
         @chapters.num_appearances(person.id).should >= 0
       end
     end
+
+    describe "external links" do
+      it "should not have any broken links to wikipedia" do
+        @people.people.each do |person|
+          if (person.wiki != "")
+            uri = open(person.wiki)
+            uri.status[1].should == "OK"
+          end
+        end
+      end
+    end
   end
 
   describe "chapters.json" do

@@ -93,7 +93,11 @@ module Viz3k
         if (person_json.has_key?("note"))
           note = person_json["note"]
         end
-        person = Person.new(person_json["id"],person_json["name"],person_json["faction"],style:style,note:note)
+        wiki = ""
+        if (person_json.has_key?("wiki"))
+          wiki = Externs.wiki_url(person_json["wiki"])
+        end
+        person = Person.new(person_json["id"],person_json["name"],person_json["faction"],style:style,note:note,wiki:wiki)
         @people.push(person)
       end
     end
@@ -195,7 +199,7 @@ module Viz3k
       @members = []
       @chapters = []
 
-      # optional attributes: wiki, members, and chapters
+      # optional attributes
       if (options[:wiki])
         @wiki = options[:wiki]
       end
@@ -238,6 +242,7 @@ module Viz3k
     attr_accessor :style
     attr_accessor :faction
     attr_accessor :note
+    attr_accessor :wiki
 
     def initialize(id, name, faction, options = {})
       @id = id
@@ -245,14 +250,19 @@ module Viz3k
       @style = ""
       @faction = faction
       @note = ""
+      @wiki = ""
 
-      # optional attributes: style and note
+      # optional attributes
       if (options[:style])
         @style = options[:style]
       end
 
       if (options[:note])
         @note = options[:note]
+      end
+
+      if (options[:wiki])
+        @wiki = options[:wiki]
       end
     end
 
@@ -278,6 +288,9 @@ module Viz3k
       end
       if (@note != "")
         person_hash.merge!("note"=>@note)
+      end
+      if (@wiki != "")
+        person_hash.merge!("wiki"=>@wiki)
       end
       return person_hash
     end
