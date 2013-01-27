@@ -3,6 +3,7 @@
 
 require 'spec_helper'
 require 'data'
+require 'open-uri'
 
 describe "data" do
   before(:all) do
@@ -26,6 +27,17 @@ describe "data" do
       @factions.factions.each do |faction|
         names.should_not include(faction.name)
         names.push(faction.name)
+      end
+    end
+
+    describe "external links" do
+      it "should not have any broken links to wikipedia" do
+        @factions.factions.each do |faction|
+          if (faction.wiki != "")
+            uri = open(faction.wiki)
+            uri.status[1].should == "OK"
+          end
+        end
       end
     end
   end
