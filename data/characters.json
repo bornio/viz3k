@@ -263,7 +263,8 @@
     },
     {
       "id":49,
-      "name":"Cao Cao","style":"Mengde","faction":5
+      "name":"Cao Cao","style":"Mengde","faction":5,
+      "wiki":"Cao_Cao"
     },
     {
       "id":50,
@@ -292,7 +293,8 @@
     },
     {
       "id":56,
-      "name":"Dong Zhuo","faction":6
+      "name":"Dong Zhuo","faction":6,
+      "wiki":"Dong_Zhuo"
     },
     {
       "id":57,
@@ -316,7 +318,8 @@
     },
     {
       "id":62,
-      "name":"Sun Jian","style":"Wentai","faction":7
+      "name":"Sun Jian","style":"Wentai","faction":7,
+      "wiki":"Sun_Jian"
     },
     {
       "id":63,
@@ -419,6 +422,7 @@
     {
       "id":85,
       "name":"Yuan Shao","style":"Benchu","faction":8,
+      "wiki":"Yuan_Shao",
       "note":"Lord of Qixiang and governor of Bohai. Led the alliance against Dong Zhuo."
     },
     {
@@ -473,11 +477,13 @@
     {
       "id":97,
       "name":"Li Jue","faction":6,
+      "wiki":"Li_Jue_(Han_Dynasty)",
       "note":"One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
     },
     {
       "id":98,
       "name":"Guo Si","faction":6,
+      "wiki":"Guo_Si",
       "note":"One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
     },
     {
@@ -501,6 +507,7 @@
     {
       "id":103,
       "name":"Yuan Shu","style":"Gonglu","faction":9,
+      "wiki":"Yuan_Shu",
       "note":"Governor of Nanyang and General of the Rear. Joined the alliance against Dong Zhuo."
     },
     {
@@ -523,6 +530,7 @@
     {
       "id":108,
       "name":"Wang Yun","style":"Zishi","faction":0,
+      "wiki":"Wang_Yun",
       "note":"Minister of the Interior in the imperial court during Dong Zhuo's usurpation. Gave Cao Cao the Seven Star Sword in a failed plot to kill Dong Zhuo. Later used his daughter Diaochan to turn Lü Bu against Dong and kill him. Died when Dong's remnant forces under Li Jue and Guo Si captured the capital."
     },
     {
@@ -549,7 +557,8 @@
     },
     {
       "id":114,
-      "name":"Lü Bu","style":"Fengxian","faction":10
+      "name":"Lü Bu","style":"Fengxian","faction":10,
+      "wiki":"Lü_Bu"
     },
     {
       "id":115,
