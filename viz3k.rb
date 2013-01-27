@@ -120,7 +120,7 @@ end
 get '/:feature' do
   file_path = "views/#{params[:feature]}.html"
   if (File.exists?(file_path))
-    File.read("views/#{params[:feature]}.html")
+    File.read(file_path)
   else
     raise Sinatra::NotFound.new()
   end
