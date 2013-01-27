@@ -243,23 +243,28 @@
     },
     {
       "id":44,
-      "name":"Zhang Shiping","faction":0
+      "name":"Zhang Shiping","faction":0,
+      "wiki":"Zhang_Shiping"
     },
     {
       "id":45,
-      "name":"Su Shuang","faction":0
+      "name":"Su Shuang","faction":0,
+      "wiki":"Su_Shuang"
     },
     {
       "id":46,
-      "name":"Cheng Yuanzhi","faction":1
+      "name":"Cheng Yuanzhi","faction":1,
+      "wiki":"Cheng_Yuanzhi"
     },
     {
       "id":47,
-      "name":"Deng Mao","faction":1
+      "name":"Deng Mao","faction":1,
+      "wiki":"Deng_Mao"
     },
     {
       "id":48,
-      "name":"Gong Jing","faction":0
+      "name":"Gong Jing","faction":0,
+      "wiki":"Gong_Jing"
     },
     {
       "id":49,
@@ -269,15 +274,19 @@
     {
       "id":50,
       "name":"Cao Song","faction":5,
+      "wiki":"Cao_Song",
       "note":"Father of Cao Cao. Originally a Xiahou, he was adopted by the eunuch Cao Teng."
     },
     {
       "id":51,
-      "name":"Cao Teng","faction":0,"note":"Adopted father of Cao Song."
+      "name":"Cao Teng","faction":0,
+      "wiki":"Cao_Teng",
+      "note":"Adopted father of Cao Song."
     },
     {
       "id":52,
-      "name":"Qiao Xuan","faction":0
+      "name":"Qiao Xuan","faction":0,
+      "wiki":"Qiao_Xuan"
     },
     {
       "id":53,
@@ -285,11 +294,13 @@
     },
     {
       "id":54,
-      "name":"Xu Shao","faction":0
+      "name":"Xu Shao","faction":0,
+      "wiki":"Xu_Shao"
     },
     {
       "id":55,
-      "name":"Zuo Feng","faction":0
+      "name":"Zuo Feng","faction":0,
+      "wiki":"Zuo_Feng"
     },
     {
       "id":56,
@@ -298,15 +309,18 @@
     },
     {
       "id":57,
-      "name":"Gao Sheng","faction":1
+      "name":"Gao Sheng","faction":1,
+      "wiki":"Gao_Sheng_(rebel)"
     },
     {
       "id":58,
-      "name":"Yan Zheng","faction":1
+      "name":"Yan Zheng","faction":1,
+      "wiki":"Yan_Zheng_(rebel)"
     },
     {
       "id":59,
-      "name":"Zhao Hong","faction":1
+      "name":"Zhao Hong","faction":1,
+      "wiki":"Zhao_Hong_(rebel)"
     },
     {
       "id":60,
