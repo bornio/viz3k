@@ -4,196 +4,242 @@
     {
       "id":0,
       "name":"Emperor Gao","faction":0,
+      "wiki":"Emperor_Gaozu_of_Han",
       "note":"Liu Bang. Also known as Gao Zu. Usually referred to as the Supreme Ancestor."
     },
     {
       "id":1,
-      "name":"Wang Mang","faction":99
+      "name":"Wang Mang","faction":99,
+      "wiki":"Wang_Mang"
     },
     {
       "id":2,
       "name":"Emperor Guangwu","faction":0,
+      "wiki":"Emperor_Guangwu_of_Han",
       "note":"Liu Xiu. Founder of the Later Han after Wang Mang's usurpation."
     },
     {
       "id":3,
       "name":"Emperor Xian","faction":0,
+      "wiki":"Emperor_Xian_of_Han",
       "note":"Liu Xie."
     },
     {
       "id":4,
-      "name":"Emperor Huan","faction":0
+      "name":"Emperor Huan","faction":0,
+      "wiki":"Emperor_Huan_of_Han"
     },
     {
       "id":5,
-      "name":"Emperor Ling","faction":0
+      "name":"Emperor Ling","faction":0,
+      "wiki":"Emperor_Ling_of_Han"
     },
     {
       "id":6,
-      "name":"Dou Wu","faction":0
+      "name":"Dou Wu","faction":0,
+      "wiki":"Dou_Wu"
     },
     {
       "id":7,
-      "name":"Chen Fan","faction":0
+      "name":"Chen Fan","faction":0,
+      "wiki":"Chen_Fan"
     },
     {
       "id":8,
       "name":"Cao Jie","faction":0,
+      "wiki":"Cao_Jie_(eunuch)",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":9,
       "name":"Cai Yong","faction":0,
+      "wiki":"Cai_Yong",
       "note:":"Privy Counselor of the Late Han court. Executed by Wang Yun for mourning the death of Dong Zhuo."
     },
     {
       "id":10,
       "name":"Zhang Rang","faction":0,
+      "wiki":"Zhang_Rang",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":11,
       "name":"Zhao Zhong","faction":0,
+      "wiki":"Zhao_Zhong",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":12,
       "name":"Feng Xu","faction":0,
+      "wiki":"Feng_Xu",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":13,
       "name":"Duan Gui","faction":0,
+      "wiki":"Duan_Gui",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":14,
       "name":"Hou Lan","faction":0,
+      "wiki":"Hou_Lan",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":15,
       "name":"Jian Shuo","faction":0,
+      "wiki":"Jian_Shuo",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":16,
-      "name":"Chen Kuang","faction":0,
+      "name":"Cheng Kuang","faction":0,
+      "wiki":"Cheng_Kuang",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":17,
       "name":"Xia Yun","faction":0,
+      "wiki":"Xia_Yun",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":18,
       "name":"Guo Sheng","faction":0,
+      "wiki":"Guo_Sheng_(eunuch)",
       "note":"One of the Ten Regular Attendants."
     },
     {
       "id":19,
       "name":"Zhang Jue","faction":1,
+      "wiki":"Zhang_Jue",
       "note":"Also known as Zhang Jiao."
     },
     {
       "id":20,
-      "name":"Zhang Bao","faction":1
+      "name":"Zhang Bao","faction":1,
+      "wiki":"Zhang_Bao_(Yellow_Turban)"
     },
     {
       "id":21,
-      "name":"Zhang Liang","faction":1
+      "name":"Zhang Liang","faction":1,
+      "wiki":"Zhang_Liang_(Yellow_Turban)"
     },
     {
       "id":22,
-      "name":"Zhuang Zi","faction":1,"note":"The Taoist sage known as The Old Hermit From Mount Hua Summit."
+      "name":"Zhuang Zi","faction":1,
+      "wiki":"Zhuang_Zhou",
+      "note":"The Taoist sage known as The Old Hermit From Mount Hua Summit."
     },
     {
       "id":23,
-      "name":"Ma Yuanyi","faction":1
+      "name":"Ma Yuanyi","faction":1,
+      "wiki":"Ma_Yuanyi"
     },
     {
       "id":24,
-      "name":"Tang Zhou","faction":1
+      "name":"Tang Zhou","faction":1,
+      "wiki":"Tang_Zhou"
     },
     {
       "id":25,
-      "name":"He Jin","style":"Suigao","faction":0
+      "name":"He Jin","style":"Suigao","faction":0,
+      "wiki":"He_Jin"
     },
     {
       "id":26,
-      "name":"Lu Zhi","faction":0
+      "name":"Lu Zhi","faction":0,
+      "wiki":"Lu_Zhi_(Han_Dynasty)"
     },
     {
       "id":27,
-      "name":"Huangfu Song","style":"Yizhen","faction":0
+      "name":"Huangfu Song","style":"Yizhen","faction":0,
+      "wiki":"Huangfu_Song"
     },
     {
       "id":28,
       "name":"Zhu Jun","style":"Gongwei","faction":0,
+      "wiki":"Zhu_Jun_(Han_Dynasty)",
       "note":"Veteran of the war against the Yellow Turbans. Appointed treasurer and court steward of the Han court by Li Jue and Guo Si."
     },
     {
       "id":29,
-      "name":"Liu Yan","style":"Junlang","faction":2
+      "name":"Liu Yan","style":"Junlang","faction":2,
+      "wiki":"Liu_Yan_(warlord)"
     },
     {
       "id":30,
-      "name":"Prince Gong","faction":0,"note":"Prince Gong of Lu, ancestor of Liu Yan."
+      "name":"Prince Gong","faction":0,
+      "wiki":"Prince_Gong_of_Lu",
+      "note":"Prince Gong of Lu, ancestor of Liu Yan."
     },
     {
       "id":31,
-      "name":"Zou Jing","faction":2
+      "name":"Zou Jing","faction":2,
+      "wiki":"Zou_Jing"
     },
     {
       "id":32,
-      "name":"Liu Bei","style":"Xuande","faction":3
+      "name":"Liu Bei","style":"Xuande","faction":3,
+      "wiki":"Liu_Bei"
     },
     {
       "id":33,
       "name":"Liu Sheng","faction":0,
+      "wiki":"Liu_Sheng",
       "note":"Prince Jing of Zhongshan. Ancestor of Liu Bei."
     },
     {
       "id":34,
-      "name":"Emperor Jing","faction":0,"note":"Fourth Han emperor. Ancestor of Liu Sheng, Prince Jing of Zhongshan."
+      "name":"Emperor Jing","faction":0,
+      "wiki":"Emperor_Jing_of_Han",
+      "note":"Fourth Han emperor. Ancestor of Liu Sheng, Prince Jing of Zhongshan."
     },
     {
       "id":35,
-      "name":"Emperor Wu","faction":0
+      "name":"Emperor Wu","faction":0,
+      "wiki":"Emperor_Wu_of_Han"
     },
     {
       "id":36,
-      "name":"Liu Zhen","faction":0,"note":"Son of Liu Sheng, Prince Jing of Zhongshan."
+      "name":"Liu Zhen","faction":0,
+      "wiki":"Liu_Zhen_(Han_Dynasty)",
+      "note":"Son of Liu Sheng, Prince Jing of Zhongshan."
     },
     {
       "id":37,
-      "name":"Liu Xiong","faction":0,"note":"Father of Liu Bei."
+      "name":"Liu Xiong","faction":0,"note":"Grandfather of Liu Bei. Father of Liu Hong."
     },
     {
       "id":38,
-      "name":"Liu Hong","faction":0,"note":"Father of Liu Xiong. Grandfather of Liu Bei."
+      "name":"Liu Hong","faction":0,"note":"Father of Liu Bei. Son of Liu Xiong."
     },
     {
       "id":39,
-      "name":"Liu Yuanqi","faction":0,"note":"Uncle of Liu Bei."
+      "name":"Liu Yuanqi","faction":0,"note":"Uncle of Liu Bei. Younger brother of Liu Hong."
     },
     {
       "id":40,
-      "name":"Zheng Xuan","faction":0,"note":"One of Liu Bei's teachers, along with Lu Zhi."
+      "name":"Zheng Xuan","faction":0,
+      "wiki":"Zheng_Xuan",
+      "note":"One of Liu Bei's teachers, along with Lu Zhi."
     },
     {
       "id":41,
       "name":"Gongsun Zan","faction":4,
+      "wiki":"Gongsun_Zan",
       "note":"Governor of Beiping. Joined the alliance against Dong Zhuo."
     },
     {
       "id":42,
-      "name":"Zhang Fei","style":"Yide","faction":3
+      "name":"Zhang Fei","style":"Yide","faction":3,
+      "wiki":"Zhang_Fei"
     },
     {
       "id":43,
-      "name":"Guan Yu","style":"Yunchang","faction":3
+      "name":"Guan Yu","style":"Yunchang","faction":3,
+      "wiki":"Guan_Yu"
     },
     {
       "id":44,
