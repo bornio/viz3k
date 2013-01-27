@@ -5,6 +5,13 @@ require "json"
 require "pp"
 
 module Viz3k
+  # Gets the corresponding full URL for a Wikipedia article name string.
+  class Externs
+    def self.wiki_url(article_name)
+      return "http://en.wikipedia.org/wiki/" + article_name
+    end
+  end
+
   # The Factions class provides methods to access a collection of Faction objects.
   class Factions
     attr_reader :factions
@@ -22,7 +29,7 @@ module Viz3k
       factions_json["factions"].each do |faction_json|
         wiki = ""
         if (faction_json.has_key?("wiki"))
-          wiki = "http://en.wikipedia.org/wiki/" + faction_json["wiki"]
+          wiki = Externs.wiki_url(faction_json["wiki"])
         end
         faction = Faction.new(faction_json["id"],faction_json["name"],faction_json["color"],faction_json["type"],wiki:wiki)
         @factions.push(faction)
@@ -175,6 +182,7 @@ module Viz3k
     attr_accessor :name
     attr_accessor :color
     attr_accessor :type
+    attr_accessor :wiki
     attr_accessor :members
     attr_accessor :chapters
 
