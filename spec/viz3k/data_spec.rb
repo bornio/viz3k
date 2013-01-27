@@ -31,7 +31,7 @@ describe "data" do
     end
 
     describe "external links" do
-      it "should not have any broken links to wikipedia" do
+      it "should not have any broken links to wikipedia", :network => true, :speed => "slow" do
         @factions.factions.each do |faction|
           if (faction.wiki != "")
             uri = open(faction.wiki)
@@ -66,7 +66,7 @@ describe "data" do
     end
 
     describe "external links" do
-      it "should not have any broken links to wikipedia" do
+      it "should not have any broken links to wikipedia", :network => true, :speed => "slow" do
         @people.people.each do |person|
           if (person.wiki != "")
             uri = open(person.wiki)
