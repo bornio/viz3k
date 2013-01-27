@@ -34,7 +34,7 @@ describe "data" do
       it "should not have any broken links to wikipedia", :network => true, :speed => "slow" do
         @factions.factions.each do |faction|
           if (faction.wiki != "")
-            uri = open(faction.wiki)
+            uri = open(URI.encode(faction.wiki))
             uri.status[1].should == "OK"
           end
         end
@@ -69,7 +69,7 @@ describe "data" do
       it "should not have any broken links to wikipedia", :network => true, :speed => "slow" do
         @people.people.each do |person|
           if (person.wiki != "")
-            uri = open(person.wiki)
+            uri = open(URI.encode(person.wiki))
             uri.status[1].should == "OK"
           end
         end
