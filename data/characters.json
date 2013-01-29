@@ -294,7 +294,7 @@
     },
     {
       "id":54,
-      "name":"Xu Shao","faction":0,
+      "name":"Xu Shao (1)","style":"Zijiang","faction":0,
       "wiki":"Xu_Shao"
     },
     {
@@ -324,11 +324,13 @@
     },
     {
       "id":60,
-      "name":"Han Zhong","faction":1
+      "name":"Han Zhong","faction":1,
+      "wiki":"Han_Zhong_(rebel)"
     },
     {
       "id":61,
-      "name":"Sun Zhong","faction":1
+      "name":"Sun Zhong","faction":1,
+      "wiki":"Sun_Zhong_(rebel)"
     },
     {
       "id":62,
@@ -338,7 +340,8 @@
     {
       "id":63,
       "name":"Sunzi","faction":0,
-      "note":"Also known as Sun Wu. More famously known as Sun Tsu, author of The Art of War. Ancestor of Sun Jian."
+      "wiki":"Sun_Tzu",
+      "note":"Also known as Sun Wu. More famously known as Sun Tzu, author of The Art of War. Ancestor of Sun Jian."
     },
     {
       "id":64,
@@ -347,7 +350,7 @@
     },
     {
       "id":65,
-      "name":"Xu Shao","faction":99,
+      "name":"Xu Shao (2)","faction":99,
       "note":"Son of Xu Chang."
     },
     {
@@ -373,16 +376,19 @@
     {
       "id":71,
       "name":"Ou Xing","faction":99,
+      "wiki":"Ou_Xing",
       "note":"Staged an uprising in Changsha."
     },
     {
       "id":72,
       "name":"Zhang Ju","faction":99,
+      "wiki":"Zhang_Ju",
       "note":"Staged an uprising in Yuyang, along with Zhang Chun."
     },
     {
       "id":73,
       "name":"Zhang Chun","faction":99,
+      "wiki":"Zhang_Chun",
       "note":"Staged an uprising in Yuyang, along with Zhang Ju."
     },
     {
@@ -395,16 +401,19 @@
     },
     {
       "id":76,
-      "name":"Liu Yu","faction":0
+      "name":"Liu Yu","faction":0,
+      "wiki":"Liu_Yu_(warlord)"
     },
     {
       "id":77,
       "name":"Empress He","faction":0,
+      "wiki":"Empress_He_(Ling)",
       "note":"Mother of Liu Bian (Emperor Shao)."
     },
     {
       "id":78,
       "name":"Emperor Shao","faction":0,
+      "wiki":"Emperor_Shao_of_Han",
       "note":"Liu Bian."
     },
     {
@@ -414,7 +423,8 @@
     },
     {
       "id":80,
-      "name":"Empress Dong","faction":0
+      "name":"Empress Dong","faction":0,
+      "wiki":"Empress_Dowager_Dong"
     },
     {
       "id":81,
