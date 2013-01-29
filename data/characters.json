@@ -733,22 +733,26 @@
     },
     {
       "id":141,
-      "name":"Zhang Miao","faction":99,
+      "name":"Zhang Miao","style":"Menzhuo","faction":99,
+      "wiki":"Zhang_Miao",
       "note":"Governor of Chenliu. Joined the alliance against Dong Zhuo. Allied with Lü Bu for a time, but was defeated by Cao Cao and went over to Yuan Shu."
     },
     {
       "id":142,
       "name":"Qiao Mao","faction":99,
+      "wiki":"Qiao_Mao",
       "note":"Governor of Dongjun. Joined the alliance against Dong Zhuo."
     },
     {
       "id":143,
       "name":"Yuan Yi","faction":99,
+      "wiki":"Yuan_Yi_(Han_Dynasty)",
       "note":"Governor of Shanyang. Joined the alliance against Dong Zhuo."
     },
     {
       "id":144,
       "name":"Kong Rong","style":"Wenju","faction":14,
+      "wiki":"Kong_Rong",
       "note":"Governor of Beihai. Joined the alliance against Dong Zhuo. A descendant of Confucius."
     },
     {
@@ -759,29 +763,35 @@
     {
       "id":146,
       "name":"Tao Qian","style":"Gongzu","faction":15,
+      "wiki":"Tao_Qian_(Han_Dynasty)",
       "note":"Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo. Cao Cao's father Cao Song was murdered by Tao Qian's officer Zhang Kai, giving Cao Cao cause to invade. Died of illness during the invasion, leaving his territory to Liu Bei."
     },
     {
       "id":147,
-      "name":"Ma Teng","faction":16,
+      "name":"Ma Teng","style":"Shoucheng","faction":16,
+      "wiki":"Ma_Teng",
       "note":"Governor of Xiliang. Joined the alliance against Dong Zhuo. Appointed Conqueror of the West by Emperor Xian."
     },
     {
       "id":148,
-      "name":"Zhang Yang","faction":17,
+      "name":"Zhang Yang","style":"Zhishu","faction":17,
+      "wiki":"Zhang_Yang_(warlord)",
       "note":"Governor of Shangdang. Joined the alliance against Dong Zhuo."
     },
     {
       "id":149,
-      "name":"Hua Xiong","faction":6
+      "name":"Hua Xiong","faction":6,
+      "wiki":"Hua_Xiong"
     },
     {
       "id":150,
-      "name":"Hu Zhen","faction":6
+      "name":"Hu Zhen","style":"Wencai","faction":6,
+      "wiki":"Hu_Zhen"
     },
     {
       "id":151,
-      "name":"Zhao Cen","faction":6
+      "name":"Zhao Cen","faction":6,
+      "wiki":"Zhao_Cen"
     },
     {
       "id":152,
@@ -789,19 +799,23 @@
     },
     {
       "id":153,
-      "name":"Cheng Pu","style":"Demou","faction":7
+      "name":"Cheng Pu","style":"Demou","faction":7,
+      "wiki":"Cheng_Pu"
     },
     {
       "id":154,
-      "name":"Huang Gai","style":"Gongfu","faction":7
+      "name":"Huang Gai","style":"Gongfu","faction":7,
+      "wiki":"Huang_Gai"
     },
     {
       "id":155,
-      "name":"Han Dang","style":"Yigong","faction":7
+      "name":"Han Dang","style":"Yigong","faction":7,
+      "wiki":"Han_Dang"
     },
     {
       "id":156,
       "name":"Zu Mao","style":"Darong","faction":7,
+      "wiki":"Zu_Mao",
       "note":"His style name is given by the novel, and was not recorded historically."
     },
     {
@@ -810,16 +824,19 @@
     },
     {
       "id":158,
-      "name":"Pan Feng","faction":11
+      "name":"Pan Feng","faction":11,
+      "wiki":"Pan_Feng"
     },
     {
       "id":159,
       "name":"Yan Liang","faction":8,
+      "wiki":"Yan_Liang",
       "note":"One of Yuan Shao's most powerful generals, along with Wen Chou. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
       "id":160,
       "name":"Wen Chou","faction":8,
+      "wiki":"Wen_Chou",
       "note":"One of Yuan Shao's most powerful generals, along with Yan Liang. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
