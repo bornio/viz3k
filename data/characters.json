@@ -841,15 +841,18 @@
     },
     {
       "id":161,
-      "name":"Fang Yue","faction":99
+      "name":"Fang Yue","faction":99,
+      "wiki":"Fang_Yue"
     },
     {
       "id":162,
-      "name":"Mu Shun","faction":17
+      "name":"Mu Shun","faction":17,
+      "wiki":"Mu_Shun_(general)"
     },
     {
       "id":163,
-      "name":"Wu Anguo","faction":14
+      "name":"Wu Anguo","faction":14,
+      "wiki":"Wu_Anguo"
     },
     {
       "id":164,
@@ -859,12 +862,14 @@
     {
       "id":165,
       "name":"Xun Shuang","faction":0,
-      "note":"Minister of Works during Dong Zhuo's occupation."
+      "note":"Minister of Works during Dong Zhuo's occupation.",
+      "wiki":"Xun_Shuang"
     },
     {
       "id":166,
       "name":"Xu Rong","faction":6,
-      "note":"Governor of Yingyang under Dong Zhuo."
+      "note":"Governor of Yingyang under Dong Zhuo.",
+      "wiki":"Xu_Rong_(general)"
     },
     {
       "id":167,
@@ -878,17 +883,20 @@
     {
       "id":169,
       "name":"The First Emperor","faction":99,
-      "note":"Qin Shi Huang, personal name Zhao Zheng. Unified China under the Qin Dynasty."
+      "note":"Qin Shi Huang, personal name Zhao Zheng. Unified China under the Qin Dynasty.",
+      "wiki":"Qin_Shi_Huang"
     },
     {
       "id":170,
       "name":"Li Si","faction":99,
-      "note":"Prime minister of Qin Shi Huang, the First Emperor."
+      "note":"Prime minister of Qin Shi Huang, the First Emperor.",
+      "wiki":"Li_Si"
     },
     {
       "id":171,
       "name":"Ziying","faction":99,
-      "note":"Last ruler of Qin."
+      "note":"Last ruler of Qin.",
+      "wiki":"Ziying"
     },
     {
       "id":172,
@@ -903,7 +911,8 @@
     {
       "id":174,
       "name":"Liu Biao","faction":18,
-      "note":"Imperial inspector of Jingzhou. One of the Eight Paragons of Jiangxia."
+      "note":"Imperial inspector of Jingzhou. One of the Eight Paragons of Jiangxia.",
+      "wiki":"Liu_Biao"
     },
     {
       "id":175,
@@ -942,15 +951,19 @@
     },
     {
       "id":182,
-      "name":"Kuai Liang","faction":18
+      "name":"Kuai Liang","faction":18,
+      "wiki":"Kuai_Liang"
     },
     {
       "id":183,
-      "name":"Kuai Yue","faction":18
+      "name":"Kuai Yue","faction":18,
+      "wiki":"Kuai_Yue",
+      "note":"Younger brother of Kuai Liang."
     },
     {
       "id":184,
       "name":"Cai Mao","faction":18,
+      "wiki":"Cai_Mao",
       "note":"Naval officer under Liu Biao who surrendered to Cao Cao."
     },
     {
@@ -966,62 +979,76 @@
     {
       "id":187,
       "name":"Xin Ping","faction":11,
+      "wiki":"Xin_Ping",
       "note":"Advisor to Han Fu."
     },
     {
       "id":188,
-      "name":"Guan Chun","faction":11
+      "name":"Guan Chun","faction":11,
+      "wiki":"Guan_Chun"
     },
     {
       "id":189,
-      "name":"Geng Wu","faction":11
+      "name":"Geng Wu","faction":11,
+      "wiki":"Geng_Wu"
     },
     {
       "id":190,
-      "name":"Tian Feng","faction":8
+      "name":"Tian Feng","style":"Yuanhao","faction":8,
+      "wiki":"Tian_Feng"
     },
     {
       "id":191,
-      "name":"Ju Shou","faction":8
+      "name":"Ju Shou","faction":8,
+      "wiki":"Ju_Shou"
     },
     {
       "id":192,
-      "name":"Xu You","faction":8,
+      "name":"Xu You","style":"Ziyuan","faction":8,
+      "wiki":"Xu_You",
       "note":"Advisor to Yuan Shao. Defected to Cao Cao at the battle of Guandu."
     },
     {
       "id":193,
       "name":"Gongsun Yue","faction":4,
+      "wiki":"Gongsun_Yue",
       "note":"Brother of Gongsun zan."
     },
     {
       "id":194,
-      "name":"Zhao Yun","style":"Zilong","faction":3
+      "name":"Zhao Yun","style":"Zilong","faction":3,
+      "wiki":"Zhao_Yun"
     },
     {
       "id":195,
-      "name":"Qu Yi","faction":8
+      "name":"Qu Yi","faction":8,
+      "wiki":"Qu_Yi"
     },
     {
       "id":196,
-      "name":"Yan Gang","faction":4
+      "name":"Yan Gang","faction":4,
+      "wiki":"Yan_Gang"
     },
     {
       "id":197,
       "name":"Ma Midi","faction":0,
+      "wiki":"Ma_Midi",
       "note":"Imperial Guardian of the Han court during Dong Zhuo's usurpation."
     },
     {
       "id":198,
-      "name":"Zhao Qi","faction":6
+      "name":"Zhao Qi","faction":0,
+      "wiki":"Zhao_Qi_(Han_Dynasty)"
     },
     {
       "id":199,
-      "name":"Huang Zu","faction":18
+      "name":"Huang Zu","faction":18,
+      "wiki":"Huang_Zu"
     },
     {
       "id":200,
       "name":"Lady Wu","faction":7,
+      "wiki":"Lady_Wu",
       "note":"Wife of Sun Jian. Mother of Sun Ce, Sun Quan, Sun Yi, and Sun Kuang."
     },
     {
