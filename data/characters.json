@@ -1054,46 +1054,54 @@
     {
       "id":201,
       "name":"Sun Ce","style":"Bofu","faction":7,
+      "wiki":"Sun_Ce",
       "note":"Eldest son of Sun Jian."
     },
     {
       "id":202,
       "name":"Sun Quan","style":"Zhongmou","faction":7,
+      "wiki":"Sun_Quan",
       "note":"Second son of Sun Jian. Founder of Wu."
     },
     {
       "id":203,
       "name":"Sun Yi","style":"Shubi","faction":7,
+      "wiki":"Sun_Yi",
       "note":"Third son of Sun Jian."
     },
     {
       "id":204,
       "name":"Sun Kuang","style":"Jizuo","faction":7,
+      "wiki":"Sun_Kuang",
       "note":"Fourth son of Sun Jian."
     },
     {
       "id":205,
-      "name":"Lady Wu's sister","faction":7,
-      "note":"Second wife of Sun Jian. Mother of Sun Lang and Sun Ren (Sun Shangxiang)."
+      "name":"Wu Guotai","faction":7,
+      "note":"Fictional second wife of Sun Jian. Mother of Sun Lang and Sun Ren (Sun Shangxiang)."
     },
     {
       "id":206,
       "name":"Sun Lang","style":"Zao'an","faction":7,
+      "wiki":"Sun_Lang",
       "note":"Son of Sun Jian by his second wife."
     },
     {
       "id":207,
       "name":"Sun Shangxiang","faction":7,
+      "wiki":"Lady_Sun",
       "note":"Daughter of Sun Jian by his second wife. Also known as Lady Sun or Sun Ren."
     },
     {
       "id":208,
       "name":"Sun Shao","style":"Gongli","faction":7,
+      "wiki":"Sun_Shao_(general)",
       "note":"Adopted son of Sun Jian."
     },
     {
       "id":209,
       "name":"Sun Jing","style":"Youtai","faction":7,
+      "wiki":"Sun_Jing",
       "note":"Younger brother of Sun Jian."
     },
     {
@@ -1107,15 +1115,18 @@
     {
       "id":212,
       "name":"Lady Cai","faction":18,
+      "wiki":"Lady_Cai",
       "note":"Second wife of Liu Biao. Sister of Cai Mao."
     },
     {
       "id":213,
-      "name":"Lü Gong","faction":18
+      "name":"Lü Gong","faction":18,
+      "wiki":"Lü_Gong"
     },
     {
       "id":214,
-      "name":"Huan Jie","faction":7,
+      "name":"Huan Jie","style":"Boxu","faction":7,
+      "wiki":"Huan_Jie",
       "note":"Retrieved Sun Jian's body from Liu Biao in exchange for the prisoner Huang Zu."
     },
     {
@@ -1126,26 +1137,31 @@
     {
       "id":216,
       "name":"Zhang Wen","faction":0,
+      "wiki":"Zhang_Wen_(Han_Dynasty)",
       "note":"Minister of Public Works during Dong Zhuo's usurpation."
     },
     {
       "id":217,
       "name":"Diaochan","faction":10,
+      "wiki":"Diaochan",
       "note":"Also written as Diao Chan. Daughter of Wang Yun."
     },
     {
       "id":218,
       "name":"Yi Yin","faction":99,
+      "wiki":"Yi_Yin",
       "note":"Preceptor of the Shang dynasty."
     },
     {
       "id":219,
       "name":"Zhougong","faction":99,
+      "wiki":"Zhougong",
       "note":"Duke of Zhou. Regent for the child emperor Chengwang."
     },
     {
       "id":220,
-      "name":"King Zhuang of Chu","faction":99
+      "name":"King Zhuang of Chu","faction":99,
+      "wiki":"King_Zhuang_of_Chu"
     },
     {
       "id":221,
