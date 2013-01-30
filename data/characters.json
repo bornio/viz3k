@@ -1332,16 +1332,19 @@
     {
       "id":251,
       "name":"Dian Wei","faction":5,
+      "wiki":"Dian_Wei",
       "note":"An officer of Cao Cao. A large man of great strength who previously had served Zhang Miao. Wielded dual steel spears."
     },
     {
       "id":252,
       "name":"Elai","faction":99,
+      "wiki":"Elai",
       "note":"An officer of the Shang dynasty whose strength was legendary."
     },
     {
       "id":253,
       "name":"Ying Shao","faction":5,
+      "wiki":"Ying_Shao",
       "note":"Governor of Taishan. Sent by Cao Cao to bring back his father Cao Song."
     },
     {
@@ -1361,36 +1364,43 @@
     },
     {
       "id":257,
-      "name":"Cao Bao","faction":15
+      "name":"Cao Bao","faction":15,
+      "wiki":"Cao_Bao_(died_196)"
     },
     {
       "id":258,
       "name":"Mi Zhu","style":"Zizhong","faction":3,
+      "wiki":"Mi_Zhu",
       "note":"Officer of Tao Qian, who entered Liu Bei's service when Liu accepted Tao's invitation to take over Xuzhou."
     },
     {
       "id":259,
       "name":"Tian Kai","faction":4,
+      "wiki":"Tian_Kai",
       "note":"Imperial inspector of Qingzhou."
     },
     {
       "id":260,
       "name":"Chen Deng","style":"Yuanlong","faction":3,
+      "wiki":"Chen_Deng",
       "note":"Officer of Tao Qian who joined Liu Bei after Tao's death."
     },
     {
       "id":261,
       "name":"Confucius","style":"Zhongni","faction":99,
+      "wiki":"Confucius",
       "note":"Kong Qiu. Ancient Chinese philosopher. Confucius is his latinized name. He was an ancestor of Kong Rong."
     },
     {
       "id":262,
       "name":"Li Ying","faction":0,
+      "wiki":"Li_Ying_(Eastern_Han)",
       "note":"Governor of Henan during the time that Kong Rong was a child."
     },
     {
       "id":263,
       "name":"Laozi","faction":99,
+      "wiki":"Laozi",
       "note":"Ancient philosopher. Considered the founder of Daoism."
     },
     {
@@ -1401,6 +1411,7 @@
     {
       "id":265,
       "name":"Guan Hai","faction":1,
+      "wiki":"Guan_Hai",
       "note":"Yellow Turban commander, active in the area of Beihai while Kong Rong was governor. Killed by Guan Yu."
     },
     {
@@ -1411,16 +1422,19 @@
     {
       "id":267,
       "name":"Taishi Ci","style":"Ziyi","faction":7,
+      "wiki":"Taishi_Ci",
       "note":"Officer of Wu. Came to Kong Rong's assistance when Beihai was besieged by Yellow Turbans, then served Liu Yao until he was captured by Sun Ce. Thereafter he served Sun Ce, and subsequently Sun Quan."
     },
     {
       "id":268,
       "name":"Liu Yao","style":"Zhengli","faction":20,
+      "wiki":"Liu_Yao_(warlord)",
       "note":"Governor of Yangzhou. Younger brother of Liu Dai."
     },
     {
       "id":269,
       "name":"Zhang Yan","faction":99,
+      "wiki":"Zhang_Yan_(Han_Dynasty)",
       "note":"Leader of the Heishan bandits. Defeated in Changshan by Lü Bu, who was working for Yuan Shao at the time."
     },
     {
@@ -1431,32 +1445,32 @@
     {
       "id":271,
       "name":"Zhang Chao","faction":0,
+      "wiki":"Zhang_Chao",
       "note":"Brother of Zhang Miao. Introduced Cheng Gong to his brother."
     },
     {
       "id":272,
-      "name":"Xue Lan","faction":10,
-      "note":"Officer of Lü Bu."
+      "name":"Xue Lan","faction":10
     },
     {
       "id":273,
-      "name":"Li Feng","faction":10,
-      "note":"Officer of Lü Bu."
+      "name":"Li Feng","faction":10
     },
     {
       "id":274,
       "name":"Zhang Liao","style":"Wenyuan","faction":5,
+      "wiki":"Zhang_Liao",
       "note":"Officer of Lü Bu who was recruited by Cao Cao after Lü Bu was defeated at the Battle of Xiapi."
     },
     {
       "id":275,
       "name":"Hao Meng","faction":10,
-      "note":"Officer of Lü Bu."
+      "wiki":"Hao_Meng"
     },
     {
       "id":276,
       "name":"Cao Xing","faction":10,
-      "note":"Officer of Lü Bu."
+      "wiki":"Cao_Xing"
     },
     {
       "id":277,
@@ -1466,17 +1480,17 @@
     {
       "id":278,
       "name":"Zang Ba","style":"Xuangao","faction":10,
-      "note":"Officer of Lü Bu."
+      "wiki":"Zang_Ba"
     },
     {
       "id":279,
       "name":"Wei Xu","faction":10,
-      "note":"Officer of Lü Bu."
+      "wiki":"Wei_Xu"
     },
     {
       "id":280,
       "name":"Song Xian","faction":10,
-      "note":"Officer of Lü Bu."
+      "wiki":"Song_Xian"
     },
     {
       "id":281,
