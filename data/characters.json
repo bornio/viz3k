@@ -123,7 +123,7 @@
     },
     {
       "id":21,
-      "name":"Zhang Liang","faction":1,
+      "name":"Zhang Liang (1)","faction":1,
       "wiki":"Zhang_Liang_(Yellow_Turban)"
     },
     {
@@ -1185,36 +1185,43 @@
     {
       "id":225,
       "name":"Sima Qian","faction":0,
+      "wiki":"Sima_Qian",
       "note":"Author of the Records of the Grand Historian."
     },
     {
       "id":226,
       "name":"Zhuge Liang","style":"Kongming","faction":3,
+      "wiki":"Zhuge_Liang",
       "note":"Brilliant strategist of Shu."
     },
     {
       "id":227,
       "name":"Jia Xu","style":"Wenhe","faction":5,
+      "wiki":"Jia_Xu",
       "note":"Advisor to Dong Zhuo's remnants under Li Jue and Guo Si, but turned against them to serve Emperor Xian."
     },
     {
       "id":228,
       "name":"Hu Chi'er","faction":6,
+      "wiki":"Hu_Chi%27er",
       "note":"Officer of Niu Fu. Murdered Niu Fu and presented his head to Lü Bu, but was executed when Lü Bu learned of his treachery."
     },
     {
       "id":229,
       "name":"Peng Yue","faction":0,
+      "wiki":"Peng_Yue",
       "note":"General of Liu Bang who fought Chu using reverse signaling tactics -- advancing at the gong and retreating at the drum."
     },
     {
       "id":230,
       "name":"Li Meng","faction":6,
+      "wiki":"Li_Meng",
       "note":"After Dong Zhuo's death, he and Wang Fang opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces. Captured by Ma Chao after failing to heed Jia Xu's advice."
     },
     {
       "id":231,
       "name":"Wang Fang","faction":6,
+      "wiki":"Wang_Fang_(Three_Kingdoms)",
       "note":"After Dong Zhuo's death, he and Li Meng opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces. Killed in battle by Ma Chao after failing to heed Jia Xu's advice."
     },
     {
@@ -1239,7 +1246,8 @@
     },
     {
       "id":236,
-      "name":"Han Sui","faction":19,
+      "name":"Han Sui","style":"Wenyue","faction":19,
+      "wiki":"Han_Sui",
       "note":"Imperial inspector of Bingzhou. Ally of Ma Teng. Appointed Queller of the West by Emperor Xian."
     },
     {
@@ -1260,11 +1268,13 @@
     {
       "id":240,
       "name":"Ma Chao","style":"Mengqi","faction":16,
+      "wiki":"Ma_Chao",
       "note":"Son of Ma Teng. After Ma Teng's death, served Zhang Lu. Submitted to Liu Bei after two inconclusive duels with Zhang Fei."
     },
     {
       "id":241,
       "name":"Xun Yu","style":"Wenruo","faction":5,
+      "wiki":"Xun_Yu",
       "note":"Son of Xun Gun. Uncle of Xun You. First served Yuan Shao before becoming Cao Cao's chief advisor."
     },
     {
@@ -1274,27 +1284,32 @@
     },
     {
       "id":243,
-      "name":"Zhang Liang","style":"Zifang","faction":0,
+      "name":"Zhang Liang (2)","style":"Zifang","faction":0,
+      "wiki":"Zhang_Liang_(Western_Han)",
       "note":"Advisor to Emperor Gao. Cao Cao referred to Xun Yu as his Zifang."
     },
     {
       "id":244,
       "name":"Cheng Yu","style":"Zhongde","faction":5,
+      "wiki":"Cheng_Yu",
       "note":"Advisor of Cao Cao, recommended by Xun Yu."
     },
     {
       "id":245,
       "name":"Guo Jia","style":"Fengxiao","faction":5,
+      "wiki":"Guo_Jia",
       "note":"Advisor of Cao Cao, recommended by Cheng Yu and Xun Yu."
     },
     {
       "id":246,
       "name":"Liu Ye","style":"Ziyang","faction":5,
+      "wiki":"Liu_Ye_(Three_Kingdoms)",
       "note":"An officer of Cao Cao, recommended by Guo Jia. Descendant of the imperial family."
     },
     {
       "id":247,
       "name":"Man Chong","style":"Boning","faction":5,
+      "wiki":"Man_Chong",
       "note":"An officer of Cao Cao."
     },
     {
@@ -1305,11 +1320,13 @@
     {
       "id":249,
       "name":"Mao Jie","style":"Xiaoxian","faction":5,
+      "wiki":"Mao_Jie",
       "note":"An officer of Cao Cao."
     },
     {
       "id":250,
       "name":"Yu Jin","style":"Wenze","faction":5,
+      "wiki":"Yu_Jin",
       "note":"An officer of Cao Cao known for his archery skills."
     },
     {
