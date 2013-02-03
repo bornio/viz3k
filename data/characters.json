@@ -2154,232 +2154,225 @@
     },
     {
       "id": 329,
-      "name": "Cao Bao",
-      "faction": 10,
-      "wiki": "Cao_Bao_(died_196)",
-      "note": "A relative of Lü Bu. After being beaten by Zhang Fei for refusing to drink alcohol, he conspired with Lü Bu to mount a surprise attack on Xuzhou. Though the attack was successful, Cao Bao was killed by Zhang Fei."
-    },
-    {
-      "id": 330,
       "name": "Lady Gan",
       "faction": 3,
       "wiki": "Lady_Gan",
       "note": "A wife of Liu Bei."
     },
     {
-      "id": 331,
+      "id": 330,
       "name": "Lady Mi",
       "faction": 3,
       "wiki": "Lady_Mi",
       "note": "A wife of Liu Bei."
     },
     {
-      "id": 332,
+      "id": 331,
       "name": "Lu Kang",
       "faction": 99,
       "wiki": "Lu_Kang_(Jining)"
     },
     {
-      "id": 333,
+      "id": 332,
       "name": "Wu Jing",
       "faction": 7,
       "wiki": "Wu_Jing_(Han_Dynasty)",
       "note": "Brother of Lady Wu."
     },
     {
-      "id": 334,
+      "id": 333,
       "name": "Zu Lang",
       "faction": 99,
       "wiki": "Zu_Lang"
     },
     {
-      "id": 335,
+      "id": 334,
       "name": "Zhu Zhi",
       "style": "Junli",
       "faction": 7,
       "wiki": "Zhu_Zhi"
     },
     {
-      "id": 336,
+      "id": 335,
       "name": "Lü Fan",
       "style": "Ziheng",
       "faction": 7,
       "wiki": "Lü_Fan"
     },
     {
-      "id": 337,
+      "id": 336,
       "name": "Zhou Yu",
       "style": "Gongjin",
       "faction": 7,
       "wiki": "Zhou_Yu"
     },
     {
-      "id": 338,
+      "id": 337,
       "name": "Zhou Shang",
       "faction": 7,
       "note": "Governor of Danyang. Uncle of Zhou Yu."
     },
     {
-      "id": 339,
+      "id": 338,
       "name": "Zhang Zhao",
       "style": "Zibu",
       "faction": 7,
       "wiki": "Zhang_Zhao"
     },
     {
-      "id": 340,
+      "id": 339,
       "name": "Zhang Hong",
       "style": "Ziwang",
       "faction": 7,
       "wiki": "Zhang_Hong"
     },
     {
-      "id": 341,
+      "id": 340,
       "name": "Liu Chong",
       "faction": 0,
       "note": "Grand Commandant of the Han. Uncle of Liu Yao and Liu Dai."
     },
     {
-      "id": 342,
+      "id": 341,
       "name": "Zhang Ying",
       "faction": 20,
       "wiki": "Zhang_Ying_(Han_Dynasty)"
     },
     {
-      "id": 343,
+      "id": 342,
       "name": "Jiang Qin",
       "style": "Gongyi",
       "faction": 7,
       "wiki": "Jiang_Qin"
     },
     {
-      "id": 344,
+      "id": 343,
       "name": "Zhou Tai",
       "style": "Youping",
       "faction": 7,
       "wiki": "Zhou_Tai"
     },
     {
-      "id": 345,
+      "id": 344,
       "name": "Chen Wu",
       "style": "Zilie",
       "faction": 7,
       "wiki": "Chen_Wu_(Han_Dynasty)"
     },
     {
-      "id": 346,
+      "id": 345,
       "name": "Xue Li",
       "faction": 20,
       "wiki": "Xue_Li_(Han_Dynasty)"
     },
     {
-      "id": 347,
+      "id": 346,
       "name": "Ze Rong",
       "faction": 20,
       "wiki": "Ze_Rong"
     },
     {
-      "id": 348,
+      "id": 347,
       "name": "Yu Mi",
       "faction": 20,
       "wiki": "Yu_Mi"
     },
     {
-      "id": 349,
+      "id": 348,
       "name": "Fan Neng",
       "faction": 20,
       "wiki": "Fan_Neng"
     },
     {
-      "id": 350,
+      "id": 349,
       "name": "Cheng Heng",
       "faction": 20
     },
     {
-      "id": 351,
+      "id": 350,
       "name": "Yan Baihu",
       "faction": 21,
       "wiki": "Yan_Baihu",
       "note": "Killed by Dong Xi."
     },
     {
-      "id": 352,
+      "id": 351,
       "name": "Yan Yu",
       "faction": 21,
       "wiki": "Yan_Yu_(Yan_Baihu%27s_brother)",
       "note": "Younger brother of Yan Baihu."
     },
     {
-      "id": 353,
+      "id": 352,
       "name": "Ling Cao",
       "faction": 7,
       "wiki": "Ling_Cao"
     },
     {
-      "id": 354,
+      "id": 353,
       "name": "Ling Tong",
       "faction": 7,
       "wiki": "Ling_Tong"
     },
     {
-      "id": 355,
+      "id": 354,
       "name": "Wang Lang",
       "faction": 22,
       "wiki": "Wang_Lang"
     },
     {
-      "id": 356,
+      "id": 355,
       "name": "Yu Fan",
       "style": "Zhongxiang",
       "faction": 7,
       "wiki": "Yu_Fan"
     },
     {
-      "id": 357,
+      "id": 356,
       "name": "Zhou Xin",
       "faction": 22,
       "wiki": "Zhou_Xin_(Han_Dynasty)",
       "note": "Killed by Sun Ce."
     },
     {
-      "id": 358,
+      "id": 357,
       "name": "Dong Xi",
       "style": "Yuandai",
       "faction": 7,
       "wiki": "Dong_Xi"
     },
     {
-      "id": 359,
+      "id": 358,
       "name": "Hua Tuo",
       "style": "Yuanhua",
       "faction": 99,
       "wiki": "Hua_Tuo"
     },
     {
-      "id": 360,
+      "id": 359,
       "name": "Yang Dajiang",
       "faction": 9
     },
     {
-      "id": 361,
+      "id": 360,
       "name": "Zhang Xun",
       "faction": 9,
       "wiki": "Zhang_Xun_(Yuan_Shu_general)"
     },
     {
-      "id": 362,
+      "id": 361,
       "name": "Qiao Rui",
       "faction": 9,
       "wiki": "Qiao_Rui"
     },
     {
-      "id": 363,
+      "id": 362,
       "name": "Lei Bo",
       "faction": 9,
       "wiki": "Lei_Bo"
     },
     {
-      "id": 364,
+      "id": 363,
       "name": "Chen Lan",
       "faction": 9,
       "wiki": "Chen_Lan_(Han_Dynasty)"
