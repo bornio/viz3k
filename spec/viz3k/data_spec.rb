@@ -51,6 +51,14 @@ describe "data" do
       end
     end
 
+    it "should not contain more than one person with the same name" do
+      names = []
+      @people.people.each do |person|
+        names.should_not include(person.name)
+        names.push(person.name)
+      end
+    end
+
     it "should have only contiguous ids starting from 0, i.e. {0,1,2,...,num_ids-1}" do
       ids = @people.people.map{|person| person.id}
       ids.sort!()
