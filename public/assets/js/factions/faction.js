@@ -9,8 +9,6 @@ function Faction($scope, $http)
 
   var populate_faction_info = function(faction)
   {
-    $scope.faction = faction;
-
     // this is so we don't momentarily see "()" by itself before the text loads asynchronously
     $scope.faction_type = "(" + faction.type + ")";
     $scope.faction_links = [];
@@ -18,6 +16,47 @@ function Faction($scope, $http)
     {
       $scope.faction_links.push({text:"wiki",href:faction.wiki});
     }
+
+    // add per-chapter stats to each faction
+    var populate_timeline = function(chapters_data)
+    {
+      chapters = chapters_data.chapters;
+      var factions = new Array();
+
+      // see what the max number of distinct characters to appear in any chapter is
+      for (var c = 0; c < chapters.length; c++)
+      {
+        if (chapters[c].people.length > max_people)
+        {
+          max_people = chapters[c].people.length;
+        }
+      }
+
+      faction.chapters = new Array(chapters.length);
+
+      // find out how many of this faction's members turn up in each chapter
+      var max_people = 0;
+      for (var c = 0; c < chapters.length; c++)
+      {
+        var chapter = chapters[c];
+        faction.chapters[c] = count_in_faction(faction, chapter.people);
+        if (faction.chapters[c] > max_people)
+        {
+          max_people = faction.chapters[c];
+        }
+      }
+
+      factions.push(faction);
+      
+      // display a stacked bar chart of faction appearances per chapter
+      appearance_timeline("chart-appearances", factions, chapters, max_people);
+
+      // assign data to the scope
+      $scope.faction = faction;
+    }
+
+    // issue an http get to grab the chapters info for the faction appearance timeline
+    $http.get("/data/chapters").success(populate_timeline);
   }
 
   var populate_member_info = function(members)
@@ -44,27 +83,17 @@ function Faction($scope, $http)
   $http.get("/data/factions/" + faction_num + "/members").success(populate_member_info);
 }
 
-function factions_sort_by_size(factions)
+function count_in_faction(faction, people_ids)
 {
-  var sorted = factions.slice();
-  sorted.sort(function(a,b)
+  var member_count = 0;
+  for (var p = 0; p < people_ids.length; p++)
   {
-    // use alphabetical name sorting as tie-breaker
-    if (b.members.length == a.members.length)
+    var person_id = people_ids[p];
+    if (faction.members.indexOf(person_id) >= 0)
     {
-      if (a.name < b.name)
-      {
-        return -1;
-      }
-      else if (a.name > b.name)
-      {
-        return 1;
-      }
-      return 0;          
+      member_count += 1;
     }
+  }
 
-    return b.members.length - a.members.length;
-  });
-
-  return sorted;
+  return member_count;
 }

@@ -11,6 +11,8 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
     <!-- styling for this page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/factions.css"/>
+    <!-- styling for charts -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/charts/appearance_timeline.css"/>
   </head>
   <body ng-controller="Factions">
     <!-- include the navbar at the top -->
@@ -68,9 +70,9 @@
       <hr>
       <div class="row">
         <div id="stats-area" class="span12">
-          <h5>Timeline of faction appearances <span class="muted">(by chapter)</span></h5>
+          <h5>Faction appearances <span class="muted">(by chapter)</span></h5>
           <div class="well well-small">
-            <div id="chart-appearances"></div>
+            <div id="chart-appearances" class="appearance-timeline"></div>
             <small class="muted">Click anywhere on the chart to jump to a chapter.</small>
           </div>
         </div>
@@ -91,5 +93,8 @@
 
     <!-- controller for this view -->
     <script type="text/javascript" src="/assets/js/factions.js"></script>
+
+    <!-- charts used by this view -->
+    <script type="text/javascript" src="/assets/js/charts/appearance_timeline.js"></script>
   </body>
 </html>

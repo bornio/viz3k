@@ -9,6 +9,8 @@
     <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
     <!-- styling common to all pages except splash page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
+    <!-- styling for charts -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/charts/appearance_timeline.css"/>
   </head>
   <body>
     <!-- include the navbar at the top -->
@@ -61,6 +63,18 @@
         </table>
       </div>
 
+      <!-- info and stats down here -->
+      <hr>
+      <div class="row">
+        <div id="stats-area" class="span12">
+          <h5>Faction appearances <span class="muted">(by chapter)</span></h5>
+          <div class="well well-small">
+            <div id="chart-appearances" class="appearance-timeline"></div>
+            <small class="muted">Click anywhere on the chart to jump to a chapter.</small>
+          </div>
+        </div>
+      </div>
+
       <hr>
       <footer>
       </footer>
@@ -69,11 +83,15 @@
     <!-- load javascripts last for speed -->
 
     <!-- third party javascript -->
+    <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
 
     <!-- controller for this view -->
     <script type="text/javascript" src="/assets/js/factions/faction.js"></script>
+
+    <!-- charts used by this view -->
+    <script type="text/javascript" src="/assets/js/charts/appearance_timeline.js"></script>
   </body>
 </html>
