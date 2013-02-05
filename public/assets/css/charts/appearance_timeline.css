@@ -1,4 +1,18 @@
 div.appearance-timeline {
-  height: 80px;
-  border-bottom:1px solid #aaaaaa;
+  height: 90px;
+}
+
+.appearance-timeline-label {
+  padding-left: 24px;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #aaaaaa;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 9px;
+    fill: #aaaaaa;
 }
