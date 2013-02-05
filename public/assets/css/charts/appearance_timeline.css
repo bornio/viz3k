@@ -8,11 +8,11 @@ div.appearance-timeline {
 
 .axis path, .axis line {
   fill: none;
-  stroke: #aaaaaa;
+  stroke: #999999;
   shape-rendering: crispEdges;
 }
 
 .axis text {
     font-size: 9px;
-    fill: #aaaaaa;
+    fill: #999999;
 }
