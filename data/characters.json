@@ -1465,7 +1465,7 @@
       "style": "Wenhe",
       "faction": 5,
       "wiki": "Jia_Xu",
-      "note": "Advisor to Dong Zhuo's remnants under Li Jue and Guo Si, but turned against them to serve Emperor Xian."
+      "note": "Advisor to Dong Zhuo's remnants under Li Jue and Guo Si, but turned against them to serve Emperor Xian. Later advised Zhang Xiu to surrender to Cao Cao."
     },
     {
       "id": 225,
@@ -1597,30 +1597,27 @@
       "style": "Ziyang",
       "faction": 5,
       "wiki": "Liu_Ye_(Three_Kingdoms)",
-      "note": "An officer of Cao Cao, recommended by Guo Jia. Descendant of the imperial family."
+      "note": "Recommended by Guo Jia. Descendant of the imperial family."
     },
     {
       "id": 244,
       "name": "Man Chong",
       "style": "Boning",
       "faction": 5,
-      "wiki": "Man_Chong",
-      "note": "An officer of Cao Cao."
+      "wiki": "Man_Chong"
     },
     {
       "id": 245,
       "name": "Lü Qian",
       "style": "Zike",
-      "faction": 5,
-      "note": "An officer of Cao Cao."
+      "faction": 5
     },
     {
       "id": 246,
       "name": "Mao Jie",
       "style": "Xiaoxian",
       "faction": 5,
-      "wiki": "Mao_Jie",
-      "note": "An officer of Cao Cao."
+      "wiki": "Mao_Jie"
     },
     {
       "id": 247,
@@ -1635,7 +1632,7 @@
       "name": "Dian Wei",
       "faction": 5,
       "wiki": "Dian_Wei",
-      "note": "An officer of Cao Cao. A large man of great strength who previously had served Zhang Miao. Wielded dual steel spears."
+      "note": "A large man of great strength who previously had served Zhang Miao. Wielded dual steel spears."
     },
     {
       "id": 249,
@@ -1899,7 +1896,7 @@
     },
     {
       "id": 288,
-      "name": "Lü Bu's daughter",
+      "name": "Lü Lingqi",
       "faction": 10,
       "wiki": "Lü_Lingqi",
       "note": "The novel does not mention her name. In the Koei games she is called Lü Lingqi."
@@ -2360,6 +2357,99 @@
       "name": "Chen Lan",
       "faction": 9,
       "wiki": "Chen_Lan_(Han_Dynasty)"
+    },
+    {
+      "id": 361,
+      "name": "Han Yin",
+      "faction": 9,
+      "wiki": "Han_Yin",
+      "note": "Yuan Shu's envoy to Lü Bu. Executed by Cao Cao."
+    },
+    {
+      "id": 362,
+      "name": "Yang Youji",
+      "faction": 99,
+      "note": "Famed archer of the state of Chu during the Spring and Autumn Period."
+    },
+    {
+      "id": 363,
+      "name": "Lady Yan",
+      "faction": 10,
+      "note": "First wife of Lü Bu. Mother of Lü Lingqi."
+    },
+    {
+      "id": 364,
+      "name": "Yuan Yao",
+      "faction": 9,
+      "wiki": "Yuan_Yao",
+      "note": "Son of Yuan Shu."
+    },
+    {
+      "id": 365,
+      "name": "Lady Cao",
+      "faction": 10,
+      "note": "Second wife of Lü Bu. Daughter of Cao Bao."
+    },
+    {
+      "id": 366,
+      "name": "Chen Gui",
+      "style": "Hanyu",
+      "faction": 3,
+      "wiki": "Chen_Gui",
+      "note": "Father of Chen Deng."
+    },
+    {
+      "id": 367,
+      "name": "Zhang Xiu",
+      "faction": 23,
+      "wiki": "Zhang_Xiu_(warlord)",
+      "note": "Nephew of Dong Zhuo's general Zhang Ji."
+    },
+    {
+      "id": 368,
+      "name": "Wang Ze",
+      "faction": 5
+    },
+    {
+      "id": 369,
+      "name": "Cao Anmin",
+      "faction": 5,
+      "wiki": "Cao_Anmin",
+      "note": "Nephew of Cao Cao. Died during Zhang Xiu's attempt to assassinate Cao Cao."
+    },
+    {
+      "id": 370,
+      "name": "Lady Zou",
+      "faction": 23
+    },
+    {
+      "id": 371,
+      "name": "Hu Juer",
+      "faction": 23,
+      "wiki": "Huche%27er",
+      "note": "Also written as Huche'er or Hu Che'er."
+    },
+    {
+      "id": 372,
+      "name": "Cao Ang",
+      "faction": 5,
+      "wiki": "Cao_Ang",
+      "note": "Cao Cao's eldest son. Died during Zhang Xiu's attempt to assassinate Cao Cao."
+    },
+    {
+      "id": 373,
+      "name": "Liu Zhang",
+      "style": "Jiyu",
+      "faction": 2,
+      "wiki": "Liu_Zhang_(warlord)",
+      "note": "Son of Liu Yan. Succeeded his father as governor of Yizhou."
+    },
+    {
+      "id": 374,
+      "name": "Zhang Lu",
+      "style": "Gongqi",
+      "faction": 24,
+      "wiki": "Zhang_Lu_(Han_Dynasty)"
     }
   ]
 }

@@ -24,6 +24,8 @@
     {"id":20,"name":"Liu Yao","color":"#00538f","type":"faction"},
     {"id":21,"name":"Yan Baihu","color":"#736441","type":"faction"},
     {"id":22,"name":"Wang Lang","color":"#9d9d9d","type":"faction"},
+    {"id":23,"name":"Zhang Xiu","color":"#ab2b4f","type":"faction"},
+    {"id":24,"name":"Zhang Lu","color":"#a1d487","type":"faction"},
     {"id":99,"name":"Other","color":"#cccccc","type":"faction"}
   ]
 }
