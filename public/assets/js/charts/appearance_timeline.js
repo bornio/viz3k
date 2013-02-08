@@ -5,8 +5,9 @@ function appearance_timeline(element_id, factions, chapters, max_people)
   var svg = d3.select("#" + element_id).append("svg").attr("class", "chart-appearances");
   var svg_height = document.getElementById("chart-appearances").clientHeight;
   var padding_l = 24;
+  var padding_t = 6;
   var padding_b = 6;
-  var max_height = svg_height - padding_b;
+  var max_height = svg_height - padding_t - padding_b;
   var y_range = d3.scale.linear()
     .domain([0, max_people])
     .range([0, max_height]);
@@ -34,7 +35,7 @@ function appearance_timeline(element_id, factions, chapters, max_people)
       .ticks(4)
       .tickSize(2);
   svg.append("g").attr("class", "axis")
-    .attr("transform", "translate(" + padding_l + ",0)")
+    .attr("transform", "translate(" + padding_l + "," + padding_t + ")")
     .call(yaxis);
 
   // create an unlabeled x axis (this should resize in response to window resizing)
@@ -49,7 +50,7 @@ function appearance_timeline(element_id, factions, chapters, max_people)
       .ticks(0)
       .tickSize(0);
   var xaxis_svg = svg.append("g")
-    .attr("class", "axis").attr("transform", "translate(" + padding_l + "," + max_height + ")")
+    .attr("class", "axis").attr("transform", "translate(" + padding_l + "," + (padding_t + max_height) + ")")
     .call(xaxis);
 
   // render or resize the chart as needed
@@ -73,7 +74,7 @@ function appearance_timeline(element_id, factions, chapters, max_people)
     // set or update dimensions of chapter anchors
     anchor_rects
       .attr("x", function(d, i) { return padding_l + bar_width*i; })
-      .attr("y", 0)
+      .attr("y", padding_t)
       .attr("width", bar_width)
       .attr("height", max_height)
       .style("fill-opacity", 0);
@@ -90,7 +91,7 @@ function appearance_timeline(element_id, factions, chapters, max_people)
       }
 
       bars.attr("x", function(d, i) { return padding_l + bar_width*i; })
-          .attr("y", function(d, i) { return y_range_inverted(d) - y_offsets[i]; })
+          .attr("y", function(d, i) { return padding_t + y_range_inverted(d) - y_offsets[i]; })
           .attr("width", bar_width)
           .attr("height", y_range)
           .style("fill", function(d) { return faction.color; });
