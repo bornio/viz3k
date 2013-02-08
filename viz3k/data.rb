@@ -20,9 +20,9 @@ module Viz3k
       begin
         factions_file = File.read(factions_json_path)
         factions_json = JSON.parse(factions_file)
-      rescue Exception => e
+      rescue => e
         # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
-        raise StandardError.new("Could not read factions data file", e)
+        raise StandardError.new("Could not read factions data file : " + e.to_s())
       end
 
       @factions = []
@@ -78,9 +78,9 @@ module Viz3k
       begin
         people_file = File.read(people_json_path)
         people_json = JSON.parse(people_file)
-      rescue Exception => e
+      rescue => e
         # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
-        raise StandardError.new("Could not read characters data file", e)
+        raise StandardError.new("Could not read characters data file : " + e.to_s())
       end
 
       @people = []
@@ -137,9 +137,9 @@ module Viz3k
       begin
         chapters_file = File.read(chapters_json_path)
         chapters_json = JSON.parse(chapters_file)
-      rescue Exception => e
+      rescue => e
         # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
-        raise StandardError.new("Could not read chapters data file", e)
+        raise StandardError.new("Could not read chapters data file : " + e.to_s())
       end
 
       @chapters = []

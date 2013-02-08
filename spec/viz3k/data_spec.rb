@@ -7,13 +7,14 @@ require 'open-uri'
 
 describe "data" do
   before(:all) do
-    data_path = "./data"
-    @factions = Viz3k::Factions.new(data_path + "/factions.json")
-    @people = Viz3k::People.new(data_path + "/characters.json")
-    @chapters = Viz3k::Chapters.new(data_path + "/chapters.json")
+    @data_path = "./data"
   end
 
   describe "factions.json" do
+    before(:all) do
+      @factions = Viz3k::Factions.new(@data_path + "/factions.json")
+    end
+
     it "should not contain any factions with the same id" do
       ids = []
       @factions.factions.each do |faction|
@@ -43,6 +44,10 @@ describe "data" do
   end
 
   describe "characters.json" do
+    before(:all) do
+      @people = Viz3k::People.new(@data_path + "/characters.json")
+    end
+
     it "should not contain any people with the same id" do
       ids = []
       @people.people.each do |person|
@@ -86,6 +91,10 @@ describe "data" do
   end
 
   describe "chapters.json" do
+    before(:all) do
+      @chapters = Viz3k::Chapters.new(@data_path + "/chapters.json")
+    end
+
     it "should not contain any chapters with the same chapter number" do
       chapter_nums = []
       @chapters.chapters.each do |chapter|
