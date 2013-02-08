@@ -72,12 +72,6 @@ describe "data" do
       end
     end
 
-    it "should contain only people who appear on at least one page in chapters.json" do
-      @people.people.each do |person|
-        @chapters.num_appearances(person.id).should >= 0
-      end
-    end
-
     describe "external links" do
       it "should not have any broken links to wikipedia", :network => true, :speed => "slow" do
         @people.people.each do |person|
@@ -118,6 +112,19 @@ describe "data" do
           page_nums.should_not include(page.page)
           page_nums.push(page.page)
         end
+      end
+    end
+  end
+
+  describe "people" do
+    before(:all) do
+      @people = Viz3k::People.new(@data_path + "/characters.json")
+      @chapters = Viz3k::Chapters.new(@data_path + "/chapters.json")
+    end
+
+    it "should each appear on at least one page in chapters.json" do
+      @people.people.each do |person|
+        @chapters.num_appearances(person.id).should >= 0
       end
     end
   end
