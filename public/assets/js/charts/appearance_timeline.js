@@ -30,9 +30,18 @@ function appearance_timeline(element_id, factions, chapters, max_people)
 
   // create a labeled y axis (this should have a constant size independent of window resizing)
   var yaxis = d3.svg.axis();
+  var num_ticks = 4;
+  if (max_people == 2)
+  {
+    num_ticks = 2;
+  }
+  else if (max_people == 1)
+  {
+    num_ticks = 1;
+  }
   yaxis.scale(y_range_inverted)
       .orient("left")
-      .ticks(4)
+      .ticks(num_ticks)
       .tickSize(2);
   svg.append("g").attr("class", "axis")
     .attr("transform", "translate(" + padding_l + "," + padding_t + ")")
