@@ -1,0 +1,2898 @@
+{
+  "allegiances":
+  [
+    {
+      "id": 0,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 1,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 2,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 3,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 4,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 5,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 6,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 7,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 8,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 9,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 10,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 11,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 12,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,6], "faction": 0},
+        {"chron": 1, "interval":[9,1457], "faction": 0}
+      ]
+    },
+    {
+      "id": 13,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 14,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 15,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 16,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 17,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 18,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 19,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 20,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 21,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 22,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 23,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 24,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,9], "faction": 1},
+        {"chron": 1, "interval":[9,1457], "faction": 0}
+      ]
+    },
+    {
+      "id": 25,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 26,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 27,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 28,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 29,
+      "allegiance":
+      [
+        {"faction": 2}
+      ]
+    },
+    {
+      "id": 30,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 31,
+      "allegiance":
+      [
+        {"faction": 2}
+      ]
+    },
+    {
+      "id": 32,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,25], "faction": 0},
+        {"chron": 1, "interval":[25,1457], "faction": 3}
+      ]
+    },
+    {
+      "id": 33,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 34,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 35,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 36,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 37,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 38,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 39,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 40,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 41,
+      "allegiance":
+      [
+        {"faction": 4}
+      ]
+    },
+    {
+      "id": 42,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,25], "faction": 0},
+        {"chron": 1, "interval":[25,1457], "faction": 3}
+      ]
+    },
+    {
+      "id": 43,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,25], "faction": 0},
+        {"chron": 1, "interval":[25,1457], "faction": 3}
+      ]
+    },
+    {
+      "id": 44,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 45,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 46,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 47,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 48,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 49,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,52], "faction": 0},
+        {"chron": 1, "interval":[52,53], "faction": 6},
+        {"chron": 2, "interval":[53,1457], "faction": 5}
+      ]
+    },
+    {
+      "id": 50,
+      "allegiance":
+      [
+        {"faction": 5}
+      ]
+    },
+    {
+      "id": 51,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 52,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 53,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 54,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 55,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 56,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,39], "faction": 0},
+        {"chron": 1, "interval":[39,1457], "faction": 6}
+      ]
+    },
+    {
+      "id": 57,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 58,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 59,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 60,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 61,
+      "allegiance":
+      [
+        {"faction": 1}
+      ]
+    },
+    {
+      "id": 62,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,57], "faction": 0},
+        {"chron": 1, "interval":[57,1457], "faction": 7}
+      ]
+    },
+    {
+      "id": 63,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 64,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 65,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 66,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 67,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 68,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 69,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 70,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 71,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 72,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 73,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 74,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 75,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 76,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 77,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 78,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 79,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 80,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 81,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 82,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 83,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 84,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 85,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,46], "faction": 0},
+        {"chron": 1, "interval":[46,1457], "faction": 8}
+      ]
+    },
+    {
+      "id": 86,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 87,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 88,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,122], "faction": 0},
+        {"chron": 1, "interval":[122,1457], "faction": 5}
+      ]
+    },
+    {
+      "id": 89,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 90,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 91,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 92,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 93,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 94,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 95,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 96,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 97,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 98,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 99,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 100,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 101,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,57], "faction": 0},
+        {"chron": 1, "interval":[57,1457], "faction": 9}
+      ]
+    },
+    {
+      "id": 102,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 103,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 104,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 105,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 106,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 107,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 108,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 109,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 110,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 111,
+      "allegiance":
+      [
+        {"faction": 17}
+      ]
+    },
+    {
+      "id": 112,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,43], "faction": 17},
+        {"chron": 1, "interval":[43,108], "faction": 6},
+        {"chron": 2, "interval":[108,108], "faction": 8},
+        {"chron": 3, "interval":[108,1457], "faction": 10}
+      ]
+    },
+    {
+      "id": 113,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 114,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 115,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 116,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 117,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 118,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,109], "faction": 6},
+        {"chron": 1, "interval":[109,1457], "faction": 0}
+      ]
+    },
+    {
+      "id": 119,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 120,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 121,
+      "allegiance":
+      [
+        {"faction": 6}
+      ]
+    },
+    {
+      "id": 122,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 123,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 124,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 125,
+      "allegiance":
+      [
+        {"chron": 0, "interval":[5,55], "faction": 0},
+        {"chron": 1, "interval":[55,57], "faction": 5},
+        {"chron": 2, "interval":[57,135], "faction": 99},
+        {"chron": 3, "interval":[135,1457], "faction": 10}
+      ]
+    },
+    {
+      "id": 126,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "allegiance": [
+        {
+          "faction": 11
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "allegiance": [
+        {
+          "faction": 12
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "allegiance": [
+        {
+          "faction": 13
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "allegiance": [
+        {
+          "faction": 14
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "allegiance": [
+        {
+          "faction": 15
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "allegiance": [
+        {
+          "faction": 16
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "allegiance": [
+        {
+          "faction": 17
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 155,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "allegiance": [
+        {
+          "faction": 11
+        }
+      ]
+    },
+    {
+      "id": 157,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "allegiance": [
+        {
+          "faction": 17
+        }
+      ]
+    },
+    {
+      "id": 161,
+      "allegiance": [
+        {
+          "faction": 14
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 163,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 164,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 165,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 166,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 168,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 176,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 178,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 180,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 181,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 182,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "allegiance": [
+        {
+          "faction": 11
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "allegiance": [
+        {
+          "faction": 11
+        }
+      ]
+    },
+    {
+      "id": 186,
+      "allegiance": [
+        {
+          "faction": 11
+        }
+      ]
+    },
+    {
+      "id": 187,
+      "allegiance": [
+        {
+          "faction": 11
+        }
+      ]
+    },
+    {
+      "id": 188,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 189,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 190,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "allegiance": [
+        {
+          "faction": 4
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 194,
+      "allegiance": [
+        {
+          "faction": 4
+        }
+      ]
+    },
+    {
+      "id": 195,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 198,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 199,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 204,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 205,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 206,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 207,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 209,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "allegiance": [
+        {
+          "faction": 18
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 213,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 214,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 215,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 216,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 217,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 218,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 219,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 221,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 222,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 223,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 224,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 225,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 226,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 227,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 228,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 229,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 230,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 231,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 232,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 233,
+      "allegiance": [
+        {
+          "faction": 19
+        }
+      ]
+    },
+    {
+      "id": 234,
+      "allegiance": [
+        {
+          "faction": 16
+        }
+      ]
+    },
+    {
+      "id": 235,
+      "allegiance": [
+        {
+          "faction": 16
+        }
+      ]
+    },
+    {
+      "id": 236,
+      "allegiance": [
+        {
+          "faction": 16
+        }
+      ]
+    },
+    {
+      "id": 237,
+      "allegiance": [
+        {
+          "faction": 16
+        }
+      ]
+    },
+    {
+      "id": 238,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 239,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 240,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 241,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 242,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 243,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 244,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 245,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 246,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 247,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 248,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 249,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 250,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 251,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 252,
+      "allegiance": [
+        {
+          "faction": 15
+        }
+      ]
+    },
+    {
+      "id": 253,
+      "allegiance": [
+        {
+          "faction": 15
+        }
+      ]
+    },
+    {
+      "id": 254,
+      "allegiance": [
+        {
+          "faction": 15
+        }
+      ]
+    },
+    {
+      "id": 255,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 256,
+      "allegiance": [
+        {
+          "faction": 4
+        }
+      ]
+    },
+    {
+      "id": 257,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 258,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 259,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 260,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 261,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 262,
+      "allegiance": [
+        {
+          "faction": 1
+        }
+      ]
+    },
+    {
+      "id": 263,
+      "allegiance": [
+        {
+          "faction": 14
+        }
+      ]
+    },
+    {
+      "id": 264,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 265,
+      "allegiance": [
+        {
+          "faction": 20
+        }
+      ]
+    },
+    {
+      "id": 266,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 267,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 269,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 270,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 271,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 272,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 273,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 274,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 276,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 277,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 278,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 279,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 280,
+      "allegiance": [
+        {
+          "faction": 15
+        }
+      ]
+    },
+    {
+      "id": 281,
+      "allegiance": [
+        {
+          "faction": 15
+        }
+      ]
+    },
+    {
+      "id": 282,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 283,
+      "allegiance": [
+        {
+          "faction": 1
+        }
+      ]
+    },
+    {
+      "id": 284,
+      "allegiance": [
+        {
+          "faction": 1
+        }
+      ]
+    },
+    {
+      "id": 285,
+      "allegiance": [
+        {
+          "faction": 1
+        }
+      ]
+    },
+    {
+      "id": 286,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 287,
+      "allegiance": [
+        {
+          "faction": 8
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 289,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 290,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 291,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 292,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 293,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 294,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 295,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 296,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 297,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 298,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 299,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 300,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 305,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 306,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "allegiance": [
+        {
+          "faction": 1
+        }
+      ]
+    },
+    {
+      "id": 308,
+      "allegiance": [
+        {
+          "faction": 1
+        }
+      ]
+    },
+    {
+      "id": 309,
+      "allegiance": [
+        {
+          "faction": 1
+        }
+      ]
+    },
+    {
+      "id": 310,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 312,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 313,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 314,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 315,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 316,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 317,
+      "allegiance": [
+        {
+          "faction": 6
+        }
+      ]
+    },
+    {
+      "id": 318,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 319,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 320,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 321,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 322,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 323,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 324,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 325,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 326,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 327,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 328,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 329,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 330,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 331,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 332,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 333,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 334,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 335,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 336,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 337,
+      "allegiance": [
+        {
+          "faction": 0
+        }
+      ]
+    },
+    {
+      "id": 338,
+      "allegiance": [
+        {
+          "faction": 20
+        }
+      ]
+    },
+    {
+      "id": 339,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 340,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 341,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 342,
+      "allegiance": [
+        {
+          "faction": 20
+        }
+      ]
+    },
+    {
+      "id": 343,
+      "allegiance": [
+        {
+          "faction": 20
+        }
+      ]
+    },
+    {
+      "id": 344,
+      "allegiance": [
+        {
+          "faction": 20
+        }
+      ]
+    },
+    {
+      "id": 345,
+      "allegiance": [
+        {
+          "faction": 20
+        }
+      ]
+    },
+    {
+      "id": 346,
+      "allegiance": [
+        {
+          "faction": 20
+        }
+      ]
+    },
+    {
+      "id": 347,
+      "allegiance": [
+        {
+          "faction": 21
+        }
+      ]
+    },
+    {
+      "id": 348,
+      "allegiance": [
+        {
+          "faction": 21
+        }
+      ]
+    },
+    {
+      "id": 349,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 350,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 351,
+      "allegiance": [
+        {
+          "faction": 22
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 353,
+      "allegiance": [
+        {
+          "faction": 22
+        }
+      ]
+    },
+    {
+      "id": 354,
+      "allegiance": [
+        {
+          "faction": 7
+        }
+      ]
+    },
+    {
+      "id": 355,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 356,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 357,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 358,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 359,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 360,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 361,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 362,
+      "allegiance": [
+        {
+          "faction": 99
+        }
+      ]
+    },
+    {
+      "id": 363,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 364,
+      "allegiance": [
+        {
+          "faction": 9
+        }
+      ]
+    },
+    {
+      "id": 365,
+      "allegiance": [
+        {
+          "faction": 10
+        }
+      ]
+    },
+    {
+      "id": 366,
+      "allegiance": [
+        {
+          "faction": 3
+        }
+      ]
+    },
+    {
+      "id": 367,
+      "allegiance": [
+        {
+          "faction": 23
+        }
+      ]
+    },
+    {
+      "id": 368,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 369,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 370,
+      "allegiance": [
+        {
+          "faction": 23
+        }
+      ]
+    },
+    {
+      "id": 371,
+      "allegiance": [
+        {
+          "faction": 23
+        }
+      ]
+    },
+    {
+      "id": 372,
+      "allegiance": [
+        {
+          "faction": 5
+        }
+      ]
+    },
+    {
+      "id": 373,
+      "allegiance": [
+        {
+          "faction": 2
+        }
+      ]
+    },
+    {
+      "id": 374,
+      "allegiance": [
+        {
+          "faction": 24
+        }
+      ]
+    }
+  ]
+}

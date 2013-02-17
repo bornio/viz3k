@@ -4,194 +4,165 @@
     {
       "id": 0,
       "name": "Emperor Gao",
-      "faction": 0,
       "wiki": "Emperor_Gaozu_of_Han",
       "note": "Liu Bang. Also known as Gao Zu. Usually referred to as the Supreme Ancestor."
     },
     {
       "id": 1,
       "name": "Wang Mang",
-      "faction": 99,
       "wiki": "Wang_Mang"
     },
     {
       "id": 2,
       "name": "Emperor Guangwu",
-      "faction": 0,
       "wiki": "Emperor_Guangwu_of_Han",
       "note": "Liu Xiu. Founder of the Later Han after Wang Mang's usurpation."
     },
     {
       "id": 3,
       "name": "Emperor Xian",
-      "faction": 0,
       "wiki": "Emperor_Xian_of_Han",
       "note": "Liu Xie."
     },
     {
       "id": 4,
       "name": "Emperor Huan",
-      "faction": 0,
       "wiki": "Emperor_Huan_of_Han"
     },
     {
       "id": 5,
       "name": "Emperor Ling",
-      "faction": 0,
       "wiki": "Emperor_Ling_of_Han"
     },
     {
       "id": 6,
       "name": "Dou Wu",
-      "faction": 0,
       "wiki": "Dou_Wu"
     },
     {
       "id": 7,
       "name": "Chen Fan",
-      "faction": 0,
       "wiki": "Chen_Fan"
     },
     {
       "id": 8,
       "name": "Cao Jie",
-      "faction": 0,
       "wiki": "Cao_Jie_(eunuch)",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 9,
       "name": "Cai Yong",
-      "faction": 0,
       "wiki": "Cai_Yong",
       "note:": "Privy Counselor of the Late Han court. Executed by Wang Yun for mourning the death of Dong Zhuo."
     },
     {
       "id": 10,
       "name": "Zhang Rang",
-      "faction": 0,
       "wiki": "Zhang_Rang",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 11,
       "name": "Zhao Zhong",
-      "faction": 0,
       "wiki": "Zhao_Zhong",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 12,
       "name": "Feng Xu",
-      "faction": 0,
       "wiki": "Feng_Xu",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 13,
       "name": "Duan Gui",
-      "faction": 0,
       "wiki": "Duan_Gui",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 14,
       "name": "Hou Lan",
-      "faction": 0,
       "wiki": "Hou_Lan",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 15,
       "name": "Jian Shuo",
-      "faction": 0,
       "wiki": "Jian_Shuo",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 16,
       "name": "Cheng Kuang",
-      "faction": 0,
       "wiki": "Cheng_Kuang",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 17,
       "name": "Xia Yun",
-      "faction": 0,
       "wiki": "Xia_Yun",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 18,
       "name": "Guo Sheng",
-      "faction": 0,
       "wiki": "Guo_Sheng_(eunuch)",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 19,
       "name": "Zhang Jue",
-      "faction": 1,
       "wiki": "Zhang_Jue",
       "note": "Also known as Zhang Jiao."
     },
     {
       "id": 20,
       "name": "Zhang Bao",
-      "faction": 1,
       "wiki": "Zhang_Bao_(Yellow_Turban)"
     },
     {
       "id": 21,
       "name": "Zhang Liang (1)",
-      "faction": 1,
       "wiki": "Zhang_Liang_(Yellow_Turban)"
     },
     {
       "id": 22,
       "name": "Zhuang Zi",
-      "faction": 1,
       "wiki": "Zhuang_Zhou",
       "note": "The Taoist sage known as The Old Hermit From Mount Hua Summit."
     },
     {
       "id": 23,
       "name": "Ma Yuanyi",
-      "faction": 1,
       "wiki": "Ma_Yuanyi"
     },
     {
       "id": 24,
       "name": "Tang Zhou",
-      "faction": 1,
       "wiki": "Tang_Zhou"
     },
     {
       "id": 25,
       "name": "He Jin",
       "style": "Suigao",
-      "faction": 0,
       "wiki": "He_Jin"
     },
     {
       "id": 26,
       "name": "Lu Zhi",
-      "faction": 0,
       "wiki": "Lu_Zhi_(Han_Dynasty)"
     },
     {
       "id": 27,
       "name": "Huangfu Song",
       "style": "Yizhen",
-      "faction": 0,
       "wiki": "Huangfu_Song"
     },
     {
       "id": 28,
       "name": "Zhu Jun",
       "style": "Gongwei",
-      "faction": 0,
       "wiki": "Zhu_Jun_(Han_Dynasty)",
       "note": "Veteran of the war against the Yellow Turbans. Appointed treasurer and court steward of the Han court by Li Jue and Guo Si."
     },
@@ -199,85 +170,72 @@
       "id": 29,
       "name": "Liu Yan",
       "style": "Junlang",
-      "faction": 2,
       "wiki": "Liu_Yan_(warlord)"
     },
     {
       "id": 30,
       "name": "Prince Gong",
-      "faction": 0,
       "wiki": "Prince_Gong_of_Lu",
       "note": "Prince Gong of Lu, ancestor of Liu Yan."
     },
     {
       "id": 31,
       "name": "Zou Jing",
-      "faction": 2,
       "wiki": "Zou_Jing"
     },
     {
       "id": 32,
       "name": "Liu Bei",
       "style": "Xuande",
-      "faction": 3,
       "wiki": "Liu_Bei"
     },
     {
       "id": 33,
       "name": "Liu Sheng",
-      "faction": 0,
       "wiki": "Liu_Sheng",
       "note": "Prince Jing of Zhongshan. Ancestor of Liu Bei."
     },
     {
       "id": 34,
       "name": "Emperor Jing",
-      "faction": 0,
       "wiki": "Emperor_Jing_of_Han",
       "note": "Fourth Han emperor. Ancestor of Liu Sheng, Prince Jing of Zhongshan."
     },
     {
       "id": 35,
       "name": "Emperor Wu",
-      "faction": 0,
       "wiki": "Emperor_Wu_of_Han"
     },
     {
       "id": 36,
       "name": "Liu Zhen",
-      "faction": 0,
       "wiki": "Liu_Zhen_(Han_Dynasty)",
       "note": "Son of Liu Sheng, Prince Jing of Zhongshan."
     },
     {
       "id": 37,
       "name": "Liu Xiong",
-      "faction": 0,
       "note": "Grandfather of Liu Bei. Father of Liu Hong."
     },
     {
       "id": 38,
       "name": "Liu Hong",
-      "faction": 0,
       "note": "Father of Liu Bei. Son of Liu Xiong."
     },
     {
       "id": 39,
       "name": "Liu Yuanqi",
-      "faction": 0,
       "note": "Uncle of Liu Bei. Younger brother of Liu Hong."
     },
     {
       "id": 40,
       "name": "Zheng Xuan",
-      "faction": 0,
       "wiki": "Zheng_Xuan",
       "note": "One of Liu Bei's teachers, along with Lu Zhi."
     },
     {
       "id": 41,
       "name": "Gongsun Zan",
-      "faction": 4,
       "wiki": "Gongsun_Zan",
       "note": "Governor of Beiping. Joined the alliance against Dong Zhuo."
     },
@@ -285,39 +243,35 @@
       "id": 42,
       "name": "Zhang Fei",
       "style": "Yide",
-      "faction": 3,
       "wiki": "Zhang_Fei"
     },
     {
       "id": 43,
       "name": "Guan Yu",
       "style": "Yunchang",
-      "faction": 3,
       "wiki": "Guan_Yu"
     },
     {
       "id": 44,
       "name": "Zhang Shiping",
-      "faction": 0,
       "wiki": "Zhang_Shiping"
     },
     {
       "id": 45,
       "name": "Su Shuang",
-      "faction": 0,
       "wiki": "Su_Shuang"
     },
     {
       "id": 46,
       "name": "Cheng Yuanzhi",
-      "faction": 1,
-      "wiki": "Cheng_Yuanzhi"
+      "wiki": "Cheng_Yuanzhi",
+      "note": "Killed by Guan Yu."
     },
     {
       "id": 47,
       "name": "Deng Mao",
-      "faction": 1,
-      "wiki": "Deng_Mao"
+      "wiki": "Deng_Mao",
+      "note": "Killed by Zhang Fei."
     },
     {
       "id": 48,
@@ -329,202 +283,173 @@
       "id": 49,
       "name": "Cao Cao",
       "style": "Mengde",
-      "faction": 5,
       "wiki": "Cao_Cao"
     },
     {
       "id": 50,
       "name": "Cao Song",
-      "faction": 5,
       "wiki": "Cao_Song",
       "note": "Father of Cao Cao. Originally a Xiahou, he was adopted by the eunuch Cao Teng."
     },
     {
       "id": 51,
       "name": "Cao Teng",
-      "faction": 0,
       "wiki": "Cao_Teng",
       "note": "Adopted father of Cao Song."
     },
     {
       "id": 52,
       "name": "Qiao Xuan",
-      "faction": 0,
       "wiki": "Qiao_Xuan"
     },
     {
       "id": 53,
       "name": "He Yu",
-      "faction": 0,
       "note": "Joined He Jin in enthroning Emperor Shao and opposing the Ten Regular Attendants."
     },
     {
       "id": 54,
       "name": "Xu Shao (1)",
       "style": "Zijiang",
-      "faction": 0,
       "wiki": "Xu_Shao"
     },
     {
       "id": 55,
       "name": "Zuo Feng",
-      "faction": 0,
       "wiki": "Zuo_Feng"
     },
     {
       "id": 56,
       "name": "Dong Zhuo",
-      "faction": 6,
       "wiki": "Dong_Zhuo"
     },
     {
       "id": 57,
       "name": "Gao Sheng",
-      "faction": 1,
-      "wiki": "Gao_Sheng_(rebel)"
+      "wiki": "Gao_Sheng_(rebel)",
+      "note": "Killed by Zhang Fei."
     },
     {
       "id": 58,
       "name": "Yan Zheng",
-      "faction": 1,
-      "wiki": "Yan_Zheng_(rebel)"
+      "wiki": "Yan_Zheng_(rebel)",
+      "note": "Killed Zhang Bao, his own commander."
     },
     {
       "id": 59,
       "name": "Zhao Hong",
-      "faction": 1,
-      "wiki": "Zhao_Hong_(rebel)"
+      "wiki": "Zhao_Hong_(rebel)",
+      "note": "Killed by Sun Jian."
     },
     {
       "id": 60,
       "name": "Han Zhong",
-      "faction": 1,
       "wiki": "Han_Zhong_(rebel)"
     },
     {
       "id": 61,
       "name": "Sun Zhong",
-      "faction": 1,
-      "wiki": "Sun_Zhong_(rebel)"
+      "wiki": "Sun_Zhong_(rebel)",
+      "note": "Killed by Liu Bei."
     },
     {
       "id": 62,
       "name": "Sun Jian",
       "style": "Wentai",
-      "faction": 7,
       "wiki": "Sun_Jian"
     },
     {
       "id": 63,
       "name": "Sunzi",
-      "faction": 0,
       "wiki": "Sun_Tzu",
       "note": "Also known as Sun Wu. More famously known as Sun Tzu, author of The Art of War. Ancestor of Sun Jian."
     },
     {
       "id": 64,
       "name": "Xu Chang",
-      "faction": 99,
       "note": "A rebel defeated by Sun Jian."
     },
     {
       "id": 65,
       "name": "Xu Shao (2)",
-      "faction": 99,
       "note": "Son of Xu Chang."
     },
     {
       "id": 66,
-      "name": "Zang Min",
-      "faction": 0
+      "name": "Zang Min"
     },
     {
       "id": 67,
-      "name": "Zhang Jun",
-      "faction": 0
+      "name": "Zhang Jun"
     },
     {
       "id": 68,
-      "name": "District Inspector",
-      "faction": 0
+      "name": "District Inspector"
     },
     {
       "id": 69,
-      "name": "County Officer",
-      "faction": 0
+      "name": "County Officer"
     },
     {
       "id": 70,
-      "name": "Liu Hui",
-      "faction": 0
+      "name": "Liu Hui"
     },
     {
       "id": 71,
       "name": "Ou Xing",
-      "faction": 99,
       "wiki": "Ou_Xing",
       "note": "Staged an uprising in Changsha."
     },
     {
       "id": 72,
       "name": "Zhang Ju",
-      "faction": 99,
       "wiki": "Zhang_Ju",
       "note": "Staged an uprising in Yuyang, along with Zhang Chun."
     },
     {
       "id": 73,
       "name": "Zhang Chun",
-      "faction": 99,
       "wiki": "Zhang_Chun",
       "note": "Staged an uprising in Yuyang, along with Zhang Ju."
     },
     {
       "id": 74,
-      "name": "Liu Tao",
-      "faction": 0
+      "name": "Liu Tao"
     },
     {
       "id": 75,
-      "name": "Chen Dan",
-      "faction": 0
+      "name": "Chen Dan"
     },
     {
       "id": 76,
       "name": "Liu Yu",
-      "faction": 0,
       "wiki": "Liu_Yu_(warlord)"
     },
     {
       "id": 77,
       "name": "Empress He",
-      "faction": 0,
       "wiki": "Empress_He_(Ling)",
       "note": "Mother of Liu Bian (Emperor Shao)."
     },
     {
       "id": 78,
       "name": "Emperor Shao",
-      "faction": 0,
       "wiki": "Emperor_Shao_of_Han",
       "note": "Liu Bian."
     },
     {
       "id": 79,
       "name": "Lady Wang",
-      "faction": 0,
       "note": "Also known as Beauty Wang or Consort Wang. Mother of Liu Xie (Emperor Xian)."
     },
     {
       "id": 80,
       "name": "Empress Dong",
-      "faction": 0,
       "wiki": "Empress_Dowager_Dong"
     },
     {
       "id": 81,
       "name": "Liu Chang",
-      "faction": 0,
       "note": "Lord of Jiedu. Father of Emperor Ling."
     },
     {
@@ -535,110 +460,93 @@
     {
       "id": 83,
       "name": "Emperor Chong",
-      "faction": 0,
       "wiki": "Emperor_Chong_of_Han"
     },
     {
       "id": 84,
       "name": "Emperor Zhi",
-      "faction": 0,
       "wiki": "Emperor_Zhi_of_Han"
     },
     {
       "id": 85,
       "name": "Yuan Shao",
       "style": "Benchu",
-      "faction": 8,
       "wiki": "Yuan_Shao",
       "note": "Lord of Qixiang and governor of Bohai. Led the alliance against Dong Zhuo."
     },
     {
       "id": 86,
       "name": "Yuan Feng",
-      "faction": 0,
       "note": "Father of Yuan Shao."
     },
     {
       "id": 87,
       "name": "Yuan Wei",
-      "faction": 0,
-      "note": "Uncle of Yuan Shao."
+      "note": "Uncle of Yuan Shao. Murdered along with his entire household by Li Jue and Guo Si on Dong Zhuo's orders."
     },
     {
       "id": 88,
       "name": "Xun You",
       "style": "Gongda",
-      "faction": 5,
       "wiki": "Xun_You",
       "note": "Nephew of Xun Yu. Left the Inner Bureau during Dong Zhuo's usurpation, later becoming an officer of Cao Cao."
     },
     {
       "id": 89,
-      "name": "Zheng Tai",
-      "faction": 0
+      "name": "Zheng Tai"
     },
     {
       "id": 90,
       "name": "Dong Chong",
-      "faction": 0,
       "note": "Brother of Empress Dong."
     },
     {
       "id": 91,
       "name": "Empress Lü",
-      "faction": 0,
       "wiki": "Empress_Lü_Zhi"
     },
     {
       "id": 92,
       "name": "He Miao",
-      "faction": 0,
       "note": "Brother of He Jin."
     },
     {
       "id": 93,
       "name": "Lady Wuyang",
-      "faction": 0,
       "note": "Mother of He Miao."
     },
     {
       "id": 94,
       "name": "Chen Lin",
-      "faction": 0,
       "wiki": "Chen_Lin_(Han_Dynasty)"
     },
     {
       "id": 95,
       "name": "Niu Fu",
-      "faction": 6,
       "wiki": "Niu_Fu",
       "note": "Son-in-law of Dong Zhuo."
     },
     {
       "id": 96,
       "name": "Li Jue",
-      "faction": 6,
       "wiki": "Li_Jue_(Han_Dynasty)",
       "note": "One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
     },
     {
       "id": 97,
       "name": "Guo Si",
-      "faction": 6,
       "wiki": "Guo_Si",
       "note": "One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
     },
     {
       "id": 98,
       "name": "Zhang Ji",
-      "faction": 6,
       "wiki": "Zhang_Ji_(Han_Dynasty)",
       "note": "One of Dong Zhuo's generals who later served Li Jue and Guo Si. Appointed General of the Flying Cavalry for mediating when fighting broke out between Li Jue and Guo Si."
     },
     {
       "id": 99,
       "name": "Fan Chou",
-      "faction": 6,
       "wiki": "Fan_Chou",
       "note": "One of Dong Zhuo's generals who later served Li Jue and Guo Si. Executed by Li Jue after failing to pursue Han Sui."
     },
@@ -646,160 +554,133 @@
       "id": 100,
       "name": "Li Ru",
       "style": "Wenyou",
-      "faction": 6,
       "wiki": "Li_Ru"
     },
     {
       "id": 101,
       "name": "Yuan Shu",
       "style": "Gonglu",
-      "faction": 9,
       "wiki": "Yuan_Shu",
       "note": "Governor of Nanyang and General of the Rear. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 102,
-      "name": "Wu Kuang",
-      "faction": 0
+      "name": "Wu Kuang"
     },
     {
       "id": 103,
-      "name": "Min Gong",
-      "faction": 0
+      "name": "Min Gong"
     },
     {
       "id": 104,
-      "name": "Cui Yi",
-      "faction": 0
+      "name": "Cui Yi"
     },
     {
       "id": 105,
       "name": "Cui Lie",
-      "faction": 0,
       "note": "Commandant of the Capital Gates."
     },
     {
       "id": 106,
       "name": "Wang Yun",
       "style": "Zishi",
-      "faction": 0,
       "wiki": "Wang_Yun",
       "note": "Minister of the Interior in the imperial court during Dong Zhuo's usurpation. Gave Cao Cao the Seven Star Sword in a failed plot to kill Dong Zhuo. Later used his daughter Diaochan to turn Lü Bu against Dong and kill him. Died when Dong's remnant forces under Li Jue and Guo Si captured the capital."
     },
     {
       "id": 107,
       "name": "Yang Biao",
-      "faction": 0,
       "note": "Grand Commandant of the Han. Conspired with Emperor Xian to turn Li Jue and Guo Si against one another."
     },
     {
       "id": 108,
       "name": "Chunyu Qiong",
-      "faction": 0,
       "wiki": "Chunyu_Qiong"
     },
     {
       "id": 109,
-      "name": "Zhao Meng",
-      "faction": 0
+      "name": "Zhao Meng"
     },
     {
       "id": 110,
       "name": "Bao Xin",
-      "faction": 0,
       "wiki": "Bao_Xin",
       "note": "Lord of Jibei. Joined the alliance against Dong Zhuo. Killed later while fighting the Yellow Turbans."
     },
     {
       "id": 111,
       "name": "Ding Yuan",
-      "faction": 17,
       "wiki": "Ding_Yuan"
     },
     {
       "id": 112,
       "name": "Lü Bu",
       "style": "Fengxian",
-      "faction": 10,
       "wiki": "Lü_Bu"
     },
     {
       "id": 113,
       "name": "Yi Yin",
-      "faction": 99,
       "wiki": "Yi_Yin",
       "note": "A minister of the Shang dynasty."
     },
     {
       "id": 114,
       "name": "Tai Jia",
-      "faction": 99,
       "wiki": "Tai_Jia",
       "note": "A sovereign of the Shang dynasty."
     },
     {
       "id": 115,
       "name": "Huo Guang",
-      "faction": 0,
       "wiki": "Huo_Guang"
     },
     {
       "id": 116,
       "name": "Prince of Changyi",
-      "faction": 0,
       "wiki": "Prince_He_of_Changyi"
     },
     {
       "id": 117,
-      "name": "Peng Bo",
-      "faction": 0
+      "name": "Peng Bo"
     },
     {
       "id": 118,
       "name": "Li Su",
-      "faction": 6,
-      "wiki": "Li_Su_(Han_Dynasty)",
-      "note": "Persuaded Lü Bu to join Dong Zhuo and kill Ding Yuan. Later joined Wang Yun's plot against Dong Zhuo."
+      "wiki": "Li_Su_(Han_Dynasty)"
     },
     {
       "id": 119,
       "name": "Dong Min",
-      "faction": 6,
       "note": "Brother of Dong Zhuo."
     },
     {
       "id": 120,
       "name": "Zhou Bi",
-      "faction": 6,
       "wiki": "Zhou_Bi"
     },
     {
       "id": 121,
-      "name": "Wu Qiong",
-      "faction": 6
+      "name": "Wu Qiong"
     },
     {
       "id": 122,
-      "name": "Ding Guan",
-      "faction": 0
+      "name": "Ding Guan"
     },
     {
       "id": 123,
       "name": "Lady Tang",
-      "faction": 0,
       "wiki": "Consort_Tang_(Tangji)",
       "note": "Consort of Emperor Shao."
     },
     {
       "id": 124,
-      "name": "Wu Fu",
-      "faction": 0
+      "name": "Wu Fu"
     },
     {
       "id": 125,
       "name": "Chen Gong",
       "style": "Gongtai",
-      "faction": 10,
       "wiki": "Chen_Gong",
       "note": "County official who helped Cao Cao escape after he failed to assassinate Dong Zhuo, but left after Cao Cao murdered Lü Boshe. Later became Lü Bu's strategist."
     },
