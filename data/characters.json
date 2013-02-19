@@ -686,53 +686,45 @@
     },
     {
       "id": 126,
-      "name": "Lü Boshe",
-      "faction": 0
+      "name": "Lü Boshe"
     },
     {
       "id": 127,
-      "name": "Wei Hong",
-      "faction": 5
+      "name": "Wei Hong"
     },
     {
       "id": 128,
       "name": "Yue Jin",
       "style": "Wenqian",
-      "faction": 5,
       "wiki": "Yue_Jin"
     },
     {
       "id": 129,
       "name": "Li Dian",
       "style": "Mancheng",
-      "faction": 5,
       "wiki": "Li_Dian"
     },
     {
       "id": 130,
       "name": "Xiahou Dun",
       "style": "Yuanrang",
-      "faction": 5,
       "wiki": "Xiahou_Dun"
     },
     {
       "id": 131,
       "name": "Xiahou Ying",
-      "faction": 5,
       "wiki": "Xiahou_Ying"
     },
     {
       "id": 132,
       "name": "Xiahou Yuan",
       "style": "Miaocai",
-      "faction": 5,
       "wiki": "Xiahou_Yuan"
     },
     {
       "id": 133,
       "name": "Cao Ren",
       "style": "Zixiao",
-      "faction": 5,
       "wiki": "Cao_Ren",
       "note": "Cousin of Cao Cao."
     },
@@ -740,7 +732,6 @@
       "id": 134,
       "name": "Cao Hong",
       "style": "Zilian",
-      "faction": 5,
       "wiki": "Cao_Hong",
       "note": "Cousin of Cao Cao."
     },
@@ -748,7 +739,6 @@
       "id": 135,
       "name": "Han Fu",
       "style": "Wenjie",
-      "faction": 11,
       "wiki": "Han_Fu_(warlord)",
       "note": "Imperial inspector of Jizhou. Joined the alliance against Dong Zhuo."
     },
@@ -756,7 +746,6 @@
       "id": 136,
       "name": "Kong Zhou",
       "style": "Gongxu",
-      "faction": 12,
       "wiki": "Kong_Zhou",
       "note": "Imperial inspector of Yuzhou. Joined the alliance against Dong Zhuo."
     },
@@ -764,7 +753,6 @@
       "id": 137,
       "name": "Liu Dai",
       "style": "Gongshan",
-      "faction": 13,
       "wiki": "Liu_Dai",
       "note": "Imperial inspector of Yanzhou. Elder brother of Liu Yao. Joined the alliance against Dong Zhuo."
     },
@@ -772,7 +760,6 @@
       "id": 138,
       "name": "Wang Kuang",
       "style": "Gongjie",
-      "faction": 99,
       "wiki": "Wang_Kuang",
       "note": "Governor of Henei. Joined the alliance against Dong Zhuo."
     },
@@ -780,21 +767,18 @@
       "id": 139,
       "name": "Zhang Miao",
       "style": "Menzhuo",
-      "faction": 99,
       "wiki": "Zhang_Miao",
       "note": "Governor of Chenliu. Joined the alliance against Dong Zhuo. Allied with Lü Bu for a time, but was defeated by Cao Cao and went over to Yuan Shu."
     },
     {
       "id": 140,
       "name": "Qiao Mao",
-      "faction": 99,
       "wiki": "Qiao_Mao",
-      "note": "Governor of Dongjun. Joined the alliance against Dong Zhuo."
+      "note": "Governor of Dongjun. Joined the alliance against Dong Zhuo. Killed by Liu Dai in retaliation for refusing to loan him grain."
     },
     {
       "id": 141,
       "name": "Yuan Yi",
-      "faction": 99,
       "wiki": "Yuan_Yi_(Han_Dynasty)",
       "note": "Governor of Shanyang. Joined the alliance against Dong Zhuo."
     },
@@ -802,21 +786,18 @@
       "id": 142,
       "name": "Kong Rong",
       "style": "Wenju",
-      "faction": 14,
       "wiki": "Kong_Rong",
       "note": "Governor of Beihai. Joined the alliance against Dong Zhuo. A descendant of Confucius."
     },
     {
       "id": 143,
       "name": "Zhang Chao",
-      "faction": 99,
       "note": "Governor of Guangling. Joined the alliance against Dong Zhuo. Brother of Zhang Miao. Committed suicide after his ally Lü Bu was defeated at Dingtao."
     },
     {
       "id": 144,
       "name": "Tao Qian",
       "style": "Gongzu",
-      "faction": 15,
       "wiki": "Tao_Qian_(Han_Dynasty)",
       "note": "Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo. Cao Cao's father Cao Song was murdered by Tao Qian's officer Zhang Kai, giving Cao Cao cause to invade. Died of illness during the invasion, leaving his territory to Liu Bei."
     },
@@ -824,7 +805,6 @@
       "id": 145,
       "name": "Ma Teng",
       "style": "Shoucheng",
-      "faction": 16,
       "wiki": "Ma_Teng",
       "note": "Governor of Xiliang. Joined the alliance against Dong Zhuo. Appointed Conqueror of the West by Emperor Xian."
     },
@@ -832,295 +812,257 @@
       "id": 146,
       "name": "Zhang Yang",
       "style": "Zhishu",
-      "faction": 17,
       "wiki": "Zhang_Yang_(warlord)",
       "note": "Governor of Shangdang. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 147,
       "name": "Hua Xiong",
-      "faction": 6,
-      "wiki": "Hua_Xiong"
+      "wiki": "Hua_Xiong",
+      "note": "Killed by Guan Yu."
     },
     {
       "id": 148,
       "name": "Hu Zhen",
       "style": "Wencai",
-      "faction": 6,
-      "wiki": "Hu_Zhen"
+      "wiki": "Hu_Zhen",
+      "note": "Killed by Cheng Pu."
     },
     {
       "id": 149,
       "name": "Zhao Cen",
-      "faction": 6,
       "wiki": "Zhao_Cen"
     },
     {
       "id": 150,
       "name": "Bao Zhong",
-      "faction": 99
+      "note": "Brother of Bao Xin. Killed by Hua Xiong."
     },
     {
       "id": 151,
       "name": "Cheng Pu",
       "style": "Demou",
-      "faction": 7,
       "wiki": "Cheng_Pu"
     },
     {
       "id": 152,
       "name": "Huang Gai",
       "style": "Gongfu",
-      "faction": 7,
       "wiki": "Huang_Gai"
     },
     {
       "id": 153,
       "name": "Han Dang",
       "style": "Yigong",
-      "faction": 7,
       "wiki": "Han_Dang"
     },
     {
       "id": 154,
       "name": "Zu Mao",
       "style": "Darong",
-      "faction": 7,
       "wiki": "Zu_Mao",
-      "note": "His style name is given by the novel, and was not recorded historically."
+      "note": "His style name is given by the novel, and was not recorded historically. Killed by Hua Xiong."
     },
     {
       "id": 155,
       "name": "Yu She",
-      "faction": 9
+      "note": "Killed by Hua Xiong."
     },
     {
       "id": 156,
       "name": "Pan Feng",
-      "faction": 11,
-      "wiki": "Pan_Feng"
+      "wiki": "Pan_Feng",
+      "note": "Killed by Hua Xiong."
     },
     {
       "id": 157,
       "name": "Yan Liang",
-      "faction": 8,
       "wiki": "Yan_Liang",
       "note": "One of Yuan Shao's most powerful generals, along with Wen Chou. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
       "id": 158,
       "name": "Wen Chou",
-      "faction": 8,
       "wiki": "Wen_Chou",
       "note": "One of Yuan Shao's most powerful generals, along with Yan Liang. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
       "id": 159,
       "name": "Fang Yue",
-      "faction": 99,
-      "wiki": "Fang_Yue"
+      "wiki": "Fang_Yue",
+      "note": "Officer of Wang Kuang. Killed by Lü Bu."
     },
     {
       "id": 160,
       "name": "Mu Shun",
-      "faction": 17,
-      "wiki": "Mu_Shun_(general)"
+      "wiki": "Mu_Shun_(general)",
+      "note": "Killed by Lü Bu."
     },
     {
       "id": 161,
       "name": "Wu Anguo",
-      "faction": 14,
-      "wiki": "Wu_Anguo"
+      "wiki": "Wu_Anguo",
+      "note": "Killed by Lü Bu."
     },
     {
       "id": 162,
       "name": "Huang Wan",
-      "faction": 0,
       "note": "Commander of the Capital Districts. Participated in Wang Yun's plot against Dong Zhuo."
     },
     {
       "id": 163,
       "name": "Xun Shuang",
-      "faction": 0,
       "note": "Minister of Works during Dong Zhuo's occupation.",
       "wiki": "Xun_Shuang"
     },
     {
       "id": 164,
       "name": "Xu Rong",
-      "faction": 6,
-      "note": "Governor of Yingyang under Dong Zhuo.",
+      "note": "Governor of Yingyang under Dong Zhuo. Killed by Xiahou Dun.",
       "wiki": "Xu_Rong_(general)"
     },
     {
       "id": 165,
       "name": "Bian He",
-      "faction": 99,
       "note": "Presented a rock to the King of Chu. The jade inside was made into the imperial seal."
     },
     {
       "id": 166,
-      "name": "King of Chu",
-      "faction": 99
+      "name": "King of Chu"
     },
     {
       "id": 167,
       "name": "The First Emperor",
-      "faction": 99,
       "note": "Qin Shi Huang, personal name Zhao Zheng. Unified China under the Qin Dynasty.",
       "wiki": "Qin_Shi_Huang"
     },
     {
       "id": 168,
       "name": "Li Si",
-      "faction": 99,
       "note": "Prime minister of Qin Shi Huang, the First Emperor.",
       "wiki": "Li_Si"
     },
     {
       "id": 169,
       "name": "Ziying",
-      "faction": 99,
       "note": "Last ruler of Qin.",
       "wiki": "Ziying"
     },
     {
       "id": 170,
       "name": "Wang Xun",
-      "faction": 99,
       "note": "Follower of Wang Mang."
     },
     {
       "id": 171,
       "name": "Su Xian",
-      "faction": 99,
       "note": "Follower of Wang Mang."
     },
     {
       "id": 172,
       "name": "Liu Biao",
-      "faction": 18,
       "note": "Imperial inspector of Jingzhou. One of the Eight Paragons of Jiangxia.",
       "wiki": "Liu_Biao"
     },
     {
       "id": 173,
       "name": "Chen Xiang",
-      "faction": 99,
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 174,
       "name": "Fan Pang",
-      "faction": 99,
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 175,
       "name": "Kong Yu",
-      "faction": 99,
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 176,
       "name": "Fan Kang",
-      "faction": 99,
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 177,
       "name": "Tan Fu",
-      "faction": 99,
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 178,
       "name": "Zhang Jian",
-      "faction": 99,
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 179,
       "name": "Cen Zhi",
-      "faction": 0,
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 180,
       "name": "Kuai Liang",
-      "faction": 18,
       "wiki": "Kuai_Liang"
     },
     {
       "id": 181,
       "name": "Kuai Yue",
-      "faction": 18,
       "wiki": "Kuai_Yue",
       "note": "Younger brother of Kuai Liang."
     },
     {
       "id": 182,
       "name": "Cai Mao",
-      "faction": 18,
       "wiki": "Cai_Mao",
       "note": "Naval officer under Liu Biao who surrendered to Cao Cao."
     },
     {
       "id": 183,
       "name": "Peng Ji",
-      "faction": 8,
       "note": "Advisor to Yuan Shao. Proposed attacking Han Fu."
     },
     {
       "id": 184,
-      "name": "Xun Chan",
-      "faction": 11,
-      "note": "Advisor to Han Fu."
+      "name": "Xun Chan"
     },
     {
       "id": 185,
       "name": "Xin Ping",
-      "faction": 11,
-      "wiki": "Xin_Ping",
-      "note": "Advisor to Han Fu."
+      "wiki": "Xin_Ping"
     },
     {
       "id": 186,
       "name": "Guan Chun",
-      "faction": 11,
-      "wiki": "Guan_Chun"
+      "wiki": "Guan_Chun",
+      "note": "Killed by Wen Chou."
     },
     {
       "id": 187,
       "name": "Geng Wu",
-      "faction": 11,
-      "wiki": "Geng_Wu"
+      "wiki": "Geng_Wu",
+      "note": "Killed by Yan Liang."
     },
     {
       "id": 188,
       "name": "Tian Feng",
       "style": "Yuanhao",
-      "faction": 8,
       "wiki": "Tian_Feng"
     },
     {
       "id": 189,
       "name": "Ju Shou",
-      "faction": 8,
       "wiki": "Ju_Shou"
     },
     {
       "id": 190,
       "name": "Xu You",
       "style": "Ziyuan",
-      "faction": 8,
       "wiki": "Xu_You",
       "note": "Advisor to Yuan Shao. Defected to Cao Cao at the battle of Guandu."
     },
     {
       "id": 191,
       "name": "Gongsun Yue",
-      "faction": 4,
       "wiki": "Gongsun_Yue",
       "note": "Brother of Gongsun zan."
     },
@@ -1128,44 +1070,39 @@
       "id": 192,
       "name": "Zhao Yun",
       "style": "Zilong",
-      "faction": 3,
       "wiki": "Zhao_Yun"
     },
     {
       "id": 193,
       "name": "Qu Yi",
-      "faction": 8,
-      "wiki": "Qu_Yi"
+      "wiki": "Qu_Yi",
+      "note": "Killed by Zhao Yun."
     },
     {
       "id": 194,
       "name": "Yan Gang",
-      "faction": 4,
-      "wiki": "Yan_Gang"
+      "wiki": "Yan_Gang",
+      "note": "Killed by Qu Yi."
     },
     {
       "id": 195,
       "name": "Ma Midi",
-      "faction": 0,
       "wiki": "Ma_Midi",
       "note": "Imperial Guardian of the Han court during Dong Zhuo's usurpation."
     },
     {
       "id": 196,
       "name": "Zhao Qi",
-      "faction": 0,
       "wiki": "Zhao_Qi_(Han_Dynasty)"
     },
     {
       "id": 197,
       "name": "Huang Zu",
-      "faction": 18,
       "wiki": "Huang_Zu"
     },
     {
       "id": 198,
       "name": "Lady Wu",
-      "faction": 7,
       "wiki": "Lady_Wu",
       "note": "Wife of Sun Jian. Mother of Sun Ce, Sun Quan, Sun Yi, and Sun Kuang."
     },
@@ -1173,7 +1110,6 @@
       "id": 199,
       "name": "Sun Ce",
       "style": "Bofu",
-      "faction": 7,
       "wiki": "Sun_Ce",
       "note": "Eldest son of Sun Jian."
     },
@@ -1181,7 +1117,6 @@
       "id": 200,
       "name": "Sun Quan",
       "style": "Zhongmou",
-      "faction": 7,
       "wiki": "Sun_Quan",
       "note": "Second son of Sun Jian. Founder of Wu."
     },
