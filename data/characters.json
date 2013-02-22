@@ -276,7 +276,6 @@
     {
       "id": 48,
       "name": "Gong Jing",
-      "faction": 0,
       "wiki": "Gong_Jing"
     },
     {
@@ -454,8 +453,7 @@
     },
     {
       "id": 82,
-      "name": "Pan Yin",
-      "faction": 0
+      "name": "Pan Yin"
     },
     {
       "id": 83,
@@ -1264,7 +1262,6 @@
     {
       "id": 225,
       "name": "Hu Chi'er",
-      "faction": 6,
       "wiki": "Hu_Chi%27er",
       "note": "Officer of Niu Fu. Murdered Niu Fu and presented his head to Lü Bu, but was executed when Lü Bu learned of his treachery."
     },
@@ -1989,8 +1986,7 @@
     },
     {
       "id": 356,
-      "name": "Yang Dajiang",
-      "faction": 9
+      "name": "Yang Dajiang"
     },
     {
       "id": 357,
