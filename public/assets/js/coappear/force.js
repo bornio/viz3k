@@ -2,7 +2,7 @@ function appear_force(data_nodes, data_links, coappear_ids)
 {
   var chartArea = document.getElementById("chart-area");
   var width = 680, height = 680;
-  var force = d3.layout.force().charge(-800).linkDistance(180).gravity(0.4).size([width, height]);
+  var force = d3.layout.force().charge(-700).linkDistance(160).gravity(0.5).size([width, height]);
   var svg = d3.select("#chart").append("svg");
   
   var viewbox_size = "0 0 " + String(width) + " " + String(height);
@@ -52,7 +52,7 @@ function appear_force(data_nodes, data_links, coappear_ids)
   g_texts.each(function(d) { if (d.links > max_links) { max_links = d.links; } })
 
   circles
-      .attr("r", function(d) { return 28*Math.sqrt(d.links/max_links) + 2; })
+      .attr("r", function(d) { return 24*Math.sqrt(d.links/max_links) + 2; })
       .style("fill", function(d) { return d3.rgb(d.color); })
 
   var texts = g_texts.append("text")
@@ -62,7 +62,7 @@ function appear_force(data_nodes, data_links, coappear_ids)
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "central")
       .text(function(d) { return d.name })
-      .attr("font-size", function(d) { return (String(16*(d.links/max_links) + 10) + "px")})
+      .attr("font-size", function(d) { return (String(12*(d.links/max_links) + 9) + "px")})
       .style("color", text_color)
       .attr("stroke-width", function(d) { return (String(1.2*(d.links/max_links) + 0.2) + "px")});
 
