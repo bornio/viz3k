@@ -1,7 +1,9 @@
 #! /usr/bin/env ruby
 # encoding: utf-8
 
-require_relative "data"
+require_relative "chapters"
+require_relative "factions"
+require_relative "people"
 
 module Viz3k
   # The Api class is the interface between the web frontend and the backend.
@@ -14,11 +16,14 @@ module Viz3k
       # parse the data files for the lists of factions, characters, and chapters
       data_path = "./data"
       @factions = Factions.new(data_path + "/factions.json")
-      @people = People.new(data_path + "/characters.json")
       @chapters = Chapters.new(data_path + "/chapters.json")
+      @people = People.new(data_path + "/characters.json", data_path + "/allegiances.json")
 
       # define relationships
       @factions.set_members(@people.people)
+
+      # set primary faction for each character
+      @people.set_primary_factions(@chapters)
     end
 
     # get a JSON representation of the faction with the requested id
@@ -96,7 +101,7 @@ module Viz3k
 
                 # otherwise append new node if there isn't one yet for this person
                 if (!found)
-                  faction = @factions.get(person.faction)
+                  faction = @factions.get(person.primary_faction())
                   person_hash = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
                                  "color"=>faction.color,"links"=>num_links}
                   if (person.style != "")
