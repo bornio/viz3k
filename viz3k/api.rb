@@ -101,7 +101,14 @@ module Viz3k
 
                 # otherwise append new node if there isn't one yet for this person
                 if (!found)
-                  faction = @factions.get(person.faction)
+                  # set the person's faction from granular per-chapter info if available
+                  # otherwise just use their primary faction
+                  faction_id = person.faction
+                  if (person.faction_for_chapter.has_key?(chapter.chapter))
+                    faction_id = person.faction_for_chapter[chapter.chapter]
+                  end
+                  faction = @factions.get(faction_id)
+
                   person_hash = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
                                  "color"=>faction.color,"links"=>num_links}
                   if (person.style != "")

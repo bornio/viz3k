@@ -98,37 +98,7 @@ module Viz3k
     # Computes the primary faction for each person and saves it in the Person object.
     def set_primary_factions(chapters)
       @people.each do |person|
-        person.faction = primary_faction(person.id, chapters)
-      end
-    end
-
-    # Determines which faction a given person is most strongly associated with in terms of pages.
-    def primary_faction(person_id, chapters)
-      person = get(person_id)
-      if (person.allegiance.length() == 1)
-        return person.allegiance[0].faction
-      else
-        person_pages = chapters.appearances(person_id)
-        faction_page_counts = {}
-
-        # initialize to 0 for all factions
-        person.allegiance.each do |person_faction|
-          faction_page_counts.merge!(person_faction.faction=>0)
-        end
-
-        # count pages in which the person appears as a member of each faction
-        person.allegiance.each do |person_faction|
-          # ignore the "Other" faction
-          person_pages.each do |person_page|
-            if (person_page >= person_faction.interval[0] && person_page <= person_faction.interval[1])
-              faction_page_counts[person_faction.faction] += 1
-            end
-          end
-        end
-
-        # sort by highest number of pages, then by lowest faction id
-        page_counts = faction_page_counts.sort_by{ |faction_id, page_count| [-page_count, faction_id] }
-        person.faction = page_counts[0][0]
+        person.set_primary_faction(chapters)
       end
     end
   end
@@ -159,15 +129,17 @@ module Viz3k
     attr_accessor :note
     attr_accessor :wiki
     attr_accessor :faction # a person's primary faction
+    attr_accessor :faction_for_chapter # hash giving a person's primary faction within each chapter
 
     def initialize(id, name, allegiance, options = {})
       @id = id
       @name = name
       @allegiance = allegiance
-      @faction = allegiance[0] # default value
       @style = ""
       @note = ""
       @wiki = ""
+      @faction = allegiance[0] # default value
+      @faction_for_chapter = {}
 
       # optional attributes
       if (options[:style])
@@ -190,6 +162,8 @@ module Viz3k
         desc += "," + @style
       end
       desc += "," + @allegiance.to_s()
+      desc += "," + @faction.to_s()
+      desc += "," + @faction_for_chapter.to_s()
       if (@note != "")
         desc += "," + @note
       end
@@ -219,6 +193,47 @@ module Viz3k
         end
       end
       return false
+    end
+
+    # Sets @faction based on this person's overall primary faction across the whole novel.
+    def set_primary_faction(chapters)
+      @faction = primary_faction(chapters.appearances(@id))
+
+      # also set a primary faction per chapter
+      chapters.chapters.each do |chapter|
+        if (chapter.num_appearances(@id) > 0)
+          @faction_for_chapter.merge!(chapter.chapter=>primary_faction(chapter.appearances(@id)))
+        end
+      end
+    end
+
+    # Gets the person's most strongly associated faction for a given range of pages.
+    def primary_faction(pages)
+      if (@allegiance.length() == 1)
+        # the person is loyal to only one faction throughout the novel
+        return @allegiance[0].faction
+      else
+        faction_page_counts = {}
+
+        # initialize to 0 for all factions
+        @allegiance.each do |person_faction|
+          faction_page_counts.merge!(person_faction.faction=>0)
+        end
+
+        # count pages in which the person appears as a member of each faction
+        @allegiance.each do |person_faction|
+          # ignore the "Other" faction
+          pages.each do |page|
+            if (page >= person_faction.interval[0] && page <= person_faction.interval[1])
+              faction_page_counts[person_faction.faction] += 1
+            end
+          end
+        end
+
+        # sort by highest number of pages, then by lowest faction id
+        page_counts = faction_page_counts.sort_by{ |faction_id, page_count| [-page_count, faction_id] }
+        return page_counts[0][0]
+      end
     end
   end
 end
