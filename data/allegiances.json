@@ -90,7 +90,7 @@
       "allegiance":
       [
         {"chron": 0, "interval":[5,6], "faction": 0},
-        {"chron": 1, "interval":[9,1457], "faction": 0}
+        {"chron": 1, "interval":[9,1457], "faction": 1}
       ]
     },
     {
@@ -2156,8 +2156,8 @@
       "id": 302,
       "allegiance":
       [
-        {"chron": 0, "interval":[5,173], "faction": 99},
-        {"chron": 1, "interval":[173,1457], "faction": 5}
+        {"chron": 0, "interval":[5,160], "faction": 6},
+        {"chron": 1, "interval":[160,1457], "faction": 0}
       ]
     },
     {
@@ -2171,8 +2171,8 @@
       "id": 304,
       "allegiance":
       [
-        {"chron": 0, "interval":[5,160], "faction": 99},
-        {"chron": 1, "interval":[160,169], "faction": 5}
+        {"chron": 0, "interval":[5,173], "faction": 99},
+        {"chron": 1, "interval":[173,1457], "faction": 5}
       ]
     },
     {
