@@ -46,6 +46,16 @@ module Viz3k
       return false
     end
 
+    # Returns the Chapter with the requested number if found. Raises StandardError otherwise.
+    def get(chapter_num)
+      @chapters.each do |chapter|
+        if (chapter.chapter == chapter_num)
+          return chapter
+        end
+      end
+      raise StandardError.new("No chapter found with specified chapter number")
+    end
+
     # Returns the total number of times the person with the given id appears among all the chapters contained.
     def num_appearances(person_id)
       total_appearances = 0

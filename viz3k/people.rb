@@ -95,6 +95,7 @@ module Viz3k
       raise StandardError.new("No person found with specified id")
     end
 
+    # Computes the primary faction for each person and saves it in the Person object.
     def set_primary_factions(chapters)
       @people.each do |person|
         person.faction = primary_faction(person.id, chapters)

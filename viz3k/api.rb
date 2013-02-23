@@ -101,7 +101,7 @@ module Viz3k
 
                 # otherwise append new node if there isn't one yet for this person
                 if (!found)
-                  faction = @factions.get(person.primary_faction())
+                  faction = @factions.get(person.faction)
                   person_hash = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
                                  "color"=>faction.color,"links"=>num_links}
                   if (person.style != "")
