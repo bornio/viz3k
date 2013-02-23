@@ -89,7 +89,7 @@
       "id": 12,
       "allegiance":
       [
-        {"chron": 0, "interval":[5,6], "faction": 0},
+        {"chron": 0, "interval":[5,9], "faction": 0},
         {"chron": 1, "interval":[9,1457], "faction": 1}
       ]
     },
