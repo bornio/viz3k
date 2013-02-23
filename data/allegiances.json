@@ -1531,8 +1531,8 @@
       "id": 215,
       "allegiance":
       [
-        {"chron": 0, "interval":[5,199], "faction": 0},
-        {"chron": 1, "interval":[199,1457], "faction": 10}
+        {"chron": 0, "interval":[5,108], "faction": 0},
+        {"chron": 1, "interval":[108,1457], "faction": 10}
       ]
     },
     {
