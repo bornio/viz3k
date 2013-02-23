@@ -295,7 +295,8 @@
       "id": 41,
       "allegiance":
       [
-        {"faction": 4}
+        {"chron": 0, "interval":[5,57], "faction": 0},
+        {"chron": 1, "interval":[57,1457], "faction": 4}
       ]
     },
     {
