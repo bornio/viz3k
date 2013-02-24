@@ -3,7 +3,7 @@
   [
     {"id":0,"name":"Han","color":"#66bbff","type":"dynasty","wiki":"Han_Dynasty"},
     {"id":1,"name":"Yellow Turbans","color":"#f89820","type":"faction","wiki":"Yellow_Turban_Rebellion"},
-    {"id":2,"name":"Liu Yan/Liu Zhang","color":"#200070","type":"faction"},
+    {"id":2,"name":"Liu Zhang","color":"#200070","type":"faction"},
     {"id":3,"name":"Shu","color":"#387800","type":"kingdom","wiki":"Shu_Han"},
     {"id":4,"name":"Gongsun Zan","color":"#f36b20","type":"faction"},
     {"id":5,"name":"Wei","color":"#2828e9","type":"kingdom","wiki":"Cao_Wei"},
