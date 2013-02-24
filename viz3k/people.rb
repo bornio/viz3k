@@ -118,6 +118,10 @@ module Viz3k
       desc = "allegiance(" + @chron.to_s() + "," + @faction.to_s() + "," + @interval.to_s() + ")"
       return desc
     end
+
+    def to_hash()
+      return {"chron"=>@chron,"faction"=>@faction,"interval"=>interval}
+    end
   end
 
   # A Person represents an individual character.
@@ -173,7 +177,8 @@ module Viz3k
 
     # Returns a hash representation of the Person object.
     def to_hash()
-      person_hash = {"id"=>@id,"name"=>@name,"faction"=>@faction}
+      person_hash = {"id"=>@id,"name"=>@name,"faction"=>@faction,"faction_for_chapter"=>@faction_for_chapter,
+                     "allegiance"=>@allegiance.map{|allegiance_faction| allegiance_faction.to_hash()}}
       if (@style != "")
         person_hash.merge!("style"=>@style)
       end

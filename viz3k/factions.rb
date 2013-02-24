@@ -108,11 +108,8 @@ module Viz3k
         faction_hash.merge!("wiki"=>@wiki)
       end
       if (@members.length > 0)
-        member_ids = []
-        @members.each do |member|
-          member_ids.push(member.id)
-        end
-        faction_hash.merge!("members"=>member_ids)
+        members_hash = {"members"=>@members.map{|member| member.to_hash()}}
+        faction_hash.merge!(members_hash)
       end
       return faction_hash
     end

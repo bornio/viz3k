@@ -31,12 +31,6 @@ module Viz3k
       return @factions.get(faction_id).to_hash().to_json()
     end
 
-    # get a JSON representation of all characters who are members of the faction with the requested id
-    def faction_members_json(faction_id)
-      members = @factions.get(faction_id).members
-      return {"members"=>members.map{|member| member.to_hash()}}.to_json()
-    end
-
     # get a JSON representation of all people along with any additional data being asked for
     def people_json(queries)
       # prepare the results as a hash

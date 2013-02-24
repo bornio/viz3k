@@ -17,6 +17,19 @@ function Faction($scope, $http)
       $scope.faction_links.push({text:"wiki",href:faction.wiki});
     }
 
+    // add parentheses to all style names
+    for (var i in faction.members)
+    {
+      if ("style" in faction.members[i])
+      {
+        faction.members[i].style_paren = "(" + faction.members[i].style + ")";
+      }
+      else
+      {
+        faction.members[i].style_paren = "";
+      }
+    }
+
     // add per-chapter stats to each faction
     var populate_timeline = function(chapters_data)
     {
@@ -39,7 +52,7 @@ function Faction($scope, $http)
       for (var c = 0; c < chapters.length; c++)
       {
         var chapter = chapters[c];
-        faction.chapters[c] = count_in_faction(faction, chapter.people);
+        faction.chapters[c] = count_in_faction(faction, chapter);
         if (faction.chapters[c] > max_people)
         {
           max_people = faction.chapters[c];
@@ -59,39 +72,48 @@ function Faction($scope, $http)
     $http.get("/data/chapters").success(populate_timeline);
   }
 
-  var populate_member_info = function(members)
+  // issue an http get to grab the info for this faction
+  $http.get("/data/factions/" + faction_num).success(populate_faction_info);
+}
+
+// count faction members only if they actually appear as an affiliate of this faction in the selected chapter
+function count_in_faction(faction, chapter)
+{
+  var member_count = 0;
+  for (var m = 0; m < faction.members.length; m++)
   {
-    for (var i in members.members)
+    var member = faction.members[m];
+    var found_in_chapter = false;
+
+    if (chapter.people.indexOf(member.id) >= 0)
     {
-      if ("style" in members.members[i])
+      // see if any of this member's intervals match this faction
+      for (var i = 0; i < member.allegiance.length; i++)
       {
-        members.members[i].style_paren = "(" + members.members[i].style + ")";
-      }
-      else
-      {
-        members.members[i].style_paren = "";
+        var affiliation = member.allegiance[i];
+        if (affiliation.faction == faction.id)
+        {
+          var interval_start = affiliation.interval[0];
+          var interval_end = affiliation.interval[1];
+          var chapter_start = chapter.pages[0];
+          var chapter_end = chapter.pages[chapter.pages.length - 1];
+
+          // see if this interval covers any part of the chapter
+          if ((interval_start >= chapter_start && interval_start <= chapter_end) ||
+              (interval_end >= chapter_start && interval_end <= chapter_end) ||
+              (interval_start <= chapter_start && interval_end >= chapter_end))
+          {
+            // if so, then count this character as appearing in this chapter as a member of this faction
+            found_in_chapter = true;
+            break;
+          }
+        }
       }
     }
 
-    $scope.faction_members = members.members;
-  }
-
-  // issue an http get to grab the info for this faction
-  $http.get("/data/factions/" + faction_num).success(populate_faction_info);
-
-  // issue an http get to grab the member info for this faction
-  $http.get("/data/factions/" + faction_num + "/members").success(populate_member_info);
-}
-
-function count_in_faction(faction, people_ids)
-{
-  var member_count = 0;
-  for (var p = 0; p < people_ids.length; p++)
-  {
-    var person_id = people_ids[p];
-    if (faction.members.indexOf(person_id) >= 0)
+    if (found_in_chapter)
     {
-      member_count += 1;
+      member_count++;
     }
   }
 

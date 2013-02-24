@@ -64,21 +64,6 @@ get '/data/factions/:faction_num' do
   end
 end
 
-get '/data/factions/:faction_num/:query' do
-  content_type :json
-  begin
-    faction_num = Integer(params[:faction_num])
-  rescue ArgumentError => e
-    raise Sinatra::NotFound.new()
-  end
-  query = params[:query]
-  if (api.factions.exists(faction_num) && query == "members")
-    api.faction_members_json(faction_num)
-  else
-    raise Sinatra::NotFound.new()
-  end
-end
-
 # people data
 get '/data/people' do
   content_type :json
