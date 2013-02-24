@@ -633,8 +633,8 @@
       "id": 88,
       "allegiance":
       [
-        {"chron": 0, "interval":[5,122], "faction": 0},
-        {"chron": 1, "interval":[122,1457], "faction": 5}
+        {"chron": 0, "interval":[5,121], "faction": 0},
+        {"chron": 1, "interval":[121,1457], "faction": 5}
       ]
     },
     {
