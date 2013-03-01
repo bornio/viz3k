@@ -16,8 +16,6 @@ function Person($scope, $http)
     // add parentheses to this person's style name
     person_style_parens(person);
 
-    console.log(person);
-
     // add external links (if any) to a list
     person.links = [];
     if ("wiki" in person)
