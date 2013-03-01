@@ -75,8 +75,8 @@ module Viz3k
         if (person.id == person_id)
           return true
         end
-        return false
       end
+      return false
     end
 
     # Returns a hash representation of the collection of Faction objects.
