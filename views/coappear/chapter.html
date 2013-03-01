@@ -82,7 +82,10 @@
                   <tbody>
                     <tr ng-repeat="person in people_by_importance">
                       <td class="table-char-ranking">{{$index + 1}}</td>
-                      <td>{{person.name}} <span class="muted">{{person.style_parens}}</span></td>
+                      <td>
+                        <a href="/people/{{person.id}}">{{person.name}}</a>
+                        <span class="muted"> {{person.style_parens}}</span>
+                      </td>
                       <td class="table-char-faction-badge">
                         <a href="/factions/{{person.group}}">
                           <div class="faction-badge" style="{{'background: ' + person.color + ';'}}"></div>
