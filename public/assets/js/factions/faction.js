@@ -18,17 +18,7 @@ function Faction($scope, $http)
     }
 
     // add parentheses to all style names
-    for (var i in faction.members)
-    {
-      if ("style" in faction.members[i])
-      {
-        faction.members[i].style_paren = "(" + faction.members[i].style + ")";
-      }
-      else
-      {
-        faction.members[i].style_paren = "";
-      }
-    }
+    people_style_parens(faction.members);
 
     // add per-chapter stats to each faction
     var populate_timeline = function(chapters_data)

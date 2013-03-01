@@ -10,19 +10,12 @@ function People($scope, $http)
   {
     var people = people_json.people;
 
+    // add style name (if any) in parentheses
+    people_style_parens(people);
+
     for (var i in people)
     {
-      // add style name (if any) in parentheses
-      if ("style" in people[i])
-      {
-        people[i].style_paren = "(" + people[i].style + ")";
-      }
-      else
-      {
-        people[i].style_paren = "";
-      }
-
-      // add external links (if any) in parentheses
+      // add external links (if any) to a list
       people[i].links = [];
       if ("wiki" in people[i])
       {

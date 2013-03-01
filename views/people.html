@@ -42,7 +42,7 @@
                 <tr ng-repeat="person in people | filter:query | orderBy:people_order:people_order_invert">
                   <td class="table-person-name">
                     {{person.name}}
-                    <span class="muted"> {{person.style_paren}}</span>
+                    <span class="muted"> {{person.style_parens}}</span>
                     <small ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )<small>
                   </td>
                   
@@ -75,6 +75,9 @@
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
+
+    <!-- general utility functions -->
+    <script type="text/javascript" src="/assets/js/util.js"></script>
 
     <!-- controller for this view -->
     <script type="text/javascript" src="/assets/js/people.js"></script>

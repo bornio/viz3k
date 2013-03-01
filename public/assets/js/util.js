@@ -41,3 +41,25 @@ function count_in_faction(faction, chapter)
 
   return member_count;
 }
+
+// add a parenthesized version of a person's style name if they have one
+function person_style_parens(person)
+{
+  if ("style" in person)
+  {
+    person.style_parens = "(" + person.style + ")";
+  }
+  else
+  {
+    person.style_parens = "";
+  }
+}
+
+// given an array of people, add a parenthesized version of each person's style name if they have one
+function people_style_parens(people)
+{
+  for (var i in people)
+  {
+    person_style_parens(people[i]);
+  }
+}

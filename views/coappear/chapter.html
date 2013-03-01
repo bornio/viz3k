@@ -82,7 +82,7 @@
                   <tbody>
                     <tr ng-repeat="person in people_by_importance">
                       <td class="table-char-ranking">{{$index + 1}}</td>
-                      <td>{{person.name}} <span class="muted">{{person.style_paren}}</span></td>
+                      <td>{{person.name}} <span class="muted">{{person.style_parens}}</span></td>
                       <td class="table-char-faction-badge">
                         <a href="/factions/{{person.group}}">
                           <div class="faction-badge" style="{{'background: ' + person.color + ';'}}"></div>
@@ -116,6 +116,9 @@
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
+
+    <!-- general utility functions -->
+    <script type="text/javascript" src="/assets/js/util.js"></script>
 
     <!-- controller for this view -->
     <script type="text/javascript" src="/assets/js/coappear/chapter.js"></script>

@@ -80,17 +80,7 @@ function Chapter($scope, $http)
     // get the top five
     top_five = nodes.slice(0,5);
 
-    for (var i in top_five)
-    {
-      if ("style" in top_five[i])
-      {
-        top_five[i].style_paren = "(" + top_five[i].style + ")";
-      }
-      else
-      {
-        top_five[i].style_paren = "";
-      }
-    }
+    people_style_parens(top_five);
 
     $scope.people_by_importance = top_five;
 
