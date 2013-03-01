@@ -52,7 +52,6 @@ get '/people/:person_id' do
     raise Sinatra::NotFound.new()
   end
   if (api.people.exists(person_id))
-    puts "found 'em!"
     File.read("views/people/person.html")
   else
     raise Sinatra::NotFound.new()
