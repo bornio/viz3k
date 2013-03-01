@@ -49,5 +49,5 @@ function People($scope, $http)
   }
 
   // get our data from the backend
-  $http.get("/data/people/num-appearances").success(populate_people);
+  $http.get("/data/people").success(populate_people);
 }

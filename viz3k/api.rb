@@ -31,28 +31,18 @@ module Viz3k
       return @factions.get(faction_id).to_hash().to_json()
     end
 
-    # get a JSON representation of all people along with any additional data being asked for
-    def people_json(queries)
+    # get a JSON representation of all people along with some additional info
+    def people_json()
       # prepare the results as a hash
       results = @people.to_hash()
 
-      # clear the query list of duplicates
-      queries.uniq!
-
-      # add to the results whatever info was requested
-      queries.each do |query|
-        if (query == "num-appearances")
-          results["people"].each do |person_result|
-            num_appearances = 0
-            @chapters.chapters.each do |chapter|
-              num_appearances += chapter.num_appearances(person_result["id"])
-            end
-            person_result.merge!("num_appearances"=>num_appearances)
-          end
-        else
-          # unrecognized query
-          raise StandardError.new("Unrecognized query '" + query.to_s() + "'.")
+      # count how many pages each person appeared on in the novel
+      results["people"].each do |person_result|
+        num_appearances = 0
+        @chapters.chapters.each do |chapter|
+          num_appearances += chapter.num_appearances(person_result["id"])
         end
+        person_result.merge!("num_appearances"=>num_appearances)
       end
 
       return results.to_json()

@@ -67,17 +67,7 @@ end
 # people data
 get '/data/people' do
   content_type :json
-  api.people.to_hash().to_json()
-end
-
-get '/data/people/:query' do
-  content_type :json
-  query = params[:query]
-  begin
-    api.people_json([query])
-  rescue StandardError => e
-    halt 400
-  end
+  api.people_json()
 end
 
 # chapter data
