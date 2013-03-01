@@ -13,16 +13,6 @@ function People($scope, $http)
     // add style name (if any) in parentheses
     people_style_parens(people);
 
-    for (var i in people)
-    {
-      // add external links (if any) to a list
-      people[i].links = [];
-      if ("wiki" in people[i])
-      {
-        people[i].links.push({text:"wiki",href:people[i].wiki});
-      }
-    }
-
     var populate_factions = function(factions_json)
     {
       var factions = factions_json.factions;

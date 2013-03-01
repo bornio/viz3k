@@ -26,17 +26,18 @@ module Viz3k
       @people.set_primary_factions(@chapters)
     end
 
-    # get a JSON representation of the faction with the requested id
+    # Gets a JSON representation of the faction with the requested id.
     def factions_json(faction_id)
       return @factions.get(faction_id).to_hash().to_json()
     end
 
-    # get a JSON representation of all people along with some additional info
+    # Gets a JSON representation of all people along with some additional info.
+    # @todo Compute the num_appearances stuff in initialize() instead to avoid recomputing it each time.
     def people_json()
       # prepare the results as a hash
       results = @people.to_hash()
 
-      # count how many pages each person appeared on in the novel
+      # count how many pages each person appeared on in the novel.
       results["people"].each do |person_result|
         num_appearances = 0
         @chapters.chapters.each do |chapter|
@@ -48,7 +49,21 @@ module Viz3k
       return results.to_json()
     end
 
-    # generates a coappearance graph using data from the specified chapters
+    # Gets a JSON representation of the person with the requested id.
+    def person_json(person_id)
+      results = @people.get(person_id).to_hash()
+
+      # count how many pages this person appeared on in the novel.
+      num_appearances = 0
+      @chapters.chapters.each do |chapter|
+        num_appearances += chapter.num_appearances(results["id"])
+      end
+      results.merge!("num_appearances"=>num_appearances)
+
+      return results.to_json()
+    end
+
+    # Generates a coappearance graph using data from the specified chapters.
     def coappearances(chapter_nums)
       nodes = []
       links = []

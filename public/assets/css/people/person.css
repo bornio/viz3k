@@ -1,0 +1,16 @@
+td.table-faction-primary {
+  width: 15%;
+  vertical-align: middle;
+  text-align: left;
+}
+
+td.table-faction-badge {
+  width: 48px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+td.table-faction {
+  width: 80%;
+  vertical-align: middle;
+}

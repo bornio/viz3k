@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" ng-app ng-controller="Person">
+  <head>
+    <meta charset="utf-8">
+    <title>{{person.name}} {{person.style_parens}} - Viz3k</title>
+    <!-- use Twitter Bootstrap for styling -->
+    <link href="/lib/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- styling common to all pages except splash page -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
+    <!-- styling for this page -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/people/person.css"/>
+    <!-- styling for charts -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/charts/appearance_timeline.css"/>
+  </head>
+  <body>
+    <!-- include the navbar at the top -->
+    <div ng-include src="navbar_url"></div>
+
+    <!-- content goes here -->
+    <div class="container">
+      <!-- page header with faction info -->
+      <div class="page-header ng-cloak">
+        <p class="lead" style="margin-bottom: 0px;">{{person.name}}</p>
+        <p>{{style_label}} {{style_text}}</p>
+        <p>Appears on {{person.num_appearances}} pages</p>
+        <p ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )<p>
+      </div>
+
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#affiliation" data-toggle="tab">Faction affiliations</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="affiliation">            
+            <table class="table table-condensed ng-cloak">
+              <tbody>
+                <tr>
+                  <td class="table-faction-label">
+                    <b>Primary affiliation:</b>
+                  </td>
+                  <td class="table-faction-badge">
+                    <a href="/factions/{{person.faction}}">
+                      <div class="faction-badge" style="{{'background: ' + primary_faction.color + ';'}}"></div>
+                    </a>
+                  </td>
+                  <td class="table-faction">
+                    <a href="/factions/{{person.faction}}">{{primary_faction.name}}</a>
+                    <span class="muted">{{primary_faction.type_label}}</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--<div class="tab-pane" id="characters-centrality"></div>-->
+        </div>
+      </div>
+
+      <hr>
+      <footer>
+      </footer>
+    </div>
+
+    <!-- load javascripts last for speed -->
+
+    <!-- third party javascript -->
+    <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/angular.min.js"></script>
+
+    <!-- general utility functions -->
+    <script type="text/javascript" src="/assets/js/util.js"></script>
+
+    <!-- controller for this view -->
+    <script type="text/javascript" src="/assets/js/people/person.js"></script>
+
+    <!-- charts used by this view -->
+    <script type="text/javascript" src="/assets/js/charts/appearance_timeline.js"></script>
+  </body>
+</html>

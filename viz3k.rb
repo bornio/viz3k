@@ -44,6 +44,21 @@ get '/factions/:faction_num' do
   end
 end
 
+# people pages
+get '/people/:person_id' do
+  begin
+    person_id = Integer(params[:person_id])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  if (api.people.exists(person_id))
+    puts "found 'em!"
+    File.read("views/people/person.html")
+  else
+    raise Sinatra::NotFound.new()
+  end
+end
+
 # faction data
 get '/data/factions' do
   content_type :json
@@ -68,6 +83,20 @@ end
 get '/data/people' do
   content_type :json
   api.people_json()
+end
+
+get '/data/people/:person_id' do
+  content_type :json
+  begin
+    person_id = Integer(params[:person_id])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  if (api.people.exists(person_id))
+    api.person_json(person_id)
+  else
+    raise Sinatra::NotFound.new()
+  end
 end
 
 # chapter data

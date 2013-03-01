@@ -41,9 +41,8 @@
               <tbody>
                 <tr ng-repeat="person in people | filter:query | orderBy:people_order:people_order_invert">
                   <td class="table-person-name">
-                    {{person.name}}
+                    <a href="/people/{{person.id}}">{{person.name}}</a>
                     <span class="muted"> {{person.style_parens}}</span>
-                    <small ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )<small>
                   </td>
                   
                   <td class="table-person-faction-badge">
