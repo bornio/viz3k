@@ -25,23 +25,15 @@ function Person($scope, $http)
 
     var populate_factions_info = function(factions)
     {
+      // find this person's primary faction
       var primary_faction;
       for (var f in factions.factions)
       {
         var faction = factions.factions[f];
         if (faction.id == person.faction)
         {
-          // for non-generic faction types, label the type in parentheses
-          if (faction.type != "faction")
-          {
-            faction.type_label = "(" + faction.type + ")";
-          }
-          else
-          {
-            faction.type_label = "";
-          }
-
           primary_faction = faction;
+          label_faction_type(primary_faction);
           break;
         }
       }
