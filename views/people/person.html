@@ -37,19 +37,31 @@
         <div class="tab-content">
           <div class="tab-pane active" id="affiliation">            
             <table class="table table-condensed ng-cloak">
-              <tbody>
+              <thead>
                 <tr>
-                  <td class="table-faction-label">
-                    <b>Primary affiliation:</b>
-                  </td>
                   <td class="table-faction-badge">
                     <a href="/factions/{{person.faction}}">
                       <div class="faction-badge" style="{{'background: ' + primary_faction.color + ';'}}"></div>
                     </a>
                   </td>
                   <td class="table-faction">
-                    <a href="/factions/{{person.faction}}">{{primary_faction.name}}</a>
-                    <span class="muted">{{primary_faction.type_label}}</span>
+                    <span class="lead">
+                      <a href="/factions/{{person.faction}}">{{primary_faction.name}}</a>
+                      <span class="muted">{{primary_faction.type_label}}</span>
+                    </span>
+                  </td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="faction in other_factions">
+                  <td class="table-faction-badge" style="border-style: none;">
+                    <a href="/factions/{{faction.id}}">
+                      <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
+                    </a>
+                  </td>
+                  <td class="table-faction" style="border-style: none;">
+                    <a href="/factions/{{faction.id}}">{{faction.name}}</a>
+                    <span class="muted">{{faction.type_label}}</span>
                   </td>
                 </tr>
               </tbody>

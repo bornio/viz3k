@@ -25,21 +25,37 @@ function Person($scope, $http)
 
     var populate_factions_info = function(factions)
     {
-      // find this person's primary faction
+      // find this person's faction info
       var primary_faction;
+      var other_factions = new Array();
       for (var f in factions.factions)
       {
         var faction = factions.factions[f];
+
+        // primary faction
         if (faction.id == person.faction)
         {
           primary_faction = faction;
           label_faction_type(primary_faction);
-          break;
+        }
+
+        // other affiliations
+        for (var a in person.allegiance)
+        {
+          var affiliation = person.allegiance[a];
+          if ((affiliation.faction != person.faction) &&
+              (affiliation.faction == faction.id))
+          {
+            label_faction_type(faction);
+            other_factions.push(faction);
+          }
         }
       }
 
       // assign data to the scope
       $scope.primary_faction = primary_faction;
+      $scope.other_factions = other_factions;
+      console.log(other_factions);
       $scope.person = person;
 
       if ("style" in person)
