@@ -182,7 +182,7 @@ describe "data" do
 
     it "should each appear on at least one page in chapters.json" do
       @people.people.each do |person|
-        @chapters.num_appearances(person.id).should >= 0
+        @chapters.num_appearances(person.id).should > 0
       end
     end
   end
