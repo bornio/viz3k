@@ -528,25 +528,24 @@
       "id": 96,
       "name": "Li Jue",
       "wiki": "Li_Jue_(Han_Dynasty)",
-      "note": "One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
+      "note": "Killed by Duan Wei."
     },
     {
       "id": 97,
       "name": "Guo Si",
       "wiki": "Guo_Si",
-      "note": "One of Dong Zhuo's generals. Occupied the capital with Guo Si after Dong Zhuo's death."
+      "note": "Killed by Wu Xi."
     },
     {
       "id": 98,
       "name": "Zhang Ji",
-      "wiki": "Zhang_Ji_(Han_Dynasty)",
-      "note": "One of Dong Zhuo's generals who later served Li Jue and Guo Si. Appointed General of the Flying Cavalry for mediating when fighting broke out between Li Jue and Guo Si."
+      "wiki": "Zhang_Ji_(Han_Dynasty)"
     },
     {
       "id": 99,
       "name": "Fan Chou",
       "wiki": "Fan_Chou",
-      "note": "One of Dong Zhuo's generals who later served Li Jue and Guo Si. Executed by Li Jue after failing to pursue Han Sui."
+      "note": "Executed by Li Jue after failing to pursue Han Sui."
     },
     {
       "id": 100,
@@ -1519,7 +1518,7 @@
     },
     {
       "id": 269,
-      "name": "Li Feng",
+      "name": "Li Feng (1)",
       "note": "Killed by Xu Chu."
     },
     {
@@ -1679,7 +1678,8 @@
     {
       "id": 299,
       "name": "Yang Feng",
-      "wiki": "Yang_Feng"
+      "wiki": "Yang_Feng",
+      "note": "Killed along with Han Xian by Guan Yu and Zhang Fei."
     },
     {
       "id": 300,
@@ -1719,7 +1719,7 @@
       "id": 307,
       "name": "Han Xian",
       "wiki": "Han_Xian_(Han_Dynasty)",
-      "note": "Officer of the White Wave rebels, an offshoot of the Yellow Turbans."
+      "note": "Officer of the White Wave rebels, an offshoot of the Yellow Turbans. Killed along with Yang Feng by Guan Yu and Zhang Fei."
     },
     {
       "id": 308,
@@ -1996,7 +1996,8 @@
     {
       "id": 358,
       "name": "Qiao Rui",
-      "wiki": "Qiao_Rui"
+      "wiki": "Qiao_Rui",
+      "note": "Killed by Xiahou Dun."
     },
     {
       "id": 359,
@@ -2086,6 +2087,84 @@
       "name": "Zhang Lu",
       "style": "Gongqi",
       "wiki": "Zhang_Lu_(Han_Dynasty)"
+    },
+    {
+      "id": 375,
+      "name": "Yan Xiang",
+      "wiki": "Yan_Xiang_(Han_Dynasty)"
+    },
+    {
+      "id": 376,
+      "name": "Hou Ji",
+      "wiki": "Hou_Ji",
+      "note": "Legendary figure, claimed as an ancestor of the Zhou ruling family."
+    },
+    {
+      "id": 377,
+      "name": "King Wen of Zhou",
+      "wiki": "King_Wen_of_Zhou"
+    },
+    {
+      "id": 378,
+      "name": "Feng Fang",
+      "note": "Father of Yuan Shu's empress."
+    },
+    {
+      "id": 379,
+      "name": "Feng Fang's daughter",
+      "note": "Yuan Shu's empress."
+    },
+    {
+      "id": 380,
+      "name": "Chen Ji",
+      "wiki": "Chen_Ji_(Yuan_Shu_official)",
+      "note": "Executed by Cao Cao."
+    },
+    {
+      "id": 381,
+      "name": "Jin Shang",
+      "note": "Executed by Yuan Shu for refusing a promotion."
+    },
+    {
+      "id": 382,
+      "name": "Li Feng (2)",
+      "note": "His hand was speared by Lü Bu in a brief clash. Executed by Cao Cao."
+    },
+    {
+      "id": 383,
+      "name": "Liang Gang",
+      "wiki": "Liang_Gang_(Han_Dynasty)",
+      "note": "Executed by Cao Cao."
+    },
+    {
+      "id": 384,
+      "name": "Yue Jiu",
+      "wiki": "Yue_Jiu",
+      "note": "Executed by Cao Cao."
+    },
+    {
+      "id": 385,
+      "name": "Dian Man",
+      "note": "Son of Dian Wei."
+    },
+    {
+      "id": 386,
+      "name": "Wang Hou",
+      "note": "Granary Officer whose head was \"borrowed\" by Cao Cao to placate the troops."
+    },
+    {
+      "id": 387,
+      "name": "Wu Xi",
+      "note": "Killed Guo Si."
+    },
+    {
+      "id": 388,
+      "name": "Lei Xu"
+    },
+    {
+      "id": 389,
+      "name": "Zhang Xian",
+      "note": "Killed by Xu Chu."
     }
   ]
 }
