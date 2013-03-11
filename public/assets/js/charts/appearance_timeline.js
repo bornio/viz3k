@@ -24,7 +24,7 @@ function appearance_timeline(element_id, factions, chapters, max_people)
 
   // create link anchors for every chapter
   var anchors = svg.selectAll("a").data(chapters).enter().append("a")
-    .attr("xlink:href", function(d) { return "/coappear/chapter/" + d.chapter; });
+    .attr("xlink:href", function(d) { return "/chapters/" + d.chapter; });
   anchors.append("title").text(function(d) { return "Chapter " + d.chapter; });
   var anchor_rects = anchors.append("rect");
 

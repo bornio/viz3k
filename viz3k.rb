@@ -17,14 +17,14 @@ get '/' do
 end
 
 # chapter pages
-get '/coappear/chapter/:chapter_num' do
+get '/chapters/:chapter_num' do
   begin
     chapter_num = Integer(params[:chapter_num])
   rescue ArgumentError => e
     raise Sinatra::NotFound.new()
   end
   if (api.chapters.exists(chapter_num))
-    File.read("views/coappear/chapter.html")
+    File.read("views/chapters/chapter.html")
   else
     raise Sinatra::NotFound.new()
   end
