@@ -79,8 +79,9 @@ p {
     margin-bottom: 12px;
   }
 
-  th, td {
+  .table th, .table td {
     font-size: 9px;
+    line-height: 11px;
   }
 
   input.input-block-level {
