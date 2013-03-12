@@ -1,17 +1,3 @@
-/* on screens below 768px-wide, make the stack well shorter */
-@media(max-width:767px) {
-  #stack-well {
-    height: 300px;
-    overflow-y: auto;
-  }
-}
-@media(min-width:768px) {
-  #stack-well {
-    height: 680px;
-    overflow-y: auto;
-  }
-}
-
 #char-stats-area {
   min-height: 600px;
 }

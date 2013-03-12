@@ -134,95 +134,6 @@ function appear_force(data_nodes, data_links, coappear_ids)
   };
 }
 
-function appear_stack(nodes, graph)
-{
-  var characters = nodes_sort_by_links(nodes);
-
-  // map new (sorted) indices back to the ones used by D3 to draw the graph
-  //var indices = new Array(nodes.length);
-  for (c = 0; c < characters.length; c++)
-  {
-    for (n = 0; n < nodes.length; n++)
-    {
-      if (characters[c].id == nodes[n].id)
-      {
-        characters[c].node_index = n;
-      }
-    }
-  }
-
-  // style
-  var bar_height = 22;
-  var bar_width = 24;
-  var label_size = "13px";
-  var height = bar_height * characters.length;
-
-  var svg = d3.select("#stack").append("svg").attr("height", height);
-  
-  // get baselines
-  var baselines = new Array(characters.length);
-  for (i = 0; i < characters.length; i++)
-  {
-    baselines[i] = i*bar_height;
-  }
-
-  // use an svg:g element to group each bar with its associated text label
-  var stack_items = svg.append("g").selectAll("g")
-      .data(characters).enter().append("g")
-      .attr("class","stack_item")
-      .attr("transform", function(d, i) { return "translate(" + 0 + "," + baselines[i] + ")"; });
-
-  // create an area to be used for each data bar and its associated text label
-  var bar_areas = stack_items.append("rect").attr("class","stack_bar_area")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("width", "100%")
-    .attr("height", function(d) { return bar_height; })
-    .style("fill", "#ffffff")
-    .style("opacity", 0.0);
-
-  // create the colored bars, one for each element of data
-  var bars = stack_items.append("rect").attr("class","stack_bar")
-    .attr("x", bar_width*0.25)
-    .attr("y", 0)
-    .attr("width", bar_width)
-    .attr("height", function(d) { return bar_height; })
-    .style("fill", function(d, i) { return d3.rgb(d.color); });
-
-  // create text labels for each bar
-  var bar_texts = stack_items.append("text").attr("class","stack")
-    .attr("x", bar_width*1.75)
-    .attr("y", function(d) { return bar_height/2; })
-    .attr("dominant-baseline", "central")
-    .text(function(d) { return d.name })
-    .attr("font-size", label_size);
-
-  // set mouseover and mouseout events for each bar area and the bars themselves
-  function stack_mouseover(character, character_index)
-  {
-    // highlight this person's bar in the stack
-    bar_areas.filter(function(d) { return (d.id == character.id) ? this : null; })
-      .style("fill", "#aaeeff")
-      .style("opacity", 1.0);
-
-    // highlight this person's circle in the graph
-    graph.highlight_i(character, character.node_index);
-  }
-
-  function stack_mouseout(character, character_index)
-  {
-    // unhighlight this person's bar in the stack
-    bar_areas.filter(function(d) { return (d.id == character.id) ? this : null; })
-      .style("opacity", 0.0);
-
-    // unhighlight this person's circle in the graph
-    graph.highlight_o(character, character.node_index);
-  }
-
-  stack_items.on("mouseover", function(d, i) { stack_mouseover(d, i); });
-  stack_items.on("mouseout", function(d, i) { stack_mouseout(d, i); });
-}
-
 function get_coappearances(nodes, links)
 {
   var coappear_ids = new Array(nodes.length);
@@ -253,10 +164,7 @@ function coappear_draw(nodes, links)
   // render the coappearance graph
   var graph = appear_force(nodes, links, coappear_ids);
 
-  // render the character stack
-  var stack = appear_stack(nodes, graph);
-
-  return { graph : graph, stack : stack };
+  return { graph : graph };
 }
 
 function coappear(data_file_path, data_callback)

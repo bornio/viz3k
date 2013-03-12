@@ -10,9 +10,6 @@ text.node {
 }
 
 @media(max-width:767px) {
-  text.stack {
-    font-size: 9px;
-  }
 }
 
 circle.node {

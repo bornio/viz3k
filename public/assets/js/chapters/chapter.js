@@ -47,24 +47,29 @@ function Chapter($scope, $http)
     }
   );
 
+  var header_area = document.getElementById("container-header");
   var chart_area = document.getElementById("chart-area");
-  var stack_area = document.getElementById("stack-area");
   var stats_area = document.getElementById("char-stats-area");
 
   var window_resize = function()
   {
-    if (document.body.clientWidth < 979)
+    if (document.body.clientWidth < 980)
     {
-      
+      header_area.className = "span12";
       chart_area.className = "hidden-phone span12";
-      stack_area.className = "visible-desktop";
       stats_area.className = "span12";
+    }
+    else if (document.body.clientWidth < 1200)
+    {
+      header_area.className = "span10";
+      chart_area.className = "hidden-phone span10";
+      stats_area.className = "span10";
     }
     else
     {
-      chart_area.className = "hidden-phone span9";
-      stack_area.className = "visible-desktop span3";
-      stats_area.className = "span8 offset3";
+      header_area.className = "span8 offset2";
+      chart_area.className = "hidden-phone span8 offset2";
+      stats_area.className = "span8 offset2";
     }
   }
 
@@ -83,6 +88,8 @@ function Chapter($scope, $http)
     people_style_parens(top_five);
 
     $scope.people_by_importance = top_five;
+    $scope.people = nodes;
+    $scope.people_order = "name";
 
     // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
     $scope.$apply();
