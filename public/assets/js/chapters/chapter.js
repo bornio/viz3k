@@ -81,11 +81,10 @@ function Chapter($scope, $http)
   var compute_stats = function(nodes, links) {
     // calculate importance by sorting nodes by decreasing number of links
     nodes = nodes_sort_by_links(nodes);
+    people_style_parens(nodes);
 
     // get the top five
     top_five = nodes.slice(0,5);
-
-    people_style_parens(top_five);
 
     $scope.people_by_importance = top_five;
     $scope.people = nodes;
