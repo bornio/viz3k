@@ -2,8 +2,8 @@ function appearance_timeline(element_id, factions, chapters, max_people)
 {
   var chart_initialized = false;
   // append the svg element for drawing the chart on
-  var svg = d3.select("#" + element_id).append("svg").attr("class", "chart-appearances");
-  var svg_height = document.getElementById("chart-appearances").clientHeight;
+  var svg = d3.select("#" + element_id).append("svg");
+  var svg_height = document.getElementById(element_id).clientHeight;
   var padding_l = 24;
   var padding_t = 6;
   var padding_b = 6;
