@@ -43,37 +43,44 @@
       </div>
       <hr>
 
-      <!-- filter and sort options for list of people below -->
-      <div class="row">
-        <div class="span3">
-          <form class="form-inline">
-            <fieldset>
-              <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
-            </fieldset>
-          </form>
-        </div>
-      </div>
-      
-      <!-- list of faction members -->
-      <div  class="scroll-list">
-        <table class="table table-condensed ng-cloak">
-          <tr ng-repeat="member in faction.members | filter:query | orderBy:'name'">
-            <td>
-              <a href="/people/{{member.id}}">{{member.name}}</a>
-              <span class="muted"> {{member.style_parens}}</span>
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <!-- info and stats down here -->
-      <hr>
-      <div class="row">
-        <div id="stats-area" class="span12">
-          <h5># of faction members appearing in each chapter</h5>
-          <div class="well well-small">
-            <div id="chart-appearances" class="appearance-timeline"></div>
-            <small class="muted appearance-timeline-label">Click anywhere on the chart to jump to a chapter.</small>
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li class="active">
+            <a href="#members" data-toggle="tab">Members</a>
+          </li>
+          <li>
+            <a href="#stats" data-toggle="tab">Stats</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <!-- list of faction members -->
+          <div class="tab-pane active" id="members">
+            <!-- filter and sort options -->
+            <div class="row">
+              <div class="span3">
+                <form class="form-inline">
+                  <fieldset>
+                    <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+            <table class="table table-condensed ng-cloak">
+              <tr ng-repeat="member in faction.members | filter:query | orderBy:'name'">
+                <td>
+                  <a href="/people/{{member.id}}">{{member.name}}</a>
+                  <span class="muted"> {{member.style_parens}}</span>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <!-- statistics for this faction -->
+          <div class="tab-pane" id="stats">
+            <h5>Members mentioned per chapter</h5>
+            <div class="well well-small">
+              <div id="chart-appearances" class="appearance-timeline"></div>
+              <small class="muted appearance-timeline-label">Click anywhere on the chart to jump to a chapter.</small>
+            </div>
           </div>
         </div>
       </div>

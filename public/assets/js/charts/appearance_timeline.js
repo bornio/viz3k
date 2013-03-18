@@ -63,7 +63,7 @@ function appearance_timeline(element_id, factions, chapters, max_people)
     .call(xaxis);
 
   // render or resize the chart as needed
-  var chart_resize = function()
+  var chart_resized = function()
   {
     // recompute element widths based on the width of the parent element
     svg_width = document.getElementById(element_id).clientWidth;
@@ -115,8 +115,11 @@ function appearance_timeline(element_id, factions, chapters, max_people)
     chart_initialized = true;
   }
 
-  // call chart_resize() to draw the chart for the first time
-  chart_resize();
+  // call chart_resized() to draw the chart for the first time
+  chart_resized();
 
-  window.addEventListener("resize", chart_resize, false);
+  // return the resize handler so it can be used by the caller
+  return {
+    resized : chart_resized
+  };
 }
