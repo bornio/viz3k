@@ -33,33 +33,31 @@
         </div>
       </div>
 
-      <!-- scrollable list of people -->
+      <!-- list of people -->
       <div class="row">
         <div class="span12">
-          <div class="scroll-list">
-            <table class="table table-condensed ng-cloak">
-              <tbody>
-                <tr ng-repeat="person in people | filter:query | orderBy:people_order:people_order_invert">
-                  <td class="table-person-name">
-                    <a href="/people/{{person.id}}">{{person.name}}</a>
-                    <span class="muted"> {{person.style_parens}}</span>
-                  </td>
-                  
-                  <td class="table-person-faction-badge">
-                    <a href="/factions/{{person.faction}}">
-                      <div class="faction-badge" style="{{'background: ' + person.faction_color + ';'}}"></div>
-                    </a>
-                  </td>
-                  <td class="table-person-faction">
-                    <a href="/factions/{{person.faction}}">{{person.faction_name}}</a>
-                  </td>
-                  <td class="table-person-num-appearances muted hidden-phone">
-                    <small>appears on {{person.num_appearances}} pages</small>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table class="table table-condensed ng-cloak">
+            <tbody>
+              <tr ng-repeat="person in people | filter:query | orderBy:people_order:people_order_invert">
+                <td class="table-person-name">
+                  <a href="/people/{{person.id}}">{{person.name}}</a>
+                  <span class="muted"> {{person.style_parens}}</span>
+                </td>
+                
+                <td class="table-person-faction-badge">
+                  <a href="/factions/{{person.faction}}">
+                    <div class="faction-badge" style="{{'background: ' + person.faction_color + ';'}}"></div>
+                  </a>
+                </td>
+                <td class="table-person-faction">
+                  <a href="/factions/{{person.faction}}">{{person.faction_name}}</a>
+                </td>
+                <td class="table-person-num-appearances muted hidden-phone">
+                  <small>appears on {{person.num_appearances}} pages</small>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
