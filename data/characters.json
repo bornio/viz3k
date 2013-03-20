@@ -53,8 +53,7 @@
     {
       "id": 9,
       "name": "Cai Yong",
-      "wiki": "Cai_Yong",
-      "note:": "Privy Counselor of the Late Han court. Executed by Wang Yun for mourning the death of Dong Zhuo."
+      "wiki": "Cai_Yong"
     },
     {
       "id": 10,
@@ -264,14 +263,12 @@
     {
       "id": 46,
       "name": "Cheng Yuanzhi",
-      "wiki": "Cheng_Yuanzhi",
-      "note": "Killed by Guan Yu."
+      "wiki": "Cheng_Yuanzhi"
     },
     {
       "id": 47,
       "name": "Deng Mao",
-      "wiki": "Deng_Mao",
-      "note": "Killed by Zhang Fei."
+      "wiki": "Deng_Mao"
     },
     {
       "id": 48,
@@ -325,20 +322,17 @@
     {
       "id": 57,
       "name": "Gao Sheng",
-      "wiki": "Gao_Sheng_(rebel)",
-      "note": "Killed by Zhang Fei."
+      "wiki": "Gao_Sheng_(rebel)"
     },
     {
       "id": 58,
       "name": "Yan Zheng",
-      "wiki": "Yan_Zheng_(rebel)",
-      "note": "Killed Zhang Bao, his own commander."
+      "wiki": "Yan_Zheng_(rebel)"
     },
     {
       "id": 59,
       "name": "Zhao Hong",
-      "wiki": "Zhao_Hong_(rebel)",
-      "note": "Killed by Sun Jian."
+      "wiki": "Zhao_Hong_(rebel)"
     },
     {
       "id": 60,
@@ -348,8 +342,7 @@
     {
       "id": 61,
       "name": "Sun Zhong",
-      "wiki": "Sun_Zhong_(rebel)",
-      "note": "Killed by Liu Bei."
+      "wiki": "Sun_Zhong_(rebel)"
     },
     {
       "id": 62,
@@ -607,7 +600,8 @@
     {
       "id": 111,
       "name": "Ding Yuan",
-      "wiki": "Ding_Yuan"
+      "wiki": "Ding_Yuan",
+      "note": "Killed by Lü_Bu."
     },
     {
       "id": 112,

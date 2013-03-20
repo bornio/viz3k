@@ -4,6 +4,7 @@
 require_relative "chapters"
 require_relative "factions"
 require_relative "people"
+require_relative "deaths"
 
 module Viz3k
   # The Api class is the interface between the web frontend and the backend.
@@ -18,6 +19,7 @@ module Viz3k
       @factions = Factions.new(data_path + "/factions.json")
       @chapters = Chapters.new(data_path + "/chapters.json")
       @people = People.new(data_path + "/characters.json", data_path + "/allegiances.json")
+      @deaths = Deaths.new(data_path + "/deaths.json")
 
       # define relationships
       @factions.set_members(@people.people)
