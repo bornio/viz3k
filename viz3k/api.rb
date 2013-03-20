@@ -12,6 +12,7 @@ module Viz3k
     attr_reader :factions
     attr_reader :people
     attr_reader :chapters
+    attr_reader :deaths
 
     def initialize()
       # parse the data files for the lists of factions, characters, and chapters
@@ -63,6 +64,11 @@ module Viz3k
       results.merge!("num_appearances"=>num_appearances)
 
       return results.to_json()
+    end
+
+    # Gets a JSON representation of the death record for the specified person id.
+    def death_json(person_id)
+      return @deaths.get(person_id).to_json()
     end
 
     # Generates a coappearance graph using data from the specified chapters.

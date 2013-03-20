@@ -36,9 +36,17 @@ module Viz3k
       return {"deaths" => deaths}
     end
 
+    # Returns true if there is a death record for the specified person id, false otherwise.
+    def exists?(person_id)
+      if (@deaths.has_key?(person_id))
+        return true
+      end
+      return false
+    end
+
     # Returns the death record for the person with the requested id if found. Raises StandardError otherwise.
     def get(person_id)
-      if (@deaths.has_key?(person_id))
+      if (exists?(person_id))
         return @deaths[person_id]
       end
       raise StandardError.new("No death record found for specified person id")

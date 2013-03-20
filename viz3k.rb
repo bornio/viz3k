@@ -119,6 +119,26 @@ get '/data/coappear/chapter/:chapter_num' do
   end
 end
 
+# deaths data
+get '/data/deaths' do
+  content_type :json
+  api.deaths.to_hash().to_json()
+end
+
+get '/data/deaths/:person_id' do
+  content_type :json
+  begin
+    person_id = Integer(params[:person_id])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  if (api.deaths.exists?(person_id))
+    api.death_json(person_id)
+  else
+    raise Sinatra::NotFound.new()
+  end
+end
+
 # root level routes
 get '/:feature' do
   file_path = "views/#{params[:feature]}.html"
