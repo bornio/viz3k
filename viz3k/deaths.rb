@@ -21,7 +21,10 @@ module Viz3k
       # Hash structure mapping person ids to their death info
       @deaths = {}
       deaths_hash["deaths"].each do |death_hash|
-        death = {:when => death_hash["when"], :cause => death_hash["cause"], :killer => death_hash["killer"]}
+        death = {:when => death_hash["when"], :cause => death_hash["cause"]}
+        if (death_hash.has_key?("killers"))
+          death.merge!(:killers => death_hash["killers"])
+        end
         @deaths.merge!(death_hash["id"] => death)
       end
     end
@@ -30,7 +33,7 @@ module Viz3k
     def to_hash()
       deaths = []
       @deaths.each do |id, death|
-        death_hash = {"id" => id, "when" => death[:when], "cause" => death[:cause], "killer" => death[:killer]}
+        death_hash = death.merge(:id => id)
         deaths.push(death_hash)
       end
       return {"deaths" => deaths}

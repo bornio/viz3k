@@ -155,18 +155,20 @@ describe "data" do
       end
     end
 
-    it "causes of death should be one of [execution, illness, combat, murder, assassination]" do
+    it "causes of death should be one of [execution, illness, combat, murder, suicide]" do
       @deaths.deaths.each do |id, death|
         cause = death[:cause]
-        valid_causes = ["execution", "illness", "combat", "murder", "assassination"]
+        valid_causes = ["execution", "illness", "combat", "murder", "suicide"]
         valid_causes.include?(cause).should == true
       end
     end
 
     it "each killer must be a valid person id" do
       @deaths.deaths.each do |id, death|
-        if (death.has_key?(:killer))
-          @people.exists(id).should == true
+        if (death.has_key?(:killers))
+          death[:killers].each do |killer|
+            @people.exists(killer).should == true
+          end
         end
       end
     end
