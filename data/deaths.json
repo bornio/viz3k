@@ -36,10 +36,73 @@
       "killers": [85,49]
     },
     {
+      "id": 12,
+      "when": {"chapter": 3, "page": 37},
+      "cause": "murder"
+    },
+    {
+      "id": 13,
+      "when": {"chapter": 3, "page": 38},
+      "cause": "execution",
+      "killers": [103]
+    },
+    {
+      "id": 14,
+      "when": {"chapter": 3, "page": 37},
+      "cause": "murder"
+    },
+    {
+      "id": 15,
+      "when": {"chapter": 2, "page": 29},
+      "cause": "murder",
+      "killers": [18]
+    },
+    {
+      "id": 16,
+      "when": {"chapter": 3, "page": 37},
+      "cause": "murder",
+      "killers": [85,49]
+    },
+    {
+      "id": 17,
+      "when": {"chapter": 3, "page": 37},
+      "cause": "murder",
+      "killers": [85,49]
+    },
+    {
+      "id": 18,
+      "when": {"chapter": 3, "page": 37},
+      "cause": "murder",
+      "killers": [85,49]
+    },
+    {
+      "id": 19,
+      "when": {"chapter": 2, "page": 20},
+      "cause": "combat"
+    },
+    {
       "id": 20,
       "when": {"chapter": 2, "page": 21},
       "cause": "murder",
       "killers": [58]
+    },
+    {
+      "id": 21,
+      "when": {"chapter": 2, "page": 20},
+      "cause": "combat",
+      "killers": [27]
+    },
+    {
+      "id": 23,
+      "when": {"chapter": 1, "page": 10},
+      "cause": "execution",
+      "killers": [25]
+    },
+    {
+      "id": 25,
+      "when": {"chapter": 1, "page": 10},
+      "cause": "murder",
+      "killers": [10,13]
     },
     {
       "id": 46,
