@@ -5,6 +5,7 @@ require 'spec_helper'
 require "chapters"
 require "factions"
 require "people"
+require "deaths"
 require 'open-uri'
 
 describe "data" do
@@ -137,6 +138,35 @@ describe "data" do
 
           # last interval should end at page 1457
           combined_end.should == 1457
+        end
+      end
+    end
+  end
+
+  describe "deaths.json" do
+    before(:all) do
+      @people = Viz3k::People.new(@data_path + "/characters.json", @data_path + "/allegiances.json")
+      @deaths = Viz3k::Deaths.new(@data_path + "/deaths.json")
+    end
+
+    it "each death record should correspond to a valid person id" do
+      @deaths.deaths.each do |id, death|
+        @people.exists(id).should == true
+      end
+    end
+
+    it "causes of death should be one of [execution, illness, combat, murder, assassination]" do
+      @deaths.deaths.each do |id, death|
+        cause = death[:cause]
+        valid_causes = ["execution", "illness", "combat", "murder", "assassination"]
+        valid_causes.include?(cause).should == true
+      end
+    end
+
+    it "each killer must be a valid person id" do
+      @deaths.deaths.each do |id, death|
+        if (death.has_key?(:killer))
+          @people.exists(id).should == true
         end
       end
     end
