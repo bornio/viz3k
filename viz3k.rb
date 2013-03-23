@@ -139,6 +139,16 @@ get '/data/deaths/:person_id' do
   end
 end
 
+get '/data/deaths/killed-by/:person_id' do
+  content_type :json
+  begin
+    person_id = Integer(params[:person_id])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  api.killed_by(person_id)
+end
+
 # root level routes
 get '/:feature' do
   file_path = "views/#{params[:feature]}.html"

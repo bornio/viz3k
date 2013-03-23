@@ -71,6 +71,18 @@ module Viz3k
       return @deaths.get(person_id).to_json()
     end
 
+    # Gets a JSON representation of the list of people killed by the person with the specified id.
+    def killed_by(person_id)
+      ids = @deaths.killed_by(person_id)
+      people_killed = []
+      ids.each do |id|
+        if @people.exists(id)
+          people_killed.push(@people.get(id).to_hash())
+        end
+      end
+      return {"killed-by" => people_killed}.to_json()
+    end
+
     # Generates a coappearance graph using data from the specified chapters.
     def coappearances(chapter_nums)
       nodes = []

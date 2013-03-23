@@ -54,5 +54,21 @@ module Viz3k
       end
       raise StandardError.new("No death record found for specified person id")
     end
+
+    # Returns a list of ids of people killed by the person with the specified id.
+    def killed_by(person_id)
+      puts "killed_by(#{person_id})"
+      ids = []
+      @deaths.each do |id, death|
+        if (death.has_key?(:killers))
+          puts death[:killers].to_s
+          if (death[:killers].include?(person_id))
+            puts "hello"
+            ids.push(id)
+          end
+        end
+      end
+      return ids
+    end
   end
 end
