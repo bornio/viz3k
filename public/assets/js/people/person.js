@@ -1,3 +1,4 @@
+// Controller for person.html.
 function Person($scope, $http)
 {
   // use the number at the end of the URL to determine which person's data to load
@@ -13,7 +14,15 @@ function Person($scope, $http)
   $scope.died = false;
   $scope.has_killers = false;
 
-  var populate_person_info = function(people_json)
+  // issue an http get to grab the info for all people
+  $http.get("/data/people").success(populate_person_info($scope, $http));
+
+  set_content_width_on_resize();
+}
+
+var populate_person_info = function($scope, $http, people_json)
+{
+  return function(people_json)
   {
     var person = get_person(people_json.people, person_id);
 
@@ -41,53 +50,68 @@ function Person($scope, $http)
 
     $scope.person = person;
 
-    var populate_factions_info = function(factions)
+    // issue an http get to grab the faction info
+    $http.get("/data/factions").success(populate_factions_info($scope, person));
+  }
+}
+
+function populate_factions_info($scope, person, factions_json)
+{
+  return function(factions_json)
+  {
+    // find this person's faction info
+    var primary_faction;
+    var other_factions = new Array();
+    for (var f in factions_json.factions)
     {
-      // find this person's faction info
-      var primary_faction;
-      var other_factions = new Array();
-      for (var f in factions.factions)
+      var faction = factions_json.factions[f];
+
+      // primary faction
+      if (faction.id == person.faction)
       {
-        var faction = factions.factions[f];
-
-        // primary faction
-        if (faction.id == person.faction)
-        {
-          primary_faction = faction;
-          label_faction_type(primary_faction);
-        }
-
-        // other affiliations
-        for (var a in person.allegiance)
-        {
-          var affiliation = person.allegiance[a];
-          if ((affiliation.faction != person.faction) &&
-              (affiliation.faction == faction.id))
-          {
-            label_faction_type(faction);
-            other_factions.push(faction);
-          }
-        }
+        primary_faction = faction;
+        label_faction_type(primary_faction);
       }
 
-      // assign data to the scope
-      $scope.primary_faction = primary_faction;
-      $scope.other_factions = other_factions;
-
-      if ("style" in person)
+      // other affiliations
+      for (var a in person.allegiance)
       {
-        $scope.style_label = "Style name:";
-        $scope.style_text = person.style;
+        var affiliation = person.allegiance[a];
+        if ((affiliation.faction != person.faction) &&
+            (affiliation.faction == faction.id))
+        {
+          label_faction_type(faction);
+          other_factions.push(faction);
+        }
       }
     }
 
-    // issue an http get to grab the faction info
-    $http.get("/data/factions").success(populate_factions_info);
+    // assign data to the scope
+    $scope.primary_faction = primary_faction;
+    $scope.other_factions = other_factions;
+
+    if ("style" in person)
+    {
+      $scope.style_label = "Style name:";
+      $scope.style_text = person.style;
+    }
+  }
+}
+
+function killers_info(people, killers)
+{
+  var info = new Array();
+  for (k in killers)
+  {
+    var killer_info = get_person(people, killers[k]);
+    info.push(killer_info);
   }
 
-  // issue an http get to grab the info for all people
-  $http.get("/data/people").success(populate_person_info);
+  return info;
+}
 
+function set_content_width_on_resize()
+{
   var content_area = document.getElementById("content-area");
   var window_resize = function()
   {
@@ -108,16 +132,4 @@ function Person($scope, $http)
   window_resize();
 
   window.addEventListener("resize", window_resize, false);
-}
-
-function killers_info(people, killers)
-{
-  var info = new Array();
-  for (k in killers)
-  {
-    var killer_info = get_person(people, killers[k]);
-    info.push(killer_info);
-  }
-
-  return info;
 }
