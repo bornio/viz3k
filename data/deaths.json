@@ -19,6 +19,11 @@
       "killers": [8]
     },
     {
+      "id": 8,
+      "when": {"chapter": 3, "page": 37},
+      "cause": "murder"
+    },
+    {
       "id": 9,
       "when": {"chapter": 9, "page": 113},
       "cause": "execution",
