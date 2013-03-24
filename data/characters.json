@@ -763,7 +763,7 @@
       "id": 140,
       "name": "Qiao Mao",
       "wiki": "Qiao_Mao",
-      "note": "Governor of Dongjun. Joined the alliance against Dong Zhuo. Killed by Liu Dai in retaliation for refusing to loan him grain."
+      "note": "Governor of Dongjun. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 141,
@@ -781,14 +781,14 @@
     {
       "id": 143,
       "name": "Zhang Chao",
-      "note": "Governor of Guangling. Joined the alliance against Dong Zhuo. Brother of Zhang Miao. Committed suicide after his ally Lü Bu was defeated at Dingtao."
+      "note": "Governor of Guangling. Joined the alliance against Dong Zhuo. Brother of Zhang Miao."
     },
     {
       "id": 144,
       "name": "Tao Qian",
       "style": "Gongzu",
       "wiki": "Tao_Qian_(Han_Dynasty)",
-      "note": "Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo. Cao Cao's father Cao Song was murdered by Tao Qian's officer Zhang Kai, giving Cao Cao cause to invade. Died of illness during the invasion, leaving his territory to Liu Bei."
+      "note": "Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 145,
@@ -807,15 +807,13 @@
     {
       "id": 147,
       "name": "Hua Xiong",
-      "wiki": "Hua_Xiong",
-      "note": "Killed by Guan Yu."
+      "wiki": "Hua_Xiong"
     },
     {
       "id": 148,
       "name": "Hu Zhen",
       "style": "Wencai",
-      "wiki": "Hu_Zhen",
-      "note": "Killed by Cheng Pu."
+      "wiki": "Hu_Zhen"
     },
     {
       "id": 149,
@@ -825,7 +823,7 @@
     {
       "id": 150,
       "name": "Bao Zhong",
-      "note": "Brother of Bao Xin. Killed by Hua Xiong."
+      "note": "Brother of Bao Xin."
     },
     {
       "id": 151,
@@ -850,18 +848,16 @@
       "name": "Zu Mao",
       "style": "Darong",
       "wiki": "Zu_Mao",
-      "note": "His style name is given by the novel, and was not recorded historically. Killed by Hua Xiong."
+      "note": "His style name is given by the novel, and was not recorded historically."
     },
     {
       "id": 155,
-      "name": "Yu She",
-      "note": "Killed by Hua Xiong."
+      "name": "Yu She"
     },
     {
       "id": 156,
       "name": "Pan Feng",
-      "wiki": "Pan_Feng",
-      "note": "Killed by Hua Xiong."
+      "wiki": "Pan_Feng"
     },
     {
       "id": 157,
@@ -879,19 +875,18 @@
       "id": 159,
       "name": "Fang Yue",
       "wiki": "Fang_Yue",
-      "note": "Officer of Wang Kuang. Killed by Lü Bu."
+      "note": "Officer of Wang Kuang."
     },
     {
       "id": 160,
       "name": "Mu Shun",
-      "wiki": "Mu_Shun_(general)",
-      "note": "Killed by Lü Bu."
+      "wiki": "Mu_Shun_(general)"
     },
     {
       "id": 161,
       "name": "Wu Anguo",
       "wiki": "Wu_Anguo",
-      "note": "Killed by Lü Bu."
+      "note": "Lost his hand to Lü Bu."
     },
     {
       "id": 162,
