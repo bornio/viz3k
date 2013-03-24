@@ -13,6 +13,10 @@ function Person($scope, $http)
   $scope.style_text = "";
   $scope.died = false;
   $scope.has_killers = false;
+  $scope.kills = new Array();
+  $scope.kills_combat = new Array();
+  $scope.kills_murder = new Array();
+  $scope.kills_execution = new Array();
 
   // issue an http get to grab the info for all people
   $http.get("/data/people").success(populate_person_info($scope, $http));
@@ -52,6 +56,9 @@ var populate_person_info = function($scope, $http, people_json)
 
     // issue an http get to grab the faction info
     $http.get("/data/factions").success(populate_factions_info($scope, person));
+
+    // get info for people killed by this person
+    $http.get("/data/deaths/killed-by/" + person_id).success(populate_kills_info($scope, person_id));
   }
 }
 
@@ -96,6 +103,38 @@ function populate_factions_info($scope, person, factions_json)
       $scope.style_text = person.style;
     }
   }
+}
+
+function populate_kills_info($scope, person_id, kills_json)
+{
+  return function(kills_json)
+  {
+    var kills = kills_json.killed_by;
+    if (kills.length > 0)
+    {
+      $scope.kills = kills;
+    }
+
+    $scope.kills_combat = kills_of_type(kills, "combat");
+    $scope.kills_murder = kills_of_type(kills, "murder");
+    $scope.kills_execution = kills_of_type(kills, "execution");
+  }
+}
+
+function kills_of_type(kills, death_type)
+{
+  var kill_indices = new Array();
+
+  for (var k in kills)
+  {
+    var death = kills[k].death;
+    if (("cause" in death) && (death.cause == death_type))
+    {
+      kill_indices.push(k);
+    }
+  }
+
+  return kill_indices;
 }
 
 function killers_info(people, killers)

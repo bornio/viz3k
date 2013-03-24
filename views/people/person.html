@@ -38,6 +38,9 @@
               <li>
                 <a href="#death" data-toggle="tab" ng-show="died">Death</a>
               </li>
+              <li>
+                <a href="#kills" data-toggle="tab" ng-show="kills.length > 0">Characters Killed</a>
+              </li>
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="affiliation">            
@@ -88,6 +91,29 @@
                   </span>
                 </p>
                 </table>
+              </div>
+              <div class="tab-pane" id="kills">
+                <p class="lead">
+                  Total characters killed: {{kills.length}}
+                </p>
+                <p ng-show="kills_combat.length > 0">
+                  <b>Killed in combat:</b>
+                  <span ng-repeat="k in kills_combat">
+                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == kills_combat.length - 1">, </span>
+                  </span>
+                </p>
+                <p ng-show="kills_murder.length > 0">
+                  <b>Murdered:</b>
+                  <span ng-repeat="k in kills_murder">
+                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == kills_murder.length - 1">, </span>
+                  </span>
+                </p>
+                <p ng-show="kills_execution.length > 0">
+                  <b>Executed:</b>
+                  <span ng-repeat="k in kills_execution">
+                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == kills_execution.length - 1">, </span>
+                  </span>
+                </p>
               </div>
             </div>
           </div>

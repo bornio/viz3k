@@ -83,7 +83,7 @@ module Viz3k
           people_killed.push(person_hash(id))
         end
       end
-      return {"killed-by" => people_killed}.to_json()
+      return {"killed_by" => people_killed}.to_json()
     end
 
     # Generates a coappearance graph using data from the specified chapters.
