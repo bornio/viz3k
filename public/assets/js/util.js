@@ -42,6 +42,20 @@ function count_in_faction(faction, chapter)
   return member_count;
 }
 
+// find and return the person with the given id
+function get_person(people, id)
+{
+  for (var p in people)
+  {
+    if (people[p].id == id)
+    {
+      return people[p];
+    }
+  }
+
+  return nil;
+}
+
 // add a parenthesized version of a person's style name if they have one
 function person_style_parens(person)
 {

@@ -10,9 +10,13 @@ function Person($scope, $http)
   // initial values
   $scope.style_label = "";
   $scope.style_text = "";
+  $scope.died = false;
+  $scope.has_killers = false;
 
-  var populate_person_info = function(person)
+  var populate_person_info = function(people_json)
   {
+    var person = get_person(people_json.people, person_id);
+
     // add parentheses to this person's style name
     person_style_parens(person);
 
@@ -22,6 +26,20 @@ function Person($scope, $http)
     {
       person.links.push({text:"wiki",href:person.wiki});
     }
+
+    // death information
+    if ("death" in person)
+    {
+      death = person.death;
+      $scope.died = true;
+      if ("killers" in death)
+      {
+        $scope.has_killers = true;
+        $scope.killers = killers_info(people_json.people, death.killers);
+      }
+    }
+
+    $scope.person = person;
 
     var populate_factions_info = function(factions)
     {
@@ -55,7 +73,6 @@ function Person($scope, $http)
       // assign data to the scope
       $scope.primary_faction = primary_faction;
       $scope.other_factions = other_factions;
-      $scope.person = person;
 
       if ("style" in person)
       {
@@ -68,6 +85,18 @@ function Person($scope, $http)
     $http.get("/data/factions").success(populate_factions_info);
   }
 
-  // issue an http get to grab the info for this person
-  $http.get("/data/people/" + person_id).success(populate_person_info);
+  // issue an http get to grab the info for all people
+  $http.get("/data/people").success(populate_person_info);
+}
+
+function killers_info(people, killers)
+{
+  var info = new Array();
+  for (k in killers)
+  {
+    var killer_info = get_person(people, killers[k]);
+    info.push(killer_info);
+  }
+
+  return info;
 }

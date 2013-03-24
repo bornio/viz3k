@@ -31,7 +31,10 @@
       <div class="tabbable">
         <ul class="nav nav-tabs">
           <li class="active">
-            <a href="#affiliation" data-toggle="tab">Faction affiliations</a>
+            <a href="#affiliation" data-toggle="tab">Affiliations</a>
+          </li>
+          <li>
+            <a href="#death" data-toggle="tab" ng-show="died">Death</a>
           </li>
         </ul>
         <div class="tab-content">
@@ -67,7 +70,23 @@
               </tbody>
             </table>
           </div>
-          <!--<div class="tab-pane" id="characters-centrality"></div>-->
+          <div class="tab-pane" id="death">
+            <p>
+              <b>Died in:</b>
+              <a href="/chapters/{{person.death.when.chapter}}">Ch. {{person.death.when.chapter}}</a>
+            </p>
+            <p>
+              <b>Cause of death:</b>
+              {{person.death.cause}}
+            </p>
+            <p ng-show="has_killers">
+              <b>Killed by:</b>
+              <span ng-repeat="killer in killers">
+                <a href="/people/{{killer.id}}">{{killer.name}}</a><span ng-hide="$index == killers.length - 1">, </span>
+              </span>
+            </p>
+            </table>
+          </div>
         </div>
       </div>
 
