@@ -55,7 +55,6 @@ function Person($scope, $http)
       // assign data to the scope
       $scope.primary_faction = primary_faction;
       $scope.other_factions = other_factions;
-      console.log(other_factions);
       $scope.person = person;
 
       if ("style" in person)
