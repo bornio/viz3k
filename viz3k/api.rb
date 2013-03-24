@@ -35,35 +35,38 @@ module Viz3k
     end
 
     # Gets a JSON representation of all people along with some additional info.
-    # @todo Compute the num_appearances stuff in initialize() instead to avoid recomputing it each time.
     def people_json()
-      # prepare the results as a hash
-      results = @people.to_hash()
+      results = []
 
       # count how many pages each person appeared on in the novel.
-      results["people"].each do |person_result|
-        num_appearances = 0
-        @chapters.chapters.each do |chapter|
-          num_appearances += chapter.num_appearances(person_result["id"])
-        end
-        person_result.merge!("num_appearances"=>num_appearances)
+      @people.people.each_index do |person_id|
+        results.push(person_hash(person_id))
       end
 
-      return results.to_json()
+      return {"people" => results}.to_json()
     end
 
     # Gets a JSON representation of the person with the requested id.
     def person_json(person_id)
-      results = @people.get(person_id).to_hash()
+      return person_hash(person_id).to_json()
+    end
+
+    def person_hash(person_id)
+      result = @people.get(person_id).to_hash()
 
       # count how many pages this person appeared on in the novel.
       num_appearances = 0
       @chapters.chapters.each do |chapter|
-        num_appearances += chapter.num_appearances(results["id"])
+        num_appearances += chapter.num_appearances(result["id"])
       end
-      results.merge!("num_appearances"=>num_appearances)
+      result.merge!("num_appearances" => num_appearances)
 
-      return results.to_json()
+      # also include death info for this person, if any
+      if (@deaths.exists?(person_id))
+        result.merge!("death" => @deaths.get(person_id))
+      end
+
+      return result
     end
 
     # Gets a JSON representation of the death record for the specified person id.
@@ -77,7 +80,7 @@ module Viz3k
       people_killed = []
       ids.each do |id|
         if @people.exists(id)
-          people_killed.push(@people.get(id).to_hash())
+          people_killed.push(person_hash(id))
         end
       end
       return {"killed-by" => people_killed}.to_json()
