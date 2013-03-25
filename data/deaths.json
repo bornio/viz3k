@@ -408,6 +408,53 @@
       "when": {"chapter": 5, "page": 68},
       "cause": "combat",
       "killers": [112]
+    },
+    {
+      "id": 164,
+      "when": {"chapter": 6, "page": 76},
+      "cause": "combat",
+      "killers": [130]
+    },
+    {
+      "id": 186,
+      "when": {"chapter": 7, "page": 83},
+      "cause": "combat",
+      "killers": [158]
+    },
+    {
+      "id": 187,
+      "when": {"chapter": 7, "page": 83},
+      "cause": "combat",
+      "killers": [157]
+    },
+    {
+      "id": 191,
+      "when": {"chapter": 7, "page": 83},
+      "cause": "murder"
+    },
+    {
+      "id": 193,
+      "when": {"chapter": 7, "page": 86},
+      "cause": "combat",
+      "killers": [192]
+    },
+    {
+      "id": 194,
+      "when": {"chapter": 7, "page": 85},
+      "cause": "combat",
+      "killers": [193]
+    },
+    {
+      "id": 208,
+      "when": {"chapter": 7, "page": 89},
+      "cause": "combat",
+      "killers": [153]
+    },
+    {
+      "id": 209,
+      "when": {"chapter": 7, "page": 89},
+      "cause": "combat",
+      "killers": [199]
     }
   ]
 }
