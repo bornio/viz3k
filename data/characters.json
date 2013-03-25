@@ -535,8 +535,7 @@
     {
       "id": 99,
       "name": "Fan Chou",
-      "wiki": "Fan_Chou",
-      "note": "Executed by Li Jue after failing to pursue Han Sui."
+      "wiki": "Fan_Chou"
     },
     {
       "id": 100,
@@ -1248,8 +1247,7 @@
     {
       "id": 225,
       "name": "Hu Chi'er",
-      "wiki": "Hu_Chi%27er",
-      "note": "Officer of Niu Fu. Murdered Niu Fu and presented his head to Lü Bu, but was executed when Lü Bu learned of his treachery."
+      "wiki": "Hu_Chi%27er"
     },
     {
       "id": 226,
@@ -1260,34 +1258,32 @@
     {
       "id": 227,
       "name": "Li Meng",
-      "wiki": "Li_Meng",
-      "note": "After Dong Zhuo's death, he and Wang Fang opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces. Captured by Ma Chao after failing to heed Jia Xu's advice."
+      "wiki": "Li_Meng"
     },
     {
       "id": 228,
       "name": "Wang Fang",
-      "wiki": "Wang_Fang_(Three_Kingdoms)",
-      "note": "After Dong Zhuo's death, he and Li Meng opened the gates to the capital from the inside to let in Dong Zhuo's remnant forces. Killed in battle by Ma Chao after failing to heed Jia Xu's advice."
+      "wiki": "Wang_Fang_(Three_Kingdoms)"
     },
     {
       "id": 229,
       "name": "Chong Fu",
-      "note": "Minister of Ritual in the imperial Han court. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+      "note": "Minister of Ritual in the imperial Han court."
     },
     {
       "id": 230,
       "name": "Lu Kui",
-      "note": "Court Steward of the imperial Han court. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+      "note": "Court Steward of the imperial Han court."
     },
     {
       "id": 231,
       "name": "Zhou Huan",
-      "note": "Minister of Protocol in the imperial Han court. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+      "note": "Minister of Protocol in the imperial Han court."
     },
     {
       "id": 232,
       "name": "Wang Qi",
-      "note": "Commandant of the Exemplary Cavalry. Died during the sacking of Chang'an by Dong Zhuo's remnant forces."
+      "note": "Commandant of the Exemplary Cavalry."
     },
     {
       "id": 233,
@@ -1299,17 +1295,15 @@
     {
       "id": 234,
       "name": "Ma Yu",
-      "note": "Privy Counselor of the Han court after the death of Cai Yong. Assisted Ma Teng and Han Sui's rebellion against Li Jue and Guo Si, but was caught and executed."
+      "note": "Privy Counselor of the Han court after the death of Cai Yong."
     },
     {
       "id": 235,
-      "name": "Chong Shao",
-      "note": "Assisted Ma Teng and Han Sui's rebellion against Li Jue and Guo Si, but was caught and executed."
+      "name": "Chong Shao"
     },
     {
       "id": 236,
-      "name": "Liu Fan",
-      "note": "Assisted Ma Teng and Han Sui's rebellion against Li Jue and Guo Si, but was caught and executed."
+      "name": "Liu Fan"
     },
     {
       "id": 237,
