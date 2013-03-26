@@ -1977,7 +1977,7 @@
       "id": 361,
       "name": "Han Yin",
       "wiki": "Han_Yin",
-      "note": "Yuan Shu's envoy to Lü Bu. Executed by Cao Cao."
+      "note": "Yuan Shu's envoy to Lü Bu."
     },
     {
       "id": 362,
@@ -2021,7 +2021,7 @@
       "id": 369,
       "name": "Cao Anmin",
       "wiki": "Cao_Anmin",
-      "note": "Nephew of Cao Cao. Died during Zhang Xiu's attempt to assassinate Cao Cao."
+      "note": "Nephew of Cao Cao."
     },
     {
       "id": 370,
@@ -2081,30 +2081,26 @@
     {
       "id": 380,
       "name": "Chen Ji",
-      "wiki": "Chen_Ji_(Yuan_Shu_official)",
-      "note": "Executed by Cao Cao."
+      "wiki": "Chen_Ji_(Yuan_Shu_official)"
     },
     {
       "id": 381,
-      "name": "Jin Shang",
-      "note": "Executed by Yuan Shu for refusing a promotion."
+      "name": "Jin Shang"
     },
     {
       "id": 382,
       "name": "Li Feng (2)",
-      "note": "His hand was speared by Lü Bu in a brief clash. Executed by Cao Cao."
+      "note": "His hand was speared by Lü Bu in a brief clash."
     },
     {
       "id": 383,
       "name": "Liang Gang",
-      "wiki": "Liang_Gang_(Han_Dynasty)",
-      "note": "Executed by Cao Cao."
+      "wiki": "Liang_Gang_(Han_Dynasty)"
     },
     {
       "id": 384,
       "name": "Yue Jiu",
-      "wiki": "Yue_Jiu",
-      "note": "Executed by Cao Cao."
+      "wiki": "Yue_Jiu"
     },
     {
       "id": 385,
@@ -2118,8 +2114,7 @@
     },
     {
       "id": 387,
-      "name": "Wu Xi",
-      "note": "Killed Guo Si."
+      "name": "Wu Xi"
     },
     {
       "id": 388,
@@ -2127,8 +2122,7 @@
     },
     {
       "id": 389,
-      "name": "Zhang Xian",
-      "note": "Killed by Xu Chu."
+      "name": "Zhang Xian"
     }
   ]
 }
