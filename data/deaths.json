@@ -609,6 +609,112 @@
       "when": {"chapter": 12, "page": 146},
       "cause": "combat",
       "killers": [134]
+    },
+    {
+      "id": 292,
+      "when": {"chapter": 14, "page": 169},
+      "cause": "combat",
+      "killers": [286]
+    },
+    {
+      "id": 299,
+      "when": {"chapter": 17, "page": 215},
+      "cause": "murder",
+      "killers": [42,43]
+    },
+    {
+      "id": 302,
+      "when": {"chapter": 13, "page": 160},
+      "cause": "execution",
+      "killers": [96]
+    },
+    {
+      "id": 303,
+      "when": {"chapter": 13, "page": 161},
+      "cause": "combat",
+      "killers": [304]
+    },
+    {
+      "id": 307,
+      "when": {"chapter": 17, "page": 215},
+      "cause": "murder",
+      "killers": [42,43]
+    },
+    {
+      "id": 308,
+      "when": {"chapter": 14, "page": 166},
+      "cause": "combat",
+      "killers": [304]
+    },
+    {
+      "id": 309,
+      "when": {"chapter": 13, "page": 163},
+      "cause": "combat"
+    },
+    {
+      "id": 317,
+      "when": {"chapter": 14, "page": 169},
+      "cause": "combat",
+      "killers": [286]
+    },
+    {
+      "id": 325,
+      "when": {"chapter": 14, "page": 177},
+      "cause": "combat",
+      "killers": [43]
+    },
+    {
+      "id": 338,
+      "when": {"chapter": 15, "page": 188},
+      "cause": "combat",
+      "killers": [341]
+    },
+    {
+      "id": 342,
+      "when": {"chapter": 15, "page": 188},
+      "cause": "combat"
+    },
+    {
+      "id": 344,
+      "when": {"chapter": 15, "page": 187},
+      "cause": "combat",
+      "killers": [199]
+    },
+    {
+      "id": 345,
+      "when": {"chapter": 15, "page": 187},
+      "cause": "combat",
+      "killers": [199]
+    },
+    {
+      "id": 346,
+      "when": {"chapter": 15, "page": 188},
+      "cause": "combat",
+      "killers": [339]
+    },
+    {
+      "id": 347,
+      "when": {"chapter": 15, "page": 193},
+      "cause": "combat",
+      "killers": [354]
+    },
+    {
+      "id": 348,
+      "when": {"chapter": 15, "page": 190},
+      "cause": "combat",
+      "killers": [199]
+    },
+    {
+      "id": 353,
+      "when": {"chapter": 15, "page": 192},
+      "cause": "combat",
+      "killers": [199]
+    },
+    {
+      "id": 358,
+      "when": {"chapter": 17, "page": 215},
+      "cause": "combat",
+      "killers": [130]
     }
   ]
 }

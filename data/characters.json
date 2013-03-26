@@ -1591,7 +1591,7 @@
       "name": "Shen Pei",
       "style": "Zhengnan",
       "wiki": "Shen_Pei",
-      "note": "Advisor to Yuan Shao. Advised Yuan Shao to side with Cao Cao during the standoff between Cao and Lü Bu."
+      "note": "Advised Yuan Shao to side with Cao Cao during the standoff between Cao and Lü Bu."
     },
     {
       "id": 288,
@@ -1617,7 +1617,7 @@
     {
       "id": 292,
       "name": "Li Xian",
-      "note": "Nephew of Li Jue. Killed by Xu Chu."
+      "note": "Nephew of Li Jue."
     },
     {
       "id": 293,
@@ -1651,8 +1651,7 @@
     {
       "id": 299,
       "name": "Yang Feng",
-      "wiki": "Yang_Feng",
-      "note": "Killed along with Han Xian by Guan Yu and Zhang Fei."
+      "wiki": "Yang_Feng"
     },
     {
       "id": 300,
@@ -1668,8 +1667,7 @@
     },
     {
       "id": 303,
-      "name": "Cui Yong",
-      "note": "Officer of Guo Si. Killed by Xu Huang while trying to capture the Emperor."
+      "name": "Cui Yong"
     },
     {
       "id": 304,
@@ -1692,7 +1690,7 @@
       "id": 307,
       "name": "Han Xian",
       "wiki": "Han_Xian_(Han_Dynasty)",
-      "note": "Officer of the White Wave rebels, an offshoot of the Yellow Turbans. Killed along with Yang Feng by Guan Yu and Zhang Fei."
+      "note": "Officer of the White Wave rebels, an offshoot of the Yellow Turbans."
     },
     {
       "id": 308,
@@ -1746,7 +1744,7 @@
     {
       "id": 317,
       "name": "Li Bie",
-      "note": "Nephew of Li Jue. Killed by Xu Chu."
+      "note": "Nephew of Li Jue."
     },
     {
       "id": 318,
@@ -1858,8 +1856,7 @@
     {
       "id": 338,
       "name": "Zhang Ying",
-      "wiki": "Zhang_Ying_(Han_Dynasty)",
-      "note": "Killed by Chen Wu."
+      "wiki": "Zhang_Ying_(Han_Dynasty)"
     },
     {
       "id": 339,
@@ -1892,25 +1889,21 @@
     {
       "id": 344,
       "name": "Yu Mi",
-      "wiki": "Yu_Mi",
-      "note": "Killed by Sun Ce."
+      "wiki": "Yu_Mi"
     },
     {
       "id": 345,
       "name": "Fan Neng",
-      "wiki": "Fan_Neng",
-      "note": "Killed by Sun Ce.'"
+      "wiki": "Fan_Neng"
     },
     {
       "id": 346,
-      "name": "Cheng Heng",
-      "note": "Killed by Jiang Qin."
+      "name": "Cheng Heng"
     },
     {
       "id": 347,
       "name": "Yan Baihu",
-      "wiki": "Yan_Baihu",
-      "note": "Killed by Dong Xi."
+      "wiki": "Yan_Baihu"
     },
     {
       "id": 348,
@@ -1942,8 +1935,7 @@
     {
       "id": 353,
       "name": "Zhou Xin",
-      "wiki": "Zhou_Xin_(Han_Dynasty)",
-      "note": "Killed by Sun Ce."
+      "wiki": "Zhou_Xin_(Han_Dynasty)"
     },
     {
       "id": 354,
@@ -1969,8 +1961,7 @@
     {
       "id": 358,
       "name": "Qiao Rui",
-      "wiki": "Qiao_Rui",
-      "note": "Killed by Xiahou Dun."
+      "wiki": "Qiao_Rui"
     },
     {
       "id": 359,
