@@ -1406,13 +1406,13 @@
     {
       "id": 253,
       "name": "Bian Rang",
-      "note": "Governor of Jiujiang. Brought an army to aid Tao Qian when Cao Cao invaded Xuzhou. Killed by Xiahou Dun."
+      "note": "Governor of Jiujiang. Brought an army to aid Tao Qian when Cao Cao invaded Xuzhou."
     },
     {
       "id": 254,
       "name": "Cao Bao",
       "wiki": "Cao_Bao_(died_196)",
-      "note": "Killed by Zhang Fei."
+      "note": "Father in law to Lü Bu."
     },
     {
       "id": 255,
@@ -1459,20 +1459,17 @@
     {
       "id": 262,
       "name": "Guan Hai",
-      "wiki": "Guan_Hai",
-      "note": "Yellow Turban commander, active in the area of Beihai while Kong Rong was governor. Killed by Guan Yu."
+      "wiki": "Guan_Hai"
     },
     {
       "id": 263,
-      "name": "Zong Bao",
-      "note": "Officer of Kong Rong killed in battle by the Yellow Turban Guan Hai."
+      "name": "Zong Bao"
     },
     {
       "id": 264,
       "name": "Taishi Ci",
       "style": "Ziyi",
-      "wiki": "Taishi_Ci",
-      "note": "Officer of Wu. Came to Kong Rong's assistance when Beihai was besieged by Yellow Turbans, then served Liu Yao until he was captured by Sun Ce. Thereafter he served Sun Ce, and subsequently Sun Quan."
+      "wiki": "Taishi_Ci"
     },
     {
       "id": 265,
@@ -1489,18 +1486,15 @@
     },
     {
       "id": 267,
-      "name": "Pang Shu",
-      "note": "Hid Lü Bu's family in Chang'an while it was ruled by Li Jue and Guo Si. He was discovered and put to death."
+      "name": "Pang Shu"
     },
     {
       "id": 268,
-      "name": "Xue Lan",
-      "note": "Killed by Lü Qian."
+      "name": "Xue Lan"
     },
     {
       "id": 269,
-      "name": "Li Feng (1)",
-      "note": "Killed by Xu Chu."
+      "name": "Li Feng (1)"
     },
     {
       "id": 270,
@@ -1521,8 +1515,7 @@
     },
     {
       "id": 273,
-      "name": "Cheng Lian",
-      "note": "Shot to death by Yue Jin at Dingtao."
+      "name": "Cheng Lian"
     },
     {
       "id": 274,
@@ -1584,8 +1577,7 @@
     {
       "id": 285,
       "name": "He Man",
-      "wiki": "He_Man_(rebel)",
-      "note": "Killed by Cao Hong."
+      "wiki": "He_Man_(rebel)"
     },
     {
       "id": 286,
