@@ -93,7 +93,6 @@ function label_faction_type(faction)
 
 function set_resize_handler_for(element_id, hidden_phone)
 {
-  console.log("setting resize handler for element", element_id);
   var element = document.getElementById(element_id);
 
   var window_resize = function()
