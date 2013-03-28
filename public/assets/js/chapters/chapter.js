@@ -1,3 +1,4 @@
+// Controller for chapter.html.
 function Chapter($scope, $http)
 {
   // use the number at the end of the URL to determine which chapter's data to load
@@ -12,41 +13,69 @@ function Chapter($scope, $http)
   $scope.navbar_url = "/navbar";
   $scope.navbar_selected = 1;
 
-  // issue an http get to grab the chapter descriptions and populate the navigation links
-  $http.get("/data/chapters").success(
-    function(data)
+  set_content_width_on_resize();
+
+  // issue an http get for the data relating to this chapter
+  $http.get("/data/chapters").success(populate_chapter_info($scope, $http));
+
+  // callback to get data back from asynchronous load
+  var compute_stats = function(nodes, links) {
+    // calculate importance by sorting nodes by decreasing number of links
+    nodes = nodes_sort_by_links(nodes);
+    people_style_parens(nodes);
+
+    // get the top five
+    top_five = nodes.slice(0,5);
+
+    $scope.people_by_importance = top_five;
+    $scope.people = nodes;
+    $scope.people_order = "name";
+
+    // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
+    $scope.$apply();
+  };
+
+  // generate the coappearance visualization for the selected chapter
+  coappear("/data/coappear/chapter/" + chapter_num, compute_stats);
+}
+
+var populate_chapter_info = function($scope, $http, chapter_json)
+{
+  return function(data)
+  {
+    for (index in data.chapters)
     {
-      for (index in data.chapters)
+      var other_num = data.chapters[index].chapter
+
+      // get the title text of this chapter
+      if (other_num == chapter_num)
       {
-        var other_num = data.chapters[index].chapter
-
-        // get the title text of this chapter
-        if (other_num == chapter_num)
-        {
-          $scope.chapter = data.chapters[index];
-        }
-
-        // get neighboring chapters (this chapter and up to three chapters on either side)
-        if (Math.abs(other_num - chapter_num) <= 3)
-        {
-          $scope.nav_chapters.push(data.chapters[index]);
-        }
-
-        // last chapter is the one with the largest number
-        $scope.last_chapter = (other_num > $scope.last_chapter) ? other_num : $scope.last_chapter;
+        $scope.chapter = data.chapters[index];
       }
 
-      // chapter description
-      $scope.chapter_title = "Chapter " + $scope.chapter.chapter + " : " + $scope.chapter.title;
+      // get neighboring chapters (this chapter and up to three chapters on either side)
+      if (Math.abs(other_num - chapter_num) <= 3)
+      {
+        $scope.nav_chapters.push(data.chapters[index]);
+      }
 
-      // enable or disable prev and next chapter links depending on whether linked-to chapter exists
-      $scope.prev_chapter = ($scope.chapter.chapter - 1 < 1) ? [] : [$scope.chapter.chapter - 1];
-      $scope.prev_chapter_ = ($scope.chapter.chapter - 1 < 1) ? [0] : [];
-      $scope.next_chapter = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [] : [$scope.chapter.chapter + 1];
-      $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
+      // last chapter is the one with the largest number
+      $scope.last_chapter = (other_num > $scope.last_chapter) ? other_num : $scope.last_chapter;
     }
-  );
 
+    // chapter description
+    $scope.chapter_title = "Chapter " + $scope.chapter.chapter + " : " + $scope.chapter.title;
+
+    // enable or disable prev and next chapter links depending on whether linked-to chapter exists
+    $scope.prev_chapter = ($scope.chapter.chapter - 1 < 1) ? [] : [$scope.chapter.chapter - 1];
+    $scope.prev_chapter_ = ($scope.chapter.chapter - 1 < 1) ? [0] : [];
+    $scope.next_chapter = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [] : [$scope.chapter.chapter + 1];
+    $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
+  }
+}
+
+function set_content_width_on_resize()
+{
   var header_area = document.getElementById("container-header");
   var chart_area = document.getElementById("chart-area");
   var stats_area = document.getElementById("char-stats-area");
@@ -76,24 +105,4 @@ function Chapter($scope, $http)
   window_resize();
 
   window.addEventListener("resize", window_resize, false);
-
-  // callback to get data back from asynchronous load
-  var compute_stats = function(nodes, links) {
-    // calculate importance by sorting nodes by decreasing number of links
-    nodes = nodes_sort_by_links(nodes);
-    people_style_parens(nodes);
-
-    // get the top five
-    top_five = nodes.slice(0,5);
-
-    $scope.people_by_importance = top_five;
-    $scope.people = nodes;
-    $scope.people_order = "name";
-
-    // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
-    $scope.$apply();
-  };
-
-  // generate the coappearance visualization for the selected chapter
-  coappear("/data/coappear/chapter/" + chapter_num, compute_stats);
 }
