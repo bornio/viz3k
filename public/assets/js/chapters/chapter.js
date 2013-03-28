@@ -13,7 +13,9 @@ function Chapter($scope, $http)
   $scope.navbar_url = "/navbar";
   $scope.navbar_selected = 1;
 
-  set_content_width_on_resize();
+  set_resize_handler_for("container-header", false);
+  set_resize_handler_for("chart-area", true);
+  set_resize_handler_for("stats-area", false);
 
   // issue an http get for the data relating to this chapter
   $http.get("/data/chapters").success(populate_chapter_info($scope, $http));
@@ -72,37 +74,4 @@ var populate_chapter_info = function($scope, $http, chapter_json)
     $scope.next_chapter = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [] : [$scope.chapter.chapter + 1];
     $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
   }
-}
-
-function set_content_width_on_resize()
-{
-  var header_area = document.getElementById("container-header");
-  var chart_area = document.getElementById("chart-area");
-  var stats_area = document.getElementById("char-stats-area");
-
-  var window_resize = function()
-  {
-    if (document.body.clientWidth < 980)
-    {
-      header_area.className = "span12";
-      chart_area.className = "hidden-phone span12";
-      stats_area.className = "span12";
-    }
-    else if (document.body.clientWidth < 1200)
-    {
-      header_area.className = "span10";
-      chart_area.className = "hidden-phone span10";
-      stats_area.className = "span10";
-    }
-    else
-    {
-      header_area.className = "span8 offset2";
-      chart_area.className = "hidden-phone span8 offset2";
-      stats_area.className = "span8 offset2";
-    }
-  }
-
-  window_resize();
-
-  window.addEventListener("resize", window_resize, false);
 }

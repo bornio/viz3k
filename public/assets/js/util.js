@@ -90,3 +90,32 @@ function label_faction_type(faction)
     faction.type_label = "";
   }
 }
+
+function set_resize_handler_for(element_id, hidden_phone)
+{
+  console.log("setting resize handler for element", element_id);
+  var element = document.getElementById(element_id);
+
+  var window_resize = function()
+  {
+    var class_name = (hidden_phone) ? "hidden-phone " : "";
+    if (document.body.clientWidth < 980)
+    {
+      class_name += "span12";
+    }
+    else if (document.body.clientWidth < 1200)
+    {
+      class_name += "span10";
+    }
+    else
+    {
+      class_name += "span8 offset2";
+    }
+
+    element.className = class_name;
+  }
+
+  window_resize();
+
+  window.addEventListener("resize", window_resize, false);
+}

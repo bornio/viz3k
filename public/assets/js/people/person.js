@@ -21,7 +21,7 @@ function Person($scope, $http)
   // issue an http get to grab the info for all people
   $http.get("/data/people").success(populate_person_info($scope, $http));
 
-  set_content_width_on_resize();
+  set_resize_handler_for("content-area", false);
 }
 
 var populate_person_info = function($scope, $http, people_json)
@@ -147,28 +147,4 @@ function killers_info(people, killers)
   }
 
   return info;
-}
-
-function set_content_width_on_resize()
-{
-  var content_area = document.getElementById("content-area");
-  var window_resize = function()
-  {
-    if (document.body.clientWidth < 980)
-    {
-      content_area.className = "span12";
-    }
-    else if (document.body.clientWidth < 1200)
-    {
-      content_area.className = "span10";
-    }
-    else
-    {
-      content_area.className = "span8 offset2";
-    }
-  }
-
-  window_resize();
-
-  window.addEventListener("resize", window_resize, false);
 }
