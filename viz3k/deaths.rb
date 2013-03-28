@@ -64,5 +64,17 @@ module Viz3k
       end
       return ids
     end
+
+    # Returns a hash of all deaths that occurred within the specified chapter.
+    def in_chapter(chapter_num)
+      deaths = []
+      @deaths.each do |id, death|
+        if (death[:when][:chapter] == chapter_num)
+          death_hash = death.merge(:id => id)
+          deaths.push(death_hash)
+        end
+      end
+      return {:deaths => deaths}
+    end
   end
 end

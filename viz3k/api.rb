@@ -7,7 +7,8 @@ require_relative "people"
 require_relative "deaths"
 
 module Viz3k
-  # The Api class is the interface between the web frontend and the backend.
+  # The Api class is the interface between the web frontend and the backend. It returns data to the frontend in JSON
+  # format.
   class Api
     attr_reader :factions
     attr_reader :people
@@ -72,6 +73,11 @@ module Viz3k
     # Gets a JSON representation of the death record for the specified person id.
     def death_json(person_id)
       return @deaths.get(person_id).to_json()
+    end
+
+    # Returns a JSON list of deaths that took place within a given chapter.
+    def deaths_in_chapter(chapter_num)
+      return @deaths.in_chapter(chapter_num).to_json()
     end
 
     # Gets a JSON representation of the list of people killed by the person with the specified id.

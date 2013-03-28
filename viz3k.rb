@@ -149,6 +149,16 @@ get '/data/deaths/killed-by/:person_id' do
   api.killed_by(person_id)
 end
 
+get '/data/deaths/chapter/:chapter_num' do
+  content_type :json
+  begin
+    chapter_num = Integer(params[:chapter_num])
+  rescue ArgumentError => e
+    raise Sinatra::NotFound.new()
+  end
+  api.deaths_in_chapter(chapter_num)
+end
+
 # root level routes
 get '/:feature' do
   file_path = "views/#{params[:feature]}.html"
