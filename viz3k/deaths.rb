@@ -12,7 +12,7 @@ module Viz3k
     def initialize(deaths_json_path)
       begin
         deaths_file = File.read(deaths_json_path)
-        deaths_hash = JSON.parse(deaths_file)
+        deaths_hash = JSON.parse(deaths_file, symbolize_names: true)
       rescue => e
         # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
         raise StandardError.new("Could not read character deaths data file : " + e.to_s())
@@ -20,12 +20,9 @@ module Viz3k
 
       # Hash structure mapping person ids to their death info
       @deaths = {}
-      deaths_hash["deaths"].each do |death_hash|
-        death = {:when => death_hash["when"], :cause => death_hash["cause"]}
-        if (death_hash.has_key?("killers"))
-          death.merge!(:killers => death_hash["killers"])
-        end
-        @deaths.merge!(death_hash["id"] => death)
+      deaths_hash[:deaths].each do |death_hash|
+        id = death_hash.delete(:id)
+        @deaths.merge!(id => death_hash)
       end
     end
 
@@ -36,7 +33,7 @@ module Viz3k
         death_hash = death.merge(:id => id)
         deaths.push(death_hash)
       end
-      return {"deaths" => deaths}
+      return {:deaths => deaths}
     end
 
     # Returns true if there is a death record for the specified person id, false otherwise.
