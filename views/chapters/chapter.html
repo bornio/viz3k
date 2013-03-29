@@ -59,43 +59,16 @@
           <div class="tabbable">
             <ul class="nav nav-tabs">
               <li class="active">
-                <a href="#characters" data-toggle="tab">Characters</a>
+                <a href="#summary" data-toggle="tab">Summary</a>
               </li>
               <li>
-                <a href="#stats" data-toggle="tab">Stats</a>
+                <a href="#characters" data-toggle="tab">Characters</a>
               </li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane active" id="characters">
-                <p>&nbsp;{{people.length}} characters appear in this chapter.</p>
-                <table class="table table-condensed ng-cloak">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th class="table-char-faction-badge"></th>
-                      <th class="table-char-faction">Faction</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr ng-repeat="person in people | orderBy:people_order">
-                      <td>
-                        <a href="/people/{{person.id}}">{{person.name}}</a>
-                        <span class="muted"> {{person.style_parens}}</span>
-                      </td>
-                      <td class="table-char-faction-badge">
-                        <a href="/factions/{{person.group}}">
-                          <div class="faction-badge" style="{{'background: ' + person.color + ';'}}"></div>
-                        </a>
-                      </td>
-                      <td class="table-char-faction">
-                        <a href="/factions/{{person.group}}">{{person.faction}}</a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="tab-pane" id="stats">
-                <p class="lead">Most Important Characters</p>
+              <div class="tab-pane active" id="summary">
+                <p class="lead">Most important characters</p>
+                <small class="muted">The more links a character has to others, the more important that character is.</small>
                 <table class="table table-condensed ng-cloak">
                   <thead>
                     <tr>
@@ -125,7 +98,76 @@
                     </tr>
                   </tbody>
                 </table>
-                <small class="muted">The more links a character has to others, the more important that character is.</small>
+                <hr>
+                <p class="lead ng-cloak" ng-hide="deaths.length == 0">Deaths ({{deaths.length}} total)</p>
+                <p ng-repeat="d in deaths_combat">
+                  <span class="text-error"><b>✖</b></span>
+                  &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
+                  was killed in battle
+                  <span ng-show="deaths[d].killers"> by
+                    <span ng-repeat="killer in deaths[d].killers">
+                      <a href="/people/{{killer.id}}">{{killer.name}}</a><span ng-hide="$index == deaths[d].killers.length - 1">, </span>
+                    </span>
+                  </span>
+                </p>
+                <p ng-repeat="d in deaths_murder">
+                  <span><b>✖</b></span>
+                  &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
+                  was murdered
+                  <span ng-show="deaths[d].killers"> by
+                    <span ng-repeat="killer in deaths[d].killers">
+                      <a href="/people/{{killer.id}}">{{killer.name}}</a><span ng-hide="$index == deaths[d].killers.length - 1">, </span>
+                    </span>
+                  </span>
+                </p>
+                <p ng-repeat="d in deaths_execution">
+                  <span class="text-warning"><b>✖</b></span>
+                  &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
+                  was executed
+                  <span ng-show="deaths[d].killers"> by
+                    <span ng-repeat="killer in deaths[d].killers">
+                      <a href="/people/{{killer.id}}">{{killer.name}}</a><span ng-hide="$index == deaths[d].killers.length - 1">, </span>
+                    </span>
+                  </span>
+                </p>
+                <p ng-repeat="d in deaths_illness">
+                  <span class="text-info"><b>✖</b></span>
+                  &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
+                  died of illness
+                </p>
+                <p ng-repeat="d in deaths_suicide">
+                  <span class="muted"><b>✖</b></span>
+                  &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
+                  committed suicide
+                </p>
+              </div>
+              <div class="tab-pane" id="characters">
+                <p class="ng-cloak">&nbsp;{{people.length}} characters appear in this chapter.</p>
+                <table class="table table-condensed ng-cloak">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th class="table-char-faction-badge"></th>
+                      <th class="table-char-faction">Faction</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="person in people | orderBy:people_order">
+                      <td>
+                        <a href="/people/{{person.id}}">{{person.name}}</a>
+                        <span class="muted"> {{person.style_parens}}</span>
+                      </td>
+                      <td class="table-char-faction-badge">
+                        <a href="/factions/{{person.group}}">
+                          <div class="faction-badge" style="{{'background: ' + person.color + ';'}}"></div>
+                        </a>
+                      </td>
+                      <td class="table-char-faction">
+                        <a href="/factions/{{person.group}}">{{person.faction}}</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>

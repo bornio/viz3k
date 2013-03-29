@@ -121,22 +121,6 @@ function populate_kills_info($scope, person_id, kills_json)
   }
 }
 
-function kills_of_type(kills, death_type)
-{
-  var kill_indices = new Array();
-
-  for (var k in kills)
-  {
-    var death = kills[k].death;
-    if (("cause" in death) && (death.cause == death_type))
-    {
-      kill_indices.push(k);
-    }
-  }
-
-  return kill_indices;
-}
-
 function killers_info(people, killers)
 {
   var info = new Array();

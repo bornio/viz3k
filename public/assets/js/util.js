@@ -91,6 +91,40 @@ function label_faction_type(faction)
   }
 }
 
+// returns indices of killed-by records that match the given cause of death
+function kills_of_type(kills, death_type)
+{
+  var kill_indices = new Array();
+
+  for (var d in kills)
+  {
+    var death = kills[d].death;
+    if (("cause" in death) && (death.cause == death_type))
+    {
+      kill_indices.push(d);
+    }
+  }
+
+  return kill_indices;
+}
+
+// returns indices of death records that match the given cause of death
+function deaths_of_type(deaths, death_type)
+{
+  var death_indices = new Array();
+
+  for (var d in deaths)
+  {
+    var death = deaths[d];
+    if (("cause" in death) && (death.cause == death_type))
+    {
+      death_indices.push(d);
+    }
+  }
+
+  return death_indices;
+}
+
 function set_resize_handler_for(element_id, hidden_phone)
 {
   var element = document.getElementById(element_id);

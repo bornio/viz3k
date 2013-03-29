@@ -19,9 +19,6 @@ function Chapter($scope, $http)
 
   // issue an http get for the data relating to this chapter
   $http.get("/data/chapters").success(populate_chapter_info($scope, $http));
-
-  // generate the coappearance visualization for the selected chapter
-  coappear("/data/coappear/chapter/" + chapter_num, compute_character_stats($scope));
 }
 
 var populate_chapter_info = function($scope, $http, chapter_json)
@@ -56,6 +53,9 @@ var populate_chapter_info = function($scope, $http, chapter_json)
     $scope.prev_chapter_ = ($scope.chapter.chapter - 1 < 1) ? [0] : [];
     $scope.next_chapter = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [] : [$scope.chapter.chapter + 1];
     $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
+
+    // generate the coappearance visualization for the selected chapter
+    coappear("/data/coappear/chapter/" + chapter_num, compute_character_stats($scope));
   }
 }
 
@@ -70,9 +70,40 @@ var compute_character_stats = function($scope, nodes, links)
     // get the top five
     top_five = nodes.slice(0,5);
 
+    // death stats
+    var deaths = $scope.chapter.deaths;
+    $scope.deaths_combat = deaths_of_type(deaths, "combat");
+    $scope.deaths_murder = deaths_of_type(deaths, "murder");
+    $scope.deaths_execution = deaths_of_type(deaths, "execution");
+    $scope.deaths_illness = deaths_of_type(deaths, "illness");
+    $scope.deaths_suicide = deaths_of_type(deaths, "suicide");
+
+    for (var d in deaths)
+    {
+      var death = deaths[d];
+      for (var n in nodes)
+      {
+        if (nodes[n].id == death.id)
+        {
+          death.person = nodes[n];
+        }
+      }
+      for (var k in death.killers)
+      {
+        for (var n in nodes)
+        {
+          if (nodes[n].id == death.killers[k])
+          {
+            death.killers[k] = nodes[n];
+          }
+        }
+      }
+    }
+
     $scope.people_by_importance = top_five;
     $scope.people = nodes;
     $scope.people_order = "name";
+    $scope.deaths = deaths;
 
     // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
     $scope.$apply();
