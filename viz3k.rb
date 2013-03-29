@@ -101,7 +101,7 @@ end
 # chapter data
 get '/data/chapters' do
   content_type :json
-  api.chapters.to_hash().to_json()
+  api.chapters_json()
 end
 
 # coappearances data

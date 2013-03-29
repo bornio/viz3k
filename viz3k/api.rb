@@ -35,11 +35,23 @@ module Viz3k
       return @factions.get(faction_id).to_hash().to_json()
     end
 
+    # Gets a JSON representation of all chapters along with some additional info.
+    def chapters_json()
+      results = []
+      @chapters.chapters.each do |chapter|
+        chapter_hash = chapter.to_hash()
+
+        # add death records
+        chapter_hash.merge!(@deaths.in_chapter(chapter.chapter))
+        results.push(chapter_hash)
+      end
+
+      return {"chapters" => results}.to_json()
+    end
+
     # Gets a JSON representation of all people along with some additional info.
     def people_json()
       results = []
-
-      # count how many pages each person appeared on in the novel.
       @people.people.each_index do |person_id|
         results.push(person_hash(person_id))
       end
