@@ -20,25 +20,8 @@ function Chapter($scope, $http)
   // issue an http get for the data relating to this chapter
   $http.get("/data/chapters").success(populate_chapter_info($scope, $http));
 
-  // callback to get data back from asynchronous load
-  var compute_stats = function(nodes, links) {
-    // calculate importance by sorting nodes by decreasing number of links
-    nodes = nodes_sort_by_links(nodes);
-    people_style_parens(nodes);
-
-    // get the top five
-    top_five = nodes.slice(0,5);
-
-    $scope.people_by_importance = top_five;
-    $scope.people = nodes;
-    $scope.people_order = "name";
-
-    // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
-    $scope.$apply();
-  };
-
   // generate the coappearance visualization for the selected chapter
-  coappear("/data/coappear/chapter/" + chapter_num, compute_stats);
+  coappear("/data/coappear/chapter/" + chapter_num, compute_character_stats($scope));
 }
 
 var populate_chapter_info = function($scope, $http, chapter_json)
@@ -75,3 +58,23 @@ var populate_chapter_info = function($scope, $http, chapter_json)
     $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
   }
 }
+
+var compute_character_stats = function($scope, nodes, links)
+{
+  return function(nodes, links)
+  {
+    // calculate importance by sorting nodes by decreasing number of links
+    nodes = nodes_sort_by_links(nodes);
+    people_style_parens(nodes);
+
+    // get the top five
+    top_five = nodes.slice(0,5);
+
+    $scope.people_by_importance = top_five;
+    $scope.people = nodes;
+    $scope.people_order = "name";
+
+    // since this is an asynchronous handler, we need to let angular.js know we've updated a scope variable
+    $scope.$apply();
+  }
+};
