@@ -519,19 +519,19 @@
     },
     {
       "id": 234,
-      "when": {"chapter": 9, "page": 121},
+      "when": {"chapter": 10, "page": 121},
       "cause": "execution",
       "killers": [96,97]
     },
     {
       "id": 235,
-      "when": {"chapter": 9, "page": 121},
+      "when": {"chapter": 10, "page": 121},
       "cause": "execution",
       "killers": [96,97]
     },
     {
       "id": 236,
-      "when": {"chapter": 9, "page": 121},
+      "when": {"chapter": 10, "page": 121},
       "cause": "execution",
       "killers": [96,97]
     },
