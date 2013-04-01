@@ -67,8 +67,7 @@
             </ul>
             <div class="tab-content">
               <div class="tab-pane active" id="summary">
-                <p class="lead">Most important characters</p>
-                <small class="muted">The more links a character has to others, the more important that character is.</small>
+                <p class="lead">Central characters</p>
                 <table class="table table-condensed ng-cloak">
                   <thead>
                     <tr>
@@ -76,7 +75,7 @@
                       <th>Name</th>
                       <th class="table-char-faction-badge"></th>
                       <th class="table-char-faction">Faction</th>
-                      <th class="table-char-links">Links</th>
+                      <th class="table-char-links">Centrality</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -98,6 +97,7 @@
                     </tr>
                   </tbody>
                 </table>
+                <small class="muted">Whenever two characters appear on the same page, a point is added to both their centrality scores. The more often someone appears alongside other characters in a chapter, the more central that person is to the chapter's story.</small>
                 <hr>
                 <p class="lead ng-cloak" ng-hide="deaths.length == 0">Deaths ({{deaths.length}} total)</p>
                 <p ng-repeat="d in deaths_combat">
