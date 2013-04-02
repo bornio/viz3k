@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Deaths - Viz3k</title>
+    <!-- use Twitter Bootstrap for styling -->
+    <link href="/lib/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- styling common to all pages except splash page -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
+    <!-- styling for this page -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/deaths.css"/>
+  </head>
+  <body ng-controller="Deaths">
+    <!-- include the navbar at the top -->
+    <div ng-include src="navbar_url"></div>
+
+    <!-- content goes here -->
+    <div class="container">
+      <div class="row">
+        <div class="span8 offset2" id="content-area">
+          <div class="page-header ng-cloak">
+            <h2>Deaths</h2>
+          </div>
+
+          <p class="lead">Total: {{deaths.length}}</p>
+          <p>Combat: {{deaths_combat.length}}</p>
+          <p>Murder: {{deaths_murder.length}}</p>
+          <p>Execution: {{deaths_execution.length}}</p>
+          <p>Illness: {{deaths_illness.length}}</p>
+          <p>Suicide: {{deaths_suicide.length}}</p>
+
+          <hr>
+          <footer>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- load javascripts last for speed -->
+
+    <!-- third party javascript -->
+    <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/lib/angular.min.js"></script>
+
+    <!-- general utility functions -->
+    <script type="text/javascript" src="/assets/js/util.js"></script>
+
+    <!-- controller for this view -->
+    <script type="text/javascript" src="/assets/js/deaths.js"></script>
+  </body>
+</html>
