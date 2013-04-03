@@ -23,7 +23,7 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
   var padding_t = 6;
   var padding_b = 6;
   var svg_height = chart_height + padding_t + padding_b;
-  svg.height = svg_height;
+  svg.attr("height", svg_height);
 
   var y_scale = d3.scale.linear()
     .domain([0, data.length])
@@ -44,8 +44,8 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
     .attr("transform", "translate(" + padding_l + "," + padding_t + ")")
     .call(yaxis);
 
-  // sum of all data elements is assumed to be a reasonable max x value, used to scale the bar lengths
-  var max_x_value = d3.sum(data);
+  // max of all data elements is used to scale the bar lengths
+  var max_x_value = d3.max(data)*1.5;
 
   // render (or re-render) the chart as needed, trying to fit x scale to width of parent element
   var chart_resized = function()
@@ -78,7 +78,7 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
       .attr("x", 0)
       .attr("y", function(d, i) { return y_scale(i); })
       .attr("width", function(d) { return x_scale(d); })
-      .attr("height", bar_thickness)
+      .attr("height", bar_thickness - 1)
       .style("fill", function(d, i) { return colors[i]; });
 
     axis_labels.attr("class", "axis-labels")

@@ -72,12 +72,21 @@ module Viz3k
       @chapters.chapters.each do |chapter|
         num_appearances += chapter.num_appearances(result["id"])
       end
-      result.merge!("num_appearances" => num_appearances)
+      result.merge!(:num_appearances => num_appearances)
 
       # also include death info for this person, if any
       if (@deaths.exists?(person_id))
-        result.merge!("death" => @deaths.get(person_id))
+        result.merge!(:death => @deaths.get(person_id))
       end
+
+      # also include kills for this person, if any
+      killed_ids = @deaths.killed_by(person_id)
+      killed_combat = killed_ids.select { |id| @deaths.get(id)[:cause] == "combat" }
+      killed_murder = killed_ids.select { |id| @deaths.get(id)[:cause] == "murder" }
+      killed_execution = killed_ids.select { |id| @deaths.get(id)[:cause] == "execution" }
+      result.merge!(:killed_combat => killed_combat)
+      result.merge!(:killed_murder => killed_murder)
+      result.merge!(:killed_execution => killed_execution)
 
       return result
     end
