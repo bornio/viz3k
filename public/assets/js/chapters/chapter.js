@@ -46,6 +46,7 @@ var populate_chapter_info = function($scope, $http, chapter_json)
     }
 
     // chapter description
+    document.title = "Chapter " + $scope.chapter.chapter + " - Viz3k";
     $scope.chapter_title = "Chapter " + $scope.chapter.chapter + " : " + $scope.chapter.title;
 
     // enable or disable prev and next chapter links depending on whether linked-to chapter exists

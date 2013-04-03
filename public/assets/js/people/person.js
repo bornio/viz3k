@@ -53,6 +53,7 @@ var populate_person_info = function($scope, $http, people_json)
     }
 
     $scope.person = person;
+    document.title = person.name + " " + person.style_parens + " - Viz3k";
 
     // issue an http get to grab the faction info
     $http.get("/data/factions").success(populate_factions_info($scope, person));

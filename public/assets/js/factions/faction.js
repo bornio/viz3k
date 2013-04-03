@@ -22,6 +22,7 @@ function Faction($scope, $http)
 
     // assign data to the scope
     $scope.faction = faction;
+    document.title = $scope.faction.name + " " + $scope.faction_type + " - Viz3k";
 
     // per-chapter stats
     var populate_chart_tab = function(chapters_data)
