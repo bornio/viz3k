@@ -23,6 +23,7 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
   var padding_t = 6;
   var padding_b = 6;
   var svg_height = chart_height + padding_t + padding_b;
+  svg.attr("width", "100%"); // for firefox -- WebKit defaults to 100% anyway
   svg.attr("height", svg_height);
 
   var y_scale = d3.scale.linear()

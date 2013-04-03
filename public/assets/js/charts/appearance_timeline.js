@@ -3,6 +3,7 @@ function appearance_timeline(element_id, factions, chapters, max_people)
   var chart_initialized = false;
   // append the svg element for drawing the chart on
   var svg = d3.select("#" + element_id).append("svg");
+  svg.attr("width", "100%"); // for firefox -- WebKit defaults to 100% anyway
   var svg_height = document.getElementById(element_id).clientHeight;
   var padding_l = 24;
   var padding_t = 6;
