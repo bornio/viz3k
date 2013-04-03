@@ -11,15 +11,10 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li ng-class="{ active: navbar_selected == 0 }"><a href="/">Home</a></li>
-              <li ng-class="{ dropdown: true, active: navbar_selected == 1}">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Visualize <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="/chapters">Chapters</a></li>
-                  <li><a href="/factions">Factions</a></li>
-                  <li><a href="/people">People</a></li>
-                  <li><a href="/deaths">Deaths</a></li>
-                </ul>
-              </li>
+              <li ng-class="{ active: navbar_selected == 1 }"><a href="/chapters">Chapters</a></li>
+              <li ng-class="{ active: navbar_selected == 2 }"><a href="/factions">Factions</a></li>
+              <li ng-class="{ active: navbar_selected == 3 }"><a href="/people">People</a></li>
+              <li ng-class="{ active: navbar_selected == 4 }"><a href="/deaths">Deaths</a></li>
             </ul>
           </div>
         </div>

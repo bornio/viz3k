@@ -2,7 +2,7 @@ function Deaths($scope, $http)
 {
   // navbar settings
   $scope.navbar_url = "/navbar";
-  $scope.navbar_selected = 1;
+  $scope.navbar_selected = 4;
 
   // get all death records
   $http.get("/data/deaths").success(populate_deaths_info($scope, $http));

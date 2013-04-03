@@ -5,7 +5,7 @@ function Faction($scope, $http)
 
   // navbar settings
   $scope.navbar_url = "/navbar";
-  $scope.navbar_selected = 1;
+  $scope.navbar_selected = 2;
 
   var populate_faction_info = function(faction)
   {

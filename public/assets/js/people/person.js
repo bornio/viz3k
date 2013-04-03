@@ -6,7 +6,7 @@ function Person($scope, $http)
 
   // navbar settings
   $scope.navbar_url = "/navbar";
-  $scope.navbar_selected = 1;
+  $scope.navbar_selected = 3;
 
   // initial values
   $scope.style_label = "";

@@ -2,7 +2,7 @@ function People($scope, $http)
 {
   // navbar settings
   $scope.navbar_url = "/navbar";
-  $scope.navbar_selected = 1;
+  $scope.navbar_selected = 3;
   $scope.people_order = "num_appearances";
   $scope.people_order_invert = true;
 
