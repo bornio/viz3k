@@ -11,6 +11,8 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
     <!-- styling for this page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/deaths.css"/>
+    <!-- styling for charts -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/charts/bar_horizontal.css"/>
   </head>
   <body ng-controller="Deaths">
     <!-- include the navbar at the top -->
@@ -24,12 +26,9 @@
             <h2>Deaths</h2>
           </div>
 
-          <p class="lead">Total: {{deaths.length}}</p>
-          <p>Combat: {{deaths_combat.length}}</p>
-          <p>Murder: {{deaths_murder.length}}</p>
-          <p>Execution: {{deaths_execution.length}}</p>
-          <p>Illness: {{deaths_illness.length}}</p>
-          <p>Suicide: {{deaths_suicide.length}}</p>
+          <p class="lead">Total deaths: {{deaths.length}}</p>
+
+          <div id="chart-deaths-by-cause"></div>
 
           <hr>
           <footer>
@@ -51,5 +50,8 @@
 
     <!-- controller for this view -->
     <script type="text/javascript" src="/assets/js/deaths.js"></script>
+
+    <!-- charts used by this view -->
+    <script type="text/javascript" src="/assets/js/charts/bar_horizontal.js"></script>
   </body>
 </html>

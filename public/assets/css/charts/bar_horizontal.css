@@ -1,0 +1,18 @@
+.axis path, .axis line {
+  fill: none;
+  stroke: #333333;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-size: 9px;
+  fill: #999999;
+}
+
+text.axis-labels {
+  fill: #444444;
+}
+
+text.value-labels {
+  fill: #444444;
+}
