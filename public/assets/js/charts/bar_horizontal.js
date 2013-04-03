@@ -48,6 +48,10 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
   // max of all data elements is used to scale the bar lengths
   var max_x_value = d3.max(data)*1.5;
 
+  var bars = svg.select("#bar-group").selectAll("rect").data(data);
+  var value_labels = svg.select("#bar-group").selectAll("text").data(data);
+  var axis_labels = define_axis_labels(svg.select("#labels-group"), labels);
+
   // render (or re-render) the chart as needed, trying to fit x scale to width of parent element
   var chart_resized = function()
   {
@@ -60,15 +64,12 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
       .domain([0, max_x_value])
       .range([0, chart_width]);
 
-    // set or update color-coded bars for every data element
-    var bars = svg.select("#bar-group").selectAll("rect").data(data);
-    var value_labels = svg.select("#bar-group").selectAll("text").data(data);
-    var axis_labels = svg.select("#labels-group").selectAll("text").data(labels);
-
+    // set or update color-coded bars for every data element, along with labels
     if (!chart_initialized)
     {
       bars.enter().append("rect");
-      axis_labels.enter().append("text");
+      init_axis_labels(axis_labels);
+      
       if (show_values)
       {
         value_labels.enter().append("text");
@@ -82,12 +83,7 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
       .attr("height", bar_thickness - 1)
       .style("fill", function(d, i) { return colors[i]; });
 
-    axis_labels.attr("class", "axis-labels")
-      .attr("x", -6)
-      .attr("y", function(d, i) { return y_scale(i) + bar_thickness/2; })
-      .attr("text-anchor", "end")
-      .attr("dominant-baseline", "central")
-      .text(function(d) { return d; });
+    draw_axis_labels(axis_labels, y_scale, bar_thickness);
 
     if (show_values)
     {
@@ -108,4 +104,62 @@ function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_va
   return {
     resized : chart_resized
   };
+}
+
+function define_axis_labels(parent, labels)
+{
+  var has_hrefs = false;
+  for (var i in labels)
+  {
+    if ("href" in labels[i])
+    {
+      has_hrefs = true;
+    }
+    else
+    {
+      labels[i].href = "#";
+    }
+  }
+
+  if (has_hrefs)
+  {
+    return {
+      anchors : parent.selectAll("a").data(labels)
+    };
+  }
+  else
+  {
+    return {
+      texts : parent.selectAll("text").data(labels)
+    };
+  }
+}
+
+function init_axis_labels(axis_labels)
+{
+  if ("anchors" in axis_labels)
+  {
+    axis_labels.anchors.enter().append("a");
+    axis_labels.texts = axis_labels.anchors.append("text");
+  }
+  else
+  {
+    axis_labels.texts.enter().append("text");
+  }
+}
+
+function draw_axis_labels(axis_labels, y_scale, bar_thickness)
+{
+  if ("anchors" in axis_labels)
+  {
+    axis_labels.anchors.attr("class", "axis-labels")
+      .attr("xlink:href", function(d) { return d.href; });
+  }
+  
+  axis_labels.texts.attr("class", "axis-labels")
+    .attr("x", -6)
+    .attr("y", function(d, i) { return y_scale(i) + bar_thickness/2; })
+    .attr("text-anchor", "end")
+    .attr("dominant-baseline", "central")
+    .text(function(d) { return d.text; });
 }

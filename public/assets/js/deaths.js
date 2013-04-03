@@ -23,7 +23,6 @@ function populate_deaths_info($scope, $http, deaths_json)
     $scope.deaths = deaths;
 
     var chart_deaths_by_cause = draw_deaths_chart($scope);
-    window.addEventListener("resize", chart_deaths_by_cause.resized, false);
 
     // get info about who killed whom
     $http.get("/data/people").success(populate_combatants_info($scope, $http));
@@ -46,7 +45,6 @@ function populate_combatants_info($scope, $http, people_json)
     $scope.combatants = combatants;
 
     var chart_top_combatants = draw_combatants_chart($scope);
-    window.addEventListener("resize", chart_top_combatants.resized, false);
   }
 }
 
@@ -67,13 +65,16 @@ function draw_deaths_chart($scope)
   cause_colors[4] = "#999999";
 
   var cause_labels = new Array(5);
-  cause_labels[0] = "Combat";
-  cause_labels[1] = "Murder";
-  cause_labels[2] = "Execution";
-  cause_labels[3] = "Illness";
-  cause_labels[4] = "Suicide";
+  cause_labels[0] = { text: "Combat" };
+  cause_labels[1] = { text: "Murder" };
+  cause_labels[2] = { text: "Execution" };
+  cause_labels[3] = { text: "Illness" };
+  cause_labels[4] = { text: "Suicide" };
 
-  return bar_horizontal("chart-deaths-by-cause", deaths_by_cause, cause_colors, cause_labels);
+  var chart_deaths_by_cause = bar_horizontal("chart-deaths-by-cause", deaths_by_cause, cause_colors, cause_labels);
+  window.addEventListener("resize", chart_deaths_by_cause.resized, false);
+
+  return chart_deaths_by_cause;
 }
 
 function draw_combatants_chart($scope)
@@ -93,10 +94,13 @@ function draw_combatants_chart($scope)
   var name_labels = new Array(combatants.length);
   for (var i in combatants)
   {
-    name_labels[i] = $scope.combatants[i].name;
+    name_labels[i] = { text: $scope.combatants[i].name, href: "/people/" + String($scope.combatants[i].id) };
   }
 
-  return bar_horizontal("chart-top-combatants", combatants, bar_colors, name_labels);
+  var chart_top_combatants = bar_horizontal("chart-top-combatants", combatants, bar_colors, name_labels);
+  window.addEventListener("resize", chart_top_combatants.resized, false);
+
+  return chart_top_combatants;
 }
 
 function people_sort_by_kills(people)
