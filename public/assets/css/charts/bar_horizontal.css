@@ -1,6 +1,7 @@
 .axis path, .axis line {
   fill: none;
-  stroke: #333333;
+  stroke: #666666;
+  stroke-width: 0.2em;
   shape-rendering: crispEdges;
 }
 
@@ -14,5 +15,5 @@ text.axis-labels {
 }
 
 text.value-labels {
-  fill: #444444;
+  fill: #555555;
 }

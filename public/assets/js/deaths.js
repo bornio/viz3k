@@ -34,7 +34,7 @@ function populate_deaths_info($scope, $http, deaths_json)
     cause_colors[1] = "#333333";
     cause_colors[2] = "#ff8800";
     cause_colors[3] = "#3388bb";
-    cause_colors[4] = "#666666";
+    cause_colors[4] = "#999999";
 
     var cause_labels = new Array(5);
     cause_labels[0] = "Combat";
