@@ -38,7 +38,7 @@
         <div class="span12">
           <table class="table table-condensed ng-cloak">
             <tbody>
-              <tr ng-repeat="person in people | filter:query | orderBy:people_order:people_order_invert">
+              <tr ng-repeat="person in people | filter:query | orderBy:['-appearances.length','name']">
                 <td class="table-person-name">
                   <a href="/people/{{person.id}}">{{person.name}}</a>
                   <span class="muted"> {{person.style_parens}}</span>
@@ -53,7 +53,7 @@
                   <a href="/factions/{{person.faction}}">{{person.faction_name}}</a>
                 </td>
                 <td class="table-person-num-appearances muted hidden-phone">
-                  <small>appears on {{person.num_appearances}} pages</small>
+                  <small>appears in {{person.appearances.length}} chapters</small>
                 </td>
               </tr>
             </tbody>

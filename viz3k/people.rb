@@ -202,7 +202,12 @@ module Viz3k
 
     # Sets @faction based on this person's overall primary faction across the whole novel.
     def set_primary_faction(chapters)
-      @faction = primary_faction(chapters.appearances(@id))
+      pages = []
+      chapters.appearances(@id).each do |chapter_appearances|
+        pages += chapter_appearances[:pages]
+      end
+
+      @faction = primary_faction(pages)
 
       # also set a primary faction per chapter
       chapters.chapters.each do |chapter|

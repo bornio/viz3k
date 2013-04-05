@@ -26,8 +26,12 @@
           <div class="page-header ng-cloak">
             <p class="lead" style="margin-bottom: 0px;">{{person.name}}</p>
             <p>{{style_label}} {{style_text}}</p>
-            <p>Appears on {{person.num_appearances}} pages</p>
             <p ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )<p>
+            <p>Mentioned in chapters:
+              <span ng-repeat="chapter_appearances in person.appearances">
+                <a href="/chapters/{{chapter_appearances.chapter}}">{{chapter_appearances.chapter}}</a><span ng-hide="$index == person.appearances.length - 1">, </span>
+              </span>
+            </p>
           </div>
 
           <div class="tabbable">

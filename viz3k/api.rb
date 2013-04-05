@@ -67,12 +67,8 @@ module Viz3k
     def person_hash(person_id)
       result = @people.get(person_id).to_hash()
 
-      # count how many pages this person appeared on in the novel.
-      num_appearances = 0
-      @chapters.chapters.each do |chapter|
-        num_appearances += chapter.num_appearances(result["id"])
-      end
-      result.merge!(:num_appearances => num_appearances)
+      # get all appearances/mentions of this person in the novel
+      result.merge!(:appearances => @chapters.appearances(person_id))
 
       # also include death info for this person, if any
       if (@deaths.exists?(person_id))

@@ -65,11 +65,14 @@ module Viz3k
       return total_appearances
     end
 
-    # Returns a list of pages the person with the given id appears on.
+    # Returns a list of chapters and pages the person with the given id appears on.
     def appearances(person_id)
       pages = []
       @chapters.each do |chapter|
-        pages += chapter.appearances(person_id)
+        chapter_appearances = chapter.appearances(person_id)
+        if (chapter_appearances.length() > 0)
+          pages.push({:chapter => chapter.chapter, :pages => chapter.appearances(person_id)})
+        end
       end
       return pages
     end
