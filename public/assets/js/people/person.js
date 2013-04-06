@@ -39,6 +39,10 @@ var populate_person_info = function($scope, $http, people_json)
     {
       person.links.push({text:"wiki",href:person.wiki});
     }
+    if ("km" in person)
+    {
+      person.links.push({text:"km",href:person.km});
+    }
 
     // death information
     if ("death" in person)

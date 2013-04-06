@@ -5,12 +5,14 @@
       "id": 0,
       "name": "Emperor Gao",
       "wiki": "Emperor_Gaozu_of_Han",
+      "km": "Liu-Bang",
       "note": "Liu Bang. Also known as Gao Zu. Usually referred to as the Supreme Ancestor."
     },
     {
       "id": 1,
       "name": "Wang Mang",
-      "wiki": "Wang_Mang"
+      "wiki": "Wang_Mang",
+      "km": "Wang-Mang"
     },
     {
       "id": 2,

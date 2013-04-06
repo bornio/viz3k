@@ -5,10 +5,16 @@ require "json"
 require "pp"
 
 module Viz3k
-  # Gets the corresponding full URL for a Wikipedia article name string.
+  # Gets the corresponding full URL for links to external sites.
   class Externs
+    # Gets the full URL for a Wikipedia article name string.
     def self.wiki_url(article_name)
       return "http://en.wikipedia.org/wiki/" + article_name
+    end
+
+    # Gets the full URL for a Kongming's Archives encyclopedia article name string.
+    def self.km_url(article_name)
+      return "http://kongming.net/encyclopedia/" + article_name
     end
   end
 
@@ -64,7 +70,11 @@ module Viz3k
         if (person_hash.has_key?("wiki"))
           wiki = Externs.wiki_url(person_hash["wiki"])
         end
-        person = Person.new(person_hash["id"],person_hash["name"],allegiance,style:style,note:note,wiki:wiki)
+        km = ""
+        if (person_hash.has_key?("km"))
+          km = Externs.km_url(person_hash["km"])
+        end
+        person = Person.new(person_hash["id"],person_hash["name"],allegiance,style:style,note:note,wiki:wiki,km:km)
         @people.push(person)
       end
     end
@@ -132,6 +142,7 @@ module Viz3k
     attr_accessor :style
     attr_accessor :note
     attr_accessor :wiki
+    attr_accessor :km
     attr_accessor :faction # a person's primary faction
     attr_accessor :faction_for_chapter # hash giving a person's primary faction within each chapter
 
@@ -142,6 +153,7 @@ module Viz3k
       @style = ""
       @note = ""
       @wiki = ""
+      @km = ""
       @faction = allegiance[0] # default value
       @faction_for_chapter = {}
 
@@ -156,6 +168,10 @@ module Viz3k
 
       if (options[:wiki])
         @wiki = options[:wiki]
+      end
+
+      if (options[:km])
+        @km = options[:km]
       end
     end
 
@@ -187,6 +203,9 @@ module Viz3k
       end
       if (@wiki != "")
         person_hash.merge!("wiki"=>@wiki)
+      end
+      if (@km != "")
+        person_hash.merge!("km"=>@km)
       end
       return person_hash
     end
