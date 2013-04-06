@@ -18,44 +18,52 @@
       "id": 2,
       "name": "Emperor Guangwu",
       "wiki": "Emperor_Guangwu_of_Han",
+      "km": "Emperor-Guangwu",
       "note": "Liu Xiu. Founder of the Later Han after Wang Mang's usurpation."
     },
     {
       "id": 3,
       "name": "Emperor Xian",
       "wiki": "Emperor_Xian_of_Han",
+      "km": "Emperor-Xian",
       "note": "Liu Xie."
     },
     {
       "id": 4,
       "name": "Emperor Huan",
-      "wiki": "Emperor_Huan_of_Han"
+      "wiki": "Emperor_Huan_of_Han",
+      "km": "Emperor-Huan"
     },
     {
       "id": 5,
       "name": "Emperor Ling",
-      "wiki": "Emperor_Ling_of_Han"
+      "wiki": "Emperor_Ling_of_Han",
+      "km": "Emperor-Ling"
     },
     {
       "id": 6,
       "name": "Dou Wu",
-      "wiki": "Dou_Wu"
+      "wiki": "Dou_Wu",
+      "km": "Dou-Wu"
     },
     {
       "id": 7,
       "name": "Chen Fan",
-      "wiki": "Chen_Fan"
+      "wiki": "Chen_Fan",
+      "km": "Chen-Fan"
     },
     {
       "id": 8,
       "name": "Cao Jie",
       "wiki": "Cao_Jie_(eunuch)",
+      "km": "Cao-Jie",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 9,
       "name": "Cai Yong",
-      "wiki": "Cai_Yong"
+      "wiki": "Cai_Yong",
+      "km" : "Cai-Yong"
     },
     {
       "id": 10,
