@@ -63,122 +63,142 @@
       "id": 9,
       "name": "Cai Yong",
       "wiki": "Cai_Yong",
-      "km" : "Cai-Yong"
+      "km": "Cai-Yong"
     },
     {
       "id": 10,
       "name": "Zhang Rang",
       "wiki": "Zhang_Rang",
+      "km": "Zhang-Rang",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 11,
       "name": "Zhao Zhong",
       "wiki": "Zhao_Zhong",
+      "km": "Zhao-Zhong",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 12,
       "name": "Feng Xu",
       "wiki": "Feng_Xu",
+      "km": "Feng-Xu",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 13,
       "name": "Duan Gui",
       "wiki": "Duan_Gui",
+      "km": "Duan-Gui",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 14,
       "name": "Hou Lan",
       "wiki": "Hou_Lan",
+      "km": "Hou-Lan",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 15,
       "name": "Jian Shuo",
       "wiki": "Jian_Shuo",
+      "km": "Jian-Shuo",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 16,
       "name": "Cheng Kuang",
       "wiki": "Cheng_Kuang",
+      "km": "Cheng-Kuang",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 17,
       "name": "Xia Yun",
       "wiki": "Xia_Yun",
+      "km": "Xia-Yun",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 18,
       "name": "Guo Sheng",
       "wiki": "Guo_Sheng_(eunuch)",
+      "km": "Guo-Sheng",
       "note": "One of the Ten Regular Attendants."
     },
     {
       "id": 19,
       "name": "Zhang Jue",
       "wiki": "Zhang_Jue",
+      "km": "Zhang-Jue",
       "note": "Also known as Zhang Jiao."
     },
     {
       "id": 20,
       "name": "Zhang Bao",
+      "km": "Zhang-Bao-2",
       "wiki": "Zhang_Bao_(Yellow_Turban)"
     },
     {
       "id": 21,
       "name": "Zhang Liang (1)",
+      "km": "Zhang-Liang",
       "wiki": "Zhang_Liang_(Yellow_Turban)"
     },
     {
       "id": 22,
       "name": "Zhuang Zi",
       "wiki": "Zhuang_Zhou",
+      "km": "Zhuang-Zi",
       "note": "The Taoist sage known as The Old Hermit From Mount Hua Summit."
     },
     {
       "id": 23,
       "name": "Ma Yuanyi",
-      "wiki": "Ma_Yuanyi"
+      "wiki": "Ma_Yuanyi",
+      "km": "Ma-Yuanyi"
     },
     {
       "id": 24,
       "name": "Tang Zhou",
-      "wiki": "Tang_Zhou"
+      "wiki": "Tang_Zhou",
+      "km": "Tang-Zhou"
     },
     {
       "id": 25,
       "name": "He Jin",
       "style": "Suigao",
-      "wiki": "He_Jin"
+      "wiki": "He_Jin",
+      "km": "He-Jin"
     },
     {
       "id": 26,
       "name": "Lu Zhi",
-      "wiki": "Lu_Zhi_(Han_Dynasty)"
+      "wiki": "Lu_Zhi_(Han_Dynasty)",
+      "km": "Lu-Zhi"
     },
     {
       "id": 27,
       "name": "Huangfu Song",
       "style": "Yizhen",
-      "wiki": "Huangfu_Song"
+      "wiki": "Huangfu_Song",
+      "km": "Huangfu-Song"
     },
     {
       "id": 28,
       "name": "Zhu Jun",
       "style": "Gongwei",
       "wiki": "Zhu_Jun_(Han_Dynasty)",
+      "km": "Zhu-Jun",
       "note": "Veteran of the war against the Yellow Turbans. Appointed treasurer and court steward of the Han court by Li Jue and Guo Si."
     },
     {
       "id": 29,
       "name": "Liu Yan",
       "style": "Junlang",
+      "km": "Liu-Yan",
       "wiki": "Liu_Yan_(warlord)"
     },
     {
