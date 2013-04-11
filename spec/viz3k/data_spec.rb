@@ -35,9 +35,20 @@ describe "data" do
     end
 
     describe "external links" do
+      it "should not have any duplicate links to wikipedia" do
+          urls = []
+          @factions.factions.each do |faction|
+          if (faction.wiki != "")
+            urls.should_not include(faction.wiki)
+            urls.push(faction.wiki)
+          end
+        end
+      end
+
       it "should not have any broken links to wikipedia", :network => true, :speed => "slow" do
         @factions.factions.each do |faction|
           if (faction.wiki != "")
+            puts "      " + faction.wiki
             uri = open(URI.encode(faction.wiki))
             uri.status[1].should == "OK"
           end
@@ -77,10 +88,41 @@ describe "data" do
       end
 
       describe "external links" do
+        it "should not have any duplicate links to wikipedia" do
+          urls = []
+          @people.people.each do |person|
+            if (person.wiki != "")
+              urls.should_not include(person.wiki)
+              urls.push(person.wiki)
+            end
+          end
+        end
+
+        it "should not have any duplicate links to kongming.net" do
+          urls = []
+          @people.people.each do |person|
+            if (person.km != "")
+              urls.should_not include(person.km)
+              urls.push(person.km)
+            end
+          end
+        end
+
         it "should not have any broken links to wikipedia", :network => true, :speed => "slow" do
           @people.people.each do |person|
             if (person.wiki != "")
+              puts "        " + person.wiki
               uri = open(URI.encode(person.wiki))
+              uri.status[1].should == "OK"
+            end
+          end
+        end
+
+        it "should not have any broken links to kongming.net", :network => true, :speed => "slow" do
+          @people.people.each do |person|
+            if (person.km != "")
+              puts "        " + person.km
+              uri = open(URI.encode(person.km))
               uri.status[1].should == "OK"
             end
           end
