@@ -210,18 +210,21 @@
     {
       "id": 31,
       "name": "Zou Jing",
-      "wiki": "Zou_Jing"
+      "wiki": "Zou_Jing",
+      "km": "Zou-Jing"
     },
     {
       "id": 32,
       "name": "Liu Bei",
       "style": "Xuande",
-      "wiki": "Liu_Bei"
+      "wiki": "Liu_Bei",
+      "km": "Liu-Bei"
     },
     {
       "id": 33,
       "name": "Liu Sheng",
       "wiki": "Liu_Sheng",
+      "km": "Liu-Sheng",
       "note": "Prince Jing of Zhongshan. Ancestor of Liu Bei."
     },
     {
@@ -244,72 +247,85 @@
     {
       "id": 37,
       "name": "Liu Xiong",
+      "km": "Liu-Xiong",
       "note": "Grandfather of Liu Bei. Father of Liu Hong."
     },
     {
       "id": 38,
       "name": "Liu Hong",
+      "km": "Liu-Hong",
       "note": "Father of Liu Bei. Son of Liu Xiong."
     },
     {
       "id": 39,
       "name": "Liu Yuanqi",
+      "km": "Liu-Yuanqi",
       "note": "Uncle of Liu Bei. Younger brother of Liu Hong."
     },
     {
       "id": 40,
       "name": "Zheng Xuan",
       "wiki": "Zheng_Xuan",
+      "km": "Zheng-Xuan",
       "note": "One of Liu Bei's teachers, along with Lu Zhi."
     },
     {
       "id": 41,
       "name": "Gongsun Zan",
       "wiki": "Gongsun_Zan",
+      "km": "Gongsun-Zan",
       "note": "Governor of Beiping. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 42,
       "name": "Zhang Fei",
       "style": "Yide",
-      "wiki": "Zhang_Fei"
+      "wiki": "Zhang_Fei",
+      "km": "Zhang-Fei"
     },
     {
       "id": 43,
       "name": "Guan Yu",
       "style": "Yunchang",
-      "wiki": "Guan_Yu"
+      "wiki": "Guan_Yu",
+      "km": "Guan-Yu"
     },
     {
       "id": 44,
       "name": "Zhang Shiping",
-      "wiki": "Zhang_Shiping"
+      "wiki": "Zhang_Shiping",
+      "km": "Zhang-Shiping"
     },
     {
       "id": 45,
       "name": "Su Shuang",
-      "wiki": "Su_Shuang"
+      "wiki": "Su_Shuang",
+      "km": "Su-Shuang"
     },
     {
       "id": 46,
       "name": "Cheng Yuanzhi",
-      "wiki": "Cheng_Yuanzhi"
+      "wiki": "Cheng_Yuanzhi",
+      "km": "Cheng-Yuanzhi"
     },
     {
       "id": 47,
       "name": "Deng Mao",
-      "wiki": "Deng_Mao"
+      "wiki": "Deng_Mao",
+      "km": "Deng-Mao"
     },
     {
       "id": 48,
       "name": "Gong Jing",
-      "wiki": "Gong_Jing"
+      "wiki": "Gong_Jing",
+      "km": "Gong-Jing"
     },
     {
       "id": 49,
       "name": "Cao Cao",
       "style": "Mengde",
-      "wiki": "Cao_Cao"
+      "wiki": "Cao_Cao",
+      "km": "Cao-Cao"
     },
     {
       "id": 50,
