@@ -630,30 +630,36 @@
       "id": 100,
       "name": "Li Ru",
       "style": "Wenyou",
-      "wiki": "Li_Ru"
+      "wiki": "Li_Ru",
+      "km": "Li-Ru"
     },
     {
       "id": 101,
       "name": "Yuan Shu",
       "style": "Gonglu",
       "wiki": "Yuan_Shu",
+      "km": "Yuan-Shu",
       "note": "Governor of Nanyang and General of the Rear. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 102,
-      "name": "Wu Kuang"
+      "name": "Wu Kuang",
+      "km": "Wu-Kuang"
     },
     {
       "id": 103,
-      "name": "Min Gong"
+      "name": "Min Gong",
+      "km": "Min-Gong"
     },
     {
       "id": 104,
-      "name": "Cui Yi"
+      "name": "Cui Yi",
+      "km": "Cui-Yi"
     },
     {
       "id": 105,
       "name": "Cui Lie",
+      "km": "Cui-Lie",
       "note": "Commandant of the Capital Gates."
     },
     {
@@ -661,17 +667,20 @@
       "name": "Wang Yun",
       "style": "Zishi",
       "wiki": "Wang_Yun",
+      "km": "Wang-Yun",
       "note": "Minister of the Interior in the imperial court during Dong Zhuo's usurpation. Gave Cao Cao the Seven Star Sword in a failed plot to kill Dong Zhuo. Later used his daughter Diaochan to turn Lü Bu against Dong and kill him. Died when Dong's remnant forces under Li Jue and Guo Si captured the capital."
     },
     {
       "id": 107,
       "name": "Yang Biao",
+      "km": "Yang-Biao",
       "note": "Grand Commandant of the Han. Conspired with Emperor Xian to turn Li Jue and Guo Si against one another."
     },
     {
       "id": 108,
       "name": "Chunyu Qiong",
-      "wiki": "Chunyu_Qiong"
+      "wiki": "Chunyu_Qiong",
+      "km": "Chunyu-Qiong"
     },
     {
       "id": 109,
@@ -681,24 +690,28 @@
       "id": 110,
       "name": "Bao Xin",
       "wiki": "Bao_Xin",
+      "km": "Bao-Xin",
       "note": "Lord of Jibei. Joined the alliance against Dong Zhuo. Killed later while fighting the Yellow Turbans."
     },
     {
       "id": 111,
       "name": "Ding Yuan",
       "wiki": "Ding_Yuan",
+      "km": "Ding-Yuan",
       "note": "Killed by Lü_Bu."
     },
     {
       "id": 112,
       "name": "Lü Bu",
       "style": "Fengxian",
-      "wiki": "Lü_Bu"
+      "wiki": "Lü_Bu",
+      "km": "Lu-Bu"
     },
     {
       "id": 113,
       "name": "Yi Yin",
       "wiki": "Yi_Yin",
+      "km": "Yi-Yin",
       "note": "A minister of the Shang dynasty."
     },
     {
@@ -710,7 +723,8 @@
     {
       "id": 115,
       "name": "Huo Guang",
-      "wiki": "Huo_Guang"
+      "wiki": "Huo_Guang",
+      "km": "Huo-Guang"
     },
     {
       "id": 116,
@@ -719,16 +733,19 @@
     },
     {
       "id": 117,
-      "name": "Peng Bo"
+      "name": "Peng Bo",
+      "km": "Peng-Bo"
     },
     {
       "id": 118,
       "name": "Li Su",
-      "wiki": "Li_Su_(Han_Dynasty)"
+      "wiki": "Li_Su_(Han_Dynasty)",
+      "km": "Li-Su"
     },
     {
       "id": 119,
       "name": "Dong Min",
+      "km": "Dong-Min",
       "note": "Brother of Dong Zhuo."
     },
     {
