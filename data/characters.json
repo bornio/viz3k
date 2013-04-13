@@ -887,12 +887,14 @@
       "id": 140,
       "name": "Qiao Mao",
       "wiki": "Qiao_Mao",
+      "km": "Qiao-Mao",
       "note": "Governor of Dongjun. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 141,
       "name": "Yuan Yi",
       "wiki": "Yuan_Yi_(Han_Dynasty)",
+      "km": "Yuan-Yi",
       "note": "Governor of Shanyang. Joined the alliance against Dong Zhuo."
     },
     {
@@ -900,11 +902,13 @@
       "name": "Kong Rong",
       "style": "Wenju",
       "wiki": "Kong_Rong",
+      "km": "Kong-Rong",
       "note": "Governor of Beihai. Joined the alliance against Dong Zhuo. A descendant of Confucius."
     },
     {
       "id": 143,
       "name": "Zhang Chao",
+      "km": "Zhang-Chao",
       "note": "Governor of Guangling. Joined the alliance against Dong Zhuo. Brother of Zhang Miao."
     },
     {
@@ -912,6 +916,7 @@
       "name": "Tao Qian",
       "style": "Gongzu",
       "wiki": "Tao_Qian_(Han_Dynasty)",
+      "km": "Tao-Qian",
       "note": "Imperial inspector of Xuzhou. Joined the alliance against Dong Zhuo."
     },
     {
@@ -919,6 +924,7 @@
       "name": "Ma Teng",
       "style": "Shoucheng",
       "wiki": "Ma_Teng",
+      "km": "Ma-Teng",
       "note": "Governor of Xiliang. Joined the alliance against Dong Zhuo. Appointed Conqueror of the West by Emperor Xian."
     },
     {
@@ -926,79 +932,93 @@
       "name": "Zhang Yang",
       "style": "Zhishu",
       "wiki": "Zhang_Yang_(warlord)",
+      "km": "Zhang-Yang",
       "note": "Governor of Shangdang. Joined the alliance against Dong Zhuo."
     },
     {
       "id": 147,
       "name": "Hua Xiong",
-      "wiki": "Hua_Xiong"
+      "wiki": "Hua_Xiong",
+      "km": "Hua-Xiong"
     },
     {
       "id": 148,
       "name": "Hu Zhen",
       "style": "Wencai",
-      "wiki": "Hu_Zhen"
+      "wiki": "Hu_Zhen",
+      "km": "Hu-Zhen"
     },
     {
       "id": 149,
       "name": "Zhao Cen",
-      "wiki": "Zhao_Cen"
+      "wiki": "Zhao_Cen",
+      "km": "Zhao-Cen"
     },
     {
       "id": 150,
       "name": "Bao Zhong",
+      "km": "Bao-Zhong",
       "note": "Brother of Bao Xin."
     },
     {
       "id": 151,
       "name": "Cheng Pu",
       "style": "Demou",
-      "wiki": "Cheng_Pu"
+      "wiki": "Cheng_Pu",
+      "km": "Cheng-Pu"
     },
     {
       "id": 152,
       "name": "Huang Gai",
       "style": "Gongfu",
-      "wiki": "Huang_Gai"
+      "wiki": "Huang_Gai",
+      "km": "Huang-Gai"
     },
     {
       "id": 153,
       "name": "Han Dang",
       "style": "Yigong",
-      "wiki": "Han_Dang"
+      "wiki": "Han_Dang",
+      "km": "Han-Dang"
     },
     {
       "id": 154,
       "name": "Zu Mao",
       "style": "Darong",
       "wiki": "Zu_Mao",
+      "km": "Zu-Mao",
       "note": "His style name is given by the novel, and was not recorded historically."
     },
     {
       "id": 155,
-      "name": "Yu She"
+      "name": "Yu She",
+      "km": "Yu-She"
     },
     {
       "id": 156,
       "name": "Pan Feng",
-      "wiki": "Pan_Feng"
+      "wiki": "Pan_Feng",
+      "km": "Pan-Feng"
     },
     {
       "id": 157,
       "name": "Yan Liang",
       "wiki": "Yan_Liang",
+      "km": "Yan-Liang",
       "note": "One of Yuan Shao's most powerful generals, along with Wen Chou. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
       "id": 158,
       "name": "Wen Chou",
       "wiki": "Wen_Chou",
+      "km": "Wen-Chou",
       "note": "One of Yuan Shao's most powerful generals, along with Yan Liang. Killed by Guan Yu while Guan was in Cao Cao's service."
     },
     {
       "id": 159,
       "name": "Fang Yue",
       "wiki": "Fang_Yue",
+      "km": "Fang-Yue",
       "note": "Officer of Wang Kuang."
     },
     {
