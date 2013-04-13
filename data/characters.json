@@ -331,18 +331,21 @@
       "id": 50,
       "name": "Cao Song",
       "wiki": "Cao_Song",
+      "km": "Cao-Song",
       "note": "Father of Cao Cao. Originally a Xiahou, he was adopted by the eunuch Cao Teng."
     },
     {
       "id": 51,
       "name": "Cao Teng",
       "wiki": "Cao_Teng",
+      "km": "Cao-Teng",
       "note": "Adopted father of Cao Song."
     },
     {
       "id": 52,
       "name": "Qiao Xuan",
-      "wiki": "Qiao_Xuan"
+      "wiki": "Qiao_Xuan",
+      "km": "Qiao-Xuan"
     },
     {
       "id": 53,
@@ -353,72 +356,86 @@
       "id": 54,
       "name": "Xu Shao (1)",
       "style": "Zijiang",
-      "wiki": "Xu_Shao"
+      "wiki": "Xu_Shao",
+      "km": "Xu-Shao"
     },
     {
       "id": 55,
       "name": "Zuo Feng",
-      "wiki": "Zuo_Feng"
+      "wiki": "Zuo_Feng",
+      "km": "Zuo-Feng"
     },
     {
       "id": 56,
       "name": "Dong Zhuo",
-      "wiki": "Dong_Zhuo"
+      "wiki": "Dong_Zhuo",
+      "km": "Dong-Zhuo"
     },
     {
       "id": 57,
       "name": "Gao Sheng",
-      "wiki": "Gao_Sheng_(rebel)"
+      "wiki": "Gao_Sheng_(rebel)",
+      "km": "Gao-Sheng"
     },
     {
       "id": 58,
       "name": "Yan Zheng",
-      "wiki": "Yan_Zheng_(rebel)"
+      "wiki": "Yan_Zheng_(rebel)",
+      "km": "Yan-Zheng"
     },
     {
       "id": 59,
       "name": "Zhao Hong",
-      "wiki": "Zhao_Hong_(rebel)"
+      "wiki": "Zhao_Hong_(rebel)",
+      "km": "Zhao-Hong"
     },
     {
       "id": 60,
       "name": "Han Zhong",
-      "wiki": "Han_Zhong_(rebel)"
+      "wiki": "Han_Zhong_(rebel)",
+      "km": "Han-Zhong"
     },
     {
       "id": 61,
       "name": "Sun Zhong",
-      "wiki": "Sun_Zhong_(rebel)"
+      "wiki": "Sun_Zhong_(rebel)",
+      "km": "Sun-Zhong"
     },
     {
       "id": 62,
       "name": "Sun Jian",
       "style": "Wentai",
-      "wiki": "Sun_Jian"
+      "wiki": "Sun_Jian",
+      "km": "Sun-Jian"
     },
     {
       "id": 63,
       "name": "Sunzi",
       "wiki": "Sun_Tzu",
+      "km": "Sunzi",
       "note": "Also known as Sun Wu. More famously known as Sun Tzu, author of The Art of War. Ancestor of Sun Jian."
     },
     {
       "id": 64,
       "name": "Xu Chang",
+      "km": "Xu-Chang",
       "note": "A rebel defeated by Sun Jian."
     },
     {
       "id": 65,
       "name": "Xu Shao (2)",
+      "km": "Xu-Zhao-2",
       "note": "Son of Xu Chang."
     },
     {
       "id": 66,
-      "name": "Zang Min"
+      "name": "Zang Min",
+      "km": "Zang-Min"
     },
     {
       "id": 67,
-      "name": "Zhang Jun"
+      "name": "Zhang Jun",
+      "km": "Zhang-Jun"
     },
     {
       "id": 68,
@@ -430,54 +447,64 @@
     },
     {
       "id": 70,
-      "name": "Liu Hui"
+      "name": "Liu Hui",
+      "km": "Liu-Hui"
     },
     {
       "id": 71,
       "name": "Ou Xing",
       "wiki": "Ou_Xing",
+      "km": "Ou-Xing",
       "note": "Staged an uprising in Changsha."
     },
     {
       "id": 72,
       "name": "Zhang Ju",
       "wiki": "Zhang_Ju",
+      "km": "Zhang-Ju",
       "note": "Staged an uprising in Yuyang, along with Zhang Chun."
     },
     {
       "id": 73,
       "name": "Zhang Chun",
       "wiki": "Zhang_Chun",
+      "km": "Zhang-Chun",
       "note": "Staged an uprising in Yuyang, along with Zhang Ju."
     },
     {
       "id": 74,
-      "name": "Liu Tao"
+      "name": "Liu Tao",
+      "km": "Liu-Tao"
     },
     {
       "id": 75,
-      "name": "Chen Dan"
+      "name": "Chen Dan",
+      "km": "Chen-Dan"
     },
     {
       "id": 76,
       "name": "Liu Yu",
+      "km": "Liu-Yu",
       "wiki": "Liu_Yu_(warlord)"
     },
     {
       "id": 77,
       "name": "Empress He",
       "wiki": "Empress_He_(Ling)",
+      "km": "Empress-He",
       "note": "Mother of Liu Bian (Emperor Shao)."
     },
     {
       "id": 78,
       "name": "Emperor Shao",
       "wiki": "Emperor_Shao_of_Han",
+      "km": "Emperor-Shao",
       "note": "Liu Bian."
     },
     {
       "id": 79,
       "name": "Lady Wang",
+      "km": "Lady-Wang-3",
       "note": "Also known as Beauty Wang or Consort Wang. Mother of Liu Xie (Emperor Xian)."
     },
     {
