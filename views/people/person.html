@@ -24,8 +24,7 @@
         <div id="content-area" class="span8 offset2">
           <!-- page header with faction info -->
           <div class="page-header ng-cloak">
-            <p class="lead" style="margin-bottom: 0px;">{{person.name}}</p>
-            <p>{{style_label}} {{style_text}}</p>
+            <p class="lead" style="margin-bottom: 0px;">{{person.name}} {{style_parens}}</p>
             <p>
               <span ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )</span>
             <p>

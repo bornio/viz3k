@@ -9,8 +9,7 @@ function Person($scope, $http)
   $scope.navbar_selected = 3;
 
   // initial values
-  $scope.style_label = "";
-  $scope.style_text = "";
+  $scope.style_parens = "";
   $scope.died = false;
   $scope.has_killers = false;
   $scope.kills = new Array();
@@ -59,6 +58,11 @@ var populate_person_info = function($scope, $http, people_json)
     $scope.person = person;
     document.title = person.name + " " + person.style_parens + " - Viz3k";
 
+    if ("style_parens" in person)
+    {
+      $scope.style_parens = person.style_parens;
+    }
+
     // issue an http get to grab the faction info
     $http.get("/data/factions").success(populate_factions_info($scope, person));
 
@@ -101,12 +105,6 @@ function populate_factions_info($scope, person, factions_json)
     // assign data to the scope
     $scope.primary_faction = primary_faction;
     $scope.other_factions = other_factions;
-
-    if ("style" in person)
-    {
-      $scope.style_label = "Style name:";
-      $scope.style_text = person.style;
-    }
   }
 }
 
