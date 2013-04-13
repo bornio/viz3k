@@ -6,7 +6,6 @@
     <!-- use Twitter Bootstrap for styling -->
     <link href="/lib/bootstrap.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/lib/bootstrap-responsive.min.css" rel="stylesheet">
     <!-- styling common to all pages except splash page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
     <!-- styling for this page -->
@@ -24,7 +23,13 @@
         <div id="content-area" class="span8 offset2">
           <!-- page header with faction info -->
           <div class="page-header ng-cloak">
-            <p class="lead" style="margin-bottom: 0px;">{{person.name}} {{style_parens}}</p>
+            <p class="lead" style="margin-bottom: 0px;">
+              {{person.name}}
+              <span id="style-name" class="muted" style="cursor: help;"
+                    data-placement="bottom" data-trigger="click" data-html="true" data-container="body">
+                {{style_parens}}
+              </span>
+            </p>
             <p>
               <span ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )</span>
             <p>
