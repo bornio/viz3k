@@ -26,7 +26,7 @@ function Person($scope, $http)
 var populate_person_info = function($scope, $http, people_json)
 {
   style_name_popover_title = "About style names"
-  style_name_popover_content = "A <a href='http://en.wikipedia.org/wiki/Chinese_style_name'>style name</a>, or courtesy name, is a name traditionally given to Chinese males when they reach adulthood. Characters in the novel frequently address one another by their style names instead of their given names as a mark of respect.";
+  style_name_popover_content = "A <em><a href='http://en.wikipedia.org/wiki/Chinese_style_name'>style name</a></em>, or <em>courtesy name</em>, is a name traditionally given to Chinese males when they reach adulthood. Characters in the novel frequently address one another by their style names instead of their given names as a mark of respect.";
   return function(people_json)
   {
     var person = get_person(people_json.people, person_id);
