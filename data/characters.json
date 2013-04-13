@@ -510,7 +510,8 @@
     {
       "id": 80,
       "name": "Empress Dong",
-      "wiki": "Empress_Dowager_Dong"
+      "wiki": "Empress_Dowager_Dong",
+      "km": "Empress-Dowager-Dong"
     },
     {
       "id": 81,
@@ -519,7 +520,8 @@
     },
     {
       "id": 82,
-      "name": "Pan Yin"
+      "name": "Pan Yin",
+      "km": "Pan-Yin"
     },
     {
       "id": 83,
@@ -536,16 +538,19 @@
       "name": "Yuan Shao",
       "style": "Benchu",
       "wiki": "Yuan_Shao",
+      "km": "Yuan-Shao",
       "note": "Lord of Qixiang and governor of Bohai. Led the alliance against Dong Zhuo."
     },
     {
       "id": 86,
       "name": "Yuan Feng",
+      "km": "Yuan-Feng",
       "note": "Father of Yuan Shao."
     },
     {
       "id": 87,
       "name": "Yuan Wei",
+      "km": "Yuan-Wei",
       "note": "Uncle of Yuan Shao. Murdered along with his entire household by Li Jue and Guo Si on Dong Zhuo's orders."
     },
     {
@@ -553,15 +558,18 @@
       "name": "Xun You",
       "style": "Gongda",
       "wiki": "Xun_You",
+      "km": "Xun-You",
       "note": "Nephew of Xun Yu. Left the Inner Bureau during Dong Zhuo's usurpation, later becoming an officer of Cao Cao."
     },
     {
       "id": 89,
-      "name": "Zheng Tai"
+      "name": "Zheng Tai",
+      "km": "Zheng-Tai"
     },
     {
       "id": 90,
       "name": "Dong Chong",
+      "km": "Dong-Chong",
       "note": "Brother of Empress Dong."
     },
     {
@@ -572,43 +580,51 @@
     {
       "id": 92,
       "name": "He Miao",
+      "km": "He-Miao",
       "note": "Brother of He Jin."
     },
     {
       "id": 93,
       "name": "Lady Wuyang",
+      "km": "Lady-Wuyang",
       "note": "Mother of He Miao."
     },
     {
       "id": 94,
       "name": "Chen Lin",
+      "km": "Chen-Lin",
       "wiki": "Chen_Lin_(Han_Dynasty)"
     },
     {
       "id": 95,
       "name": "Niu Fu",
       "wiki": "Niu_Fu",
+      "km": "Niu-Fu",
       "note": "Son-in-law of Dong Zhuo."
     },
     {
       "id": 96,
       "name": "Li Jue",
+      "km": "Li-Jue",
       "wiki": "Li_Jue_(Han_Dynasty)"
     },
     {
       "id": 97,
       "name": "Guo Si",
-      "wiki": "Guo_Si"
+      "wiki": "Guo_Si",
+      "km": "Guo-Si"
     },
     {
       "id": 98,
       "name": "Zhang Ji",
+      "km": "Zhang-Ji",
       "wiki": "Zhang_Ji_(Han_Dynasty)"
     },
     {
       "id": 99,
       "name": "Fan Chou",
-      "wiki": "Fan_Chou"
+      "wiki": "Fan_Chou",
+      "km": "Fan-Chou"
     },
     {
       "id": 100,
