@@ -751,58 +751,69 @@
     {
       "id": 120,
       "name": "Zhou Bi",
-      "wiki": "Zhou_Bi"
+      "wiki": "Zhou_Bi",
+      "km": "Zhou-Bi"
     },
     {
       "id": 121,
-      "name": "Wu Qiong"
+      "name": "Wu Qiong",
+      "km": "Wu-Qiong"
     },
     {
       "id": 122,
-      "name": "Ding Guan"
+      "name": "Ding Guan",
+      "km": "Ding-Guan"
     },
     {
       "id": 123,
       "name": "Lady Tang",
       "wiki": "Consort_Tang_(Tangji)",
+      "km": "Lady-Tang-Ji",
       "note": "Consort of Emperor Shao."
     },
     {
       "id": 124,
-      "name": "Wu Fu"
+      "name": "Wu Fu",
+      "km": "Wu-Fu"
     },
     {
       "id": 125,
       "name": "Chen Gong",
       "style": "Gongtai",
       "wiki": "Chen_Gong",
+      "km": "Chen-Gong",
       "note": "County official who helped Cao Cao escape after he failed to assassinate Dong Zhuo, but left after Cao Cao murdered Lü Boshe. Later became Lü Bu's strategist."
     },
     {
       "id": 126,
-      "name": "Lü Boshe"
+      "name": "Lü Boshe",
+      "km": "Lu-Boshe"
     },
     {
       "id": 127,
-      "name": "Wei Hong"
+      "name": "Wei Hong",
+      "km": "Wei-Hong"
     },
     {
       "id": 128,
       "name": "Yue Jin",
       "style": "Wenqian",
-      "wiki": "Yue_Jin"
+      "wiki": "Yue_Jin",
+      "km": "Yue-Jin"
     },
     {
       "id": 129,
       "name": "Li Dian",
       "style": "Mancheng",
-      "wiki": "Li_Dian"
+      "wiki": "Li_Dian",
+      "km": "Li-Dian"
     },
     {
       "id": 130,
       "name": "Xiahou Dun",
       "style": "Yuanrang",
-      "wiki": "Xiahou_Dun"
+      "wiki": "Xiahou_Dun",
+      "km": "Xiahou-Dun"
     },
     {
       "id": 131,
@@ -813,13 +824,15 @@
       "id": 132,
       "name": "Xiahou Yuan",
       "style": "Miaocai",
-      "wiki": "Xiahou_Yuan"
+      "wiki": "Xiahou_Yuan",
+      "km": "Xiahou-Yuan"
     },
     {
       "id": 133,
       "name": "Cao Ren",
       "style": "Zixiao",
       "wiki": "Cao_Ren",
+      "km": "Cao-Ren",
       "note": "Cousin of Cao Cao."
     },
     {
@@ -827,6 +840,7 @@
       "name": "Cao Hong",
       "style": "Zilian",
       "wiki": "Cao_Hong",
+      "km": "Cao-Hong",
       "note": "Cousin of Cao Cao."
     },
     {
@@ -834,6 +848,7 @@
       "name": "Han Fu",
       "style": "Wenjie",
       "wiki": "Han_Fu_(warlord)",
+      "km": "Han-Fu",
       "note": "Imperial inspector of Jizhou. Joined the alliance against Dong Zhuo."
     },
     {
@@ -841,6 +856,7 @@
       "name": "Kong Zhou",
       "style": "Gongxu",
       "wiki": "Kong_Zhou",
+      "km": "Kong-Zhou",
       "note": "Imperial inspector of Yuzhou. Joined the alliance against Dong Zhuo."
     },
     {
@@ -848,6 +864,7 @@
       "name": "Liu Dai",
       "style": "Gongshan",
       "wiki": "Liu_Dai",
+      "km": "Liu-Dai",
       "note": "Imperial inspector of Yanzhou. Elder brother of Liu Yao. Joined the alliance against Dong Zhuo."
     },
     {
@@ -855,6 +872,7 @@
       "name": "Wang Kuang",
       "style": "Gongjie",
       "wiki": "Wang_Kuang",
+      "km": "Wang-Kuang",
       "note": "Governor of Henei. Joined the alliance against Dong Zhuo."
     },
     {
@@ -862,6 +880,7 @@
       "name": "Zhang Miao",
       "style": "Menzhuo",
       "wiki": "Zhang_Miao",
+      "km": "Zhang-Miao",
       "note": "Governor of Chenliu. Joined the alliance against Dong Zhuo. Allied with Lü Bu for a time, but was defeated by Cao Cao and went over to Yuan Shu."
     },
     {
