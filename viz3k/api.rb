@@ -31,7 +31,7 @@ module Viz3k
     end
 
     # Gets a JSON representation of the faction with the requested id.
-    def factions_json(faction_id)
+    def faction_json(faction_id)
       return @factions.get(faction_id).to_hash().to_json()
     end
 

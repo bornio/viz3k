@@ -72,7 +72,7 @@ get '/data/factions/:faction_num' do
     raise Sinatra::NotFound.new()
   end
   if (api.factions.exists(faction_num))
-    api.factions_json(faction_num)
+    api.faction_json(faction_num)
   else
     raise Sinatra::NotFound.new()
   end
