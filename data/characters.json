@@ -1024,34 +1024,40 @@
     {
       "id": 160,
       "name": "Mu Shun",
-      "wiki": "Mu_Shun_(general)"
+      "wiki": "Mu_Shun_(general)",
+      "km": "Mu-Shun"
     },
     {
       "id": 161,
       "name": "Wu Anguo",
       "wiki": "Wu_Anguo",
+      "km": "Wu-Anguo",
       "note": "Lost his hand to Lü Bu."
     },
     {
       "id": 162,
       "name": "Huang Wan",
+      "km": "Huang-Wan",
       "note": "Commander of the Capital Districts. Participated in Wang Yun's plot against Dong Zhuo."
     },
     {
       "id": 163,
       "name": "Xun Shuang",
+      "km": "Xun-Shuang",
       "note": "Minister of Works during Dong Zhuo's occupation.",
       "wiki": "Xun_Shuang"
     },
     {
       "id": 164,
       "name": "Xu Rong",
-      "note": "Governor of Yingyang under Dong Zhuo. Killed by Xiahou Dun.",
+      "km": "Xu-Rong",
+      "note": "Governor of Yingyang under Dong Zhuo.",
       "wiki": "Xu_Rong_(general)"
     },
     {
       "id": 165,
       "name": "Bian He",
+      "km": "Bian-He",
       "note": "Presented a rock to the King of Chu. The jade inside was made into the imperial seal."
     },
     {
@@ -1089,32 +1095,38 @@
     {
       "id": 172,
       "name": "Liu Biao",
-      "note": "Imperial inspector of Jingzhou. One of the Eight Paragons of Jiangxia.",
-      "wiki": "Liu_Biao"
+      "wiki": "Liu_Biao",
+      "km": "Liu-Biao",
+      "note": "Imperial inspector of Jingzhou. One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 173,
       "name": "Chen Xiang",
+      "km": "Chen-Xiang",
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 174,
       "name": "Fan Pang",
+      "km": "Fan-Pang",
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 175,
       "name": "Kong Yu",
+      "km": "Kong-Yu",
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 176,
       "name": "Fan Kang",
+      "km": "Fan-Kang",
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
       "id": 177,
       "name": "Tan Fu",
+      "km": "Tan-Fu",
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
@@ -1125,6 +1137,7 @@
     {
       "id": 179,
       "name": "Cen Zhi",
+      "km": "Cen-Zhi",
       "note": "One of the Eight Paragons of Jiangxia."
     },
     {
