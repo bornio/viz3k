@@ -1278,6 +1278,7 @@
       "name": "Sun Quan",
       "style": "Zhongmou",
       "wiki": "Sun_Quan",
+      "km": "Sun-Quan",
       "note": "Second son of Sun Jian. Founder of Wu."
     },
     {
@@ -1285,6 +1286,7 @@
       "name": "Sun Yi",
       "style": "Shubi",
       "wiki": "Sun_Yi",
+      "km": "Sun-Yi-Shubi",
       "note": "Third son of Sun Jian."
     },
     {
@@ -1292,11 +1294,13 @@
       "name": "Sun Kuang",
       "style": "Jizuo",
       "wiki": "Sun_Kuang",
+      "km": "Sun-Kuang",
       "note": "Fourth son of Sun Jian."
     },
     {
       "id": 203,
       "name": "Wu Guotai",
+      "km": "Wu-Guotai",
       "note": "Fictional second wife of Sun Jian. Mother of Sun Lang and Sun Ren (Sun Shangxiang)."
     },
     {
@@ -1304,12 +1308,14 @@
       "name": "Sun Lang",
       "style": "Zao'an",
       "wiki": "Sun_Lang",
+      "km": "Sun-Lang",
       "note": "Son of Sun Jian by his second wife."
     },
     {
       "id": 205,
       "name": "Sun Shangxiang",
       "wiki": "Lady_Sun",
+      "km": "Lady-Sun",
       "note": "Daughter of Sun Jian by his second wife. Also known as Lady Sun or Sun Ren."
     },
     {
@@ -1317,6 +1323,7 @@
       "name": "Sun Shao",
       "style": "Gongli",
       "wiki": "Sun_Shao_(general)",
+      "km": "Sun-Shao",
       "note": "Adopted son of Sun Jian."
     },
     {
@@ -1324,51 +1331,58 @@
       "name": "Sun Jing",
       "style": "Youtai",
       "wiki": "Sun_Jing",
+      "km": "Sun-Jing",
       "note": "Younger brother of Sun Jian."
     },
     {
       "id": 208,
       "name": "Zhang Hu",
-      "note": "Killed by Han Dang."
+      "km": "Zhang-Hu"
     },
     {
       "id": 209,
       "name": "Chen Sheng",
-      "note": "Killed by Sun Ce."
+      "km": "Chen-Sheng"
     },
     {
       "id": 210,
       "name": "Lady Cai",
       "wiki": "Lady_Cai",
+      "km": "Lady-Cai",
       "note": "Second wife of Liu Biao. Sister of Cai Mao."
     },
     {
       "id": 211,
       "name": "Lü Gong",
-      "wiki": "Lü_Gong"
+      "wiki": "Lü_Gong",
+      "km": "Lu-Gong"
     },
     {
       "id": 212,
       "name": "Huan Jie",
       "style": "Boxu",
       "wiki": "Huan_Jie",
+      "km": "Huan-Jie",
       "note": "Retrieved Sun Jian's body from Liu Biao in exchange for the prisoner Huang Zu."
     },
     {
       "id": 213,
       "name": "Dong Huang",
+      "km": "Dong-Huang",
       "note": "Nephew of Dong Zhuo."
     },
     {
       "id": 214,
       "name": "Zhang Wen",
       "wiki": "Zhang_Wen_(Han_Dynasty)",
+      "km": "Zhang-Wen",
       "note": "Minister of Public Works during Dong Zhuo's usurpation."
     },
     {
       "id": 215,
       "name": "Diaochan",
       "wiki": "Diaochan",
+      "km": "Diaochan",
       "note": "Also written as Diao Chan. Daughter of Wang Yun."
     },
     {
@@ -1390,6 +1404,7 @@
     {
       "id": 219,
       "name": "Shisun Rui",
+      "km": "Shisun-Rui",
       "note": "A supervisor in the Secretariat. Participated in Wang Yun's plot against Dong Zhuo."
     },
     {
