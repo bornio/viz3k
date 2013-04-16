@@ -1143,108 +1143,126 @@
     {
       "id": 180,
       "name": "Kuai Liang",
-      "wiki": "Kuai_Liang"
+      "wiki": "Kuai_Liang",
+      "km": "Kuai-Liang"
     },
     {
       "id": 181,
       "name": "Kuai Yue",
       "wiki": "Kuai_Yue",
+      "km": "Kuai-Yue",
       "note": "Younger brother of Kuai Liang."
     },
     {
       "id": 182,
       "name": "Cai Mao",
       "wiki": "Cai_Mao",
+      "km": "Cai-Mao",
       "note": "Naval officer under Liu Biao who surrendered to Cao Cao."
     },
     {
       "id": 183,
       "name": "Peng Ji",
+      "wiki": "Pang_Ji",
+      "km": "Feng-Ji",
       "note": "Advisor to Yuan Shao. Proposed attacking Han Fu."
     },
     {
       "id": 184,
-      "name": "Xun Chan"
+      "name": "Xun Chan",
+      "km": "Xun-Chen"
     },
     {
       "id": 185,
       "name": "Xin Ping",
-      "wiki": "Xin_Ping"
+      "wiki": "Xin_Ping",
+      "km": "Xin-Ping"
     },
     {
       "id": 186,
       "name": "Guan Chun",
       "wiki": "Guan_Chun",
+      "km": "Min-Chun",
       "note": "Killed by Wen Chou."
     },
     {
       "id": 187,
       "name": "Geng Wu",
       "wiki": "Geng_Wu",
+      "km": "Geng-Wu",
       "note": "Killed by Yan Liang."
     },
     {
       "id": 188,
       "name": "Tian Feng",
       "style": "Yuanhao",
-      "wiki": "Tian_Feng"
+      "wiki": "Tian_Feng",
+      "km": "Tian-Feng"
     },
     {
       "id": 189,
       "name": "Ju Shou",
-      "wiki": "Ju_Shou"
+      "wiki": "Ju_Shou",
+      "km": "Ju-Shou"
     },
     {
       "id": 190,
       "name": "Xu You",
       "style": "Ziyuan",
       "wiki": "Xu_You",
+      "km": "Xu-You",
       "note": "Advisor to Yuan Shao. Defected to Cao Cao at the battle of Guandu."
     },
     {
       "id": 191,
       "name": "Gongsun Yue",
       "wiki": "Gongsun_Yue",
+      "km": "Gongsun-Yue",
       "note": "Brother of Gongsun zan."
     },
     {
       "id": 192,
       "name": "Zhao Yun",
       "style": "Zilong",
-      "wiki": "Zhao_Yun"
+      "wiki": "Zhao_Yun",
+      "km": "Zhao-Yun"
     },
     {
       "id": 193,
       "name": "Qu Yi",
       "wiki": "Qu_Yi",
-      "note": "Killed by Zhao Yun."
+      "km": "Qu-Yi"
     },
     {
       "id": 194,
       "name": "Yan Gang",
       "wiki": "Yan_Gang",
-      "note": "Killed by Qu Yi."
+      "km": "Yan-Gang"
     },
     {
       "id": 195,
       "name": "Ma Midi",
       "wiki": "Ma_Midi",
+      "km": "Ma-Midi",
       "note": "Imperial Guardian of the Han court during Dong Zhuo's usurpation."
     },
     {
       "id": 196,
       "name": "Zhao Qi",
+      "km": "Zhao-Qi",
       "wiki": "Zhao_Qi_(Han_Dynasty)"
     },
     {
       "id": 197,
       "name": "Huang Zu",
-      "wiki": "Huang_Zu"
+      "wiki": "Huang_Zu",
+      "km": "Huang-Zu"
     },
     {
       "id": 198,
       "name": "Lady Wu",
       "wiki": "Lady_Wu",
+      "km": "Lady-Wu",
       "note": "Wife of Sun Jian. Mother of Sun Ce, Sun Quan, Sun Yi, and Sun Kuang."
     },
     {
@@ -1252,6 +1270,7 @@
       "name": "Sun Ce",
       "style": "Bofu",
       "wiki": "Sun_Ce",
+      "km": "Sun-Ce",
       "note": "Eldest son of Sun Jian."
     },
     {
