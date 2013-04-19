@@ -1680,94 +1680,112 @@
     {
       "id": 261,
       "name": "Chen Wei",
+      "km": "Chen-Wei",
       "note": "Advisor to Governor Li Ying of Henan."
     },
     {
       "id": 262,
       "name": "Guan Hai",
-      "wiki": "Guan_Hai"
+      "wiki": "Guan_Hai",
+      "km": "Guan-Hai"
     },
     {
       "id": 263,
-      "name": "Zong Bao"
+      "name": "Zong Bao",
+      "km": "Zong-Bao"
     },
     {
       "id": 264,
       "name": "Taishi Ci",
       "style": "Ziyi",
-      "wiki": "Taishi_Ci"
+      "wiki": "Taishi_Ci",
+      "km": "Taishi-Ci"
     },
     {
       "id": 265,
       "name": "Liu Yao",
       "style": "Zhengli",
       "wiki": "Liu_Yao_(warlord)",
+      "km": "Liu-Yao",
       "note": "Governor of Yangzhou. Younger brother of Liu Dai."
     },
     {
       "id": 266,
       "name": "Zhang Yan",
       "wiki": "Zhang_Yan_(Han_Dynasty)",
+      "km": "Zhang-Yan",
       "note": "Leader of the Heishan bandits. Defeated in Changshan by Lü Bu, who was working for Yuan Shao at the time."
     },
     {
       "id": 267,
-      "name": "Pang Shu"
+      "name": "Pang Shu",
+      "km": "Pang-Shu"
     },
     {
       "id": 268,
-      "name": "Xue Lan"
+      "name": "Xue Lan",
+      "km": "Xue-Lan"
     },
     {
       "id": 269,
-      "name": "Li Feng (1)"
+      "name": "Li Feng (1)",
+      "km": "Li-Feng-3"
     },
     {
       "id": 270,
       "name": "Zhang Liao",
       "style": "Wenyuan",
       "wiki": "Zhang_Liao",
+      "km": "Zhang-Liao",
       "note": "Officer of Lü Bu who was recruited by Cao Cao after Lü Bu was defeated at the Battle of Xiapi."
     },
     {
       "id": 271,
       "name": "Hao Meng",
-      "wiki": "Hao_Meng"
+      "wiki": "Hao_Meng",
+      "km": "Hao-Meng"
     },
     {
       "id": 272,
       "name": "Cao Xing",
-      "wiki": "Cao_Xing"
+      "wiki": "Cao_Xing",
+      "km": "Cao-Xing"
     },
     {
       "id": 273,
-      "name": "Cheng Lian"
+      "name": "Cheng Lian",
+      "km": "Cheng-Lian"
     },
     {
       "id": 274,
       "name": "Zang Ba",
       "style": "Xuangao",
-      "wiki": "Zang_Ba"
+      "wiki": "Zang_Ba",
+      "km": "Zang-Ba"
     },
     {
       "id": 275,
       "name": "Wei Xu",
-      "wiki": "Wei_Xu"
+      "wiki": "Wei_Xu",
+      "km": "Wei-Xu"
     },
     {
       "id": 276,
       "name": "Song Xian",
-      "wiki": "Song_Xian"
+      "wiki": "Song_Xian",
+      "km": "Song-Xian"
     },
     {
       "id": 277,
       "name": "Hou Cheng",
-      "wiki": "Hou_Cheng"
+      "wiki": "Hou_Cheng",
+      "km": "Hou-Cheng"
     },
     {
       "id": 278,
       "name": "Gao Shun",
-      "wiki": "Gao_Shun"
+      "wiki": "Gao_Shun",
+      "km": "Gao-Shun"
     },
     {
       "id": 279,
@@ -1787,29 +1805,34 @@
       "id": 282,
       "name": "Sun Qian",
       "style": "Gongyou",
-      "wiki": "Sun_Qian"
+      "wiki": "Sun_Qian",
+      "km": "Sun-Qian"
     },
     {
       "id": 283,
       "name": "He Yi",
       "wiki": "He_Yi",
+      "km": "He-Yi",
       "note": "Co-commander of a Yellow Turbans remnant force in the Chen area."
     },
     {
       "id": 284,
       "name": "Huang Shao",
+      "km": "Huang-Shao",
       "note": "Co-commander of a Yellow Turbans remnant force in the Chen area."
     },
     {
       "id": 285,
       "name": "He Man",
-      "wiki": "He_Man_(rebel)"
+      "wiki": "He_Man_(rebel)",
+      "km": "He-Man"
     },
     {
       "id": 286,
       "name": "Xu Chu",
       "style": "Zhongkang",
       "wiki": "Xu_Chu",
+      "km": "Xu-Chu",
       "note": "Came into Cao Cao's service after capturing some Yellow Turbans and dueling Dian Wei to a draw."
     },
     {
@@ -1817,12 +1840,14 @@
       "name": "Shen Pei",
       "style": "Zhengnan",
       "wiki": "Shen_Pei",
+      "km": "Shen-Pei",
       "note": "Advised Yuan Shao to side with Cao Cao during the standoff between Cao and Lü Bu."
     },
     {
       "id": 288,
       "name": "Lü Lingqi",
       "wiki": "Lü_Lingqi",
+      "km": "Lu-Lingqi",
       "note": "Daughter of Lü Bu and Lady Yan. The novel does not mention her name. In the Koei games she is called Lü Lingqi."
     },
     {
