@@ -1427,19 +1427,21 @@
       "name": "Zhuge Liang",
       "style": "Kongming",
       "wiki": "Zhuge_Liang",
-      "note": "Brilliant strategist of Shu."
+      "km": "Zhuge-Liang"
     },
     {
       "id": 224,
       "name": "Jia Xu",
       "style": "Wenhe",
       "wiki": "Jia_Xu",
+      "km": "Jia-Xu",
       "note": "Advisor to Dong Zhuo's remnants under Li Jue and Guo Si, but turned against them to serve Emperor Xian. Later advised Zhang Xiu to surrender to Cao Cao."
     },
     {
       "id": 225,
       "name": "Hu Chi'er",
-      "wiki": "Hu_Chi%27er"
+      "wiki": "Hu_Chi%27er",
+      "km": "Hu-Cheer"
     },
     {
       "id": 226,
@@ -1450,31 +1452,37 @@
     {
       "id": 227,
       "name": "Li Meng",
-      "wiki": "Li_Meng"
+      "wiki": "Li_Meng",
+      "km": "Li-Meng"
     },
     {
       "id": 228,
       "name": "Wang Fang",
-      "wiki": "Wang_Fang_(Three_Kingdoms)"
+      "wiki": "Wang_Fang_(Three_Kingdoms)",
+      "km": "Wang-Fang"
     },
     {
       "id": 229,
       "name": "Chong Fu",
+      "km": "Chong-Fu",
       "note": "Minister of Ritual in the imperial Han court."
     },
     {
       "id": 230,
       "name": "Lu Kui",
+      "km": "Lu-Kui",
       "note": "Court Steward of the imperial Han court."
     },
     {
       "id": 231,
       "name": "Zhou Huan",
+      "km": "Zhou-Huan",
       "note": "Minister of Protocol in the imperial Han court."
     },
     {
       "id": 232,
       "name": "Wang Qi",
+      "km": "Wang-Qi-2",
       "note": "Commandant of the Exemplary Cavalry."
     },
     {
@@ -1482,26 +1490,31 @@
       "name": "Han Sui",
       "style": "Wenyue",
       "wiki": "Han_Sui",
+      "km": "Han-Sui",
       "note": "Imperial inspector of Bingzhou. Ally of Ma Teng. Appointed Queller of the West by Emperor Xian."
     },
     {
       "id": 234,
       "name": "Ma Yu",
+      "km": "Ma-Yu",
       "note": "Privy Counselor of the Han court after the death of Cai Yong."
     },
     {
       "id": 235,
-      "name": "Chong Shao"
+      "name": "Chong Shao",
+      "km": "Chong-Shao"
     },
     {
       "id": 236,
-      "name": "Liu Fan"
+      "name": "Liu Fan",
+      "km": "Liu-Fan"
     },
     {
       "id": 237,
       "name": "Ma Chao",
       "style": "Mengqi",
       "wiki": "Ma_Chao",
+      "km": "Ma-Chao",
       "note": "Son of Ma Teng. After Ma Teng's death, served Zhang Lu. Submitted to Liu Bei after two inconclusive duels with Zhang Fei."
     },
     {
@@ -1509,11 +1522,13 @@
       "name": "Xun Yu",
       "style": "Wenruo",
       "wiki": "Xun_Yu",
+      "km": "Xun-Yu",
       "note": "Son of Xun Gun. Uncle of Xun You. First served Yuan Shao before becoming Cao Cao's chief advisor."
     },
     {
       "id": 239,
       "name": "Xun Gun",
+      "km": "Xun-Gun",
       "note": "Father of Xun Yu."
     },
     {
