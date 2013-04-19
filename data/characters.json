@@ -1536,6 +1536,7 @@
       "name": "Zhang Liang (2)",
       "style": "Zifang",
       "wiki": "Zhang_Liang_(Western_Han)",
+      "km": "Zhang-Liang-Zifang",
       "note": "Advisor to Emperor Gao. Cao Cao referred to Xun Yu as his Zifang."
     },
     {
@@ -1543,6 +1544,7 @@
       "name": "Cheng Yu",
       "style": "Zhongde",
       "wiki": "Cheng_Yu",
+      "km": "Cheng-Yu",
       "note": "Advisor of Cao Cao, recommended by Xun Yu."
     },
     {
@@ -1550,6 +1552,7 @@
       "name": "Guo Jia",
       "style": "Fengxiao",
       "wiki": "Guo_Jia",
+      "km": "Guo-Jia",
       "note": "Advisor of Cao Cao, recommended by Cheng Yu and Xun Yu."
     },
     {
@@ -1557,36 +1560,42 @@
       "name": "Liu Ye",
       "style": "Ziyang",
       "wiki": "Liu_Ye_(Three_Kingdoms)",
+      "km": "Liu-Ye",
       "note": "Recommended by Guo Jia. Descendant of the imperial family."
     },
     {
       "id": 244,
       "name": "Man Chong",
       "style": "Boning",
-      "wiki": "Man_Chong"
+      "wiki": "Man_Chong",
+      "km": "Man-Chong"
     },
     {
       "id": 245,
       "name": "Lü Qian",
-      "style": "Zike"
+      "style": "Zike",
+      "km": "Lu-Qian"
     },
     {
       "id": 246,
       "name": "Mao Jie",
       "style": "Xiaoxian",
-      "wiki": "Mao_Jie"
+      "wiki": "Mao_Jie",
+      "km": "Mao-Jie"
     },
     {
       "id": 247,
       "name": "Yu Jin",
       "style": "Wenze",
       "wiki": "Yu_Jin",
+      "km": "Yu-Jin",
       "note": "An officer of Cao Cao known for his archery skills."
     },
     {
       "id": 248,
       "name": "Dian Wei",
       "wiki": "Dian_Wei",
+      "km": "Dian-Wei",
       "note": "A large man of great strength who previously had served Zhang Miao. Wielded dual steel spears."
     },
     {
@@ -1599,57 +1608,67 @@
       "id": 250,
       "name": "Ying Shao",
       "wiki": "Ying_Shao",
+      "km": "Ying-Shao",
       "note": "Governor of Taishan. Sent by Cao Cao to bring back his father Cao Song."
     },
     {
       "id": 251,
       "name": "Cao De",
+      "km": "Cao-De",
       "note": "Younger brother of Cao Song."
     },
     {
       "id": 252,
-      "name": "Zhang Kai"
+      "name": "Zhang Kai",
+      "km": "Zhang-Kai"
     },
     {
       "id": 253,
       "name": "Bian Rang",
+      "km": "Bian-Rang",
       "note": "Governor of Jiujiang. Brought an army to aid Tao Qian when Cao Cao invaded Xuzhou."
     },
     {
       "id": 254,
       "name": "Cao Bao",
       "wiki": "Cao_Bao_(died_196)",
+      "km": "Cao-Bao",
       "note": "Father in law to Lü Bu."
     },
     {
       "id": 255,
       "name": "Mi Zhu",
       "style": "Zizhong",
-      "wiki": "Mi_Zhu"
+      "wiki": "Mi_Zhu",
+      "km": "Mi-Zhu"
     },
     {
       "id": 256,
       "name": "Tian Kai",
       "wiki": "Tian_Kai",
+      "km": "Tian-Kai",
       "note": "Imperial inspector of Qingzhou."
     },
     {
       "id": 257,
       "name": "Chen Deng",
       "style": "Yuanlong",
-      "wiki": "Chen_Deng"
+      "wiki": "Chen_Deng",
+      "km": "Chen-Deng"
     },
     {
       "id": 258,
       "name": "Confucius",
       "style": "Zhongni",
       "wiki": "Confucius",
+      "km": "Confucius",
       "note": "Kong Qiu. Ancient Chinese philosopher. Confucius is his latinized name. He was an ancestor of Kong Rong."
     },
     {
       "id": 259,
       "name": "Li Ying",
       "wiki": "Li_Ying_(Eastern_Han)",
+      "km": "Li-Ying",
       "note": "Governor of Henan during the time that Kong Rong was a child."
     },
     {
