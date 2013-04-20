@@ -1868,29 +1868,35 @@
     {
       "id": 292,
       "name": "Li Xian",
+      "km": "Li-Xian",
       "note": "Nephew of Li Jue."
     },
     {
       "id": 293,
       "name": "Empress Fu",
       "wiki": "Empress_Fu_Shou",
+      "km": "Empress-Fu-Shou",
       "note": "Fu Shou. Emperor Xian's wife early in the novel. Daughter of Fu Wan."
     },
     {
       "id": 294,
-      "name": "Zuo Ling"
+      "name": "Zuo Ling",
+      "km": "Zuo-Ling"
     },
     {
       "id": 295,
-      "name": "Yang Qi"
+      "name": "Yang Qi",
+      "km": "Yang-Qi"
     },
     {
       "id": 296,
-      "name": "Yang Mi"
+      "name": "Yang Mi",
+      "km": "Yang-Mi"
     },
     {
       "id": 297,
       "name": "Huangfu Li",
+      "km": "Huangfu-Li",
       "note": "Townsman of Li Jue from Xiliang. Tasked by the Emperor with making peace between Li Jue and Guo Si. After failing to convince Li Jue, returned to Xiliang and spread rumors against him."
     },
     {
@@ -1902,19 +1908,23 @@
     {
       "id": 299,
       "name": "Yang Feng",
-      "wiki": "Yang_Feng"
+      "wiki": "Yang_Feng",
+      "km": "Yang-Feng"
     },
     {
       "id": 300,
-      "name": "Hu Miao"
+      "name": "Hu Miao",
+      "km": "Hu-Miao"
     },
     {
       "id": 301,
-      "name": "Wang Chang"
+      "name": "Wang Chang",
+      "km": "Wang-Chang-2"
     },
     {
       "id": 302,
-      "name": "Song Guo"
+      "name": "Song Guo",
+      "km": "Song-Guo"
     },
     {
       "id": 303,
@@ -1924,33 +1934,39 @@
       "id": 304,
       "name": "Xu Huang",
       "style": "Gongming",
-      "wiki": "Xu_Huang"
+      "wiki": "Xu_Huang",
+      "km": "Xu-Huang"
     },
     {
       "id": 305,
       "name": "Duan Wei",
+      "km": "Duan-Wei",
       "note": "General who provided food and clothing to the Emperor's party when they passed through Huayin."
     },
     {
       "id": 306,
       "name": "Dong Cheng",
       "wiki": "Dong_Cheng_(Han_Dynasty)",
+      "km": "Dong-Cheng",
       "note": "An imperial in-law. Uncle of Emperor Xian. Nephew of Emperor Ling's mother."
     },
     {
       "id": 307,
       "name": "Han Xian",
       "wiki": "Han_Xian_(Han_Dynasty)",
+      "km": "Han-Xian",
       "note": "Officer of the White Wave rebels, an offshoot of the Yellow Turbans."
     },
     {
       "id": 308,
       "name": "Li Yue",
+      "km": "Li-Yue",
       "note": "Leader of the White Wave rebels, an offshoot of the Yellow Turbans. Killed by Xu Huang."
     },
     {
       "id": 309,
       "name": "Hu Cai",
+      "km": "Hu-Cai",
       "note": "Officer of the White Wave rebels, an offshoot of the Yellow Turbans."
     },
     {
