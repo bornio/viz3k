@@ -2161,33 +2161,39 @@
       "id": 340,
       "name": "Zhou Tai",
       "style": "Youping",
-      "wiki": "Zhou_Tai"
+      "wiki": "Zhou_Tai",
+      "km": "Zhou-Tai"
     },
     {
       "id": 341,
       "name": "Chen Wu",
       "style": "Zilie",
+      "km": "Chen-Wu",
       "wiki": "Chen_Wu_(Han_Dynasty)"
     },
     {
       "id": 342,
       "name": "Xue Li",
-      "wiki": "Xue_Li_(Han_Dynasty)"
+      "wiki": "Xue_Li_(Han_Dynasty)",
+      "km": "Xue-Li"
     },
     {
       "id": 343,
       "name": "Ze Rong",
-      "wiki": "Ze_Rong"
+      "wiki": "Ze_Rong",
+      "km": "Ze-Rong"
     },
     {
       "id": 344,
       "name": "Yu Mi",
-      "wiki": "Yu_Mi"
+      "wiki": "Yu_Mi",
+      "km": "Yu-Mi"
     },
     {
       "id": 345,
       "name": "Fan Neng",
-      "wiki": "Fan_Neng"
+      "wiki": "Fan_Neng",
+      "km": "Fan-Neng"
     },
     {
       "id": 346,
@@ -2196,70 +2202,83 @@
     {
       "id": 347,
       "name": "Yan Baihu",
-      "wiki": "Yan_Baihu"
+      "wiki": "Yan_Baihu",
+      "km": "Yan-Baihu"
     },
     {
       "id": 348,
       "name": "Yan Yu",
       "wiki": "Yan_Yu_(Yan_Baihu%27s_brother)",
+      "km": "Yan-Yu",
       "note": "Younger brother of Yan Baihu."
     },
     {
       "id": 349,
       "name": "Ling Cao",
-      "wiki": "Ling_Cao"
+      "wiki": "Ling_Cao",
+      "km": "Ling-Cao"
     },
     {
       "id": 350,
       "name": "Ling Tong",
-      "wiki": "Ling_Tong"
+      "wiki": "Ling_Tong",
+      "km": "Ling-Tong"
     },
     {
       "id": 351,
       "name": "Wang Lang",
-      "wiki": "Wang_Lang"
+      "wiki": "Wang_Lang",
+      "km": "Wang-Lang"
     },
     {
       "id": 352,
       "name": "Yu Fan",
       "style": "Zhongxiang",
-      "wiki": "Yu_Fan"
+      "wiki": "Yu_Fan",
+      "km": "Yu-Fan"
     },
     {
       "id": 353,
       "name": "Zhou Xin",
-      "wiki": "Zhou_Xin_(Han_Dynasty)"
+      "wiki": "Zhou_Xin_(Han_Dynasty)",
+      "km": "Zhou-Xin"
     },
     {
       "id": 354,
       "name": "Dong Xi",
       "style": "Yuandai",
-      "wiki": "Dong_Xi"
+      "wiki": "Dong_Xi",
+      "km": "Dong-Xi"
     },
     {
       "id": 355,
       "name": "Hua Tuo",
       "style": "Yuanhua",
-      "wiki": "Hua_Tuo"
+      "wiki": "Hua_Tuo",
+      "km": "Hua-Tuo"
     },
     {
       "id": 356,
-      "name": "Yang Dajiang"
+      "name": "Yang Dajiang",
+      "km": "Yang-Dajiang"
     },
     {
       "id": 357,
       "name": "Zhang Xun",
-      "wiki": "Zhang_Xun_(Yuan_Shu_general)"
+      "wiki": "Zhang_Xun_(Yuan_Shu_general)",
+      "km": "Zhang-Xun"
     },
     {
       "id": 358,
       "name": "Qiao Rui",
-      "wiki": "Qiao_Rui"
+      "wiki": "Qiao_Rui",
+      "km": "Qiao-Rui"
     },
     {
       "id": 359,
       "name": "Lei Bo",
-      "wiki": "Lei_Bo"
+      "wiki": "Lei_Bo",
+      "km": "Lei-Bo"
     },
     {
       "id": 360,
