@@ -1972,28 +1972,33 @@
     {
       "id": 310,
       "name": "Fu De",
+      "km": "Fu-De",
       "note": "Brother of Empress Fu."
     },
     {
       "id": 311,
       "name": "Han Rong",
+      "km": "Han-Rong",
       "note": "Court Steward of the late Han."
     },
     {
       "id": 312,
       "name": "Wang Yi",
+      "km": "Wang-Yi",
       "note": "Governor of Hedong."
     },
     {
       "id": 313,
       "name": "Xiang Yu",
       "wiki": "Xiang_Yu",
+      "km": "Xiang-Yu",
       "note": "Hegemon of Chu who fought Liu Bang, founder of the Han dynasty. Mentioned in a poem."
     },
     {
       "id": 314,
       "name": "Lord-Patriarch Wen",
       "wiki": "Duke_Wen_of_Jin",
+      "km": "Chonger",
       "note": "Leader of Jin who protected King Xiang of Zhou."
     },
     {
@@ -2011,6 +2016,7 @@
     {
       "id": 317,
       "name": "Li Bie",
+      "km": "Li-Bie",
       "note": "Nephew of Li Jue."
     },
     {
@@ -2023,96 +2029,114 @@
       "id": 319,
       "name": "Dong Zhao",
       "style": "Gongren",
+      "km": "Dong-Zhao",
       "wiki": "Dong_Zhao_(Three_Kingdoms)"
     },
     {
       "id": 320,
       "name": "Wang Li",
+      "km": "Wang-Li",
       "note": "Privy counselor and Historian-Astrologer of the imperial court."
     },
     {
       "id": 321,
       "name": "Liu Ai",
+      "km": "Liu-Ai",
       "note": "Director of the Imperial Clan."
     },
     {
       "id": 322,
-      "name": "Ren Jun"
+      "name": "Ren Jun",
+      "km": "Ren-Jun"
     },
     {
       "id": 323,
-      "name": "Fan Cheng"
+      "name": "Fan Cheng",
+      "km": "Fan-Cheng"
     },
     {
       "id": 324,
       "name": "Ji Ling",
-      "wiki": "Ji_Ling"
+      "wiki": "Ji_Ling",
+      "km": "Ji-Ling"
     },
     {
       "id": 325,
-      "name": "Xun Zheng"
+      "name": "Xun Zheng",
+      "km": "Xun-Zheng"
     },
     {
       "id": 326,
       "name": "Lady Gan",
       "wiki": "Lady_Gan",
+      "km": "Empress-Gan",
       "note": "A wife of Liu Bei."
     },
     {
       "id": 327,
       "name": "Lady Mi",
       "wiki": "Lady_Mi",
+      "km": "Lady-Mi",
       "note": "A wife of Liu Bei."
     },
     {
       "id": 328,
       "name": "Lu Kang",
-      "wiki": "Lu_Kang_(Jining)"
+      "wiki": "Lu_Kang_(Jining)",
+      "km": "Lu-Kang-2"
     },
     {
       "id": 329,
       "name": "Wu Jing",
       "wiki": "Wu_Jing_(Han_Dynasty)",
+      "km": "Wu-Jing",
       "note": "Brother of Lady Wu."
     },
     {
       "id": 330,
       "name": "Zu Lang",
-      "wiki": "Zu_Lang"
+      "wiki": "Zu_Lang",
+      "km": "Zu-Lang"
     },
     {
       "id": 331,
       "name": "Zhu Zhi",
       "style": "Junli",
-      "wiki": "Zhu_Zhi"
+      "wiki": "Zhu_Zhi",
+      "km": "Zhu-Zhi"
     },
     {
       "id": 332,
       "name": "Lü Fan",
       "style": "Ziheng",
-      "wiki": "Lü_Fan"
+      "wiki": "Lü_Fan",
+      "km": "Lu-Fan"
     },
     {
       "id": 333,
       "name": "Zhou Yu",
       "style": "Gongjin",
-      "wiki": "Zhou_Yu"
+      "wiki": "Zhou_Yu",
+      "km": "Zhou-Yu"
     },
     {
       "id": 334,
       "name": "Zhou Shang",
+      "km": "Zhou-Shang",
       "note": "Governor of Danyang. Uncle of Zhou Yu."
     },
     {
       "id": 335,
       "name": "Zhang Zhao",
       "style": "Zibu",
-      "wiki": "Zhang_Zhao"
+      "wiki": "Zhang_Zhao",
+      "km": "Zhang-Zhao"
     },
     {
       "id": 336,
       "name": "Zhang Hong",
       "style": "Ziwang",
+      "km": "Zhang-Hong",
       "wiki": "Zhang_Hong"
     },
     {
@@ -2123,13 +2147,15 @@
     {
       "id": 338,
       "name": "Zhang Ying",
+      "km": "Zhang-Ying",
       "wiki": "Zhang_Ying_(Han_Dynasty)"
     },
     {
       "id": 339,
       "name": "Jiang Qin",
       "style": "Gongyi",
-      "wiki": "Jiang_Qin"
+      "wiki": "Jiang_Qin",
+      "km": "Jiang-Qin"
     },
     {
       "id": 340,
