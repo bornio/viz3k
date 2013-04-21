@@ -2283,13 +2283,15 @@
     {
       "id": 360,
       "name": "Chen Lan",
-      "wiki": "Chen_Lan_(Han_Dynasty)"
+      "wiki": "Chen_Lan_(Han_Dynasty)",
+      "km": "Chen-Lan"
     },
     {
       "id": 361,
       "name": "Han Yin",
       "wiki": "Han_Yin",
-      "note": "Yuan Shu's envoy to Lü Bu."
+      "note": "Yuan Shu's envoy to Lü Bu.",
+      "km": "Han-Yin"
     },
     {
       "id": 362,
@@ -2299,17 +2301,20 @@
     {
       "id": 363,
       "name": "Lady Yan",
+      "km": "Lady-Yan",
       "note": "First wife of Lü Bu. Mother of Lü Lingqi."
     },
     {
       "id": 364,
       "name": "Yuan Yao",
       "wiki": "Yuan_Yao",
+      "km": "Yuan-Yao",
       "note": "Son of Yuan Shu."
     },
     {
       "id": 365,
       "name": "Lady Cao",
+      "km": "Lady-Cao",
       "note": "Second wife of Lü Bu. Daughter of Cao Bao."
     },
     {
@@ -2317,38 +2322,45 @@
       "name": "Chen Gui",
       "style": "Hanyu",
       "wiki": "Chen_Gui",
+      "km": "Chen-Gui",
       "note": "Father of Chen Deng."
     },
     {
       "id": 367,
       "name": "Zhang Xiu",
       "wiki": "Zhang_Xiu_(warlord)",
+      "km": "Zhang-Xiu",
       "note": "Nephew of Dong Zhuo's general Zhang Ji."
     },
     {
       "id": 368,
-      "name": "Wang Ze"
+      "name": "Wang Ze",
+      "km": "Wang-Ze"
     },
     {
       "id": 369,
       "name": "Cao Anmin",
       "wiki": "Cao_Anmin",
+      "km": "Cao-Anmin",
       "note": "Nephew of Cao Cao."
     },
     {
       "id": 370,
-      "name": "Lady Zou"
+      "name": "Lady Zou",
+      "km": "Lady-Zou"
     },
     {
       "id": 371,
       "name": "Hu Juer",
       "wiki": "Huche%27er",
+      "km": "Hu-Juer",
       "note": "Also written as Huche'er or Hu Che'er."
     },
     {
       "id": 372,
       "name": "Cao Ang",
       "wiki": "Cao_Ang",
+      "km": "Cao-Ang",
       "note": "Cao Cao's eldest son. Died during Zhang Xiu's attempt to assassinate Cao Cao."
     },
     {
@@ -2356,18 +2368,21 @@
       "name": "Liu Zhang",
       "style": "Jiyu",
       "wiki": "Liu_Zhang_(warlord)",
+      "km": "Liu-Zhang",
       "note": "Son of Liu Yan. Succeeded his father as governor of Yizhou."
     },
     {
       "id": 374,
       "name": "Zhang Lu",
       "style": "Gongqi",
+      "km": "Zhang-Lu",
       "wiki": "Zhang_Lu_(Han_Dynasty)"
     },
     {
       "id": 375,
       "name": "Yan Xiang",
-      "wiki": "Yan_Xiang_(Han_Dynasty)"
+      "wiki": "Yan_Xiang_(Han_Dynasty)",
+      "km": "Yan-Xiang"
     },
     {
       "id": 376,
@@ -2383,11 +2398,13 @@
     {
       "id": 378,
       "name": "Feng Fang",
+      "km": "Feng-Fang",
       "note": "Father of Yuan Shu's empress."
     },
     {
       "id": 379,
-      "name": "Feng Fang's daughter",
+      "name": "Lady Feng",
+      "km": "Empress-Feng",
       "note": "Yuan Shu's empress."
     },
     {
