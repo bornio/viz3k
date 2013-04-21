@@ -2410,48 +2410,58 @@
     {
       "id": 380,
       "name": "Chen Ji",
+      "km": "Chen-Ji",
       "wiki": "Chen_Ji_(Yuan_Shu_official)"
     },
     {
       "id": 381,
-      "name": "Jin Shang"
+      "name": "Jin Shang",
+      "km": "Jin-Shang"
     },
     {
       "id": 382,
       "name": "Li Feng (2)",
+      "km": "Li-Feng",
       "note": "His hand was speared by Lü Bu in a brief clash."
     },
     {
       "id": 383,
       "name": "Liang Gang",
-      "wiki": "Liang_Gang_(Han_Dynasty)"
+      "wiki": "Liang_Gang_(Han_Dynasty)",
+      "km": "Liang-Gang"
     },
     {
       "id": 384,
       "name": "Yue Jiu",
-      "wiki": "Yue_Jiu"
+      "wiki": "Yue_Jiu",
+      "km": "Yue-Jiu"
     },
     {
       "id": 385,
       "name": "Dian Man",
+      "km": "Dian-Man",
       "note": "Son of Dian Wei."
     },
     {
       "id": 386,
       "name": "Wang Hou",
+      "km": "Wang-Hou",
       "note": "Granary Officer whose head was \"borrowed\" by Cao Cao to placate the troops."
     },
     {
       "id": 387,
-      "name": "Wu Xi"
+      "name": "Wu Xi",
+      "km": "Wu-Xi"
     },
     {
       "id": 388,
-      "name": "Lei Xu"
+      "name": "Lei Xu",
+      "km": "Lei-Xu"
     },
     {
       "id": 389,
-      "name": "Zhang Xian"
+      "name": "Zhang Xian",
+      "km": "Zhang-Xian"
     }
   ]
 }
