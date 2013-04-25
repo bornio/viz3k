@@ -17,10 +17,12 @@ end
 desc "Run all RSpec tests (might take a while)"
 RSpec::Core::RakeTask.new(:spec_all) do |task|
   task.rspec_opts = '--color --format documentation'
+  task.fail_on_error = false
 end
 
 desc "Run RSpec tests that connect to remote URLs (might take a while)"
 RSpec::Core::RakeTask.new(:spec_network) do |task|
   task.rspec_opts = '--color --format documentation'
   task.rspec_opts += ' --tag network:true'
+  task.fail_on_error = false
 end
