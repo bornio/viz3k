@@ -589,6 +589,12 @@
       "killers": [286]
     },
     {
+      "id": 272,
+      "when": {"chapter": 18, "page": 227},
+      "cause": "combat",
+      "killers": [130]
+    },
+    {
       "id": 273,
       "when": {"chapter": 12, "page": 149},
       "cause": "combat",

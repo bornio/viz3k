@@ -1840,8 +1840,7 @@
       "name": "Shen Pei",
       "style": "Zhengnan",
       "wiki": "Shen_Pei",
-      "km": "Shen-Pei",
-      "note": "Advised Yuan Shao to side with Cao Cao during the standoff between Cao and Lü Bu."
+      "km": "Shen-Pei"
     },
     {
       "id": 288,
@@ -1992,7 +1991,7 @@
       "name": "Xiang Yu",
       "wiki": "Xiang_Yu",
       "km": "Xiang-Yu",
-      "note": "Hegemon of Chu who fought Liu Bang, founder of the Han dynasty. Mentioned in a poem."
+      "note": "Hegemon of Chu who fought Liu Bang, founder of the Han dynasty."
     },
     {
       "id": 314,
@@ -2462,6 +2461,54 @@
       "id": 389,
       "name": "Zhang Xian",
       "km": "Zhang-Xian"
+    },
+    {
+      "id": 390,
+      "name": "Li Tong",
+      "style": "Wenda",
+      "wiki": "Li_Tong_(Wenda)",
+      "km": "Li-Tong"
+    },
+    {
+      "id": 391,
+      "name": "Sun Guan",
+      "km": "Sun-Guan"
+    },
+    {
+      "id": 392,
+      "name": "Wu Dun",
+      "km": "Wu-Dun"
+    },
+    {
+      "id": 393,
+      "name": "Yin Li",
+      "wiki": "Yin_Li_(Han_Dynasty)",
+      "km": "Yin-Li"
+    },
+    {
+      "id": 394,
+      "name": "Chang Xi",
+      "km": "Chang-Xi"
+    },
+    {
+      "id": 395,
+      "name": "Jian Yong",
+      "style": "Xianhe",
+      "wiki": "Jian_Yong",
+      "km": "Jian-Yong"
+    },
+    {
+      "id": 396,
+      "name": "Mi Fang",
+      "style": "Zifang",
+      "wiki": "Mi_Fang",
+      "km": "Mi-Fang",
+      "note": "Younger brother of Mi Zhu."
+    },
+    {
+      "id": 397,
+      "name": "He Meng",
+      "km": "He-Meng"
     }
   ]
 }

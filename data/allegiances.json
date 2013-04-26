@@ -2783,6 +2783,62 @@
       [
         {"faction": 23}
       ]
+    },
+    {
+      "id": 390,
+      "allegiance":
+      [
+        {"faction": 5}
+      ]
+    },
+    {
+      "id": 391,
+      "allegiance":
+      [
+        {"faction": 10}
+      ]
+    },
+    {
+      "id": 392,
+      "allegiance":
+      [
+        {"faction": 10}
+      ]
+    },
+    {
+      "id": 393,
+      "allegiance":
+      [
+        {"faction": 10}
+      ]
+    },
+    {
+      "id": 394,
+      "allegiance":
+      [
+        {"faction": 10}
+      ]
+    },
+    {
+      "id": 395,
+      "allegiance":
+      [
+        {"faction": 3}
+      ]
+    },
+    {
+      "id": 396,
+      "allegiance":
+      [
+        {"faction": 3}
+      ]
+    },
+    {
+      "id": 397,
+      "allegiance":
+      [
+        {"faction": 10}
+      ]
     }
   ]
 }
