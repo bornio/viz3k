@@ -99,7 +99,7 @@
                 <small class="muted">Whenever two characters appear on the same page, a point is added to both their centrality scores. The more often someone appears alongside other characters in a chapter, the more central that person is to the chapter's story.</small>
                 <hr>
                 <p class="lead ng-cloak" ng-hide="deaths.length == 0">Deaths ({{deaths.length}} total)</p>
-                <p ng-repeat="d in deaths_combat">
+                <p ng-repeat="d in deaths_combat" ng-cloak>
                   <span class="text-error"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   was killed in battle
@@ -109,7 +109,7 @@
                     </span>
                   </span>
                 </p>
-                <p ng-repeat="d in deaths_murder">
+                <p ng-repeat="d in deaths_murder" ng-cloak>
                   <span><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   was murdered
@@ -119,7 +119,7 @@
                     </span>
                   </span>
                 </p>
-                <p ng-repeat="d in deaths_execution">
+                <p ng-repeat="d in deaths_execution" ng-cloak>
                   <span class="text-warning"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   was executed
@@ -129,12 +129,12 @@
                     </span>
                   </span>
                 </p>
-                <p ng-repeat="d in deaths_illness">
+                <p ng-repeat="d in deaths_illness" ng-cloak>
                   <span class="text-info"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   died of illness
                 </p>
-                <p ng-repeat="d in deaths_suicide">
+                <p ng-repeat="d in deaths_suicide" ng-cloak>
                   <span class="muted"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   committed suicide
