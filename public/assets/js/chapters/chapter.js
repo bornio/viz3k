@@ -13,9 +13,9 @@ function Chapter($scope, $http)
   $scope.navbar_url = "/navbar";
   $scope.navbar_selected = 1;
 
-  set_resize_handler_for("container-header", false);
+  set_resize_handler_for("container-header");
   set_resize_handler_for("chart-area", true);
-  set_resize_handler_for("stats-area", false);
+  set_resize_handler_for("stats-area");
 
   // issue an http get for the data relating to this chapter
   $http.get("/data/chapters").success(populate_chapter_info($scope, $http));

@@ -127,6 +127,12 @@ function deaths_of_type(deaths, death_type)
 
 function set_resize_handler_for(element_id, hidden_phone)
 {
+  // default values
+  if (typeof(hidden_phone) === 'undefined')
+  {
+    hidden_phone = false;
+  }
+
   var element = document.getElementById(element_id);
 
   var window_resize = function()
