@@ -56,7 +56,7 @@ var populate_chapter_info = function($scope, $http, chapter_json)
     $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
 
     // generate the coappearance visualization for the selected chapter
-    coappear("/data/coappear/chapter/" + chapter_num, compute_character_stats($scope));
+    chart_coappear("chart", "/data/coappear/chapter/" + chapter_num, compute_character_stats($scope));
   }
 }
 

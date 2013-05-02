@@ -1,9 +1,3 @@
-#chart {
-  margin-left: auto;
-  margin-right: auto;
-  width: 800;
-}
-
 text.node {
   pointer-events: none;
   text-shadow: 0em 0em 0.15em #fff, 0em 0em 0.15em #fff, 0em 0em 0.15em #fff;

@@ -1,9 +1,15 @@
-function appear_force(data_nodes, data_links, coappear_ids)
+/**
+ * This chart is used to draw networks of nodes and links interactively, with each node labeled according to its name,
+ * sized according to the number of links it has, and animated according to the charge between nodes (which causes them
+ * to repel each other) and the links (which attract pairs of linked nodes toward one another).
+ *
+ * Mousing over a node will highlight it, and partially highlight its neighbors.
+ */
+function chart_network_force(element_id, data_nodes, data_links)
 {
-  var chartArea = document.getElementById("chart-area");
   var width = 680, height = 680;
   var force = d3.layout.force().charge(-700).linkDistance(160).gravity(0.5).size([width, height]);
-  var svg = d3.select("#chart").append("svg");
+  var svg = d3.select("#" + element_id).append("svg");
   
   var viewbox_size = "0 0 " + String(width) + " " + String(height);
   svg.attr("viewBox", viewbox_size).attr("width", "100%").attr("height", "100%");
@@ -78,9 +84,9 @@ function appear_force(data_nodes, data_links, coappear_ids)
   });
 
   // returns true if a node is directly connected to another node by a link
-  var connected_node = function(i, other_i)
+  var connected = function(i, other_i)
   {
-    return (coappear_ids[i].indexOf(other_i) >= 0) ? true : false;
+    return (data_nodes[i].linked.indexOf(other_i) >= 0) ? true : false;
   }
 
   // functions to highlight characters on mouseover and mouseout
@@ -88,15 +94,15 @@ function appear_force(data_nodes, data_links, coappear_ids)
   var highlight_i = function(node, node_index)
   {
     // partly gray out nodes that are directly linked to this one
-    circles.filter(function(d, i) { return connected_node(node_index, i) ? this : null; })
+    circles.filter(function(d, i) { return connected(node_index, i) ? this : null; })
       .style("fill", function(d) { color = d3.interpolateRgb(circle_color_faded, d.color); return color(0.3); });
-    texts.filter(function(d, i) { return connected_node(node_index, i) ? this : null; })
+    texts.filter(function(d, i) { return connected(node_index, i) ? this : null; })
       .style("fill", text_color_interpol(0.3));
 
     // fully gray out all other nodes in the graph
-    circles.filter(function(d, i) { return (!connected_node(node_index, i) && (d.id != node.id)) ? this : null; })
+    circles.filter(function(d, i) { return (!connected(node_index, i) && (d.id != node.id)) ? this : null; })
       .style("fill", circle_color_faded);
-    texts.filter(function(d, i) { return (!connected_node(node_index, i) && (d.id != node.id)) ? this : null; })
+    texts.filter(function(d, i) { return (!connected(node_index, i) && (d.id != node.id)) ? this : null; })
       .style("fill", text_color_faded);
 
     // reduce opacity of all links that do not have this node as a source or target
@@ -132,95 +138,4 @@ function appear_force(data_nodes, data_links, coappear_ids)
     highlight_i : highlight_i,
     highlight_o : highlight_o
   };
-}
-
-function get_coappearances(nodes, links)
-{
-  var coappear_ids = new Array(nodes.length);
-  for (n = 0; n < nodes.length; n++)
-  {
-    coappear_ids[n] = new Array();
-    for (l = 0; l < links.length; l++)
-    { 
-      if (links[l].source == n)
-      {
-        coappear_ids[n].push(links[l].target);
-      }
-      else if (links[l].target == n)
-      {
-        coappear_ids[n].push(links[l].source);
-      }
-    }
-  }
-
-  return coappear_ids;
-}
-
-function coappear_draw(nodes, links)
-{
-  // create a data structure to remember which nodes are connected to which others
-  var coappear_ids = get_coappearances(nodes, links);
-
-  // render the coappearance graph
-  var graph = appear_force(nodes, links, coappear_ids);
-
-  return { graph : graph };
-}
-
-function coappear(data_file_path, data_callback)
-{
-  var nodes;
-  var links;
-
-  // read the json data
-  d3.json(data_file_path, function(json)
-  {
-    nodes = json.nodes;
-    links = json.links;
-
-    // return a copy of the nodes and links (use a copy to ensure they can be modified without affecting originals)
-    data_callback(nodes.slice(),links.slice());
-
-    console.log("number of nodes:", nodes.length);
-    console.log("number of links:", links.length);
-
-    var coappear_resize = function()
-    {
-      chart.style.width = "680px";
-      chart.style.height = "680px";
-    }
-
-    // set initial size
-    coappear_resize();
-
-    // create the d3 visualization(s)
-    var viz = coappear_draw(nodes, links);
-
-    window.addEventListener("resize", coappear_resize, false);
-  });
-}
-
-function nodes_sort_by_links(nodes)
-{
-  // sort the characters by decreasing number of links
-  var sorted = nodes.slice();
-  sorted.sort(function(a,b)
-  {
-    // use alphabetical name sorting as tie-breaker
-    if (b.links == a.links)
-    {
-      if (a.name < b.name)
-      {
-        return -1;
-      }
-      else if (a.name > b.name)
-      {
-        return 1;
-      }
-      return 0;          
-    }
-
-    return b.links - a.links;
-  });
-  return sorted;
 }

@@ -1,3 +1,10 @@
+#chart {
+  margin-left: auto;
+  margin-right: auto;
+  width: 680px;
+  height: 680px;
+}
+
 th.table-char-ranking, td.table-char-ranking {
   width: 8%;
   text-align: center;
