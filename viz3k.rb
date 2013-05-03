@@ -113,7 +113,7 @@ get '/data/coappear/chapter/:chapter_num' do
     raise Sinatra::NotFound.new()
   end
   if (api.chapters.exists(chapter_num))
-    return api.coappearances_in_chapters([chapter_num])
+    return api.coappearances_in_chapter(chapter_num).to_json()
   else
     raise Sinatra::NotFound.new()
   end

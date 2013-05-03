@@ -11,7 +11,7 @@ describe "api" do
 
   describe "#faction_json" do
     describe "when given a valid faction id, should return a JSON object for that faction" do
-      before(:all) do
+      before(:each) do
         faction_id = 0
         faction = @api.faction_json(faction_id)
         @faction_hash = JSON.parse(faction, symbolize_names: true)
@@ -36,6 +36,24 @@ describe "api" do
       it "which contains the key 'members'" do
         @faction_hash.has_key?(:members).should == true
       end
+    end
+  end
+
+  describe "#coappearances_in_chapter" do
+    before(:each) do
+      @coappearances = @api.coappearances_in_chapter(1)
+    end
+
+    it "returns a hash" do
+      @coappearances.is_a?(Hash).should == true
+    end
+
+    it "returns an object containing the key :nodes" do
+      @coappearances.has_key?(:nodes).should == true
+    end
+
+    it "returns an object containing the key :links" do
+      @coappearances.has_key?(:links).should == true
     end
   end
 end

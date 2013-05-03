@@ -112,6 +112,10 @@ module Viz3k
       return {"killed_by" => people_killed}.to_json()
     end
 
+    def coappearances_in_chapter(chapter_num)
+      return coappearances_in_chapters([chapter_num])
+    end
+
     # Generates a coappearance network using data from the specified chapters.
     def coappearances_in_chapters(chapter_nums)
       # raise an error if any chapter numbers in chapter_nums are invalid
@@ -129,7 +133,7 @@ module Viz3k
         end
       end
 
-      return @coappearances.coappearances(pages).to_json()
+      return @coappearances.coappearances(pages)
     end
   end
 end
