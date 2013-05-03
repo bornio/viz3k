@@ -1,9 +1,11 @@
 module Viz3k
+  # Generates coappearance networks for characters.
   class Coappearances
     def initialize(people, factions)
       @people = people
       @factions = factions
     end
+
     # Generates a coappearance network from the specified list of pages. Each character is a node in the network. Any
     # two characters who appear on the same page are linked in the network.
     def coappearances(pages)
