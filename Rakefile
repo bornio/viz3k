@@ -12,6 +12,7 @@ desc "Run basic RSpec tests"
 RSpec::Core::RakeTask.new(:spec) do |task|
   task.rspec_opts = '--color --format documentation'
   task.rspec_opts += ' --tag ~speed:slow'
+  task.fail_on_error = false
 end
 
 desc "Run all RSpec tests (might take a while)"
