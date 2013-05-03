@@ -17,10 +17,10 @@ function Person($scope, $http)
   $scope.kills_murder = new Array();
   $scope.kills_execution = new Array();
 
+  set_resize_handler_for("content-area", false);
+
   // issue an http get to grab the info for all people
   $http.get("/data/people").success(populate_person_info($scope, $http));
-
-  set_resize_handler_for("content-area", false);
 }
 
 var populate_person_info = function($scope, $http, people_json)
