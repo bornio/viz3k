@@ -237,7 +237,7 @@ module Viz3k
     end
 
     # Gets the person's most strongly associated faction for a given range of pages.
-    def primary_faction(pages)
+    def primary_faction(page_nums)
       if (@allegiance.length() == 1)
         # the person is loyal to only one faction throughout the novel
         return @allegiance[0].faction
@@ -252,8 +252,8 @@ module Viz3k
         # count pages in which the person appears as a member of each faction
         @allegiance.each do |person_faction|
           # ignore the "Other" faction
-          pages.each do |page|
-            if (page >= person_faction.interval[0] && page <= person_faction.interval[1])
+          page_nums.each do |page_num|
+            if (page_num >= person_faction.interval[0] && page_num <= person_faction.interval[1])
               faction_page_counts[person_faction.faction] += 1
             end
           end
