@@ -8,6 +8,18 @@ require_relative "deaths"
 require_relative "coappearances"
 
 module Viz3k
+  def self.parse_json_file(path)
+    begin
+      json = File.read(path)
+      hash = JSON.parse(json, symbolize_names: true)
+    rescue => e
+      # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
+      raise StandardError.new("Could not read file " + path + " : " + e.to_s())
+    end
+
+    return hash
+  end
+
   # The Api class is the interface between the web frontend and the backend. It returns data to the frontend in JSON
   # format.
   class Api
@@ -17,12 +29,19 @@ module Viz3k
     attr_reader :deaths
 
     def initialize()
-      # parse the data files for the lists of factions, characters, and chapters
+      # load the data from JSON files
       data_path = "./data"
-      @factions = Factions.new(data_path + "/factions.json")
-      @chapters = Chapters.new(data_path + "/chapters.json")
-      @people = People.new(data_path + "/characters.json", data_path + "/allegiances.json")
-      @deaths = Deaths.new(data_path + "/deaths.json")
+      factions_hash = Viz3k::parse_json_file(data_path + "/factions.json")
+      chapters_hash = Viz3k::parse_json_file(data_path + "/chapters.json")
+      people_hash = Viz3k::parse_json_file(data_path + "/characters.json")
+      allegiances_hash = Viz3k::parse_json_file(data_path + "/allegiances.json")
+      deaths_hash = Viz3k::parse_json_file(data_path + "/deaths.json")
+
+      # Build the data structures from the loaded data
+      @factions = Factions.new(factions_hash)
+      @chapters = Chapters.new(chapters_hash)
+      @people = People.new(people_hash, allegiances_hash)
+      @deaths = Deaths.new(deaths_hash)
 
       # define relationships
       @factions.set_members(@people.people)

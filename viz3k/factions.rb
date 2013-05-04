@@ -9,22 +9,15 @@ module Viz3k
   class Factions
     attr_reader :factions
 
-    def initialize(factions_json_path)
-      begin
-        factions_file = File.read(factions_json_path)
-        factions_json = JSON.parse(factions_file)
-      rescue => e
-        # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
-        raise StandardError.new("Could not read factions data file : " + e.to_s())
-      end
-
+    def initialize(factions_hash)
       @factions = []
-      factions_json["factions"].each do |faction_json|
+      factions_hash[:factions].each do |faction_hash|
         wiki = ""
-        if (faction_json.has_key?("wiki"))
-          wiki = Externs.wiki_url(faction_json["wiki"])
+        if (faction_hash.has_key?(:wiki))
+          wiki = Externs.wiki_url(faction_hash[:wiki])
         end
-        faction = Faction.new(faction_json["id"],faction_json["name"],faction_json["color"],faction_json["type"],wiki:wiki)
+        faction = Faction.new(faction_hash[:id], faction_hash[:name], faction_hash[:color], faction_hash[:type],
+                              wiki:wiki)
         @factions.push(faction)
       end
     end
@@ -52,7 +45,7 @@ module Viz3k
     # Returns a hash representation of the collection of Faction objects.
     def to_hash()
       factions_hash = @factions.map{|faction| faction.to_hash()}
-      return {"factions"=>factions_hash}
+      return {:factions => factions_hash}
     end
 
     # Sets the members of all Faction objects in this collection from the ids of an array of Person objects.
@@ -103,12 +96,12 @@ module Viz3k
 
     # Returns a hash representation of the Faction object.
     def to_hash()
-      faction_hash = {"id"=>@id,"name"=>@name,"color"=>@color,"type"=>@type}
+      faction_hash = {:id => @id, :name => @name, :color => @color, :type => @type}
       if (@wiki != "")
-        faction_hash.merge!("wiki"=>@wiki)
+        faction_hash.merge!(:wiki => @wiki)
       end
       if (@members.length > 0)
-        members_hash = {"members"=>@members.map{|member| member.to_hash()}}
+        members_hash = {:members => @members.map{|member| member.to_hash()}}
         faction_hash.merge!(members_hash)
       end
       return faction_hash

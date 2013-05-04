@@ -9,15 +9,7 @@ module Viz3k
   class Deaths
     attr_reader :deaths
 
-    def initialize(deaths_json_path)
-      begin
-        deaths_file = File.read(deaths_json_path)
-        deaths_hash = JSON.parse(deaths_file, symbolize_names: true)
-      rescue => e
-        # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
-        raise StandardError.new("Could not read character deaths data file : " + e.to_s())
-      end
-
+    def initialize(deaths_hash)
       # Hash structure mapping person ids to their death info
       @deaths = {}
       deaths_hash[:deaths].each do |death_hash|

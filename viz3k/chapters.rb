@@ -9,23 +9,15 @@ module Viz3k
   class Chapters
     attr_reader :chapters
 
-    def initialize(chapters_json_path)
-      begin
-        chapters_file = File.read(chapters_json_path)
-        chapters_json = JSON.parse(chapters_file)
-      rescue => e
-        # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
-        raise StandardError.new("Could not read chapters data file : " + e.to_s())
-      end
-
+    def initialize(chapters_hash)
       @chapters = []
-      chapters_json["chapters"].each do |chapter_json|
+      chapters_hash[:chapters].each do |chapter_hash|
         pages = []
-        pages_json = chapter_json["pages"]
-        pages_json.each do |page_json|
-          pages.push(Page.new(page_json["page"],page_json["ids"]))
+        pages_hash = chapter_hash[:pages]
+        pages_hash.each do |page_hash|
+          pages.push(Page.new(page_hash[:page], page_hash[:ids]))
         end
-        chapter = Chapter.new(chapter_json["chapter"],chapter_json["title"],pages)
+        chapter = Chapter.new(chapter_hash[:chapter], chapter_hash[:title], pages)
         @chapters.push(chapter)
       end
     end
@@ -33,7 +25,7 @@ module Viz3k
     # Returns a hash representation of the collection of Chapter objects.
     def to_hash()
       chapters_hash = @chapters.map{|chapter| chapter.to_hash()}
-      return {"chapters"=>chapters_hash}
+      return {:chapters => chapters_hash}
     end
 
     # Returns true if the Chapter with the given chapter number was found, false otherwise.
@@ -125,7 +117,7 @@ module Viz3k
 
     # Returns a hash representation of the Chapter object.
     def to_hash()
-      return {"chapter"=>@chapter,"title"=>@title,"pages"=>@pages.map{|page| page.page},"people"=>people()}
+      return {:chapter => @chapter, :title => @title, :pages => @pages.map{|page| page.page}, :people => people()}
     end
 
     # Computes the number of times the person with id person_id appears in this chapter.

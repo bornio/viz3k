@@ -23,58 +23,48 @@ module Viz3k
     attr_reader :people
     attr_reader :allegiances
 
-    def initialize(people_json_path, allegiances_json_path)
-      begin
-        people_file = File.read(people_json_path)
-        people_hash = JSON.parse(people_file)
-
-        allegiances_file = File.read(allegiances_json_path)
-        allegiances_hash = JSON.parse(allegiances_file)
-      rescue => e
-        # It's possible we couldn't find the file or it didn't parse as valid JSON, etc.
-        raise StandardError.new("Could not read characters data file : " + e.to_s())
-      end
-
+    def initialize(people_hash, allegiances_hash)
       # Hash structure mapping person ids to their allegiance info
       @allegiances = {}
-      allegiances_hash["allegiances"].each do |allegiance_hash|
+      allegiances_hash[:allegiances].each do |allegiance_hash|
         allegiance_factions = []
-        allegiance_hash["allegiance"].each do |faction_hash|
-          faction = faction_hash["faction"]
+        allegiance_hash[:allegiance].each do |faction_hash|
+          faction = faction_hash[:faction]
           chron = 0
           interval = [5,1457]
-          if (faction_hash.has_key?("chron"))
-            chron = faction_hash["chron"]
+          if (faction_hash.has_key?(:chron))
+            chron = faction_hash[:chron]
           end
-          if (faction_hash.has_key?("interval"))
-            interval = faction_hash["interval"]
+          if (faction_hash.has_key?(:interval))
+            interval = faction_hash[:interval]
           end
           allegiance_faction = AllegianceFaction.new(chron, faction, interval)
           allegiance_factions.push(allegiance_faction)
         end
-        @allegiances.merge!(allegiance_hash["id"]=>allegiance_factions)
+        @allegiances.merge!(allegiance_hash[:id]=>allegiance_factions)
       end
 
       @people = []
-      people_hash["people"].each do |person_hash|
-        allegiance = allegiances[person_hash["id"]]
+      people_hash[:people].each do |person_hash|
+        allegiance = allegiances[person_hash[:id]]
         style = ""
         note = ""
-        if (person_hash.has_key?("style"))
-          style = person_hash["style"]
+        if (person_hash.has_key?(:style))
+          style = person_hash[:style]
         end
-        if (person_hash.has_key?("note"))
-          note = person_hash["note"]
+        if (person_hash.has_key?(:note))
+          note = person_hash[:note]
         end
         wiki = ""
-        if (person_hash.has_key?("wiki"))
-          wiki = Externs.wiki_url(person_hash["wiki"])
+        if (person_hash.has_key?(:wiki))
+          wiki = Externs.wiki_url(person_hash[:wiki])
         end
         km = ""
-        if (person_hash.has_key?("km"))
-          km = Externs.km_url(person_hash["km"])
+        if (person_hash.has_key?(:km))
+          km = Externs.km_url(person_hash[:km])
         end
-        person = Person.new(person_hash["id"],person_hash["name"],allegiance,style:style,note:note,wiki:wiki,km:km)
+        person = Person.new(person_hash[:id], person_hash[:name], allegiance,
+                            style: style, note: note, wiki: wiki, km: km)
         @people.push(person)
       end
     end
@@ -92,7 +82,7 @@ module Viz3k
     # Returns a hash representation of the collection of Faction objects.
     def to_hash()
       people_hash = @people.map{|person| person.to_hash()}
-      return {"people"=>people_hash}
+      return {:people => people_hash}
     end
 
     # Returns the Person with the requested id if found. Raises StandardError otherwise.
@@ -130,7 +120,7 @@ module Viz3k
     end
 
     def to_hash()
-      return {"chron"=>@chron,"faction"=>@faction,"interval"=>interval}
+      return {:chron => @chron, :faction => @faction, :interval => interval}
     end
   end
 
@@ -193,19 +183,19 @@ module Viz3k
 
     # Returns a hash representation of the Person object.
     def to_hash()
-      person_hash = {"id"=>@id,"name"=>@name,"faction"=>@faction,"faction_for_chapter"=>@faction_for_chapter,
-                     "allegiance"=>@allegiance.map{|allegiance_faction| allegiance_faction.to_hash()}}
+      person_hash = {:id => @id, :name => @name, :faction => @faction, :faction_for_chapter => @faction_for_chapter,
+                     :allegiance => @allegiance.map{|allegiance_faction| allegiance_faction.to_hash()}}
       if (@style != "")
-        person_hash.merge!("style"=>@style)
+        person_hash.merge!(:style => @style)
       end
       if (@note != "")
-        person_hash.merge!("note"=>@note)
+        person_hash.merge!(:note => @note)
       end
       if (@wiki != "")
-        person_hash.merge!("wiki"=>@wiki)
+        person_hash.merge!(:wiki => @wiki)
       end
       if (@km != "")
-        person_hash.merge!("km"=>@km)
+        person_hash.merge!(:km => @km)
       end
       return person_hash
     end
