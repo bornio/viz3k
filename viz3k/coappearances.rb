@@ -9,12 +9,20 @@ module Viz3k
     # Generates a coappearance network from the specified list of pages. Each character is a node in the network. Any
     # two characters who appear on the same page are linked in the network.
     def coappearances(pages)
-      nodes = []
-      links = []
-      node_indices = {}
-      page_nums = pages.map{|page| page.page}
-
       # create nodes for every person who shares a page with any other person
+      # sort the nodes in order of id BEFORE creating links, as node indices for links must be based on node ordering
+      nodes = sort_nodes_by_id(create_nodes(pages))
+
+      # now create links for every pair of nodes representing people who appear on the same page
+      links = sort_links(create_links(pages, nodes))
+
+      # the complete hash representation with nodes + links together
+      return {:nodes => nodes, :links => links}
+    end
+
+    def create_nodes(pages)
+      nodes = []
+      page_nums = pages.map{|page| page.page}
       pages.each do |page|
         if (page.ids.length() > 1)
           page.ids.each do |person_id|
@@ -42,13 +50,33 @@ module Viz3k
         end
       end
 
-      # sort the nodes in order of id BEFORE creating links, as node indices for links must be based on node ordering
-      nodes.sort!(){|a,b| a["id"] <=> b["id"]}
+      return nodes
+    end
+
+    def sort_nodes_by_id(nodes)
+      return nodes.sort!(){|a,b| a["id"] <=> b["id"]}
+    end
+
+    def create_node(person, num_links, page_nums)
+      # set the person's faction based on the page range
+      faction_id = person.primary_faction(page_nums)
+      faction = @factions.get(faction_id)
+      node = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
+                     "color"=>faction.color,"links"=>num_links}
+      if (person.style != "")
+        node.merge!("style"=>person.style)
+      end
+      return node
+    end
+
+    def create_links(pages, nodes)
+      # generate a list of node indices
+      node_indices = {}
       nodes.each_with_index do |node, node_index|
         node_indices.merge!(node["id"]=>node_index)
       end
 
-      # now create links for every pair of nodes representing people who appear on the same page
+      links = []
       pages.each do |page|
         (0..page.ids.length()-1).each do |i|
           (i+1..page.ids.length()-1).each do |j|
@@ -79,23 +107,12 @@ module Viz3k
         end
       end
 
-      # sort the links by source, with target as tie-breaker
-      links.sort!(){|a,b| [a["source"],a["target"]] <=> [b["source"],b["target"]]}
-
-      # the complete hash representation with nodes + links together
-      return {:nodes=>nodes, :links=>links}
+      return links
     end
 
-    def create_node(person, num_links, page_nums)
-      # set the person's faction based on the page range
-      faction_id = person.primary_faction(page_nums)
-      faction = @factions.get(faction_id)
-      node = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
-                     "color"=>faction.color,"links"=>num_links}
-      if (person.style != "")
-        node.merge!("style"=>person.style)
-      end
-      return node
+    # Sort the links by source, with target as tie-breaker.
+    def sort_links(links)
+      return links.sort(){|a,b| [a["source"],a["target"]] <=> [b["source"],b["target"]]}
     end
   end
 end
