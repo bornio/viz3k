@@ -29,22 +29,9 @@ module Viz3k
             # get the corresponding person object
             person = @people.get(person_id)
 
-            # number of links for this person on this page
-            num_links = page.ids.length() - 1
-            
-            # add num_links to existing node (if any) for this person
-            found = false
-            nodes.each do |node|
-              if (node["id"] == person_id)
-                node["links"] += num_links
-                found = true
-                break
-              end
-            end
-
-            # otherwise append new node if there isn't one yet for this person
-            if (!found)
-              nodes.push(create_node(person, num_links, page_nums))
+            # if no node exists for this person, add one
+            if (!nodes.any?{|node| node["id"] == person_id})
+              nodes.push(create_node(person, page_nums))
             end
           end
         end
@@ -57,12 +44,12 @@ module Viz3k
       return nodes.sort!(){|a,b| a["id"] <=> b["id"]}
     end
 
-    def create_node(person, num_links, page_nums)
+    def create_node(person, page_nums)
       # set the person's faction based on the page range
       faction_id = person.primary_faction(page_nums)
       faction = @factions.get(faction_id)
       node = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
-                     "color"=>faction.color,"links"=>num_links}
+                     "color"=>faction.color,"links"=>0}
       if (person.style != "")
         node.merge!("style"=>person.style)
       end
@@ -89,8 +76,12 @@ module Viz3k
               id1 = page.ids[i]
             end
 
-            # Add link between the two nodes, or increment link value by 1 if they are already linked.
-            add_link(links, node_indices[id0], node_indices[id1])
+            # add link between the two nodes, or increment link value by 1 if they are already linked
+            n0 = node_indices[id0]
+            n1 = node_indices[id1]
+            add_link(links, n0, n1)
+            increment_node_links(nodes[n0])
+            increment_node_links(nodes[n1])
           end
         end
       end
@@ -117,6 +108,10 @@ module Viz3k
       if (!exists)
         links.push({"source"=> source, "target" => target, "value" => 1})
       end
+    end
+
+    def increment_node_links(node)
+      node["links"] += 1
     end
   end
 end
