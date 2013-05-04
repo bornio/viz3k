@@ -4,7 +4,7 @@ require "spec_helper"
 require "api"
 
 module Viz3k
-  describe "api" do
+  describe "Api" do
     before(:all) do
       # initialize the api
       @api = Api.new()
