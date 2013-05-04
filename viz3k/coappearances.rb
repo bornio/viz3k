@@ -89,20 +89,8 @@ module Viz3k
               id1 = page.ids[i]
             end
 
-            # if a link already exists between two people, increment the value of the link
-            exists = false
-            links.each do |link|
-              if (link["source"] == node_indices[id0] && link["target"] == node_indices[id1])
-                link["value"] += 1
-                exists = true
-                break
-              end
-            end
-
-            # otherwise, add a new link
-            if (!exists)
-              links.push({"source"=>node_indices[id0],"target"=>node_indices[id1],"value"=>1})
-            end
+            # Add link between the two nodes, or increment link value by 1 if they are already linked.
+            add_link(links, node_indices[id0], node_indices[id1])
           end
         end
       end
@@ -113,6 +101,22 @@ module Viz3k
     # Sort the links by source, with target as tie-breaker.
     def sort_links(links)
       return links.sort(){|a,b| [a["source"],a["target"]] <=> [b["source"],b["target"]]}
+    end
+
+    # If a link already exists between two people, increment the value of the link by 1. Otherwise, add a new link.
+    def add_link(links, source, target)
+      exists = false
+      links.each do |link|
+        if (link["source"] == source && link["target"] == target)
+          link["value"] += 1
+          exists = true
+          break
+        end
+      end
+
+      if (!exists)
+        links.push({"source"=> source, "target" => target, "value" => 1})
+      end
     end
   end
 end
