@@ -30,7 +30,7 @@ module Viz3k
             person = @people.get(person_id)
 
             # if no node exists for this person, add one
-            if (!nodes.any?{|node| node["id"] == person_id})
+            if (!nodes.any?{|node| node[:id] == person_id})
               nodes.push(create_node(person, page_nums))
             end
           end
@@ -41,17 +41,17 @@ module Viz3k
     end
 
     def sort_nodes_by_id(nodes)
-      return nodes.sort!(){|a,b| a["id"] <=> b["id"]}
+      return nodes.sort!(){|a,b| a[:id] <=> b[:id]}
     end
 
     def create_node(person, page_nums)
       # set the person's faction based on the page range
       faction_id = person.primary_faction(page_nums)
       faction = @factions.get(faction_id)
-      node = {"id"=>person.id,"name"=>person.name,"group"=>faction.id,"faction"=>faction.name,
-                     "color"=>faction.color,"links"=>0}
+      node = {:id => person.id, :name => person.name, :group => faction.id, :faction => faction.name,
+              :color => faction.color, :links => 0}
       if (person.style != "")
-        node.merge!("style"=>person.style)
+        node.merge!(:style => person.style)
       end
       return node
     end
@@ -60,7 +60,7 @@ module Viz3k
       # generate a list of node indices
       node_indices = {}
       nodes.each_with_index do |node, node_index|
-        node_indices.merge!(node["id"]=>node_index)
+        node_indices.merge!(node[:id] => node_index)
       end
 
       links = []
@@ -91,27 +91,27 @@ module Viz3k
 
     # Sort the links by source, with target as tie-breaker.
     def sort_links(links)
-      return links.sort(){|a,b| [a["source"],a["target"]] <=> [b["source"],b["target"]]}
+      return links.sort(){|a,b| [a[:source], a[:target]] <=> [b[:source], b[:target]]}
     end
 
     # If a link already exists between two people, increment the value of the link by 1. Otherwise, add a new link.
     def add_link(links, source, target)
       exists = false
       links.each do |link|
-        if (link["source"] == source && link["target"] == target)
-          link["value"] += 1
+        if (link[:source] == source && link[:target] == target)
+          link[:value] += 1
           exists = true
           break
         end
       end
 
       if (!exists)
-        links.push({"source"=> source, "target" => target, "value" => 1})
+        links.push({:source => source, :target => target, :value => 1})
       end
     end
 
     def increment_node_links(node)
-      node["links"] += 1
+      node[:links] += 1
     end
   end
 end
