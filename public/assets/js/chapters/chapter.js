@@ -56,7 +56,7 @@ var populate_chapter_info = function($scope, $http, chapter_json)
     $scope.next_chapter_ = ($scope.chapter.chapter + 1 > $scope.last_chapter) ? [0] : [];
 
     // generate the coappearance visualization for the selected chapter
-    chart_coappear("chart", "/data/coappear/chapter/" + chapter_num, compute_character_stats($scope));
+    chartCoappear("chart", "/data/coappear/chapter/" + chapter_num, compute_character_stats($scope));
   }
 }
 
@@ -65,7 +65,7 @@ var compute_character_stats = function($scope, nodes, links)
   return function(nodes, links)
   {
     // calculate importance by sorting nodes by decreasing number of links
-    nodes = nodes_sort_by_links(nodes);
+    nodes = sortNodesByLinks(nodes);
     people_style_parens(nodes);
 
     // get the top five
