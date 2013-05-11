@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app ng-controller="Chapter">
+<html lang="en" ng-app ng-controller="ChapterController">
   <head>
     <meta charset="utf-8">
     <title>Viz3k</title>
@@ -15,7 +15,7 @@
   </head>
   <body>
     <!-- include the navbar at the top -->
-    <div ng-include src="navbar_url"></div>
+    <div ng-include src="navbarUrl"></div>
 
     <!-- content goes here -->
     <div id="container" class="container">
@@ -26,21 +26,21 @@
           <ul>
             <!-- only show a link to the previous chapter if there is one -->
             <li ng-class="{ disabled: chapter.chapter - 1 < 1 }">
-              <a ng-repeat="prev_href in prev_chapter" href="{{prev_href}}">&laquo;</a>
-              <span ng-repeat="prev_href in prev_chapter_">&laquo;</span>
+              <a ng-repeat="prevHref in prevChapter" href="{{prevHref}}">&laquo;</a>
+              <span ng-repeat="prevHref in prevChapter_">&laquo;</span>
             </li>
-            <li ng-repeat="nav_chapter in nav_chapters" ng-class="{ active: nav_chapter.chapter == chapter.chapter }">
-              <a href="{{nav_chapter.chapter}}" ng-bind="nav_chapter.chapter"></a>
+            <li ng-repeat="navChapter in navChapters" ng-class="{ active: navChapter.chapter == chapter.chapter }">
+              <a href="{{navChapter.chapter}}" ng-bind="navChapter.chapter"></a>
             </li>
             <!-- only show a link to the next chapter if there is one -->
-            <li ng-class="{ disabled: chapter.chapter + 1 > last_chapter }">
-              <a ng-repeat="next_href in next_chapter" href="{{next_href}}">&raquo;</a>
-              <span ng-repeat="next_href in next_chapter_">&raquo;</span>
+            <li ng-class="{ disabled: chapter.chapter + 1 > lastChapter }">
+              <a ng-repeat="nextHref in nextChapter" href="{{nextHref}}">&raquo;</a>
+              <span ng-repeat="nextHref in nextChapter_">&raquo;</span>
             </li>
           </ul>
         </div>
         <div class="ng-cloak lead">
-          {{chapter_title}}
+          {{chapterTitle}}
         </div>
       </div>
       </div>
@@ -78,7 +78,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="person in people_by_importance">
+                    <tr ng-repeat="person in peopleByImportance">
                       <td class="table-char-ranking">{{$index + 1}}</td>
                       <td>
                         <a href="/people/{{person.id}}">{{person.name}}</a>
@@ -99,7 +99,7 @@
                 <small class="muted">Whenever two characters appear on the same page, a point is added to both their centrality scores. The more often someone appears alongside other characters in a chapter, the more central that person is to the chapter's story.</small>
                 <hr>
                 <p class="lead ng-cloak" ng-hide="deaths.length == 0">Deaths ({{deaths.length}} total)</p>
-                <p ng-repeat="d in deaths_combat" ng-cloak>
+                <p ng-repeat="d in deathsCombat" ng-cloak>
                   <span class="text-error"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   was killed in battle
@@ -109,7 +109,7 @@
                     </span>
                   </span>
                 </p>
-                <p ng-repeat="d in deaths_murder" ng-cloak>
+                <p ng-repeat="d in deathsMurder" ng-cloak>
                   <span><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   was murdered
@@ -119,7 +119,7 @@
                     </span>
                   </span>
                 </p>
-                <p ng-repeat="d in deaths_execution" ng-cloak>
+                <p ng-repeat="d in deathsExecution" ng-cloak>
                   <span class="text-warning"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   was executed
@@ -129,12 +129,12 @@
                     </span>
                   </span>
                 </p>
-                <p ng-repeat="d in deaths_illness" ng-cloak>
+                <p ng-repeat="d in deathsIllness" ng-cloak>
                   <span class="text-info"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   died of illness
                 </p>
-                <p ng-repeat="d in deaths_suicide" ng-cloak>
+                <p ng-repeat="d in deathsSuicide" ng-cloak>
                   <span class="muted"><b>✖</b></span>
                   &nbsp;<b><a href="/people/{{deaths[d].id}}">{{deaths[d].person.name}}</a></b>
                   committed suicide
@@ -151,7 +151,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="person in people | orderBy:people_order">
+                    <tr ng-repeat="person in people | orderBy:peopleOrder">
                       <td>
                         <a href="/people/{{person.id}}">{{person.name}}</a>
                         <span class="muted"> {{person.style_parens}}</span>
