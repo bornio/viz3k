@@ -47,19 +47,20 @@
                 List of characters <span class="muted">(click to toggle)</span>
               </a>
             </div>
-            <div class="accordion-body collapse" id="collapse-people">
-              <div class="accordion-inner" id="people">
-                <div ng-cloak class="lead">
+            <div class="accordion-body collapse in" id="collapse-people">
+              <div class="accordion-inner" id="people" ng-cloak>
+                <span class="muted" ng-hide="loaded">Loading data...</span>
+                <div class="lead" ng-show="loaded">
                   {{people.length}} characters appear in the novel.
                 </div>
                 <!-- filter and sort options for list of people below -->
-                <form class="form-inline">
+                <form class="form-inline" ng-show="loaded" ng-cloak>
                   <fieldset>
                     <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
                   </fieldset>
                 </form>
                 <!-- list of people -->
-                <table class="table table-condensed" ng-cloak>
+                <table class="table table-condensed" ng-show="loaded" ng-cloak>
                   <tbody>
                     <tr ng-repeat="person in people | filter:query | orderBy:['-appearances.length','name']">
                       <td class="table-person-name">

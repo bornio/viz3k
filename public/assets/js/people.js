@@ -3,6 +3,9 @@ function PeopleController($scope, $http, $q) {
   $scope.navbar_url = "/navbar";
   $scope.navbar_selected = 3;
 
+  // hide some stuff until it's ready
+  $scope.loaded = false;
+
   set_resize_handler_for("content-area", false);
 
   // get our data from the backend
@@ -34,9 +37,7 @@ function renderView($scope, people, factions, deaths) {
 
   // save people to scope
   $scope.people = people;
-
-  // show the collapsible people list
-  $('#collapse-people').collapse('show');
+  $scope.loaded = true;
 
   // save death stats to scope
   $scope.deathsCombat = deaths_of_type(deaths, "combat");
