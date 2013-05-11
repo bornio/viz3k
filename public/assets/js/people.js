@@ -75,7 +75,7 @@ function drawDeathsChart($scope) {
   causeLabels[3] = { text: "Illness" };
   causeLabels[4] = { text: "Suicide" };
 
-  var chartDeathsByCause = bar_horizontal("chart-deaths-by-cause", deathsByCause, causeColors, causeLabels);
+  var chartDeathsByCause = chartBarHorizontal("chart-deaths-by-cause", deathsByCause, causeColors, causeLabels);
   window.addEventListener("resize", chartDeathsByCause.resized, false);
 
   return chartDeathsByCause;
@@ -97,7 +97,7 @@ function drawCombatantsChart($scope) {
     nameLabels[i] = { text: $scope.combatants[i].name, href: "/people/" + String($scope.combatants[i].id) };
   }
 
-  var chartTopCombatants = bar_horizontal("chart-top-combatants", combatants, barColors, nameLabels);
+  var chartTopCombatants = chartBarHorizontal("chart-top-combatants", combatants, barColors, nameLabels);
   window.addEventListener("resize", chartTopCombatants.resized, false);
 
   return chartTopCombatants;

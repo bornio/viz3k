@@ -1,164 +1,148 @@
-function bar_horizontal(element_id, data, colors, labels, bar_thickness, show_values)
-{
+/**
+ * General purpose horizontal bar chart.
+ */
+function chartBarHorizontal(elementId, data, colors, labels, barThickness, showValues) {
   // default values
-  if (typeof(bar_thickness) === 'undefined')
-  {
-    bar_thickness = 20;
+  if (typeof(barThickness) === 'undefined') {
+    barThickness = 20;
   }
-  if (typeof(show_values) === 'undefined')
-  {
-    show_values = true;
+  if (typeof(showValues) === 'undefined') {
+    showValues = true;
   }
 
-  var chart_initialized = false;
+  var chartInitialized = false;
 
   // append the svg element for drawing the chart on
-  var svg = d3.select("#" + element_id).append("svg");
+  var svg = d3.select("#" + elementId).append("svg");
 
   // compute chart height based on number of elements
-  var chart_height = data.length*bar_thickness;
+  var chartHeight = data.length*barThickness;
 
   // set the height of svg element based on chart height and padding amounts
-  var padding_l = 120; // need enough space for text labels
-  var padding_t = 6;
-  var padding_b = 6;
-  var svg_height = chart_height + padding_t + padding_b;
+  var paddingLeft = 120; // need enough space for text labels
+  var paddingTop = 6;
+  var paddingBottom = 6;
+  var svgHeight = chartHeight + paddingTop + paddingBottom;
   svg.attr("width", "100%"); // for firefox -- WebKit defaults to 100% anyway
-  svg.attr("height", svg_height);
+  svg.attr("height", svgHeight);
 
-  var y_scale = d3.scale.linear()
+  var yScale = d3.scale.linear()
     .domain([0, data.length])
-    .range([0, chart_height]);
+    .range([0, chartHeight]);
 
   svg.append("g").attr("id", "bar-group")
-    .attr("transform", "translate(" + padding_l + "," + padding_t + ")");
+    .attr("transform", "translate(" + paddingLeft + "," + paddingTop + ")");
   svg.append("g").attr("id", "labels-group")
-    .attr("transform", "translate(" + padding_l + "," + padding_t + ")");
+    .attr("transform", "translate(" + paddingLeft + "," + paddingTop + ")");
 
   // create an unlabeled y axis (this should have a constant size independent of window resizing)
-  var yaxis = d3.svg.axis();
-  yaxis.scale(y_scale)
-      .orient("left")
-      .ticks(0)
-      .tickSize(0);
+  var yAxis = d3.svg.axis();
+  yAxis.scale(yScale)
+    .orient("left")
+    .ticks(0)
+    .tickSize(0);
   svg.append("g").attr("class", "axis")
-    .attr("transform", "translate(" + padding_l + "," + padding_t + ")")
-    .call(yaxis);
+    .attr("transform", "translate(" + paddingLeft + "," + paddingTop + ")")
+    .call(yAxis);
 
   // max of all data elements is used to scale the bar lengths
-  var max_x_value = d3.max(data)*1.5;
+  var maxXValue = d3.max(data)*1.5;
 
   var bars = svg.select("#bar-group").selectAll("rect").data(data);
-  var value_labels = svg.select("#bar-group").selectAll("text").data(data);
-  var axis_labels = define_axis_labels(svg.select("#labels-group"), labels);
+  var valueLabels = svg.select("#bar-group").selectAll("text").data(data);
+  var axisLabels = defineAxisLabels(svg.select("#labels-group"), labels);
 
   // render (or re-render) the chart as needed, trying to fit x scale to width of parent element
-  var chart_resized = function()
-  {
+  var chartResized = function() {
     // recompute element widths based on the width of the parent element
-    var svg_width = document.getElementById(element_id).clientWidth;
-    var chart_width = svg_width - padding_l;
+    var svgWidth = document.getElementById(elementId).clientWidth;
+    var chartWidth = svgWidth - paddingLeft;
 
     // recompute x scale
-    var x_scale = d3.scale.linear()
-      .domain([0, max_x_value])
-      .range([0, chart_width]);
+    var xScale = d3.scale.linear()
+      .domain([0, maxXValue])
+      .range([0, chartWidth]);
 
     // set or update color-coded bars for every data element, along with labels
-    if (!chart_initialized)
-    {
+    if (!chartInitialized) {
       bars.enter().append("rect");
-      init_axis_labels(axis_labels);
+      initAxisLabels(axisLabels);
       
-      if (show_values)
-      {
-        value_labels.enter().append("text");
+      if (showValues) {
+        valueLabels.enter().append("text");
       }
     }
 
     bars.attr("class", "bar-horizontal")
       .attr("x", 0)
-      .attr("y", function(d, i) { return y_scale(i); })
-      .attr("width", function(d) { return x_scale(d); })
-      .attr("height", bar_thickness - 1)
+      .attr("y", function(d, i) { return yScale(i); })
+      .attr("width", function(d) { return xScale(d); })
+      .attr("height", barThickness - 1)
       .style("fill", function(d, i) { return colors[i]; });
 
-    draw_axis_labels(axis_labels, y_scale, bar_thickness);
+    drawAxisLabels(axisLabels, yScale, barThickness);
 
-    if (show_values)
-    {
-      value_labels.attr("class", "value-labels")
-      .attr("x", function(d) { return x_scale(d) + 4; })
-      .attr("y", function(d, i) { return y_scale(i) + bar_thickness/2; })
+    if (showValues) {
+      valueLabels.attr("class", "value-labels")
+      .attr("x", function(d) { return xScale(d) + 4; })
+      .attr("y", function(d, i) { return yScale(i) + barThickness/2; })
       .attr("dominant-baseline", "central")
       .text(function(d) { return d; });
     }
     
-    chart_initialized = true;
+    chartInitialized = true;
   }
 
-  // call chart_resized() to draw the chart for the first time
-  chart_resized();
+  // call chartResized() to draw the chart for the first time
+  chartResized();
 
   // return the resize handler so it can be used by the caller
   return {
-    resized : chart_resized
+    resized : chartResized
   };
 }
 
-function define_axis_labels(parent, labels)
+function defineAxisLabels(parent, labels)
 {
-  var has_hrefs = false;
-  for (var i in labels)
-  {
-    if ("href" in labels[i])
-    {
-      has_hrefs = true;
-    }
-    else
-    {
+  var hasHrefs = false;
+  for (var i in labels) {
+    if ("href" in labels[i]) {
+      hasHrefs = true;
+    } else {
       labels[i].href = "#";
     }
   }
 
-  if (has_hrefs)
-  {
+  if (hasHrefs) {
     return {
       anchors : parent.selectAll("a").data(labels)
     };
-  }
-  else
-  {
+  } else {
     return {
       texts : parent.selectAll("text").data(labels)
     };
   }
 }
 
-function init_axis_labels(axis_labels)
-{
-  if ("anchors" in axis_labels)
-  {
-    axis_labels.anchors.enter().append("a");
-    axis_labels.texts = axis_labels.anchors.append("text");
-  }
-  else
-  {
-    axis_labels.texts.enter().append("text");
+function initAxisLabels(axisLabels) {
+  if ("anchors" in axisLabels) {
+    axisLabels.anchors.enter().append("a");
+    axisLabels.texts = axisLabels.anchors.append("text");
+  } else {
+    axisLabels.texts.enter().append("text");
   }
 }
 
-function draw_axis_labels(axis_labels, y_scale, bar_thickness)
+function drawAxisLabels(axisLabels, yScale, barThickness)
 {
-  if ("anchors" in axis_labels)
-  {
-    axis_labels.anchors.attr("class", "axis-labels")
+  if ("anchors" in axisLabels) {
+    axisLabels.anchors.attr("class", "axis-labels")
       .attr("xlink:href", function(d) { return d.href; });
   }
   
-  axis_labels.texts.attr("class", "axis-labels")
+  axisLabels.texts.attr("class", "axis-labels")
     .attr("x", -6)
-    .attr("y", function(d, i) { return y_scale(i) + bar_thickness/2; })
+    .attr("y", function(d, i) { return yScale(i) + barThickness/2; })
     .attr("text-anchor", "end")
     .attr("dominant-baseline", "central")
     .text(function(d) { return d.text; });
