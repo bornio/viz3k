@@ -54,7 +54,7 @@ function Factions($scope, $http)
       }
       
       // display a stacked bar chart of faction appearances per chapter
-      var chart = appearance_timeline("chart-appearances", factions, chapters, max_people);
+      var chart = chartAppearanceTimeline("chart-appearances", factions, chapters, max_people);
       window.addEventListener("resize", chart.resized, false);
 
       // assign data to the scope

@@ -1,24 +1,23 @@
-function appearance_timeline(element_id, factions, chapters, max_people)
+function chartAppearanceTimeline(elementId, factions, chapters, maxPeople)
 {
-  var chart_initialized = false;
+  var chartInitialized = false;
   // append the svg element for drawing the chart on
-  var svg = d3.select("#" + element_id).append("svg");
+  var svg = d3.select("#" + elementId).append("svg");
   svg.attr("width", "100%"); // for firefox -- WebKit defaults to 100% anyway
-  var svg_height = document.getElementById(element_id).clientHeight;
-  var padding_l = 24;
-  var padding_t = 6;
-  var padding_b = 6;
-  var max_height = svg_height - padding_t - padding_b;
-  var y_range = d3.scale.linear()
-    .domain([0, max_people])
-    .range([0, max_height]);
-  var y_range_inverted = d3.scale.linear()
-    .domain([0, max_people])
-    .range([max_height, 0]);
+  var svgHeight = document.getElementById(elementId).clientHeight;
+  var paddingLeft = 24;
+  var paddingTop = 6;
+  var paddingBottom = 6;
+  var maxHeight = svgHeight - paddingTop - paddingBottom;
+  var yRange = d3.scale.linear()
+    .domain([0, maxPeople])
+    .range([0, maxHeight]);
+  var yRangeInverted = d3.scale.linear()
+    .domain([0, maxPeople])
+    .range([maxHeight, 0]);
 
   // create a bar group for every faction
-  for (var f = 0; f < factions.length; f++)
-  {
+  for (var f = 0; f < factions.length; f++) {
     var faction = factions[f];
     svg.append("g").attr("id", "faction" + String(faction.id));
   }
@@ -27,100 +26,92 @@ function appearance_timeline(element_id, factions, chapters, max_people)
   var anchors = svg.selectAll("a").data(chapters).enter().append("a")
     .attr("xlink:href", function(d) { return "/chapters/" + d.chapter; });
   anchors.append("title").text(function(d) { return "Chapter " + d.chapter; });
-  var anchor_rects = anchors.append("rect");
+  var anchorRects = anchors.append("rect");
 
   // create a labeled y axis (this should have a constant size independent of window resizing)
-  var yaxis = d3.svg.axis();
-  var num_ticks = 4;
-  if (max_people == 2)
-  {
-    num_ticks = 2;
+  var yAxis = d3.svg.axis();
+  var numTicks = 4;
+  if (maxPeople == 2) {
+    numTicks = 2;
+  } else if (maxPeople == 1) {
+    numTicks = 1;
   }
-  else if (max_people == 1)
-  {
-    num_ticks = 1;
-  }
-  yaxis.scale(y_range_inverted)
+  yAxis.scale(yRangeInverted)
       .orient("left")
-      .ticks(num_ticks)
+      .ticks(numTicks)
       .tickSize(2);
   svg.append("g").attr("class", "axis")
-    .attr("transform", "translate(" + padding_l + "," + padding_t + ")")
-    .call(yaxis);
+    .attr("transform", "translate(" + paddingLeft + "," + paddingTop + ")")
+    .call(yAxis);
 
   // create an unlabeled x axis (this should resize in response to window resizing)
-  var svg_width = document.getElementById(element_id).clientWidth;
-  var x_range = d3.scale.linear()
+  var svgWidth = document.getElementById(elementId).clientWidth;
+  var xRange = d3.scale.linear()
     .domain([0, chapters.length])
-    .range([0, svg_width]);
+    .range([0, svgWidth]);
 
-  var xaxis = d3.svg.axis();
-  xaxis.scale(x_range)
+  var xAxis = d3.svg.axis();
+  xAxis.scale(xRange)
       .orient("bottom")
       .ticks(0)
       .tickSize(0);
-  var xaxis_svg = svg.append("g")
-    .attr("class", "axis").attr("transform", "translate(" + padding_l + "," + (padding_t + max_height) + ")")
-    .call(xaxis);
+  var xAxisSvg = svg.append("g")
+    .attr("class", "axis").attr("transform", "translate(" + paddingLeft + "," + (paddingTop + maxHeight) + ")")
+    .call(xAxis);
 
   // render or resize the chart as needed
-  var chart_resized = function()
-  {
+  var chartResized = function() {
     // recompute element widths based on the width of the parent element
-    svg_width = document.getElementById(element_id).clientWidth;
-    var bar_width = (svg_width - padding_l)/chapters.length;
+    svgWidth = document.getElementById(elementId).clientWidth;
+    var barWidth = (svgWidth - paddingLeft)/chapters.length;
 
     // redraw x axis
-    x_range.range([0, svg_width]);
-    xaxis.scale(x_range);
-    xaxis_svg.call(xaxis);
+    xRange.range([0, svgWidth]);
+    xAxis.scale(xRange);
+    xAxisSvg.call(xAxis);
 
-    var y_offsets = new Array(chapters.length);
-    for (var c = 0; c < chapters.length; c++)
-    {
-      y_offsets[c] = 0;
+    var yOffsets = new Array(chapters.length);
+    for (var c = 0; c < chapters.length; c++) {
+      yOffsets[c] = 0;
     }
 
     // set or update dimensions of chapter anchors
-    anchor_rects
-      .attr("x", function(d, i) { return padding_l + bar_width*i; })
-      .attr("y", padding_t)
-      .attr("width", bar_width)
-      .attr("height", max_height)
+    anchorRects
+      .attr("x", function(d, i) { return paddingLeft + barWidth*i; })
+      .attr("y", paddingTop)
+      .attr("width", barWidth)
+      .attr("height", maxHeight)
       .style("fill-opacity", 0);
 
     // set or update color-coded bars for every faction
-    for (var f = 0; f < factions.length; f++)
-    {
+    for (var f = 0; f < factions.length; f++) {
       var faction = factions[f];
       var bars = svg.select("#faction" + String(faction.id)).selectAll("rect").data(faction.chapters);
 
-      if (!chart_initialized)
-      {
+      if (!chartInitialized) {
         bars.enter().append("rect");
       }
 
-      bars.attr("x", function(d, i) { return padding_l + bar_width*i; })
-          .attr("y", function(d, i) { return padding_t + y_range_inverted(d) - y_offsets[i]; })
-          .attr("width", bar_width)
-          .attr("height", y_range)
-          .style("fill", function(d) { return faction.color; });
+      bars.attr("x", function(d, i) { return paddingLeft + barWidth*i; })
+        .attr("y", function(d, i) { return paddingTop + yRangeInverted(d) - yOffsets[i]; })
+        .attr("width", barWidth)
+        .attr("height", yRange)
+        .style("fill", function(d) { return faction.color; });
 
       // update offsets
-      for (var c = 0; c < chapters.length; c++)
-      {
-        y_offsets[c] += y_range(faction.chapters[c]);
+      for (var c = 0; c < chapters.length; c++) {
+        yOffsets[c] += yRange(faction.chapters[c]);
       }
     }
 
-    chart_initialized = true;
+    chartInitialized = true;
   }
 
-  // call chart_resized() to draw the chart for the first time
-  chart_resized();
+  // call chartResized() to draw the chart for the first time
+  chartResized();
 
   // return the resize handler so it can be used by the caller
   return {
-    resized : chart_resized
+    resized : chartResized
   };
 }

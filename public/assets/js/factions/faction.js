@@ -78,7 +78,7 @@ function configure_chart(faction, chapters_data)
       // display a stacked bar chart of faction appearances per chapter
       if (chart == null)
       {
-        chart = appearance_timeline("chart-appearances", factions, chapters, max_people);
+        chart = chartAppearanceTimeline("chart-appearances", factions, chapters, max_people);
       }
       
       // add window resize event for the chart
