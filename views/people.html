@@ -11,63 +11,91 @@
     <!-- styling for this page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/people.css"/>
   </head>
-  <body ng-controller="People">
+  <body ng-controller="PeopleController">
     <!-- include the navbar at the top -->
     <div ng-include src="navbar_url"></div>
 
     <!-- content goes here -->
-    <div class="container">
-      <div class="page-header">
-        <h2>People</h2>
-      </div>
-
-      <!-- filter and sort options for list of people below -->
+    <div class="container">      
       <div class="row">
-        <div class="span3">
-          <form class="form-inline">
-            <fieldset>
-              <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
-            </fieldset>
-          </form>
+        <div id="content-area" class="span8 offset2">
+          <div class="page-header">
+            <h2>People</h2>
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" href="#collapse-deaths">
+                Statistics <span class="muted">(click to toggle)</span>
+              </a>
+            </div>
+            <div class="accordion-body collapse" id="collapse-deaths">
+              <div class="accordion-inner" id="deaths">
+                <p class="lead">Total deaths: {{deaths.length}}</p>
+                <div id="chart-deaths-by-cause"></div>
+                <hr>
+
+                <p class="lead">Deadliest combatants</p>
+                <div id="chart-top-combatants"></div>
+                <small class="muted">Combatants are ranked on the number of characters they've killed in battle. Note that data is incomplete and rankings currently reflect only a portion of the novel.</small>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" href="#collapse-people">
+                List of characters <span class="muted">(click to toggle)</span>
+              </a>
+            </div>
+            <div class="accordion-body collapse" id="collapse-people">
+              <div class="accordion-inner" id="people">
+                <div ng-cloak class="lead">
+                  {{people.length}} characters appear in the novel.
+                </div>
+                <!-- filter and sort options for list of people below -->
+                <form class="form-inline">
+                  <fieldset>
+                    <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
+                  </fieldset>
+                </form>
+                <!-- list of people -->
+                <table class="table table-condensed" ng-cloak>
+                  <tbody>
+                    <tr ng-repeat="person in people | filter:query | orderBy:['-appearances.length','name']">
+                      <td class="table-person-name">
+                        <a href="/people/{{person.id}}">{{person.name}}</a>
+                        <span class="muted"> {{person.style_parens}}</span>
+                      </td>
+                      
+                      <td class="table-person-faction-badge">
+                        <a href="/factions/{{person.faction}}">
+                          <div class="faction-badge" style="{{'background: ' + person.faction_color + ';'}}"></div>
+                        </a>
+                      </td>
+                      <td class="table-person-faction">
+                        <a href="/factions/{{person.faction}}">{{person.faction_name}}</a>
+                      </td>
+                      <td class="table-person-num-appearances muted hidden-phone">
+                        <small>appears in {{person.appearances.length}} chapters</small>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+          <footer>
+          </footer>
         </div>
       </div>
-
-      <!-- list of people -->
-      <div class="row">
-        <div class="span12">
-          <table class="table table-condensed ng-cloak">
-            <tbody>
-              <tr ng-repeat="person in people | filter:query | orderBy:['-appearances.length','name']">
-                <td class="table-person-name">
-                  <a href="/people/{{person.id}}">{{person.name}}</a>
-                  <span class="muted"> {{person.style_parens}}</span>
-                </td>
-                
-                <td class="table-person-faction-badge">
-                  <a href="/factions/{{person.faction}}">
-                    <div class="faction-badge" style="{{'background: ' + person.faction_color + ';'}}"></div>
-                  </a>
-                </td>
-                <td class="table-person-faction">
-                  <a href="/factions/{{person.faction}}">{{person.faction_name}}</a>
-                </td>
-                <td class="table-person-num-appearances muted hidden-phone">
-                  <small>appears in {{person.appearances.length}} chapters</small>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <hr>
-      <footer>
-      </footer>
     </div>
 
     <!-- load javascripts last for speed -->
 
     <!-- third party javascript -->
+    <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
@@ -77,5 +105,8 @@
 
     <!-- controller for this view -->
     <script type="text/javascript" src="/assets/js/people.js"></script>
+
+    <!-- charts used by this view -->
+    <script type="text/javascript" src="/assets/js/charts/bar_horizontal.js"></script>
   </body>
 </html>
