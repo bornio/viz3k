@@ -33,13 +33,17 @@ function renderView($scope, factions, chapters) {
   // sort the factions
   factions = sortFactionsBySize(factions);
 
+  // assign data to the scope
+  $scope.factions = factions;
+  $scope.factionsOther = factionsOther;
+
+  // draw charts
+  var chart = chartFactionAppearances($scope, factions, chapters);  
+}
+
+function chartFactionAppearances($scope, factions, chapters) {
   // see what the max number of distinct characters to appear in any chapter is
-  var maxPeople = 0;
-  for (var c = 0; c < chapters.length; c++) {
-    if (chapters[c].people.length > maxPeople) {
-      maxPeople = chapters[c].people.length;
-    }
-  }
+  var maxPeople = maxPeoplePerChapter(chapters);
 
   // for each faction...
   for (var f = 0; f < factions.length; f++) {
@@ -57,9 +61,7 @@ function renderView($scope, factions, chapters) {
   var chart = chartAppearanceTimeline("chart-appearances", factions, chapters, maxPeople);
   window.addEventListener("resize", chart.resized, false);
 
-  // assign data to the scope
-  $scope.factions = factions;
-  $scope.factionsOther = factionsOther;
+  return chart;
 }
 
 function sortFactionsBySize(factions) {
@@ -79,4 +81,15 @@ function sortFactionsBySize(factions) {
   });
 
   return sorted;
+}
+
+function maxPeoplePerChapter(chapters) {
+  var maxPeople = 0;
+  for (var c = 0; c < chapters.length; c++) {
+    if (chapters[c].people.length > maxPeople) {
+      maxPeople = chapters[c].people.length;
+    }
+  }
+
+  return maxPeople;
 }
