@@ -1,7 +1,7 @@
 function Factions($scope, $http)
 {
   // navbar settings
-  $scope.navbar_url = "/navbar";
+  $scope.navbarUrl = "/navbar";
   $scope.navbar_selected = 2;
 
   set_resize_handler_for("content-area", false);
