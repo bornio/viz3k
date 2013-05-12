@@ -13,7 +13,7 @@
     <!-- styling for charts -->
     <link type="text/css" rel="stylesheet" href="/assets/css/charts/appearance_timeline.css"/>
   </head>
-  <body ng-controller="Factions">
+  <body ng-controller="FactionsController">
     <!-- include the navbar at the top -->
     <div ng-include src="navbarUrl"></div>
 
@@ -48,7 +48,7 @@
                 <td class="faction faction-size muted">{{faction.members.length}} members</td>
               </tr>
               <!-- display the catch-all "Other" faction last regardless of its size -->
-              <tr ng-repeat="faction in factions_other | filter:query">
+              <tr ng-repeat="faction in factionsOther | filter:query">
                 <td class="faction-color">
                   <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
                 </td>
