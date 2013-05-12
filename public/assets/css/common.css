@@ -25,11 +25,6 @@ div.faction-badge {
   border-radius: 12px; 
 }
 
-div.scroll-list {
-  overflow: auto;
-  height: 400px;
-}
-
 div.page-header {
   padding-bottom: 6px;
   margin: 16px 0 20px;
@@ -99,10 +94,6 @@ p {
 
   div.well {
     margin-bottom: 8px;
-  }
-
-  div.scroll-list {
-    height: 240px;
   }
 
   /* make faction badges 3/4 size */

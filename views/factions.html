@@ -19,67 +19,63 @@
 
     <!-- content goes here -->
     <div class="container">
-      <div class="page-header">
-        <h2>Factions</h2>
-      </div>
-
-      <!-- filter and sort options for list of factions below -->
       <div class="row">
-        <div class="span3">
-          <form class="form-inline">
+        <div id="content-area" class="span8 offset2">
+          <div class="page-header">
+            <h2>Factions</h2>
+          </div>
+
+          <!-- filter and sort options for list of factions below -->
+          <form class="form-inline" ng-cloak>
             <fieldset>
               <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
             </fieldset>
           </form>
-        </div>
-      </div>
 
-      <!-- scrollable list of factions -->
-      <div class="scroll-list">
-        <table class="table table-condensed ng-cloak">
-          <tbody>
-            <tr ng-repeat="faction in factions | filter:query">
-              <td class="faction-color">
-                <a href="/factions/{{faction.id}}">
+          <!-- list of all factions -->
+          <table class="table table-condensed ng-cloak">
+            <tbody>
+              <tr ng-repeat="faction in factions | filter:query">
+                <td class="faction-color">
+                  <a href="/factions/{{faction.id}}">
+                    <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
+                  </a>
+                </td>
+                <td class="faction">
+                  <a href="/factions/{{faction.id}}">{{faction.name}}</a>
+                  <span class="muted">{{faction.type_label}}</span>
+                </td>
+                <td class="faction faction-size muted">{{faction.members.length}} members</td>
+              </tr>
+              <!-- display the catch-all "Other" faction last regardless of its size -->
+              <tr ng-repeat="faction in factions_other | filter:query">
+                <td class="faction-color">
                   <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
-                </a>
-              </td>
-              <td class="faction">
-                <a href="/factions/{{faction.id}}">{{faction.name}}</a>
-                <span class="muted">{{faction.type_label}}</span>
-              </td>
-              <td class="faction faction-size">{{faction.members.length}}</td>
-            </tr>
-            <!-- display the catch-all "Other" faction last regardless of its size -->
-            <tr ng-repeat="faction in factions_other | filter:query">
-              <td class="faction-color">
-                <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
-              </td>
-              <td class="faction">
-                <a href="/factions/{{faction.id}}">{{faction.name}} {{faction.type_label}}</a>
-                <span class="muted">{{faction.type_label}}</span>
-              </td>
-              <td class="faction faction-size">{{faction.members.length}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                </td>
+                <td class="faction">
+                  <a href="/factions/{{faction.id}}">{{faction.name}} {{faction.type_label}}</a>
+                  <span class="muted">{{faction.type_label}}</span>
+                </td>
+                <td class="faction faction-size muted">{{faction.members.length}} members</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <!-- info and stats down here -->
-      <hr>
-      <div class="row">
-        <div id="stats-area" class="span12">
-          <h5># of faction members appearing in each chapter</h5>
-          <div class="well well-small">
-            <div id="chart-appearances" class="appearance-timeline"></div>
-            <small class="muted appearance-timeline-label">Click anywhere on the chart to jump to a chapter.</small>
+          <!-- info and stats down here -->
+          <hr>
+          <div id="stats-area">
+            <h5># of faction members appearing in each chapter</h5>
+            <div class="well well-small">
+              <div id="chart-appearances" class="appearance-timeline"></div>
+              <small class="muted appearance-timeline-label">Click anywhere on the chart to jump to a chapter.</small>
+            </div>
           </div>
+
+          <hr>
+          <footer>
+          </footer>
         </div>
       </div>
-
-      <hr>
-      <footer>
-      </footer>
     </div>
 
     <!-- load javascripts last for speed -->

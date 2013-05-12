@@ -4,6 +4,8 @@ function Factions($scope, $http)
   $scope.navbar_url = "/navbar";
   $scope.navbar_selected = 2;
 
+  set_resize_handler_for("content-area", false);
+
   var populate_factions = function(factions_data)
   {
     factions = factions_data.factions;
