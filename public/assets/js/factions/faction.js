@@ -1,4 +1,4 @@
-function Faction($scope, $http) {
+function FactionController($scope, $http) {
   // use the number at the end of the URL to determine which faction's data to load
   factionNum = document.URL.split("/").pop();
 
@@ -23,7 +23,7 @@ function Faction($scope, $http) {
 
     // per-chapter stats
     var populateChartTab = function(chaptersData) {
-      configureChart(faction, chaptersData);
+      chartFactionAppearances(faction, chaptersData);
     }
 
     // issue an http get to grab the chapters info for the faction appearance timeline
@@ -34,7 +34,7 @@ function Faction($scope, $http) {
   $http.get("/data/factions/" + factionNum).success(populateFactionInfo);
 }
 
-function configureChart(faction, chaptersData) {
+function chartFactionAppearances(faction, chaptersData) {
   chapters = chaptersData.chapters;
   var factions = new Array();
 
