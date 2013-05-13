@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- include the navbar at the top -->
-    <div ng-include src="navbar_url"></div>
+    <div ng-include src="navbarUrl"></div>
 
     <!-- content goes here -->
     <div class="container">
@@ -26,7 +26,7 @@
             </td>
             <td style="padding-left: 12px;">
               <p class="lead" style="margin-bottom: 0px;">{{faction.name}}</p>
-              <span class="muted">{{faction_type}}</span>
+              <span class="muted">{{factionType}}</span>
             </td>
           </tr>
         </table>
@@ -36,7 +36,7 @@
         <div class="span12 ng-cloak">
           <p><small>{{faction.members.length}} members</small></p>
           <p><small>
-            <span ng-repeat="link in faction_links">(<a href="{{link.href}}">{{link.text}}</a>)<span>
+            <span ng-repeat="link in factionLinks">(<a href="{{link.href}}">{{link.text}}</a>)<span>
           </small></p>
         </div>
       </div>

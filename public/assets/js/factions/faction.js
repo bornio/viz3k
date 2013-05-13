@@ -1,20 +1,17 @@
-function Faction($scope, $http)
-{
+function Faction($scope, $http) {
   // use the number at the end of the URL to determine which faction's data to load
-  faction_num = document.URL.split("/").pop();
+  factionNum = document.URL.split("/").pop();
 
   // navbar settings
-  $scope.navbar_url = "/navbar";
+  $scope.navbarUrl = "/navbar";
   $scope.navbar_selected = 2;
 
-  var populate_faction_info = function(faction)
-  {
+  var populateFactionInfo = function(faction) {
     // this is so we don't momentarily see "()" by itself before the text loads asynchronously
-    $scope.faction_type = "(" + faction.type + ")";
-    $scope.faction_links = [];
-    if ("wiki" in faction)
-    {
-      $scope.faction_links.push({text:"wiki",href:faction.wiki});
+    $scope.factionType = "(" + faction.type + ")";
+    $scope.factionLinks = [];
+    if ("wiki" in faction) {
+      $scope.factionLinks.push({ text:"wiki", href:faction.wiki });
     }
 
     // add parentheses to all style names
@@ -22,47 +19,34 @@ function Faction($scope, $http)
 
     // assign data to the scope
     $scope.faction = faction;
-    document.title = $scope.faction.name + " " + $scope.faction_type + " - Viz3k";
+    document.title = $scope.faction.name + " " + $scope.factionType + " - Viz3k";
 
     // per-chapter stats
-    var populate_chart_tab = function(chapters_data)
-    {
-      configure_chart(faction, chapters_data);
+    var populateChartTab = function(chaptersData) {
+      configureChart(faction, chaptersData);
     }
 
     // issue an http get to grab the chapters info for the faction appearance timeline
-    $http.get("/data/chapters").success(populate_chart_tab);
+    $http.get("/data/chapters").success(populateChartTab);
   }
 
   // issue an http get to grab the info for this faction
-  $http.get("/data/factions/" + faction_num).success(populate_faction_info);
+  $http.get("/data/factions/" + factionNum).success(populateFactionInfo);
 }
 
-function configure_chart(faction, chapters_data)
-{
-  chapters = chapters_data.chapters;
+function configureChart(faction, chaptersData) {
+  chapters = chaptersData.chapters;
   var factions = new Array();
-
-  // see what the max number of distinct characters to appear in any chapter is
-  for (var c = 0; c < chapters.length; c++)
-  {
-    if (chapters[c].people.length > max_people)
-    {
-      max_people = chapters[c].people.length;
-    }
-  }
 
   faction.chapters = new Array(chapters.length);
 
   // find out how many of this faction's members turn up in each chapter
-  var max_people = 0;
-  for (var c = 0; c < chapters.length; c++)
-  {
+  var maxPeople = 0;
+  for (var c = 0; c < chapters.length; c++) {
     var chapter = chapters[c];
     faction.chapters[c] = countFactionMembersInChapter(faction, chapter);
-    if (faction.chapters[c] > max_people)
-    {
-      max_people = faction.chapters[c];
+    if (faction.chapters[c] > maxPeople) {
+      maxPeople = faction.chapters[c];
     }
   }
 
@@ -73,22 +57,17 @@ function configure_chart(faction, chapters_data)
   var activeTab = null;
   $('a[data-toggle="tab"]').on('shown', function (e) {
     activeTab = e.target;
-    if (activeTab.hash == "#stats")
-    {
+    if (activeTab.hash == "#stats") {
       // display a stacked bar chart of faction appearances per chapter
-      if (chart == null)
-      {
-        chart = chartAppearanceTimeline("chart-appearances", factions, chapters, max_people);
+      if (chart == null) {
+        chart = chartAppearanceTimeline("chart-appearances", factions, chapters, maxPeople);
       }
       
       // add window resize event for the chart
       window.addEventListener("resize", chart.resized, false);
-    }
-    else
-    {
+    } else {
       // remove the resize event if needed
-      if (chart != null)
-      {
+      if (chart != null) {
         window.removeEventListener("resize", chart.resized, false);
       }
     }
