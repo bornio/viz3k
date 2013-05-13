@@ -42,7 +42,7 @@ function countFactionMembersInChapter(faction, chapter) {
 }
 
 // find and return the person with the given id
-function get_person(people, id) {
+function getPerson(people, id) {
   for (var p in people)
   {
     if (people[p].id == id)

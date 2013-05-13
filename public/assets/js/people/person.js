@@ -29,7 +29,7 @@ var populate_person_info = function($scope, $http, people_json)
   style_name_popover_content = "A <em><a href='http://en.wikipedia.org/wiki/Chinese_style_name'>style name</a></em>, or <em>courtesy name</em>, is a name traditionally given to Chinese males when they reach adulthood. Characters in the novel frequently address one another by their style names instead of their given names as a mark of respect.";
   return function(people_json)
   {
-    var person = get_person(people_json.people, person_id);
+    var person = getPerson(people_json.people, person_id);
 
     // add parentheses to this person's style name
     person_style_parens(person);
@@ -135,7 +135,7 @@ function killers_info(people, killers)
   var info = new Array();
   for (k in killers)
   {
-    var killer_info = get_person(people, killers[k]);
+    var killer_info = getPerson(people, killers[k]);
     info.push(killer_info);
   }
 
