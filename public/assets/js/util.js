@@ -1,6 +1,5 @@
 // count faction members only if they actually appear as an affiliate of this faction in the selected chapter
-function count_in_faction(faction, chapter)
-{
+function countFactionMembersInChapter(faction, chapter) {
   var member_count = 0;
   for (var m = 0; m < faction.members.length; m++)
   {
@@ -43,8 +42,7 @@ function count_in_faction(faction, chapter)
 }
 
 // find and return the person with the given id
-function get_person(people, id)
-{
+function get_person(people, id) {
   for (var p in people)
   {
     if (people[p].id == id)

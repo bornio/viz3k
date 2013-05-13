@@ -53,7 +53,7 @@ function chartFactionAppearances($scope, factions, chapters) {
     // find out how many of its members turn up in each chapter
     for (var c = 0; c < chapters.length; c++) {
       var chapter = chapters[c];
-      faction.chapters[c] = count_in_faction(faction, chapter);
+      faction.chapters[c] = countFactionMembersInChapter(faction, chapter);
     }
   }
 

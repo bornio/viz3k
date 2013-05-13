@@ -59,7 +59,7 @@ function configure_chart(faction, chapters_data)
   for (var c = 0; c < chapters.length; c++)
   {
     var chapter = chapters[c];
-    faction.chapters[c] = count_in_faction(faction, chapter);
+    faction.chapters[c] = countFactionMembersInChapter(faction, chapter);
     if (faction.chapters[c] > max_people)
     {
       max_people = faction.chapters[c];
