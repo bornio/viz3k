@@ -40,10 +40,8 @@ function isFactionMemberInChapter(person, faction, chapter) {
 
 // find and return the person with the given id
 function getPerson(people, id) {
-  for (var p in people)
-  {
-    if (people[p].id == id)
-    {
+  for (var p in people) {
+    if (people[p].id == id) {
       return people[p];
     }
   }
@@ -53,97 +51,83 @@ function getPerson(people, id) {
 
 // add a parenthesized version of a person's style name if they have one
 function personStyleParens(person) {
-  if ("style" in person)
-  {
+  if ("style" in person) {
     person.style_parens = "(" + person.style + ")";
-  }
-  else
-  {
+  } else {
     person.style_parens = "";
   }
 }
 
 // given an array of people, add a parenthesized version of each person's style name if they have one
 function peopleStyleParens(people) {
-  for (var i in people)
-  {
+  for (var i in people) {
     personStyleParens(people[i]);
   }
 }
 
 // add a parenthesized verson of a faction's type if it has one
 function labelFactionType(faction) {
-  if (faction.type != "faction")
-  {
+  if (faction.type != "faction") {
     faction.type_label = "(" + faction.type + ")";
-  }
-  else
-  {
+  } else {
     faction.type_label = "";
   }
 }
 
 // returns indices of killed-by records that match the given cause of death
-function killsOfType(kills, death_type) {
-  var kill_indices = new Array();
+function killsOfType(kills, deathType) {
+  var killIndices = new Array();
 
-  for (var d in kills)
-  {
+  for (var d in kills) {
     var death = kills[d].death;
-    if (("cause" in death) && (death.cause == death_type))
-    {
-      kill_indices.push(d);
+    if (deathIsOfType(death, deathType)) {
+      killIndices.push(d);
     }
   }
 
-  return kill_indices;
+  return killIndices;
 }
 
 // returns indices of death records that match the given cause of death
-function deathsOfType(deaths, death_type) {
-  var death_indices = new Array();
+function deathsOfType(deaths, deathType) {
+  var deathIndices = new Array();
 
-  for (var d in deaths)
-  {
+  for (var d in deaths) {
     var death = deaths[d];
-    if (("cause" in death) && (death.cause == death_type))
-    {
-      death_indices.push(d);
+    if (deathIsOfType(death, deathType)) {
+      deathIndices.push(d);
     }
   }
 
-  return death_indices;
+  return deathIndices;
 }
 
-function setResizeHandlerFor(element_id, hidden_phone) {
+function deathIsOfType(death, deathType) {
+  return (("cause" in death) && (death.cause == deathType));
+}
+
+function setResizeHandlerFor(elementId, hiddenPhone) {
   // default values
-  if (typeof(hidden_phone) === 'undefined')
-  {
-    hidden_phone = false;
+  if (typeof(hiddenPhone) === 'undefined') {
+    hiddenPhone = false;
   }
 
-  var element = document.getElementById(element_id);
+  var element = document.getElementById(elementId);
 
-  var window_resize = function()
-  {
-    var class_name = (hidden_phone) ? "hidden-phone " : "";
-    if (document.body.clientWidth < 980)
-    {
-      class_name += "span12";
-    }
-    else if (document.body.clientWidth < 1200)
-    {
-      class_name += "span10";
-    }
-    else
-    {
-      class_name += "span8 offset2";
+  var windowResize = function() {
+    var className = (hiddenPhone) ? "hidden-phone " : "";
+    if (document.body.clientWidth < 980) {
+      className += "span12";
+    } else if (document.body.clientWidth < 1200) {
+      className += "span10";
+    } else {
+      className += "span8 offset2";
     }
 
-    element.className = class_name;
+    element.className = className;
   }
 
-  window_resize();
+  windowResize();
 
-  window.addEventListener("resize", window_resize, false);
+  window.addEventListener("resize", windowResize, false);
 }
