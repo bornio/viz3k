@@ -3,7 +3,7 @@ function FactionsController($scope, $http, $q) {
   $scope.navbarUrl = "/navbar";
   $scope.navbar_selected = 2;
 
-  set_resize_handler_for("content-area", false);
+  setResizeHandlerFor("content-area", false);
 
   // get our data from the backend
   var promises = [$http.get("/data/factions"), $http.get("/data/chapters")];

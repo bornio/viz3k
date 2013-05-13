@@ -12,9 +12,9 @@ function ChapterController($scope, $http) {
   $scope.navbarUrl = "/navbar";
   $scope.navbar_selected = 1;
 
-  set_resize_handler_for("container-header");
-  set_resize_handler_for("chart-area", true);
-  set_resize_handler_for("stats-area");
+  setResizeHandlerFor("container-header");
+  setResizeHandlerFor("chart-area", true);
+  setResizeHandlerFor("stats-area");
 
   // issue an http get for the data relating to this chapter
   $http.get("/data/chapters").success(populateChapterInfo($scope, $http));

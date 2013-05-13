@@ -118,8 +118,7 @@ function deathsOfType(deaths, death_type) {
   return death_indices;
 }
 
-function set_resize_handler_for(element_id, hidden_phone)
-{
+function setResizeHandlerFor(element_id, hidden_phone) {
   // default values
   if (typeof(hidden_phone) === 'undefined')
   {
