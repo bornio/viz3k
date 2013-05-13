@@ -22,7 +22,7 @@ function PeopleController($scope, $http, $q) {
 
 function renderView($scope, people, factions, deaths) {
   // add style name (if any) in parentheses
-  people_style_parens(people);
+  peopleStyleParens(people);
 
   // add faction data to people
   for (var p in people) {

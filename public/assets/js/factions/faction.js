@@ -18,7 +18,7 @@ function Faction($scope, $http)
     }
 
     // add parentheses to all style names
-    people_style_parens(faction.members);
+    peopleStyleParens(faction.members);
 
     // assign data to the scope
     $scope.faction = faction;

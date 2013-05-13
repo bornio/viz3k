@@ -58,7 +58,7 @@ var computeCharacterStats = function($scope, nodes, links) {
   return function(nodes, links) {
     // calculate importance by sorting nodes by decreasing number of links
     nodes = sortNodesByLinks(nodes);
-    people_style_parens(nodes);
+    peopleStyleParens(nodes);
 
     // get the top five
     var topFive = nodes.slice(0,5);

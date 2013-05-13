@@ -55,8 +55,7 @@ function getPerson(people, id) {
 }
 
 // add a parenthesized version of a person's style name if they have one
-function person_style_parens(person)
-{
+function personStyleParens(person) {
   if ("style" in person)
   {
     person.style_parens = "(" + person.style + ")";
@@ -68,11 +67,10 @@ function person_style_parens(person)
 }
 
 // given an array of people, add a parenthesized version of each person's style name if they have one
-function people_style_parens(people)
-{
+function peopleStyleParens(people) {
   for (var i in people)
   {
-    person_style_parens(people[i]);
+    personStyleParens(people[i]);
   }
 }
 

@@ -32,7 +32,7 @@ var populate_person_info = function($scope, $http, people_json)
     var person = getPerson(people_json.people, person_id);
 
     // add parentheses to this person's style name
-    person_style_parens(person);
+    personStyleParens(person);
 
     // add external links (if any) to a list
     person.links = [];
