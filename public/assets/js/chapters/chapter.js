@@ -65,11 +65,11 @@ var computeCharacterStats = function($scope, nodes, links) {
 
     // death stats
     var deaths = $scope.chapter.deaths;
-    $scope.deathsCombat = deaths_of_type(deaths, "combat");
-    $scope.deathsMurder = deaths_of_type(deaths, "murder");
-    $scope.deathsExecution = deaths_of_type(deaths, "execution");
-    $scope.deathsIllness = deaths_of_type(deaths, "illness");
-    $scope.deathsSuicide = deaths_of_type(deaths, "suicide");
+    $scope.deathsCombat = deathsOfType(deaths, "combat");
+    $scope.deathsMurder = deathsOfType(deaths, "murder");
+    $scope.deathsExecution = deathsOfType(deaths, "execution");
+    $scope.deathsIllness = deathsOfType(deaths, "illness");
+    $scope.deathsSuicide = deathsOfType(deaths, "suicide");
 
     for (var d in deaths) {
       var death = deaths[d];

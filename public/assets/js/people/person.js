@@ -124,9 +124,9 @@ function populate_kills_info($scope, person_id, kills_json)
       $scope.kills = kills;
     }
 
-    $scope.kills_combat = kills_of_type(kills, "combat");
-    $scope.kills_murder = kills_of_type(kills, "murder");
-    $scope.kills_execution = kills_of_type(kills, "execution");
+    $scope.kills_combat = killsOfType(kills, "combat");
+    $scope.kills_murder = killsOfType(kills, "murder");
+    $scope.kills_execution = killsOfType(kills, "execution");
   }
 }
 

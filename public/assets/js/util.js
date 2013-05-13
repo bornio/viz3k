@@ -87,8 +87,7 @@ function labelFactionType(faction) {
 }
 
 // returns indices of killed-by records that match the given cause of death
-function kills_of_type(kills, death_type)
-{
+function killsOfType(kills, death_type) {
   var kill_indices = new Array();
 
   for (var d in kills)
@@ -104,8 +103,7 @@ function kills_of_type(kills, death_type)
 }
 
 // returns indices of death records that match the given cause of death
-function deaths_of_type(deaths, death_type)
-{
+function deathsOfType(deaths, death_type) {
   var death_indices = new Array();
 
   for (var d in deaths)
