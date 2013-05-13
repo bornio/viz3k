@@ -21,7 +21,7 @@ function renderView($scope, factions, chapters) {
 
   for (var i = 0; i < factions.length; i++) {
     // for non-generic faction types, label the type in parentheses
-    label_faction_type(factions[i]);
+    labelFactionType(factions[i]);
 
     // keep the "Other" faction (id = 99) separate
     if (factions[i].id == 99) {

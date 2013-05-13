@@ -92,7 +92,7 @@ function populate_factions_info($scope, person, factions_json)
       if (faction.id == person.faction)
       {
         primary_faction = faction;
-        label_faction_type(primary_faction);
+        labelFactionType(primary_faction);
       }
 
       // other affiliations
@@ -102,7 +102,7 @@ function populate_factions_info($scope, person, factions_json)
         if ((affiliation.faction != person.faction) &&
             (affiliation.faction == faction.id))
         {
-          label_faction_type(faction);
+          labelFactionType(faction);
           other_factions.push(faction);
         }
       }

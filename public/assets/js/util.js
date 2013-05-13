@@ -75,8 +75,7 @@ function peopleStyleParens(people) {
 }
 
 // add a parenthesized verson of a faction's type if it has one
-function label_faction_type(faction)
-{
+function labelFactionType(faction) {
   if (faction.type != "faction")
   {
     faction.type_label = "(" + faction.type + ")";
