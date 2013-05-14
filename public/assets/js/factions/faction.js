@@ -1,4 +1,4 @@
-function FactionController($scope, $http) {
+function FactionController($scope, $http, $q) {
   // use the number at the end of the URL to determine which faction's data to load
   factionNum = document.URL.split("/").pop();
 
@@ -6,36 +6,37 @@ function FactionController($scope, $http) {
   $scope.navbarUrl = "/navbar";
   $scope.navbar_selected = 2;
 
-  var populateFactionInfo = function(faction) {
-    // this is so we don't momentarily see "()" by itself before the text loads asynchronously
-    $scope.factionType = "(" + faction.type + ")";
-    $scope.factionLinks = [];
-    if ("wiki" in faction) {
-      $scope.factionLinks.push({ text:"wiki", href:faction.wiki });
-    }
+  // get our data from the backend
+  var promises = [$http.get("/data/factions/" + factionNum), $http.get("/data/chapters")];
+  $q.all(promises).then(function(results) {
+    var faction = results[0].data;
+    var chapters = results[1].data.chapters;
 
-    // add parentheses to all style names
-    peopleStyleParens(faction.members);
-
-    // assign data to the scope
-    $scope.faction = faction;
-    document.title = $scope.faction.name + " " + $scope.factionType + " - Viz3k";
-
-    // per-chapter stats
-    var populateChartTab = function(chaptersData) {
-      chartFactionAppearances(faction, chaptersData);
-    }
-
-    // issue an http get to grab the chapters info for the faction appearance timeline
-    $http.get("/data/chapters").success(populateChartTab);
-  }
-
-  // issue an http get to grab the info for this faction
-  $http.get("/data/factions/" + factionNum).success(populateFactionInfo);
+    // we have all the data we need
+    renderView($scope, faction, chapters);
+  });
 }
 
-function chartFactionAppearances(faction, chaptersData) {
-  chapters = chaptersData.chapters;
+function renderView($scope, faction, chapters) {
+  // this is so we don't momentarily see "()" by itself before the text loads asynchronously
+  $scope.factionType = "(" + faction.type + ")";
+  $scope.factionLinks = [];
+  if ("wiki" in faction) {
+    $scope.factionLinks.push({ text:"wiki", href:faction.wiki });
+  }
+
+  // add parentheses to all style names
+  peopleStyleParens(faction.members);
+
+  // assign data to the scope
+  $scope.faction = faction;
+  document.title = $scope.faction.name + " " + $scope.factionType + " - Viz3k";
+
+  // per-chapter stats
+  chartFactionAppearances(faction, chapters);
+}
+
+function chartFactionAppearances(faction, chapters) {
   var factions = new Array();
 
   faction.chapters = new Array(chapters.length);
