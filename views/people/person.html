@@ -15,7 +15,7 @@
   </head>
   <body>
     <!-- include the navbar at the top -->
-    <div ng-include src="navbar_url"></div>
+    <div ng-include src="navbarUrl"></div>
 
     <!-- content goes here -->
     <div class="container">
@@ -27,15 +27,15 @@
               {{person.name}}
               <span id="style-name" class="muted" style="cursor: help;"
                     data-placement="bottom" data-trigger="click" data-html="true" data-container="body">
-                {{style_parens}}
+                {{styleParens}}
               </span>
             </p>
             <p>
               <span ng-repeat="link in person.links"> ( <a href="{{link.href}}">{{link.text}}</a> )</span>
             <p>
             <p>Mentioned in chapters:
-              <span ng-repeat="chapter_appearances in person.appearances">
-                <a href="/chapters/{{chapter_appearances.chapter}}">{{chapter_appearances.chapter}}</a><span ng-hide="$index == person.appearances.length - 1">, </span>
+              <span ng-repeat="chapterAppearances in person.appearances">
+                <a href="/chapters/{{chapterAppearances.chapter}}">{{chapterAppearances.chapter}}</a><span ng-hide="$index == person.appearances.length - 1">, </span>
               </span>
             </p>
           </div>
@@ -59,19 +59,19 @@
                     <tr>
                       <td class="table-faction-badge">
                         <a href="/factions/{{person.faction}}">
-                          <div class="faction-badge" style="{{'background: ' + primary_faction.color + ';'}}"></div>
+                          <div class="faction-badge" style="{{'background: ' + primaryFaction.color + ';'}}"></div>
                         </a>
                       </td>
                       <td class="table-faction">
                         <span class="lead">
-                          <a href="/factions/{{person.faction}}">{{primary_faction.name}}</a>
-                          <span class="muted">{{primary_faction.type_label}}</span>
+                          <a href="/factions/{{person.faction}}">{{primaryFaction.name}}</a>
+                          <span class="muted">{{primaryFaction.type_label}}</span>
                         </span>
                       </td>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr ng-repeat="faction in other_factions">
+                    <tr ng-repeat="faction in otherFactions">
                       <td class="table-faction-badge" style="border-style: none;">
                         <a href="/factions/{{faction.id}}">
                           <div class="faction-badge" style="{{'background: ' + faction.color + ';'}}"></div>
@@ -94,7 +94,7 @@
                   <b>Cause of death:</b>
                   {{person.death.cause}}
                 </p>
-                <p ng-show="has_killers">
+                <p ng-show="hasKillers">
                   <b>Killed by:</b>
                   <span ng-repeat="killer in killers">
                     <a href="/people/{{killer.id}}">{{killer.name}}</a><span ng-hide="$index == killers.length - 1">, </span>
@@ -106,22 +106,22 @@
                 <p class="lead">
                   Total characters killed: {{kills.length}}
                 </p>
-                <p ng-show="kills_combat.length > 0">
+                <p ng-show="killsCombat.length > 0">
                   <b>Killed in combat:</b>
-                  <span ng-repeat="k in kills_combat">
-                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == kills_combat.length - 1">, </span>
+                  <span ng-repeat="k in killsCombat">
+                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == killsCombat.length - 1">, </span>
                   </span>
                 </p>
-                <p ng-show="kills_murder.length > 0">
+                <p ng-show="killsMurder.length > 0">
                   <b>Murdered:</b>
-                  <span ng-repeat="k in kills_murder">
-                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == kills_murder.length - 1">, </span>
+                  <span ng-repeat="k in killsMurder">
+                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == killsMurder.length - 1">, </span>
                   </span>
                 </p>
-                <p ng-show="kills_execution.length > 0">
+                <p ng-show="killsExecution.length > 0">
                   <b>Executed:</b>
-                  <span ng-repeat="k in kills_execution">
-                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == kills_execution.length - 1">, </span>
+                  <span ng-repeat="k in killsExecution">
+                    <a href="/people/{{kills[k].id}}">{{kills[k].name}}</a><span ng-hide="$index == killsExecution.length - 1">, </span>
                   </span>
                 </p>
               </div>
