@@ -10,7 +10,7 @@ function ChapterController($scope, $http) {
   
   // navbar settings
   $scope.navbarUrl = "/navbar";
-  $scope.navbar_selected = 1;
+  $scope.navbarSelected = 1;
 
   setResizeHandlerFor("container-header");
   setResizeHandlerFor("chart-area", true);

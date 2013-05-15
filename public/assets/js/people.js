@@ -1,7 +1,7 @@
 function PeopleController($scope, $http, $q) {
   // navbar settings
   $scope.navbarUrl = "/navbar";
-  $scope.navbar_selected = 3;
+  $scope.navbarSelected = 3;
 
   // hide some stuff until it's ready
   $scope.loaded = false;

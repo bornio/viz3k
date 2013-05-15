@@ -1,7 +1,7 @@
 function ChaptersController($scope, $http) {
   // navbar settings
   $scope.navbarUrl = "/navbar";
-  $scope.navbar_selected = 1;
+  $scope.navbarSelected = 1;
 
   // default ordering of chapters list is by chapter number
   $scope.orderProp = "chapter";

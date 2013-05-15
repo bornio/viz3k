@@ -4,7 +4,7 @@ function FactionController($scope, $http, $q) {
 
   // navbar settings
   $scope.navbarUrl = "/navbar";
-  $scope.navbar_selected = 2;
+  $scope.navbarSelected = 2;
 
   // get our data from the backend
   var promises = [$http.get("/data/factions/" + factionNum), $http.get("/data/chapters")];

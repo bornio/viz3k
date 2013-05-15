@@ -5,7 +5,7 @@ function PersonController($scope, $http, $q) {
 
   // navbar settings
   $scope.navbarUrl = "/navbar";
-  $scope.navbar_selected = 3;
+  $scope.navbarSelected = 3;
 
   // initial values
   $scope.styleParens = "";

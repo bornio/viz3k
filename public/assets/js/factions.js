@@ -1,7 +1,7 @@
 function FactionsController($scope, $http, $q) {
   // navbar settings
   $scope.navbarUrl = "/navbar";
-  $scope.navbar_selected = 2;
+  $scope.navbarSelected = 2;
 
   setResizeHandlerFor("content-area", false);
 
