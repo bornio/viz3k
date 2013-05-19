@@ -40,67 +40,140 @@ function renderView($scope, people, factions, deaths) {
   $scope.loaded = true;
 
   // save death stats to scope
-  $scope.deathsCombat = deathsOfType(deaths, "combat");
-  $scope.deathsMurder = deathsOfType(deaths, "murder");
-  $scope.deathsExecution = deathsOfType(deaths, "execution");
-  $scope.deathsIllness = deathsOfType(deaths, "illness");
-  $scope.deathsSuicide = deathsOfType(deaths, "suicide");
   $scope.deaths = deaths;
-  $scope.combatants = topCombatants(people);
+
+  // count deaths of each type
+  var counts = {
+    combat: deathsOfType(deaths, "combat").length,
+    murder: deathsOfType(deaths, "murder").length,
+    execution: deathsOfType(deaths, "execution").length,
+    illness: deathsOfType(deaths, "illness").length,
+    suicide: deathsOfType(deaths, "suicide").length,
+  }
 
   // draw charts
-  var chartDeathsByCause = drawDeathsChart($scope);
-  var chartTopCombatants = drawCombatantsChart($scope);
+  var barThickness = 20;
+  var chartDeathsByCause = drawDeathsChart(counts, barThickness);
+  var chartTopCombatants = drawCombatantsChart(topCombatants(people), barThickness);
 }
 
-function drawDeathsChart($scope) {
-  var deathsByCause = new Array(5);
-  deathsByCause[0] = $scope.deathsCombat.length;
-  deathsByCause[1] = $scope.deathsMurder.length;
-  deathsByCause[2] = $scope.deathsExecution.length;
-  deathsByCause[3] = $scope.deathsIllness.length;
-  deathsByCause[4] = $scope.deathsSuicide.length;
+function drawDeathsChart(deathCounts, barThickness) {
+  var chartData = [
+    {
+      key: "Deaths by cause",
+      values: [
+        {
+          label: "Combat",
+          color: "#cc3333",
+          value: deathCounts.combat
+        },
+        {
+          label: "Murder",
+          color: "#333333",
+          value: deathCounts.murder
+        },
+        {
+          label: "Execution",
+          color: "#ff8800",
+          value: deathCounts.execution
+        },
+        {
+          label: "Illness",
+          color: "#3388bb",
+          value: deathCounts.illness
+        },
+        {
+          label: "Suicide",
+          color: "#999999",
+          value: deathCounts.suicide
+        }
+      ]
+    }
+  ];
 
-  var causeColors = new Array(5);
-  causeColors[0] = "#cc3333";
-  causeColors[1] = "#333333";
-  causeColors[2] = "#ff8800";
-  causeColors[3] = "#3388bb";
-  causeColors[4] = "#999999";
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarHorizontalChart()
+      .x(function(d) { return d.label })
+      .y(function(d) { return d.value })
+      .barColor(function(d) { return d.color })
+      .margin({top: 0, right: 20, bottom: 0, left: 100})
+      .showValues(true).valueFormat(d3.format(',d'))
+      .showLegend(false)
+      .tooltips(false)
+      .showControls(false);
 
-  var causeLabels = new Array(5);
-  causeLabels[0] = { text: "Combat" };
-  causeLabels[1] = { text: "Murder" };
-  causeLabels[2] = { text: "Execution" };
-  causeLabels[3] = { text: "Illness" };
-  causeLabels[4] = { text: "Suicide" };
+    d3.select('#chart-deaths-by-cause svg').datum(chartData)
+      .attr("width", "100%") // for firefox -- WebKit defaults to 100% anyway
+      .attr("height", barThickness*5)
+      .call(chart);
 
-  var chartDeathsByCause = chartBarHorizontal("chart-deaths-by-cause", deathsByCause, causeColors, causeLabels);
-  window.addEventListener("resize", chartDeathsByCause.resized, false);
+    nv.utils.windowResize(chart.update);
 
-  return chartDeathsByCause;
+    return chart;
+  });
 }
 
-function drawCombatantsChart($scope) {
-  var combatants = new Array($scope.combatants.length);
-  for (var i in $scope.combatants) {
-    combatants[i] = $scope.combatants[i].killed_combat.length;
-  }
-
-  var barColors = new Array(combatants.length);
+function drawCombatantsChart(combatants, barThickness) {
+  var values = [];
   for (var i in combatants) {
-    barColors[i] = "#77aadd";
+    //var href = "/people/" + String(combatants[i].id);
+    values.push({
+      label: combatants[i].name,
+      href: "/people/" + String(combatants[i].id),
+      value: combatants[i].killed_combat.length
+    });
   }
 
-  var nameLabels = new Array(combatants.length);
-  for (var i in combatants) {
-    nameLabels[i] = { text: $scope.combatants[i].name, href: "/people/" + String($scope.combatants[i].id) };
+  var chartData = [{
+    label: "Deadliest combatants",
+    color: "#6699cc",
+    values: values
+  }];
+  
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarHorizontalChart()
+      .x(function(d) { return d.label })
+      .y(function(d) { return d.value })
+      .margin({top: 0, right: 20, bottom: 0, left: 100})
+      .showValues(true).valueFormat(d3.format(',d'))
+      .showLegend(false)
+      .tooltips(false)
+      .showControls(false);
+
+    d3.select('#chart-top-combatants svg').datum(chartData)
+      .attr("width", "100%") // for firefox -- WebKit defaults to 100% anyway
+      .attr("height", barThickness*combatants.length)
+      .call(chart);
+
+    var redraw = replaceLabels(chart, values, barThickness);
+    nv.utils.windowResize(chart.update);
+    nv.utils.windowResize(redraw);
+    redraw();
+
+    return chart;
+  });
+}
+
+function replaceLabels(chart, values, barThickness) {
+  return function() {
+    // remove default axis labels
+    var axis = d3.select('#chart-top-combatants svg').select('.nv-x .nv-axis').select('g');
+    axis.selectAll('g').remove();
+
+    // add our own axis labels with hyperlinks
+    var scale = chart.xAxis.scale();
+    var g = axis.selectAll("g").data(values).enter().append("g");
+    var a = g.append("a")
+      .attr("xlink:href", function(d) { return d.href; })
+      .append("text")
+      .text(function(d) { return d.label; });
+
+    a.attr("class", "axis-labels")
+      .attr("x", -chart.xAxis.tickPadding())
+      .attr("y", function(d, i) { return scale(i) + barThickness/2; })
+      .attr("text-anchor", "end")
+      .attr("dominant-baseline", "central");
   }
-
-  var chartTopCombatants = chartBarHorizontal("chart-top-combatants", combatants, barColors, nameLabels);
-  window.addEventListener("resize", chartTopCombatants.resized, false);
-
-  return chartTopCombatants;
 }
 
 function topCombatants(people) {

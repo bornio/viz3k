@@ -17,3 +17,8 @@ td.table-person-num-appearances {
   vertical-align: middle;
   width: 20%;
 }
+
+/* hide chart axis */
+g.nv-axis.nv-y {
+  display: none;
+}

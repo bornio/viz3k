@@ -32,11 +32,15 @@
             <div class="accordion-body collapse" id="collapse-deaths">
               <div class="accordion-inner" id="deaths">
                 <p class="lead">Total deaths: {{deaths.length}}</p>
-                <div id="chart-deaths-by-cause"></div>
+                <div id="chart-deaths-by-cause">
+                  <svg></svg>
+                </div>
                 <hr>
 
                 <p class="lead">Deadliest combatants</p>
-                <div id="chart-top-combatants"></div>
+                <div id="chart-top-combatants">
+                  <svg></svg>
+                </div>
                 <small class="muted">Combatants are ranked on the number of characters they've killed in battle. Note that data is incomplete and rankings currently reflect only a portion of the novel.</small>
               </div>
             </div>
@@ -97,6 +101,7 @@
 
     <!-- third party javascript -->
     <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
+    <script type="text/javascript" src="/lib/nv.d3.min.js"></script>
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
@@ -106,8 +111,5 @@
 
     <!-- controller for this view -->
     <script type="text/javascript" src="/assets/js/people.js"></script>
-
-    <!-- charts used by this view -->
-    <script type="text/javascript" src="/assets/js/charts/bar_horizontal.js"></script>
   </body>
 </html>
