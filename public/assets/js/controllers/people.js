@@ -42,18 +42,9 @@ function renderView($scope, people, factions, deaths) {
   // save death stats to scope
   $scope.deaths = deaths;
 
-  // count deaths of each type
-  var counts = {
-    combat: deathsOfType(deaths, "combat").length,
-    murder: deathsOfType(deaths, "murder").length,
-    execution: deathsOfType(deaths, "execution").length,
-    illness: deathsOfType(deaths, "illness").length,
-    suicide: deathsOfType(deaths, "suicide").length,
-  }
-
   // draw charts
   var barThickness = 20;
-  var chartDeathsByCause = drawDeathsChart(counts, barThickness);
+  var chartDeathsByCause = drawDeathsChart(countDeathsByType(deaths), barThickness);
   var chartTopCombatants = drawCombatantsChart(topCombatants(people), barThickness);
 }
 

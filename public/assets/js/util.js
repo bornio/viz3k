@@ -106,6 +106,27 @@ function deathIsOfType(death, deathType) {
   return (("cause" in death) && (death.cause == deathType));
 }
 
+function deathsByType(deaths) {
+  return {
+    combat: deathsOfType(deaths, "combat"),
+    murder: deathsOfType(deaths, "murder"),
+    execution: deathsOfType(deaths, "execution"),
+    illness: deathsOfType(deaths, "illness"),
+    suicide: deathsOfType(deaths, "suicide")
+  }
+}
+
+function countDeathsByType(deaths) {
+  var categorized = deathsByType(deaths);
+  return {
+    combat: categorized.combat.length,
+    murder: categorized.murder.length,
+    execution: categorized.execution.length,
+    illness: categorized.illness.length,
+    suicide: categorized.suicide.length
+  }
+}
+
 function setResizeHandlerFor(elementId, hiddenPhone) {
   // default values
   if (typeof(hiddenPhone) === 'undefined') {
