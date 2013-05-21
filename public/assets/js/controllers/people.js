@@ -43,12 +43,11 @@ function renderView($scope, people, factions, deaths) {
   $scope.deaths = deaths;
 
   // draw charts
-  var barThickness = 20;
-  var chartDeathsByCause = drawDeathsChart(countDeathsByType(deaths), barThickness);
-  var chartTopCombatants = drawCombatantsChart(topCombatants(people), barThickness);
+  var chartDeathsByCause = drawDeathsChart("#chart-deaths-by-cause", countDeathsByType(deaths));
+  var chartTopCombatants = drawCombatantsChart("#chart-top-combatants", topCombatants(people));
 }
 
-function drawDeathsChart(deathCounts, barThickness) {
+function drawDeathsChart(elementId, deathCounts) {
   var chartData = [
     {
       key: "Deaths by cause",
@@ -82,29 +81,12 @@ function drawDeathsChart(deathCounts, barThickness) {
     }
   ];
 
-  nv.addGraph(function() {
-    var chart = nv.models.multiBarHorizontalChart()
-      .x(function(d) { return d.label })
-      .y(function(d) { return d.value })
-      .barColor(function(d) { return d.color })
-      .margin({top: 0, right: 20, bottom: 0, left: 100})
-      .showValues(true).valueFormat(d3.format(',d'))
-      .showLegend(false)
-      .tooltips(false)
-      .showControls(false);
-
-    d3.select('#chart-deaths-by-cause svg').datum(chartData)
-      .attr("width", "100%") // for firefox -- WebKit defaults to 100% anyway
-      .attr("height", barThickness*5)
-      .call(chart);
-
-    nv.utils.windowResize(chart.update);
-
-    return chart;
-  });
+  var chart = chartBarHorizontal().data(chartData).height(20*5).useBarColors(true);
+  chart.render(elementId);
+  return chart;
 }
 
-function drawCombatantsChart(combatants, barThickness) {
+function drawCombatantsChart(elementId, combatants) {
   var values = [];
   for (var i in combatants) {
     //var href = "/people/" + String(combatants[i].id);
@@ -121,50 +103,10 @@ function drawCombatantsChart(combatants, barThickness) {
     values: values
   }];
   
-  nv.addGraph(function() {
-    var chart = nv.models.multiBarHorizontalChart()
-      .x(function(d) { return d.label })
-      .y(function(d) { return d.value })
-      .margin({top: 0, right: 20, bottom: 0, left: 100})
-      .showValues(true).valueFormat(d3.format(',d'))
-      .showLegend(false)
-      .tooltips(false)
-      .showControls(false);
-
-    d3.select('#chart-top-combatants svg').datum(chartData)
-      .attr("width", "100%") // for firefox -- WebKit defaults to 100% anyway
-      .attr("height", barThickness*combatants.length)
-      .call(chart);
-
-    var redraw = replaceLabels(chart, values, barThickness);
-    nv.utils.windowResize(chart.update);
-    nv.utils.windowResize(redraw);
-    redraw();
-
-    return chart;
-  });
-}
-
-function replaceLabels(chart, values, barThickness) {
-  return function() {
-    // remove default axis labels
-    var axis = d3.select('#chart-top-combatants svg').select('.nv-x .nv-axis').select('g');
-    axis.selectAll('g').remove();
-
-    // add our own axis labels with hyperlinks
-    var scale = chart.xAxis.scale();
-    var g = axis.selectAll("g").data(values).enter().append("g");
-    var a = g.append("a")
-      .attr("xlink:href", function(d) { return d.href; })
-      .append("text")
-      .text(function(d) { return d.label; });
-
-    a.attr("class", "axis-labels")
-      .attr("x", -chart.xAxis.tickPadding())
-      .attr("y", function(d, i) { return scale(i) + barThickness/2; })
-      .attr("text-anchor", "end")
-      .attr("dominant-baseline", "central");
-  }
+  var chart = chartBarHorizontal().data(chartData).height(20*combatants.length);
+  chart.customLabels(values);
+  chart.render(elementId);
+  return chart;
 }
 
 function topCombatants(people) {

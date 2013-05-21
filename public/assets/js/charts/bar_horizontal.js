@@ -1,149 +1,121 @@
 /**
- * General purpose horizontal bar chart.
+ * General purpose horizontal bar chart using NVD3.js.
  */
-function chartBarHorizontal(elementId, data, colors, labels, barThickness, showValues) {
-  // default values
-  if (typeof(barThickness) === 'undefined') {
-    barThickness = 20;
-  }
-  if (typeof(showValues) === 'undefined') {
-    showValues = true;
-  }
+function chartBarHorizontal() {
+  // default settings
+  var data = [];
+  var customLabels = [];
+  var showValues = true;
+  var valueFormat = d3.format(',d');
+  var useBarColors = false;
+  var height = 100;
 
-  var chartInitialized = false;
+  // the chart object that will be returned
+  var chart = {};
 
-  // append the svg element for drawing the chart on
-  var svg = d3.select("#" + elementId).append("svg");
+  // expose getter/setters
 
-  // compute chart height based on number of elements
-  var chartHeight = data.length*barThickness;
-
-  // set the height of svg element based on chart height and padding amounts
-  var paddingLeft = 120; // need enough space for text labels
-  var paddingTop = 6;
-  var paddingBottom = 6;
-  var svgHeight = chartHeight + paddingTop + paddingBottom;
-  svg.attr("width", "100%"); // for firefox -- WebKit defaults to 100% anyway
-  svg.attr("height", svgHeight);
-
-  var yScale = d3.scale.linear()
-    .domain([0, data.length])
-    .range([0, chartHeight]);
-
-  svg.append("g").attr("id", "bar-group")
-    .attr("transform", "translate(" + paddingLeft + "," + paddingTop + ")");
-  svg.append("g").attr("id", "labels-group")
-    .attr("transform", "translate(" + paddingLeft + "," + paddingTop + ")");
-
-  // create an unlabeled y axis (this should have a constant size independent of window resizing)
-  var yAxis = d3.svg.axis();
-  yAxis.scale(yScale)
-    .orient("left")
-    .ticks(0)
-    .tickSize(0);
-  svg.append("g").attr("class", "axis")
-    .attr("transform", "translate(" + paddingLeft + "," + paddingTop + ")")
-    .call(yAxis);
-
-  // max of all data elements is used to scale the bar lengths
-  var maxXValue = d3.max(data)*1.5;
-
-  var bars = svg.select("#bar-group").selectAll("rect").data(data);
-  var valueLabels = svg.select("#bar-group").selectAll("text").data(data);
-  var axisLabels = defineAxisLabels(svg.select("#labels-group"), labels);
-
-  // render (or re-render) the chart as needed, trying to fit x scale to width of parent element
-  var chartResized = function() {
-    // recompute element widths based on the width of the parent element
-    var svgWidth = document.getElementById(elementId).clientWidth;
-    var chartWidth = svgWidth - paddingLeft;
-
-    // recompute x scale
-    var xScale = d3.scale.linear()
-      .domain([0, maxXValue])
-      .range([0, chartWidth]);
-
-    // set or update color-coded bars for every data element, along with labels
-    if (!chartInitialized) {
-      bars.enter().append("rect");
-      initAxisLabels(axisLabels);
-      
-      if (showValues) {
-        valueLabels.enter().append("text");
-      }
-    }
-
-    bars.attr("class", "bar-horizontal")
-      .attr("x", 0)
-      .attr("y", function(d, i) { return yScale(i); })
-      .attr("width", function(d) { return xScale(d); })
-      .attr("height", barThickness - 1)
-      .style("fill", function(d, i) { return colors[i]; });
-
-    drawAxisLabels(axisLabels, yScale, barThickness);
-
-    if (showValues) {
-      valueLabels.attr("class", "value-labels")
-      .attr("x", function(d) { return xScale(d) + 4; })
-      .attr("y", function(d, i) { return yScale(i) + barThickness/2; })
-      .attr("dominant-baseline", "central")
-      .text(function(d) { return d; });
-    }
-    
-    chartInitialized = true;
-  }
-
-  // call chartResized() to draw the chart for the first time
-  chartResized();
-
-  // return the resize handler so it can be used by the caller
-  return {
-    resized : chartResized
+  chart.data = function(value) {
+    console.log("received chart data", value);
+    if (!arguments.length) return data;
+    data = value;
+    return chart;
   };
-}
 
-function defineAxisLabels(parent, labels)
-{
-  var hasHrefs = false;
-  for (var i in labels) {
-    if ("href" in labels[i]) {
-      hasHrefs = true;
-    } else {
-      labels[i].href = "#";
+  chart.showValues = function(value) {
+    if (!arguments.length) return showValues;
+    showValues = value;
+    return chart;
+  };
+
+  chart.valueFormat = function(value) {
+    if (!arguments.length) return valueFormat;
+    valueFormat = value;
+    return chart;
+  };
+
+  chart.height = function(value) {
+    if (!arguments.length) return height;
+    height = value;
+    return chart;
+  };
+
+  // If set to true, the render() function will look for a color attribute on each bar's data value.
+  chart.useBarColors = function(value) {
+    if (!arguments.length) return useBarColors;
+    useBarColors = value;
+    return chart;
+  }
+
+  /**
+   * If set to a non-empty array, drawCustomLabels() will be called by render() to replace the default NVD3 axis labels
+   * with our own custom ones. There should be as many labels as bars in the chart. Each label's label attribute is the
+   * text displayed, while the href attribute is used to turn each label into a clickable link.
+   */
+  chart.customLabels = function(value) {
+    if (!arguments.length) return customLabels;
+    customLabels = value;
+    return chart;
+  }
+
+  function drawCustomLabels(nvChart, elementId) {
+    return function() {
+      var offset = height/customLabels.length;
+      var scale = nvChart.xAxis.scale();
+
+      // remove default axis labels
+      var axis = d3.select(elementId + " svg").select('.nv-x .nv-axis').select('g');
+      axis.selectAll('g').remove();
+
+      // add our own axis labels with hyperlinks
+      var g = axis.selectAll("g").data(customLabels).enter().append("g");
+      var a = g.append("a")
+        .attr("xlink:href", function(d) { return d.href; })
+        .append("text")
+        .text(function(d) { return d.label; });
+
+      a.attr("class", "axis-labels")
+        .attr("x", -nvChart.xAxis.tickPadding())
+        .attr("y", function(d, i) { return scale(i) + offset/2; })
+        .attr("text-anchor", "end")
+        .attr("dominant-baseline", "central");
     }
   }
 
-  if (hasHrefs) {
-    return {
-      anchors : parent.selectAll("a").data(labels)
-    };
-  } else {
-    return {
-      texts : parent.selectAll("text").data(labels)
-    };
-  }
-}
+  // render the chart using settings
+  chart.render = function(elementId) {
+    nv.addGraph(function() {
+      var nvChart = nv.models.multiBarHorizontalChart()
+        .x(function(d) { return d.label })
+        .y(function(d) { return d.value })
+        .margin({top: 0, right: 20, bottom: 0, left: 100})
+        .showLegend(false)
+        .tooltips(false)
+        .showControls(false)
+        .showValues(showValues).valueFormat(valueFormat);
 
-function initAxisLabels(axisLabels) {
-  if ("anchors" in axisLabels) {
-    axisLabels.anchors.enter().append("a");
-    axisLabels.texts = axisLabels.anchors.append("text");
-  } else {
-    axisLabels.texts.enter().append("text");
-  }
-}
+      if (useBarColors) {
+        nvChart.barColor(function(d) { return d.color });
+      }
+      
+      d3.select(elementId + " svg").datum(data)
+        .attr("width", "100%") // for firefox -- WebKit defaults to 100% anyway
+        .attr("height", height)
+        .call(nvChart);
 
-function drawAxisLabels(axisLabels, yScale, barThickness)
-{
-  if ("anchors" in axisLabels) {
-    axisLabels.anchors.attr("class", "axis-labels")
-      .attr("xlink:href", function(d) { return d.href; });
+      nv.utils.windowResize(nvChart.update);
+
+      if (customLabels.length > 0) {
+        var updated = drawCustomLabels(nvChart, elementId);
+        nv.utils.windowResize(updated);
+        updated();
+      }
+
+      return nvChart;
+    });
+
+    return chart;
   }
-  
-  axisLabels.texts.attr("class", "axis-labels")
-    .attr("x", -6)
-    .attr("y", function(d, i) { return yScale(i) + barThickness/2; })
-    .attr("text-anchor", "end")
-    .attr("dominant-baseline", "central")
-    .text(function(d) { return d.text; });
-}
+
+  return chart;
+};
