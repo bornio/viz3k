@@ -6,6 +6,8 @@ function chartBarHorizontal() {
   var data = [];
   var customLabels = [];
   var showValues = true;
+  var showXAxis = true;
+  var showYAxis = true;
   var valueFormat = d3.format(',d');
   var useBarColors = false;
   var height = 100;
@@ -25,6 +27,25 @@ function chartBarHorizontal() {
   chart.showValues = function(value) {
     if (!arguments.length) return showValues;
     showValues = value;
+    return chart;
+  };
+
+  chart.showAxes = function(value) {
+    if (!arguments.length) return showAxes;
+    showXAxis = value;
+    showYAxis = value;
+    return chart;
+  };
+
+  chart.showYAxis = function(value) {
+    if (!arguments.length) return showAxes;
+    showYAxis = value;
+    return chart;
+  };
+
+  chart.showXAxis = function(value) {
+    if (!arguments.length) return showAxes;
+    showXAxis = value;
     return chart;
   };
 
@@ -82,21 +103,36 @@ function chartBarHorizontal() {
     }
   }
 
-  // render the chart using settings
+  // configure the NVD3.js multibar horizontal chart based on our settings
+  chart.configure = function() {
+    var nvChart = nv.models.multiBarHorizontalChart()
+      .x(function(d) { return d.label })
+      .y(function(d) { return d.value })
+      .margin({top: 0, right: 20, bottom: 0, left: 100})
+      .showLegend(false)
+      .tooltips(false)
+      .showControls(false)
+      .showValues(showValues).valueFormat(valueFormat);
+
+    if (useBarColors) {
+      nvChart.barColor(function(d) { return d.color });
+    }
+
+    if (!showXAxis) {
+      nvChart.xAxis.tickValues([]);
+    }
+
+    if (!showYAxis) {
+      nvChart.yAxis.tickValues([]);
+    }
+
+    return nvChart;
+  }
+
+  // render the chart
   chart.render = function(elementId) {
     nv.addGraph(function() {
-      var nvChart = nv.models.multiBarHorizontalChart()
-        .x(function(d) { return d.label })
-        .y(function(d) { return d.value })
-        .margin({top: 0, right: 20, bottom: 0, left: 100})
-        .showLegend(false)
-        .tooltips(false)
-        .showControls(false)
-        .showValues(showValues).valueFormat(valueFormat);
-
-      if (useBarColors) {
-        nvChart.barColor(function(d) { return d.color });
-      }
+      var nvChart = chart.configure();
       
       d3.select(elementId + " svg").datum(data)
         .attr("width", "100%") // for firefox -- WebKit defaults to 100% anyway
@@ -105,7 +141,8 @@ function chartBarHorizontal() {
 
       nv.utils.windowResize(nvChart.update);
 
-      if (customLabels.length > 0) {
+      // draw custom labels, if any, on the x axis
+      if (showXAxis && customLabels.length > 0) {
         var updated = drawCustomLabels(nvChart, elementId);
         nv.utils.windowResize(updated);
         updated();

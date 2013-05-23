@@ -81,8 +81,14 @@ function drawDeathsChart(elementId, deathCounts) {
     }
   ];
 
-  var chart = chartBarHorizontal().data(chartData).height(20*5).useBarColors(true);
+  var chart = chartBarHorizontal()
+    .data(chartData)
+    .height(20*5)
+    .useBarColors(true)
+    .showYAxis(false);
+
   chart.render(elementId);
+  
   return chart;
 }
 
@@ -103,9 +109,14 @@ function drawCombatantsChart(elementId, combatants) {
     values: values
   }];
   
-  var chart = chartBarHorizontal().data(chartData).height(20*combatants.length);
-  chart.customLabels(values);
+  var chart = chartBarHorizontal()
+    .data(chartData)
+    .height(20*combatants.length)
+    .showYAxis(false)
+    .customLabels(values);
+
   chart.render(elementId);
+
   return chart;
 }
 
