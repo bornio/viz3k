@@ -44,35 +44,7 @@ function renderView($scope, people, factions, deaths) {
 
   // draw charts
   var chartDeathsByCause = chartDeaths().data(countDeathsByType(deaths)).render("#chart-deaths-by-cause");
-  var chartTopCombatants = drawCombatantsChart("#chart-top-combatants", topCombatants(people));
-}
-
-function drawCombatantsChart(elementId, combatants) {
-  var values = [];
-  for (var i in combatants) {
-    //var href = "/people/" + String(combatants[i].id);
-    values.push({
-      label: combatants[i].name,
-      href: "/people/" + String(combatants[i].id),
-      value: combatants[i].killed_combat.length
-    });
-  }
-
-  var chartData = [{
-    label: "Deadliest combatants",
-    color: "#6699cc",
-    values: values
-  }];
-  
-  var chart = chartBarHorizontal()
-    .data(chartData)
-    .height(20*combatants.length)
-    .showYAxis(false)
-    .customLabels(values);
-
-  chart.render(elementId);
-
-  return chart;
+  var chartTopCombatants = chartCombatants().data(topCombatants(people)).render("#chart-top-combatants");
 }
 
 function topCombatants(people) {
