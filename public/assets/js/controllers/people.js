@@ -43,53 +43,8 @@ function renderView($scope, people, factions, deaths) {
   $scope.deaths = deaths;
 
   // draw charts
-  var chartDeathsByCause = drawDeathsChart("#chart-deaths-by-cause", countDeathsByType(deaths));
+  var chartDeathsByCause = chartDeaths().data(countDeathsByType(deaths)).render("#chart-deaths-by-cause");
   var chartTopCombatants = drawCombatantsChart("#chart-top-combatants", topCombatants(people));
-}
-
-function drawDeathsChart(elementId, deathCounts) {
-  var chartData = [
-    {
-      key: "Deaths by cause",
-      values: [
-        {
-          label: "Combat",
-          color: "#cc3333",
-          value: deathCounts.combat
-        },
-        {
-          label: "Murder",
-          color: "#333333",
-          value: deathCounts.murder
-        },
-        {
-          label: "Execution",
-          color: "#ff8800",
-          value: deathCounts.execution
-        },
-        {
-          label: "Illness",
-          color: "#3388bb",
-          value: deathCounts.illness
-        },
-        {
-          label: "Suicide",
-          color: "#999999",
-          value: deathCounts.suicide
-        }
-      ]
-    }
-  ];
-
-  var chart = chartBarHorizontal()
-    .data(chartData)
-    .height(20*5)
-    .useBarColors(true)
-    .showYAxis(false);
-
-  chart.render(elementId);
-  
-  return chart;
 }
 
 function drawCombatantsChart(elementId, combatants) {
