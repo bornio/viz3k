@@ -18,7 +18,6 @@ function chartBarHorizontal() {
   // expose getter/setters
 
   chart.data = function(value) {
-    console.log("received chart data", value);
     if (!arguments.length) return data;
     data = value;
     return chart;
