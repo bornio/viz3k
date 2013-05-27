@@ -27,3 +27,12 @@ RSpec::Core::RakeTask.new(:spec_network) do |task|
   task.rspec_opts += ' --tag network:true'
   task.fail_on_error = false
 end
+
+begin
+  require 'jasmine'
+  load 'jasmine/tasks/jasmine.rake'
+rescue LoadError
+  task :jasmine do
+    abort "Jasmine is not available. In order to run jasmine, you must: (sudo) gem install jasmine"
+  end
+end
