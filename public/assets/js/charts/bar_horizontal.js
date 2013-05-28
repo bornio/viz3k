@@ -79,27 +79,29 @@ function chartBarHorizontal() {
   }
 
   function drawCustomLabels(nvChart, elementId) {
-    return function() {
-      var offset = height/customLabels.length;
-      var scale = nvChart.xAxis.scale();
+    var offset = height/customLabels.length;
+    var scale = nvChart.xAxis.scale();
 
-      // remove default axis labels
-      var axis = d3.select(elementId + " svg").select('.nv-x .nv-axis').select('g');
-      axis.selectAll('g').remove();
+    // remove default axis labels
+    var axis = d3.select(elementId + " svg").select('.nv-x .nv-axis').select('g');
+    axis.selectAll('g').remove();
 
-      // add our own axis labels with hyperlinks
-      var g = axis.selectAll("g").data(customLabels).enter().append("g");
-      var a = g.append("a")
-        .attr("xlink:href", function(d) { return d.href; })
-        .append("text")
-        .text(function(d) { return d.label; });
+    // add our own axis labels with hyperlinks
+    var g = axis.selectAll("g").data(customLabels).enter().append("g");
+    var a = g.append("a")
+      .attr("xlink:href", function(d) { return d.href; })
+      .append("text")
+      .text(function(d) { return d.label; });
 
-      a.attr("class", "axis-labels")
-        .attr("x", -nvChart.xAxis.tickPadding())
-        .attr("y", function(d, i) { return scale(i) + offset/2; })
-        .attr("text-anchor", "end")
-        .attr("dominant-baseline", "central");
-    }
+    a.attr("class", "axis-labels")
+      .attr("x", -nvChart.xAxis.tickPadding())
+      .attr("y", function(d, i) { return scale(i) + offset/2; })
+      .attr("text-anchor", "end")
+      .attr("dominant-baseline", "central");
+  }
+
+  function removeTickLines(nvChart, elementId) {
+    d3.select(elementId + " svg").select('.nv-x .nv-axis').selectAll('line').remove();
   }
 
   // configure the NVD3.js multibar horizontal chart based on our settings
@@ -140,12 +142,18 @@ function chartBarHorizontal() {
 
       nv.utils.windowResize(nvChart.update);
 
-      // draw custom labels, if any, on the x axis
-      if (showXAxis && customLabels.length > 0) {
-        var updated = drawCustomLabels(nvChart, elementId);
-        nv.utils.windowResize(updated);
-        updated();
+      var updated = function() {
+        // never show tick lines in this chart
+        removeTickLines(nvChart, elementId);
+
+        // draw custom labels, if any, on the x axis
+        if (showXAxis && customLabels.length > 0) {
+          drawCustomLabels(nvChart, elementId);
+        }
       }
+
+      nv.utils.windowResize(updated);
+      updated();
 
       return nvChart;
     });
