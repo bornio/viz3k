@@ -12,3 +12,8 @@ td.faction-size {
   width: 30%;
   text-align: center;
 }
+
+/* override NVD3's transparency settings */
+.stream .nvd3.nv-stackedarea path.nv-area {
+  fill-opacity: 1;
+}

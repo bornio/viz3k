@@ -42,26 +42,32 @@ function renderView($scope, factions, chapters) {
 }
 
 function chartFactionAppearances($scope, factions, chapters) {
-  // see what the max number of distinct characters to appear in any chapter is
-  var maxPeople = maxPeoplePerChapter(chapters);
-
   // for each faction...
+  var chartData = new Array(factions.length);
+  var colors = new Array(factions.length);
   for (var f = 0; f < factions.length; f++) {
     var faction = factions[f];
-    faction.chapters = new Array(chapters.length);
+    var values = new Array(chapters.length);
 
     // find out how many of its members turn up in each chapter
     for (var c = 0; c < chapters.length; c++) {
       var chapter = chapters[c];
-      faction.chapters[c] = countFactionMembersInChapter(faction, chapter);
+      values[c] = [c, countFactionMembersInChapter(faction, chapter)];
     }
+
+    chartData[f] = { key: faction.name, values: values };
+    colors[f] = faction.color;
   }
 
-  // display a stacked bar chart of faction appearances per chapter
-  var chart = chartAppearanceTimeline("chart-appearances", factions, chapters, maxPeople);
-  window.addEventListener("resize", chart.resized, false);
+  // display a streamgraph of faction member appearances per chapter
+  var stream = chartStream().data(chartData).colors(colors).tooltip(factionTooltip).render("#stream-test");
 
-  return chart;
+  return stream;
+}
+
+function factionTooltip(key, x, y, e, graph) {
+  return '<h3>' + key + '</h3>' +
+         '<p>' +  y + ' members in Chapter ' + x + '</p>';
 }
 
 function sortFactionsBySize(factions) {
@@ -81,15 +87,4 @@ function sortFactionsBySize(factions) {
   });
 
   return sorted;
-}
-
-function maxPeoplePerChapter(chapters) {
-  var maxPeople = 0;
-  for (var c = 0; c < chapters.length; c++) {
-    if (chapters[c].people.length > maxPeople) {
-      maxPeople = chapters[c].people.length;
-    }
-  }
-
-  return maxPeople;
 }

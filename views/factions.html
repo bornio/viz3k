@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styling common to all pages except splash page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
+    <!-- styling for NVD3.js charts -->
+    <link type="text/css" rel="stylesheet" href="/lib/nv.d3.css"/>
     <!-- styling for this page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/factions.css"/>
-    <!-- styling for charts -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/charts/appearance_timeline.css"/>
   </head>
   <body ng-controller="FactionsController">
     <!-- include the navbar at the top -->
@@ -65,9 +65,12 @@
           <hr>
           <div id="stats-area">
             <h5># of faction members appearing in each chapter</h5>
-            <div class="well well-small">
+            <!--<div class="well well-small">
               <div id="chart-appearances" class="appearance-timeline"></div>
               <small class="muted appearance-timeline-label">Click anywhere on the chart to jump to a chapter.</small>
+            </div>-->
+            <div id="stream-test" class="stream">
+              <svg></svg>
             </div>
           </div>
 
@@ -82,6 +85,7 @@
 
     <!-- third party javascript -->
     <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
+    <script type="text/javascript" src="/lib/nv.d3.min.js"></script>
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
@@ -93,6 +97,7 @@
     <script type="text/javascript" src="/assets/js/controllers/factions.js"></script>
 
     <!-- charts used by this view -->
-    <script type="text/javascript" src="/assets/js/charts/appearance_timeline.js"></script>
+    <script type="text/javascript" src="/assets/js/charts/stream.js"></script>
+    <!--<script type="text/javascript" src="/assets/js/charts/appearance_timeline.js"></script>-->
   </body>
 </html>
