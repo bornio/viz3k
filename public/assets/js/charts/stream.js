@@ -6,6 +6,8 @@ function chartStream() {
   var data = [];
   var colors = null;
   var height = 200;
+  var showXAxis = true;
+  var showYAxis = true;
   var xTickFormat = d3.format(',d');
   var yTickFormat = d3.format(',d');
   var tooltip = null;
@@ -33,6 +35,18 @@ function chartStream() {
     return chart;
   };
 
+  chart.showYAxis = function(value) {
+    if (!arguments.length) return showYAxis;
+    showYAxis = value;
+    return chart;
+  };
+
+  chart.showXAxis = function(value) {
+    if (!arguments.length) return showXAxis;
+    showXAxis = value;
+    return chart;
+  };
+
   chart.tooltip = function(value) {
     if (!arguments.length) return tooltip;
     tooltip = value;
@@ -51,9 +65,19 @@ function chartStream() {
     // use the 'stream' style for the chart
     nvChart.stacked.style('stream');
 
-    // axis settings
-    nvChart.xAxis.tickFormat(xTickFormat).showMaxMin(false);
-    nvChart.yAxis.tickFormat(yTickFormat).showMaxMin(false);
+    // x axis settings
+    if (showXAxis) {
+      nvChart.xAxis.tickFormat(xTickFormat).showMaxMin(false);
+    } else {
+      nvChart.xAxis.tickValues([]);
+    }
+
+    // y axis settings
+    if (showYAxis) {
+      nvChart.yAxis.tickFormat(yTickFormat).showMaxMin(false);
+    } else {
+      nvChart.yAxis.tickValues([]);
+    }
 
     // customize tooltip
     if (tooltip != null) {
