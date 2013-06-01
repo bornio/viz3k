@@ -6,11 +6,11 @@ describe("chartBarHorizontal", function() {
   });
 
   describe("data()", function() {
-    it("returns an empty array when called on a new chart", function() {
+    it("when called with no arguments, returns an empty array for a new chart", function() {
       expect(chart.data()).toEqual([]);
     });
 
-    it("sets the data on the chart when called with an argument", function() {
+    it("when called with one argument, sets the data on the chart", function() {
       var testData = [{
         key: "Test data",
         color: "#6699cc",
@@ -21,6 +21,10 @@ describe("chartBarHorizontal", function() {
       }];
       chart.data(testData)
       expect(chart.data()).toEqual(testData);
+    });
+
+    it("when called with one argument, returns the chart for method chaining", function() {
+      expect(chart.data([])).toEqual(chart);
     });
   });
 
