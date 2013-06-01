@@ -29,21 +29,14 @@ function chartBarHorizontal() {
     return chart;
   };
 
-  chart.showAxes = function(value) {
-    if (!arguments.length) return showAxes;
-    showXAxis = value;
-    showYAxis = value;
-    return chart;
-  };
-
   chart.showYAxis = function(value) {
-    if (!arguments.length) return showAxes;
+    if (!arguments.length) return showYAxis;
     showYAxis = value;
     return chart;
   };
 
   chart.showXAxis = function(value) {
-    if (!arguments.length) return showAxes;
+    if (!arguments.length) return showXAxis;
     showXAxis = value;
     return chart;
   };
