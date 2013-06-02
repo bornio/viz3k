@@ -32,45 +32,10 @@ function renderView($scope, faction, chapters) {
   $scope.faction = faction;
   document.title = $scope.faction.name + " " + $scope.factionType + " - Viz3k";
 
-  // per-chapter stats
-  chartFactionAppearances(faction, chapters);
-}
-
-function chartFactionAppearances(faction, chapters) {
-  var factions = new Array();
-
-  faction.chapters = new Array(chapters.length);
-
-  // find out how many of this faction's members turn up in each chapter
-  var maxPeople = 0;
-  for (var c = 0; c < chapters.length; c++) {
-    var chapter = chapters[c];
-    faction.chapters[c] = countFactionMembersInChapter(faction, chapter);
-    if (faction.chapters[c] > maxPeople) {
-      maxPeople = faction.chapters[c];
-    }
-  }
-
-  factions.push(faction);
-
-  // use jQuery to redraw the chart each time the tab is selected
-  var chart = null;
-  var activeTab = null;
-  $('a[data-toggle="tab"]').on('shown', function (e) {
-    activeTab = e.target;
-    if (activeTab.hash == "#stats") {
-      // display a stacked bar chart of faction appearances per chapter
-      if (chart == null) {
-        chart = chartAppearanceTimeline("chart-appearances", factions, chapters, maxPeople);
-      }
-      
-      // add window resize event for the chart
-      window.addEventListener("resize", chart.resized, false);
-    } else {
-      // remove the resize event if needed
-      if (chart != null) {
-        window.removeEventListener("resize", chart.resized, false);
-      }
-    }
-  })
+  // streamgraph for this faction
+  chartFactionsStream()
+    .factions([faction])
+    .chapters(chapters)
+    .style('stack')
+    .render("#chart-faction");
 }

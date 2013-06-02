@@ -9,7 +9,7 @@ function chartStream() {
   var showXAxis = true;
   var showYAxis = true;
   var xTickFormat = d3.format(',d');
-  var yTickFormat = d3.format(',d');
+  var yTickFormat = d3.format(',.0f');
   var style = 'stream';
   var tooltip = null;
 
@@ -69,21 +69,24 @@ function chartStream() {
       .showControls(false)
       .clipEdge(false);
 
-    // use the 'stream' style for the chart
+    // 'stream', 'stack', or 'expand' (percentage)
     nvChart.stacked.style(style);
 
     // x axis settings
     if (showXAxis) {
       nvChart.xAxis.tickFormat(xTickFormat).showMaxMin(true);
     } else {
-      nvChart.xAxis.tickValues([]);
+      nvChart.xAxis.tickValues([]).showMaxMin(false);
     }
 
     // y axis settings
+    nvChart.yAxis.tickFormat(yTickFormat);
     if (showYAxis) {
-      nvChart.yAxis.tickFormat(yTickFormat).showMaxMin(false);
+      if (style == 'stack') {
+        nvChart.yAxis.tickValues([0]).showMaxMin(true);
+      }
     } else {
-      nvChart.yAxis.tickValues([]);
+      nvChart.yAxis.tickValues([]).showMaxMin(false);
     }
 
     // customize tooltip
@@ -91,7 +94,7 @@ function chartStream() {
       nvChart.tooltipContent(tooltip);
     }
 
-    nvChart.margin({left: 10, right: 10, top: 20, bottom: 40 });
+    nvChart.margin({left: 30, right: 10, top: 20, bottom: 40 });
 
     // customize colors
     if (colors != null) {
@@ -116,7 +119,6 @@ function chartStream() {
       var updated = function() {
         // disable clicking to expand items in the stream
         nvChart.stacked.dispatch.on('areaClick.toggle', null);
-        nvChart.stacked.dispatch.on('areaMouseover', null);
       }
 
       nv.utils.windowResize(updated);

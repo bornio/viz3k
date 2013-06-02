@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styling common to all pages except splash page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
+    <!-- styling for NVD3.js charts -->
+    <link type="text/css" rel="stylesheet" href="/lib/nv.d3.css"/>
     <!-- styling for charts -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/charts/appearance_timeline.css"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/charts/factionsStream.css"/>
   </head>
   <body>
     <!-- include the navbar at the top -->
@@ -17,82 +19,73 @@
 
     <!-- content goes here -->
     <div class="container">
-      <!-- page header with faction info -->
-      <div class="page-header">
-        <table class="ng-cloak">
-          <tr>
-            <td>
-              <div class="faction-badge-lg" style="{{'background: ' + faction.color + ';'}}"></div>
-            </td>
-            <td style="padding-left: 12px;">
-              <p class="lead" style="margin-bottom: 0px;">{{faction.name}}</p>
-              <span class="muted">{{factionType}}</span>
-            </td>
-          </tr>
-        </table>
-      </div>
-
       <div class="row">
-        <div class="span12 ng-cloak">
-          <p><small>{{faction.members.length}} members</small></p>
-          <p><small>
-            <span ng-repeat="link in factionLinks">(<a href="{{link.href}}">{{link.text}}</a>)<span>
-          </small></p>
-        </div>
-      </div>
-      <hr>
-
-      <div class="tabbable">
-        <ul class="nav nav-tabs">
-          <li class="active">
-            <a href="#members" data-toggle="tab">Members</a>
-          </li>
-          <li>
-            <a href="#stats" data-toggle="tab">Stats</a>
-          </li>
-        </ul>
-        <div class="tab-content">
-          <!-- list of faction members -->
-          <div class="tab-pane active" id="members">
-            <!-- filter and sort options -->
-            <div class="row">
-              <div class="span3">
-                <form class="form-inline">
-                  <fieldset>
-                    <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
-                  </fieldset>
-                </form>
-              </div>
-            </div>
-            <table class="table table-condensed ng-cloak">
-              <tr ng-repeat="member in faction.members | filter:query | orderBy:'name'">
+        <div id="content-area" class="span8 offset2">
+          <!-- page header with faction info -->
+          <div class="page-header">
+            <table class="ng-cloak">
+              <tr>
                 <td>
-                  <a href="/people/{{member.id}}">{{member.name}}</a>
-                  <span class="muted"> {{member.style_parens}}</span>
+                  <div class="faction-badge-lg" style="{{'background: ' + faction.color + ';'}}"></div>
+                </td>
+                <td style="padding-left: 12px;">
+                  <p class="lead" style="margin-bottom: 0px;">
+                    {{faction.name}}
+                    <span class="muted">{{factionType}}</span>
+                  </p>
+                  <span ng-repeat="link in factionLinks">(<a href="{{link.href}}">{{link.text}}</a>)<span>
                 </td>
               </tr>
             </table>
           </div>
+
           <!-- statistics for this faction -->
-          <div class="tab-pane" id="stats">
-            <h5>Members mentioned per chapter</h5>
-            <div class="well well-small">
-              <div id="chart-appearances" class="appearance-timeline"></div>
-              <small class="muted appearance-timeline-label">Click anywhere on the chart to jump to a chapter.</small>
+          <h5>Members mentioned per chapter</h5>
+          <div id="chart-faction" class="stream">
+            <svg></svg>
+          </div>
+
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" href="#collapse-members">
+                List of members <span class="muted">(click to toggle)</span>
+              </a>
+            </div>
+            <div class="accordion-body collapse" id="collapse-members">
+              <!-- list of faction members -->
+              <div class="accordion-inner" id="members">
+                <p class="lead">{{faction.members.length}} characters are affiliated with this faction.</p>
+                <!-- filter and sort options -->
+                <form class="form-inline" ng-cloak>
+                  <fieldset>
+                    <input class="input-block-level" type="text" ng-model="query.name" placeholder="Filter by name">
+                  </fieldset>
+                </form>
+                <table class="table table-condensed ng-cloak">
+                  <tr ng-repeat="member in faction.members | filter:query | orderBy:'name'">
+                    <td>
+                      <a href="/people/{{member.id}}">{{member.name}}</a>
+                      <span class="muted"> {{member.style_parens}}</span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
             </div>
           </div>
+
+          <hr>
+          <footer>
+          </footer>
+
         </div>
       </div>
-
-      <hr>
-      <footer>
-      </footer>
     </div>
 
     <!-- load javascripts last for speed -->
 
     <!-- third party javascript -->
     <script type="text/javascript" src="/lib/d3/d3.v2.min.js"></script>
+    <script type="text/javascript" src="/lib/nv.d3.min.js"></script>
     <script type="text/javascript" src="/lib/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="/lib/angular.min.js"></script>
@@ -104,6 +97,7 @@
     <script type="text/javascript" src="/assets/js/controllers/factions/faction.js"></script>
 
     <!-- charts used by this view -->
-    <script type="text/javascript" src="/assets/js/charts/appearance_timeline.js"></script>
+    <script type="text/javascript" src="/assets/js/charts/stream.js"></script>
+    <script type="text/javascript" src="/assets/js/charts/factionsStream.js"></script>
   </body>
 </html>

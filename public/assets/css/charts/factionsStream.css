@@ -1,0 +1,4 @@
+/* override NVD3's transparency settings */
+.stream .nvd3.nv-stackedarea path.nv-area {
+  fill-opacity: 1;
+}

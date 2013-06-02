@@ -38,36 +38,7 @@ function renderView($scope, factions, chapters) {
   $scope.factionsOther = factionsOther;
 
   // draw charts
-  var chart = chartFactionAppearances($scope, factions, chapters);  
-}
-
-function chartFactionAppearances($scope, factions, chapters) {
-  // for each faction...
-  var chartData = new Array(factions.length);
-  var colors = new Array(factions.length);
-  for (var f = 0; f < factions.length; f++) {
-    var faction = factions[f];
-    var values = new Array(chapters.length);
-
-    // find out how many of its members turn up in each chapter
-    for (var c = 0; c < chapters.length; c++) {
-      var chapter = chapters[c];
-      values[c] = [c, countFactionMembersInChapter(faction, chapter)];
-    }
-
-    chartData[f] = { key: faction.name, values: values };
-    colors[f] = faction.color;
-  }
-
-  // display a streamgraph of faction member appearances per chapter
-  var stream = chartStream().data(chartData).colors(colors).tooltip(factionTooltip).render("#stream-test");
-
-  return stream;
-}
-
-function factionTooltip(key, x, y, e, graph) {
-  return '<h3>' + key + '</h3>' +
-         '<p>' +  y + ' members in Chapter ' + x + '</p>';
+  var chart = chartFactionsStream().factions(factions).chapters(chapters).render("#chart-factions");  
 }
 
 function sortFactionsBySize(factions) {

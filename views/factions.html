@@ -10,6 +10,8 @@
     <link type="text/css" rel="stylesheet" href="/assets/css/common.css"/>
     <!-- styling for NVD3.js charts -->
     <link type="text/css" rel="stylesheet" href="/lib/nv.d3.css"/>
+    <!-- styling for charts -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/charts/factionsStream.css"/>
     <!-- styling for this page -->
     <link type="text/css" rel="stylesheet" href="/assets/css/factions.css"/>
   </head>
@@ -64,12 +66,8 @@
           <!-- info and stats down here -->
           <hr>
           <div id="stats-area">
-            <h5>Faction appearances stream</h5>
-            <!--<div class="well well-small">
-              <div id="chart-appearances" class="appearance-timeline"></div>
-              <small class="muted appearance-timeline-label">Click anywhere on the chart to jump to a chapter.</small>
-            </div>-->
-            <div id="stream-test" class="stream">
+            <h5>Factions stream</h5>
+            <div id="chart-factions" class="stream">
               <svg></svg>
             </div>
           </div>
@@ -98,6 +96,6 @@
 
     <!-- charts used by this view -->
     <script type="text/javascript" src="/assets/js/charts/stream.js"></script>
-    <!--<script type="text/javascript" src="/assets/js/charts/appearance_timeline.js"></script>-->
+    <script type="text/javascript" src="/assets/js/charts/factionsStream.js"></script>
   </body>
 </html>
