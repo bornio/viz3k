@@ -91,7 +91,7 @@ function chartStream() {
       nvChart.tooltipContent(tooltip);
     }
 
-    nvChart.margin({left: 10, right: 10});
+    nvChart.margin({left: 10, right: 10, top: 20, bottom: 20 });
 
     // customize colors
     if (colors != null) {
