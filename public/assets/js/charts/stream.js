@@ -10,6 +10,7 @@ function chartStream() {
   var showYAxis = true;
   var xTickFormat = d3.format(',d');
   var yTickFormat = d3.format(',d');
+  var style = 'stream';
   var tooltip = null;
 
   // the chart object that will be returned
@@ -47,6 +48,12 @@ function chartStream() {
     return chart;
   };
 
+  chart.style = function(value) {
+    if (!arguments.length) return style;
+    style = value;
+    return chart;
+  };
+
   chart.tooltip = function(value) {
     if (!arguments.length) return tooltip;
     tooltip = value;
@@ -63,11 +70,11 @@ function chartStream() {
       .clipEdge(false);
 
     // use the 'stream' style for the chart
-    nvChart.stacked.style('stream');
+    nvChart.stacked.style(style);
 
     // x axis settings
     if (showXAxis) {
-      nvChart.xAxis.tickFormat(xTickFormat).showMaxMin(false);
+      nvChart.xAxis.tickFormat(xTickFormat).showMaxMin(true);
     } else {
       nvChart.xAxis.tickValues([]);
     }
