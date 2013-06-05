@@ -1930,7 +1930,8 @@
       "id": 270,
       "allegiance":
       [
-        {"faction": 10}
+        {"chron": 0, "interval":[5,243], "faction": 10},
+        {"chron": 1, "interval":[243,1457], "faction": 5}
       ]
     },
     {
@@ -1958,7 +1959,8 @@
       "id": 274,
       "allegiance":
       [
-        {"faction": 10}
+        {"chron": 0, "interval":[5,243], "faction": 10},
+        {"chron": 1, "interval":[243,1457], "faction": 5}
       ]
     },
     {
@@ -2798,21 +2800,24 @@
       "id": 391,
       "allegiance":
       [
-        {"faction": 10}
+        {"chron": 0, "interval":[5,243], "faction": 10},
+        {"chron": 1, "interval":[243,1457], "faction": 5}
       ]
     },
     {
       "id": 392,
       "allegiance":
       [
-        {"faction": 10}
+        {"chron": 0, "interval":[5,243], "faction": 10},
+        {"chron": 1, "interval":[243,1457], "faction": 5}
       ]
     },
     {
       "id": 393,
       "allegiance":
       [
-        {"faction": 10}
+        {"chron": 0, "interval":[5,243], "faction": 10},
+        {"chron": 1, "interval":[243,1457], "faction": 5}
       ]
     },
     {
@@ -2884,6 +2889,167 @@
       "allegiance":
       [
         {"faction": 5}
+      ]
+    },
+    {
+      "id": 404,
+      "allegiance":
+      [
+        {"faction": 5}
+      ]
+    },
+    {
+      "id": 404,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 405,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 406,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 407,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 408,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 409,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 410,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 411,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 412,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 413,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 414,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 415,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 416,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 417,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 418,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 419,
+      "allegiance":
+      [
+        {"faction": 99}
+      ]
+    },
+    {
+      "id": 420,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 421,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 422,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 423,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 424,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 425,
+      "allegiance":
+      [
+        {"faction": 0}
       ]
     }
   ]

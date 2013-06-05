@@ -825,6 +825,12 @@
       "id": 402,
       "when": {"chapter": 19, "page": 237},
       "cause": "murder"
+    },
+    {
+      "id": 420,
+      "when": {"chapter": 20, "page": 246},
+      "cause": "execution",
+      "killers": [49]
     }
   ]
 }

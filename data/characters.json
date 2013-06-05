@@ -447,7 +447,7 @@
     },
     {
       "id": 70,
-      "name": "Liu Hui",
+      "name": "Liu Hui (1)",
       "km": "Liu-Hui"
     },
     {
@@ -1388,9 +1388,9 @@
     },
     {
       "id": 216,
-      "name": "Zhougong",
-      "wiki": "Zhougong",
-      "note": "Duke of Zhou. Regent for the child emperor Chengwang."
+      "name": "Duke of Zhou",
+      "wiki": "Duke_of_Zhou",
+      "note": "Also written as Zhougong. Regent for the child emperor Cheng of Zhou."
     },
     {
       "id": 217,
@@ -2040,7 +2040,7 @@
     },
     {
       "id": 321,
-      "name": "Liu Ai",
+      "name": "Liu Ai (1)",
       "km": "Liu-Ai",
       "note": "Director of the Imperial Clan."
     },
@@ -2541,6 +2541,120 @@
       "id": 403,
       "name": "Shi Huan",
       "km": "Shi-Huan"
+    },
+    {
+      "id": 404,
+      "name": "Che Zhou",
+      "km": "Che-Zhou"
+    },
+    {
+      "id": 405,
+      "name": "Liu Ang",
+      "note": "Son of Liu Zhen, father of Liu Lu. Lord of Pei."
+    },
+    {
+      "id": 406,
+      "name": "Liu Lu",
+      "note": "Son of Liu Ang, father of Liu Lian. Lord of Zhang."
+    },
+    {
+      "id": 407,
+      "name": "Liu Lian",
+      "note": "Son of Liu Lu, father of Liu Ying. Lord of Yishui."
+    },
+    {
+      "id": 408,
+      "name": "Liu Ying",
+      "note": "Son of Liu Lian, father of Liu Jian. Lord of Qinyang."
+    },
+    {
+      "id": 409,
+      "name": "Liu Jian",
+      "note": "Son of Liu Ying, father of Liu Ai. Lord of Anguo."
+    },
+    {
+      "id": 410,
+      "name": "Liu Ai (2)",
+      "note": "Son of Liu Jian, father of Liu Xian. Lord of Guangling."
+    },
+    {
+      "id": 411,
+      "name": "Liu Xian",
+      "note": "Son of Liu Ai, father of Liu Shu. Lord of Jiaoshui."
+    },
+    {
+      "id": 412,
+      "name": "Liu Shu",
+      "note": "Son of Liu Xian, father of Liu Yi. Lord of Zuyi."
+    },
+    {
+      "id": 413,
+      "name": "Liu Yi",
+      "note": "Son of Liu Shu, father of Liu Bi. Lord of Qiyang."
+    },
+    {
+      "id": 414,
+      "name": "Liu Bi",
+      "note": "Son of Liu Yi, father of Liu Da. Lord of Yuanze."
+    },
+    {
+      "id": 415,
+      "name": "Liu Da",
+      "note": "Son of Liu Bi, father of Liu Buyi. Lord of Yingchuan."
+    },
+    {
+      "id": 416,
+      "name": "Liu Buyi",
+      "note": "Son of Liu Da, father of Liu Hui. Lord of Fengling."
+    },
+    {
+      "id": 417,
+      "name": "Liu Hui (2)",
+      "note": "Son of Liu Buyi, father of Liu Xiong. Lord of Jichuan."
+    },
+    {
+      "id": 418,
+      "name": "King Cheng of Zhou",
+      "wiki": "King_Cheng_of_Zhou",
+      "note": "Also written as Chengwang."
+    },
+    {
+      "id": 419,
+      "name": "Duke Shao"
+    },
+    {
+      "id": 420,
+      "name": "Zhao Yan",
+      "km": "Zhao-Yan-3",
+      "note": "Court Counselor of the imperial court."
+    },
+    {
+      "id": 421,
+      "name": "Fu Wan",
+      "km": "Fu-Wan",
+      "note": "Father of Empress Fu."
+    },
+    {
+      "id": 422,
+      "name": "Xiao He",
+      "km": "Xiao_He",
+      "note": "Statesman of the early Han."
+    },
+    {
+      "id": 423,
+      "name": "Wang Zifu",
+      "km": "Wang-Fu"
+    },
+    {
+      "id": 424,
+      "name": "Wu Shi",
+      "style": "Zilan",
+      "km": "Wu-Shi"
+    },
+    {
+      "id": 425,
+      "name": "Chong Ji",
+      "km": "Chong-Ji"
     }
   ]
 }
