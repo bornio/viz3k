@@ -1,6 +1,4 @@
 viz3k
 =====
 
-Visualizations of data collected from the novel _Romance of the Three Kingdoms_ by Luo Guanzhong.
-
-See [the wiki](http://github.com/sbai/viz3k/wiki) for more information.
+[**Viz3k**](http://www.threekingdoms.info) is an online resource for the 14th century historical novel [_Romance of the Three Kingdoms_](http://en.wikipedia.org/wiki/Romance_of_the_Three_Kingdoms). It displays statistics and interactive visualizations using data collected from the novel.
