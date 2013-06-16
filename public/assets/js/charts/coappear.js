@@ -1,29 +1,26 @@
 /**
- * This chart loads the character appearance data for this chapter and builds a chartNetworkForce from the nodes and
- * links returned from the server.
+ * This chart displays the character appearance data for this chapter as a chartNetworkForce using the nodes and links
+ * returned from the server.
  */
-function chartCoappear(elementId, dataFilePath, dataCallback)
+function chartCoappear(elementId, coappear)
 {
   var nodes;
   var links;
 
-  // read the json data
-  d3.json(dataFilePath, function(json) {
-    nodes = json.nodes;
-    links = json.links;
+  // make a copy of the data so we can modify it
+  nodes = coappear.nodes.slice();
+  links = coappear.links.slice();
 
-    // each node should keep track of which other nodes it's linked to
-    linkNodes(nodes, links);
+  // each node should keep track of which other nodes it's linked to
+  linkNodes(nodes, links);
 
-    // return a copy of the nodes and links (use a copy to ensure they can be modified without affecting originals)
-    dataCallback(nodes.slice(),links.slice());
+  console.log("number of nodes:", nodes.length);
+  console.log("number of links:", links.length);
 
-    console.log("number of nodes:", nodes.length);
-    console.log("number of links:", links.length);
-
-    // create the d3 visualization(s)
-    var viz = chartNetworkForce(elementId, nodes, links);
-  });
+  // create the d3 visualization(s)
+  var viz = chartNetworkForce()
+    .data({nodes: nodes, links: links})
+    .render(elementId);
 }
 
 function linkNodes(nodes, links) {
