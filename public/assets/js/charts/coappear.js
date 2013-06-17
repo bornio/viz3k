@@ -2,25 +2,41 @@
  * This chart displays the character appearance data for this chapter as a chartNetworkForce using the nodes and links
  * returned from the server.
  */
-function chartCoappear(elementId, coappear)
-{
-  var nodes;
-  var links;
+function chartCoappear() {
+  // default settings
+  var data = {nodes: [], links: []};
 
-  // make a copy of the data so we can modify it
-  nodes = coappear.nodes.slice();
-  links = coappear.links.slice();
+  // the chart object that will be returned
+  var chart = {};
 
-  // each node should keep track of which other nodes it's linked to
-  linkNodes(nodes, links);
+  // expose getter/setters
 
-  console.log("number of nodes:", nodes.length);
-  console.log("number of links:", links.length);
+  chart.data = function(value) {
+    if (!arguments.length) return data;
 
-  // create the d3 visualization(s)
-  var viz = chartNetworkForce()
-    .data({nodes: nodes, links: links})
-    .render(elementId);
+    // make a copy of the data so we can modify it
+    data.nodes = value.nodes.slice();
+    data.links = value.links.slice();
+
+    // each node should keep track of which other nodes it's linked to
+    linkNodes(data.nodes, data.links);
+
+    console.log("number of nodes:", data.nodes.length);
+    console.log("number of links:", data.links.length);
+
+    return chart;
+  };
+
+  // render the chart
+  chart.render = function(elementId) {
+    chartNetworkForce()
+      .data(data)
+      .render(elementId);
+
+    return chart;
+  };
+  
+  return chart;
 }
 
 function linkNodes(nodes, links) {

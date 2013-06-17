@@ -59,7 +59,7 @@ function renderView($scope, $http, chapters, coappear) {
   computeCharacterStats($scope, coappear.nodes.slice(), coappear.links.slice());
 
   // generate the coappearance visualization for the selected chapter
-  chartCoappear("#chart", coappear);
+  chartCoappear().data(coappear).render("#chart");
 }
 
 function computeCharacterStats($scope, nodes, links) {
