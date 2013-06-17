@@ -1,3 +1,5 @@
+require 'set'
+
 module Viz3k
   # Generates coappearance networks for characters.
   class Coappearances
@@ -15,6 +17,9 @@ module Viz3k
 
       # now create links for every pair of nodes representing people who appear on the same page
       links = sort_links(create_links(pages, nodes))
+
+      # convert sets to arrays
+      nodes = Coappearances.convert_nodes(nodes)
 
       # the complete hash representation with nodes + links together
       return {:nodes => nodes, :links => links}
@@ -49,11 +54,21 @@ module Viz3k
       faction_id = person.primary_faction(page_nums)
       faction = @factions.get(faction_id)
       node = {:id => person.id, :name => person.name, :group => faction.id, :faction => faction.name,
-              :color => faction.color, :links => 0}
+              :color => faction.color, :neighbors => Set.new([]), :degree => 0}
       if (person.style != "")
         node.merge!(:style => person.style)
       end
       return node
+    end
+
+    def self.convert_node(node)
+      copy = node.clone
+      copy[:neighbors] = node[:neighbors].to_a().sort()
+      return copy
+    end
+
+    def self.convert_nodes(nodes)
+      return nodes.map {|node| self.convert_node(node)}
     end
 
     def create_links(pages, nodes)
@@ -79,9 +94,7 @@ module Viz3k
             # add link between the two nodes, or increment link value by 1 if they are already linked
             n0 = node_indices[id0]
             n1 = node_indices[id1]
-            add_link(links, n0, n1)
-            increment_node_links(nodes[n0])
-            increment_node_links(nodes[n1])
+            add_link(nodes, links, n0, n1)
           end
         end
       end
@@ -95,7 +108,7 @@ module Viz3k
     end
 
     # If a link already exists between two people, increment the value of the link by 1. Otherwise, add a new link.
-    def add_link(links, source, target)
+    def add_link(nodes, links, source, target)
       exists = false
       links.each do |link|
         if (link[:source] == source && link[:target] == target)
@@ -108,10 +121,11 @@ module Viz3k
       if (!exists)
         links.push({:source => source, :target => target, :value => 1})
       end
-    end
 
-    def increment_node_links(node)
-      node[:links] += 1
+      nodes[source][:neighbors].add(target)
+      nodes[source][:degree] += 1
+      nodes[target][:neighbors].add(source)
+      nodes[target][:degree] += 1
     end
   end
 end

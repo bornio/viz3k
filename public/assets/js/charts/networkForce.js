@@ -96,10 +96,10 @@ function chartNetworkForce() {
 
     // scale all circles and text labels relative to most heavily-linked node
     var maxLinks = 0.0;
-    gTexts.each(function(d) { if (d.links > maxLinks) { maxLinks = d.links; } })
+    gTexts.each(function(d) { if (d.degree > maxLinks) { maxLinks = d.degree; } })
 
     circles
-      .attr("r", function(d) { return 24*Math.sqrt(d.links/maxLinks) + 2; })
+      .attr("r", function(d) { return 24*Math.sqrt(d.degree/maxLinks) + 2; })
       .style("fill", function(d) { return d3.rgb(d.color); })
 
     var texts = gTexts.append("text")
@@ -109,9 +109,9 @@ function chartNetworkForce() {
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "central")
       .text(function(d) { return d.name })
-      .attr("font-size", function(d) { return (String(12*(d.links/maxLinks) + 9) + "px")})
+      .attr("font-size", function(d) { return (String(12*(d.degree/maxLinks) + 9) + "px")})
       .style("color", textColor)
-      .attr("stroke-width", function(d) { return (String(1.2*(d.links/maxLinks) + 0.2) + "px")});
+      .attr("stroke-width", function(d) { return (String(1.2*(d.degree/maxLinks) + 0.2) + "px")});
 
     force.on("tick", function() {
       links.attr("x1", function(d) { return d.source.x; })
@@ -125,7 +125,7 @@ function chartNetworkForce() {
 
     // returns true if a node is directly connected to another node by a link
     var connected = function(i, iOther) {
-      return (data.nodes[i].linked.indexOf(iOther) >= 0) ? true : false;
+      return (data.nodes[i].neighbors.indexOf(iOther) >= 0) ? true : false;
     }
 
     // functions to highlight characters on mouseover and mouseout

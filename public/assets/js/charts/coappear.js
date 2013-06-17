@@ -18,9 +18,6 @@ function chartCoappear() {
     data.nodes = value.nodes.slice();
     data.links = value.links.slice();
 
-    // each node should keep track of which other nodes it's linked to
-    linkNodes(data.nodes, data.links);
-
     console.log("number of nodes:", data.nodes.length);
     console.log("number of links:", data.links.length);
 
@@ -39,25 +36,12 @@ function chartCoappear() {
   return chart;
 }
 
-function linkNodes(nodes, links) {
-  for (var n = 0; n < nodes.length; n++) {
-    nodes[n].linked = new Array();
-    for (var l = 0; l < links.length; l++) { 
-      if (links[l].source == n) {
-        nodes[n].linked.push(links[l].target);
-      } else if (links[l].target == n) {
-        nodes[n].linked.push(links[l].source);
-      }
-    }
-  }
-}
-
 function sortNodesByLinks(nodes) {
   // sort the characters by decreasing number of links
   var sorted = nodes.slice();
   sorted.sort(function(a,b) {
     // use alphabetical name sorting as tie-breaker
-    if (b.links == a.links) {
+    if (b.degree == a.degree) {
       if (a.name < b.name) {
         return -1;
       } else if (a.name > b.name) {
@@ -66,7 +50,7 @@ function sortNodesByLinks(nodes) {
       return 0;          
     }
 
-    return b.links - a.links;
+    return b.degree - a.degree;
   });
   return sorted;
 }
