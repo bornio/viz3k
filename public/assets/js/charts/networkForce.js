@@ -7,7 +7,7 @@
  */
 function chartNetworkForce() {
   // default settings
-  var data = [];
+  var data = {nodes: [], links: []};
   var width = 680;
   var height = 680;
 
