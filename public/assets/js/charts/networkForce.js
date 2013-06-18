@@ -38,12 +38,9 @@ function chartNetworkForce() {
   chart.configure = function() {
     var force = d3.layout.force()
       .size([width, height])
-      .charge(-700).linkDistance(160).gravity(0.5);
-
-    force
+      .charge(-700).linkDistance(160).gravity(0.5)
       .nodes(data.nodes)
-      .links(data.links)
-      .start();
+      .links(data.links);
 
     return force;
   }
@@ -53,9 +50,8 @@ function chartNetworkForce() {
     var force = chart.configure();
 
     // draw an SVG element for the chart
-    var viewBoxSize = "0 0 " + String(width) + " " + String(height);
     var svg = d3.select(elementId).append("svg");
-    svg.attr("viewBox", viewBoxSize).attr("width", "100%").attr("height", "100%");
+    svg.attr("width", width).attr("height", height);
 
     var links = svg.selectAll("line.link")
       .data(data.links)
@@ -67,6 +63,8 @@ function chartNetworkForce() {
       .enter().append("g")
       .attr("class", "node")
       .call(force.drag);
+
+    force.start();
 
     var circles = nodes.append("circle")
       .attr("class", "node")
@@ -97,9 +95,12 @@ function chartNetworkForce() {
     // scale all circles and text labels relative to most heavily-linked node
     var maxLinks = 0.0;
     gTexts.each(function(d) { if (d.degree > maxLinks) { maxLinks = d.degree; } })
+    function radius(d) {
+      return 22*Math.sqrt(d.degree/maxLinks) + 2;
+    };
 
     circles
-      .attr("r", function(d) { return 24*Math.sqrt(d.degree/maxLinks) + 2; })
+      .attr("r", function(d) { return radius(d); })
       .style("fill", function(d) { return d3.rgb(d.color); })
 
     var texts = gTexts.append("text")
@@ -109,18 +110,29 @@ function chartNetworkForce() {
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "central")
       .text(function(d) { return d.name })
-      .attr("font-size", function(d) { return (String(12*(d.degree/maxLinks) + 9) + "px")})
+      .attr("font-size", function(d) { return (String(12*(d.degree/maxLinks) + 8) + "px")})
       .style("color", textColor)
       .attr("stroke-width", function(d) { return (String(1.2*(d.degree/maxLinks) + 0.2) + "px")});
 
+    // update positions on each tick
     force.on("tick", function() {
-      links.attr("x1", function(d) { return d.source.x; })
-          .attr("y1", function(d) { return d.source.y; })
-          .attr("x2", function(d) { return d.target.x; })
-          .attr("y2", function(d) { return d.target.y; });
+      // enforce a bounding box that nodes must stay within
+      nodes.attr("transform", function(d) {
+        r = radius(d);
+        d.x = Math.max(r, Math.min(width - r, d.x));
+        d.y = Math.max(r, Math.min(height - r, d.y));
+        return "translate(" + d.x + "," + d.y + ")";
+      });
 
-      nodes.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-      gTexts.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+      gTexts.attr("transform", function(d) {
+        return "translate(" + d.x + "," + d.y + ")";
+      });
+
+      links
+        .attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
     });
 
     // returns true if a node is directly connected to another node by a link

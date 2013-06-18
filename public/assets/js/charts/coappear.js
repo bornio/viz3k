@@ -28,6 +28,8 @@ function chartCoappear() {
   chart.render = function(elementId) {
     chartNetworkForce()
       .data(data)
+      .width(750)
+      .height(480)
       .render(elementId);
 
     return chart;
