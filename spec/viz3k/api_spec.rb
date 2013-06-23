@@ -60,8 +60,8 @@ module Viz3k
         @coappearances.has_key?(:links).should == true
       end
 
-      it "completes in less than 0.1 second" do
-        @elapsed.should < 0.1
+      it "completes in less than 0.05 second" do
+        @elapsed.should < 0.05
       end
     end
   end
