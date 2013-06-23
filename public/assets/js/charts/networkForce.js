@@ -14,6 +14,25 @@ function chartNetworkForce() {
   // the chart object that will be returned
   var chart = {};
 
+  // private functions
+
+  /**
+   * Run a few iterations of the force layout algorithm to let the node
+   * positions converge a bit before rendering anything. Reduces visible
+   * bouncing of nodes in the first few seconds of rendering the chart.
+   */
+  function cool_off(force, alpha_thresh, max_iters) {
+    force.start();
+    var i = max_iters;
+    while (i--) {
+      force.tick();
+      if(force.alpha() < alpha_thresh) {
+        break;
+      }
+    }
+    force.stop();
+  }
+
   // expose getter/setters
 
   chart.data = function(value) {
@@ -36,11 +55,23 @@ function chartNetworkForce() {
 
   // configure the d3.js force based layout using our settings
   chart.configure = function() {
+    // seed nodes with initial locations
+    for (var n in data.nodes) {
+      var half_w = width/2;
+      var half_h = height/2;
+      var offset_x = (Math.random() - 1)*(1/(data.nodes[n].degree + 1))*width;
+      var offset_y = (Math.random() - 1)*(1/(data.nodes[n].degree + 1))*height;
+      data.nodes[n].x = half_w + offset_x;
+      data.nodes[n].y = half_h + offset_y;
+    }
+
     var force = d3.layout.force()
       .size([width, height])
       .charge(-700).linkDistance(160).gravity(0.5)
       .nodes(data.nodes)
       .links(data.links);
+
+    cool_off(force, 0.001, 200);
 
     return force;
   }
@@ -63,8 +94,6 @@ function chartNetworkForce() {
       .enter().append("g")
       .attr("class", "node")
       .call(force.drag);
-
-    force.start();
 
     var circles = nodes.append("circle")
       .attr("class", "node")
@@ -180,6 +209,8 @@ function chartNetworkForce() {
 
     circles.on("mouseover", function(d, i) { highlightI(d, i); });
     circles.on("mouseout", function(d, i) { highlightO(d, i); });
+
+    force.start();
 
     return chart;
   }
