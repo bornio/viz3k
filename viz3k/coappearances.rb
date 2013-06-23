@@ -27,19 +27,20 @@ module Viz3k
 
     def create_nodes(pages)
       nodes = []
+      ids = Set.new([])
       page_nums = pages.map{|page| page.page}
       pages.each do |page|
         if (page.ids.length() > 1)
           page.ids.each do |person_id|
-            # get the corresponding person object
-            person = @people.get(person_id)
-
-            # if no node exists for this person, add one
-            if (!nodes.any?{|node| node[:id] == person_id})
-              nodes.push(create_node(person, page_nums))
-            end
+            ids.add(person_id)
           end
         end
+      end
+
+      ids.each do |person_id|
+        # get the corresponding person object
+        person = @people.get(person_id)
+        nodes.push(create_node(person, page_nums))
       end
 
       return nodes
