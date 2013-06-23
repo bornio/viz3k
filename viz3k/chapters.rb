@@ -28,6 +28,11 @@ module Viz3k
       return {:chapters => chapters_hash}
     end
 
+    # Returns an array of all chapter numbers.
+    def numbers()
+      return @chapters.map{ |chapter| chapter.chapter }
+    end
+
     # Returns true if the Chapter with the given chapter number was found, false otherwise.
     def exists(chapter_num)
       @chapters.each do |chapter|
