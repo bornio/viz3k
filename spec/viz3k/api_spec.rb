@@ -1,5 +1,6 @@
 # encoding: utf-8
 
+require "benchmark"
 require "spec_helper"
 require "api"
 
@@ -42,7 +43,9 @@ module Viz3k
 
     describe "#coappearances_in_chapter" do
       before(:each) do
-        @coappearances = @api.coappearances_in_chapter(1)
+        @elapsed = Benchmark.realtime do
+          @coappearances = @api.coappearances_in_chapter(1)
+        end
       end
 
       it "returns a hash" do
@@ -55,6 +58,10 @@ module Viz3k
 
       it "returns an object containing the key :links" do
         @coappearances.has_key?(:links).should == true
+      end
+
+      it "completes in less than 0.1 second" do
+        @elapsed.should < 0.1
       end
     end
   end
