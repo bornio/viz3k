@@ -11,7 +11,7 @@ module Viz3k
     # Generates a coappearance network from the specified list of pages. Each character is a node in the network. Any
     # two characters who appear on the same page are linked in the network.
     def coappearances(pages)
-      # create nodes for every person who shares a page with any other person
+      # create nodes for every person who appears on any of these pages
       # sort the nodes in order of id BEFORE creating links, as node indices for links must be based on node ordering
       nodes = sort_nodes_by_id(create_nodes(pages))
 
@@ -30,10 +30,8 @@ module Viz3k
       ids = Set.new([])
       page_nums = pages.map{|page| page.page}
       pages.each do |page|
-        if (page.ids.length() > 1)
-          page.ids.each do |person_id|
-            ids.add(person_id)
-          end
+        page.ids.each do |person_id|
+          ids.add(person_id)
         end
       end
 
