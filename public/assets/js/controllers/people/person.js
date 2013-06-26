@@ -87,7 +87,10 @@ function renderView($scope, people, factions, kills) {
       if ((affiliation.faction != person.faction) &&
           (affiliation.faction == faction.id)) {
         labelFactionType(faction);
-        otherFactions.push(faction);
+        // a person can be affiliated with a given faction multiple times
+        if (otherFactions.indexOf(faction) < 0) {
+          otherFactions.push(faction);
+        }
       }
     }
   }
