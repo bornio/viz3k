@@ -2647,14 +2647,43 @@
     },
     {
       "id": 424,
-      "name": "Wu Shi",
-      "style": "Zilan",
-      "km": "Wu-Shi"
+      "name": "Wu Zilan",
+      "note": "General of Manifest Trust."
     },
     {
       "id": 425,
       "name": "Chong Ji",
-      "km": "Chong-Ji"
+      "km": "Chong-Ji",
+      "note": "Commandant of the Changshui command."
+    },
+    {
+      "id": 426,
+      "name": "Wu Shi",
+      "km": "Wu-Shi",
+      "note": "Court Counselor."
+    },
+    {
+      "id": 427,
+      "name": "Zhu Ling",
+      "wiki": "Zhu_Ling_(Three_Kingdoms)",
+      "km": "Zhu-Ling"
+    },
+    {
+      "id": 428,
+      "name": "Lu Zhao",
+      "km": "Lu-Zhao"
+    },
+    {
+      "id": 429,
+      "name": "Yuan Yin",
+      "wiki": "Yuan_Yin_(Han_Dynasty)",
+      "km": "Yuan-Yin",
+      "note": "Nephew of Yuan Shu."
+    },
+    {
+      "id": 430,
+      "name": "Xu Liu",
+      "km": "Xu-Qiu"
     }
   ]
 }

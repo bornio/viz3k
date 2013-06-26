@@ -1372,7 +1372,9 @@
       "allegiance":
       [
         {"chron": 0, "interval":[5,133], "faction": 4},
-        {"chron": 1, "interval":[133,1457], "faction": 3}
+        {"chron": 1, "interval":[133,137], "faction": 3},
+        {"chron": 2, "interval":[137,261], "faction": 4},
+        {"chron": 3, "interval":[261,1457], "faction": 99}
       ]
     },
     {
@@ -1837,7 +1839,8 @@
       [
         {"chron": 0, "interval":[5,145], "faction": 15},
         {"chron": 1, "interval":[145,211], "faction": 3},
-        {"chron": 2, "interval":[211,1457], "faction": 5}
+        {"chron": 2, "interval":[211,265], "faction": 5},
+        {"chron": 3, "interval":[265,1457], "faction": 3}
       ]
     },
     {
@@ -2575,14 +2578,16 @@
       "id": 359,
       "allegiance":
       [
-        {"faction": 9}
+        {"chron": 0, "interval":[5,263], "faction": 9},
+        {"chron": 1, "interval":[263,1457], "faction": 99}
       ]
     },
     {
       "id": 360,
       "allegiance":
       [
-        {"faction": 9}
+        {"chron": 0, "interval":[5,263], "faction": 9},
+        {"chron": 1, "interval":[263,1457], "faction": 99}
       ]
     },
     {
@@ -2625,7 +2630,8 @@
       "allegiance":
       [
         {"chron": 0, "interval":[5,211], "faction": 3},
-        {"chron": 1, "interval":[211,1457], "faction": 5}
+        {"chron": 1, "interval":[211,265], "faction": 5},
+        {"chron": 2, "interval":[265,1457], "faction": 3}
       ]
     },
     {
@@ -2902,7 +2908,7 @@
       "id": 404,
       "allegiance":
       [
-        {"faction": 0}
+        {"faction": 5}
       ]
     },
     {
@@ -3050,6 +3056,41 @@
       "allegiance":
       [
         {"faction": 0}
+      ]
+    },
+    {
+      "id": 426,
+      "allegiance":
+      [
+        {"faction": 0}
+      ]
+    },
+    {
+      "id": 427,
+      "allegiance":
+      [
+        {"faction": 5}
+      ]
+    },
+    {
+      "id": 428,
+      "allegiance":
+      [
+        {"faction": 5}
+      ]
+    },
+    {
+      "id": 429,
+      "allegiance":
+      [
+        {"faction": 9}
+      ]
+    },
+    {
+      "id": 430,
+      "allegiance":
+      [
+        {"faction": 5}
       ]
     }
   ]

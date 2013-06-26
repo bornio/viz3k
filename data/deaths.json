@@ -115,6 +115,11 @@
       "cause": "illness"
     },
     {
+      "id": 41,
+      "when": {"chapter": 21, "page": 261},
+      "cause": "suicide"
+    },
+    {
       "id": 46,
       "when": {"chapter": 1, "page": 14},
       "cause": "combat",
@@ -275,6 +280,11 @@
       "when": {"chapter": 9, "page": 111},
       "cause": "execution",
       "killers": [106]
+    },
+    {
+      "id": 101,
+      "when": {"chapter": 21, "page": 264},
+      "cause": "illness"
     },
     {
       "id": 105,
@@ -688,6 +698,12 @@
       "killers": [286]
     },
     {
+      "id": 324,
+      "when": {"chapter": 21, "page": 263},
+      "cause": "combat",
+      "killers": [42]
+    },
+    {
       "id": 325,
       "when": {"chapter": 14, "page": 177},
       "cause": "combat",
@@ -827,10 +843,22 @@
       "cause": "murder"
     },
     {
+      "id": 404,
+      "when": {"chapter": 21, "page": 266},
+      "cause": "combat",
+      "killers": [43]
+    },
+    {
       "id": 420,
       "when": {"chapter": 20, "page": 246},
       "cause": "execution",
       "killers": [49]
+    },
+    {
+      "id": 429,
+      "when": {"chapter": 21, "page": 264},
+      "cause": "execution",
+      "killers": [430]
     }
   ]
 }
