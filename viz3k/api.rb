@@ -46,8 +46,8 @@ module Viz3k
       # define relationships
       @factions.set_members(@people.people)
 
-      # set primary faction for each character
-      @people.set_primary_factions(@chapters)
+      # set primary faction for each character over the whole novel and for each chapter
+      @people.set_faction_info(@chapters)
 
       @coappearances = Coappearances.new(@people, @factions)
     end
