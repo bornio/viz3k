@@ -21,16 +21,31 @@ function chartNetworkForce() {
    * positions converge a bit before rendering anything. Reduces visible
    * bouncing of nodes in the first few seconds of rendering the chart.
    */
-  function cool_off(force, alpha_thresh, max_iters) {
+  function coolOff(force, maxIters) {
     force.start();
-    var i = max_iters;
+    var alphaThresh = 0.01;
+    var i = maxIters;
     while (i--) {
       force.tick();
-      if(force.alpha() < alpha_thresh) {
+      if (force.alpha() < alphaThresh) {
         break;
       }
     }
-    force.stop();
+  }
+
+  /**
+   * There is a bug in Firefox that slows down SVG animations gradually until
+   * the browser becomes unresponsive. See
+   * https://bugzilla.mozilla.org/show_bug.cgi?id=791699 for details. Display
+   * only a static layout for Firefox until the bug is fixed.
+   */
+  function static() {
+    if (jQuery.browser.mozilla) {
+      if (jQuery.browser.version <= "22.0") {
+        return true;
+      }
+    }
+    return false;
   }
 
   // expose getter/setters
@@ -55,14 +70,20 @@ function chartNetworkForce() {
 
   // configure the d3.js force based layout using our settings
   chart.configure = function() {
+    var minDegree = 1000;
+    for (var n in data.nodes) {
+      minDegree = Math.min(minDegree, data.nodes[n].degree);
+    }
+
     // seed nodes with initial locations
     for (var n in data.nodes) {
-      var half_w = width/2;
-      var half_h = height/2;
-      var offset_x = (Math.random() - 1)*(1/(data.nodes[n].degree + 1))*width;
-      var offset_y = (Math.random() - 1)*(1/(data.nodes[n].degree + 1))*height;
-      data.nodes[n].x = half_w + offset_x;
-      data.nodes[n].y = half_h + offset_y;
+      var halfW = width/2;
+      var halfH = height/2;
+      var percent = ((minDegree + 1)/(data.nodes[n].degree + 1));
+      var offsetX = (Math.random() - 0.5)*percent*width;
+      var offsetY = (Math.random() - 0.5)*percent*height;
+      data.nodes[n].x = halfW + offsetX;
+      data.nodes[n].y = halfH + offsetY;
     }
 
     var force = d3.layout.force()
@@ -70,8 +91,6 @@ function chartNetworkForce() {
       .charge(-700).linkDistance(160).gravity(0.5)
       .nodes(data.nodes)
       .links(data.links);
-
-    cool_off(force, 0.001, 200);
 
     return force;
   }
@@ -84,6 +103,9 @@ function chartNetworkForce() {
     var svg = d3.select(elementId).append("svg");
     svg.attr("width", width).attr("height", height);
 
+    // make chart invisible until initial rendering is done
+    svg.style("visibility", "hidden");
+
     var links = svg.selectAll("line.link")
       .data(data.links)
       .enter().append("line")
@@ -92,8 +114,7 @@ function chartNetworkForce() {
     var nodes = svg.selectAll("circle")
       .data(data.nodes)
       .enter().append("circle")
-      .attr("class", "node")
-      .call(force.drag);
+      .attr("class", "node");
 
     var texts = svg.selectAll("g")
       .data(force.nodes())
@@ -128,7 +149,7 @@ function chartNetworkForce() {
 
     nodes
       .attr("r", function(d) { return radius(d); })
-      .style("fill", function(d) { return d3.rgb(d.color); })
+      .style("fill", function(d) { return d3.rgb(d.color); });
 
     texts
       .attr("text-anchor", "middle")
@@ -137,11 +158,10 @@ function chartNetworkForce() {
       .attr("font-size", function(d) { return (String(12*(d.degree/maxLinks) + 8) + "px")})
       .style("color", textColor);
 
-    // update positions on each tick
     //var time0 = Date.now();
     //var time1;
     //var t = 0;
-    force.on("tick", function() {
+    function update_positions() {
       // enforce a bounding box that nodes must stay within
       nodes.each(function(d) {
         r = radius(d);
@@ -167,7 +187,7 @@ function chartNetworkForce() {
       //  console.log("ticks per s:", (1000 / (time1 - time0)).toFixed(3));
       //time0 = time1;
       //t++;
-    });
+    };
 
     // returns true if a node is directly connected to another node by a link
     var connected = function(i, iOther) {
@@ -211,10 +231,33 @@ function chartNetworkForce() {
       });
     }
 
-    nodes.on("mouseover", function(d, i) { highlightI(d, i); });
-    nodes.on("mouseout", function(d, i) { highlightO(d, i); });
+    // let the rest of the page load before doing this
+    setTimeout(function() {
+      // disable animation in firefox due to suckage
+      if (static()) {
+        // run enough iterations to get a pretty well converged layout
+        coolOff(force, 10000);
+      } else {
+        // if not static, just run a few iterations before rendering
+        coolOff(force, 100);
+      }
 
-    force.start();
+      nodes.on("mouseover", function(d, i) { highlightI(d, i); });
+      nodes.on("mouseout", function(d, i) { highlightO(d, i); });
+
+      update_positions();
+
+      if (!static()) {
+        // enable mouse dragging
+        nodes.call(force.drag);
+
+        // update positions on each tick
+        force.on("tick", update_positions);
+      }
+
+      // make chart visible
+      svg.style("visibility", "visible");
+    }, 200);
 
     return chart;
   }
