@@ -89,18 +89,16 @@ function chartNetworkForce() {
       .enter().append("line")
       .attr("class", "link");
 
-    var nodes = svg.selectAll("g")
+    var nodes = svg.selectAll("circle")
       .data(data.nodes)
-      .enter().append("g")
+      .enter().append("circle")
       .attr("class", "node")
       .call(force.drag);
 
-    var circles = nodes.append("circle")
-      .attr("class", "node")
-
-    var gTexts = svg.append("g").selectAll("g")
+    var texts = svg.selectAll("g")
       .data(force.nodes())
-      .enter().append("g");
+      .enter().append("text")
+      .attr("class", "node")
 
     // standard colors
     var circleColorFaded = "#cccccc";
@@ -123,45 +121,52 @@ function chartNetworkForce() {
 
     // scale all circles and text labels relative to most heavily-linked node
     var maxLinks = 0.0;
-    gTexts.each(function(d) { if (d.degree > maxLinks) { maxLinks = d.degree; } })
+    texts.each(function(d) { if (d.degree > maxLinks) { maxLinks = d.degree; } });
     function radius(d) {
       return 22*Math.sqrt(d.degree/maxLinks) + 2;
     };
 
-    circles
+    nodes
       .attr("r", function(d) { return radius(d); })
       .style("fill", function(d) { return d3.rgb(d.color); })
 
-    var texts = gTexts.append("text")
-      .attr("class", "node")
-      .attr("dx", 0)
-      .attr("dy", 0)
+    texts
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "central")
       .text(function(d) { return d.name })
       .attr("font-size", function(d) { return (String(12*(d.degree/maxLinks) + 8) + "px")})
-      .style("color", textColor)
-      .attr("stroke-width", function(d) { return (String(1.2*(d.degree/maxLinks) + 0.2) + "px")});
+      .style("color", textColor);
 
     // update positions on each tick
+    //var time0 = Date.now();
+    //var time1;
+    //var t = 0;
     force.on("tick", function() {
       // enforce a bounding box that nodes must stay within
-      nodes.attr("transform", function(d) {
+      nodes.each(function(d) {
         r = radius(d);
         d.x = Math.max(r, Math.min(width - r, d.x));
         d.y = Math.max(r, Math.min(height - r, d.y));
-        return "translate(" + d.x + "," + d.y + ")";
       });
 
-      gTexts.attr("transform", function(d) {
-        return "translate(" + d.x + "," + d.y + ")";
-      });
+      // update node positions
+      nodes.attr("cx", function(d) { return d.x });
+      nodes.attr("cy", function(d) { return d.y });
+      texts.attr("x", function(d) { return d.x });
+      texts.attr("y", function(d) { return d.y });
 
+      // update link positions
       links
         .attr("x1", function(d) { return d.source.x; })
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
+
+      //time1 = Date.now();
+      //if (t % 10 == 0)
+      //  console.log("ticks per s:", (1000 / (time1 - time0)).toFixed(3));
+      //time0 = time1;
+      //t++;
     });
 
     // returns true if a node is directly connected to another node by a link
@@ -170,16 +175,15 @@ function chartNetworkForce() {
     }
 
     // functions to highlight characters on mouseover and mouseout
-    // note that these are made accessible to other events as well, outside the graph
     var highlightI = function(node, nodeIndex) {
       // partly gray out nodes that are directly linked to this one
-      circles.filter(function(d, i) { return connected(nodeIndex, i) ? this : null; })
+      nodes.filter(function(d, i) { return connected(nodeIndex, i) ? this : null; })
         .style("fill", function(d) { color = d3.interpolateRgb(circleColorFaded, d.color); return color(0.3); });
       texts.filter(function(d, i) { return connected(nodeIndex, i) ? this : null; })
         .style("fill", textColorInterpol(0.3));
 
       // fully gray out all other nodes in the graph
-      circles.filter(function(d, i) { return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null; })
+      nodes.filter(function(d, i) { return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null; })
         .style("fill", circleColorFaded);
       texts.filter(function(d, i) { return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null; })
         .style("fill", textColorFaded);
@@ -195,8 +199,8 @@ function chartNetworkForce() {
 
     var highlightO = function(node, nodeIndex)
     {
-      // return all graph circles to their standard styles
-      circles.style("fill", function(d) { return d3.rgb(d.color); });
+      // return all graph nodes to their standard styles
+      nodes.style("fill", function(d) { return d3.rgb(d.color); });
 
       // return all graph texts to their standard styles
       texts.style("fill", textColor);
@@ -207,8 +211,8 @@ function chartNetworkForce() {
       });
     }
 
-    circles.on("mouseover", function(d, i) { highlightI(d, i); });
-    circles.on("mouseout", function(d, i) { highlightO(d, i); });
+    nodes.on("mouseover", function(d, i) { highlightI(d, i); });
+    nodes.on("mouseout", function(d, i) { highlightO(d, i); });
 
     force.start();
 
