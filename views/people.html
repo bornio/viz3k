@@ -31,19 +31,22 @@
                 Statistics <span class="muted">(click to toggle)</span>
               </a>
             </div>
-            <div class="accordion-body collapse" id="collapse-deaths">
-              <div class="accordion-inner" id="deaths">
-                <p class="lead">Total deaths: {{deaths.length}}</p>
-                <div id="chart-deaths-by-cause">
-                  <svg></svg>
-                </div>
-                <hr>
+            <div class="accordion-body collapse in" id="collapse-deaths">
+              <div class="accordion-inner" id="deaths" ng-cloak>
+                <span class="muted" ng-hide="loaded">Loading data...</span>
+                <div ng-show="loaded">
+                  <p class="lead">Total deaths: {{deaths.length}}</p>
+                  <div id="chart-deaths-by-cause">
+                    <svg></svg>
+                  </div>
+                  <hr>
 
-                <p class="lead">Deadliest combatants</p>
-                <div id="chart-top-combatants">
-                  <svg></svg>
+                  <p class="lead">Deadliest combatants</p>
+                  <div id="chart-top-combatants">
+                    <svg></svg>
+                  </div>
+                  <small class="muted">Combatants are ranked on the number of characters they've killed in battle. Note that data is incomplete and rankings currently reflect only a portion of the novel.</small>
                 </div>
-                <small class="muted">Combatants are ranked on the number of characters they've killed in battle. Note that data is incomplete and rankings currently reflect only a portion of the novel.</small>
               </div>
             </div>
           </div>

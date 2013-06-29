@@ -16,11 +16,14 @@ function chartCombatants() {
 
     var values = [];
     for (var i in value) {
-      values.push({
-        label: value[i].name,
-        href: "/people/" + String(value[i].id),
-        value: value[i].killed_combat.length
-      });
+      // ignore characters with fewer than 2 kills
+      if (value[i].killed_combat.length > 1) {
+        values.push({
+          label: value[i].name,
+          href: "/people/" + String(value[i].id),
+          value: value[i].killed_combat.length
+        });
+      }
     }
 
     data.values = values;
