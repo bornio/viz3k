@@ -10,6 +10,10 @@ function chartNetworkForce() {
   var data = {nodes: [], links: []};
   var width = 680;
   var height = 680;
+  var nodeColorFaded = "#cccccc";
+  var textColor = "#000000";
+  var textColorFaded = "#aaaaaa";
+  var textColorInterpol = d3.interpolateRgb(textColorFaded, textColor);
 
   // the chart object that will be returned
   var chart = {};
@@ -48,11 +52,73 @@ function chartNetworkForce() {
     return false;
   }
 
+  // scale all circles and text labels relative to most heavily-linked node
+  function radius(d) {
+    return 22*Math.sqrt(d.degree/data.maxNodeDegree) + 2;
+  };
+
+  function renderLinks(svg, dataLinks) {
+    var links = svg.selectAll("line.link")
+      .data(data.links)
+      .enter().append("line")
+      .attr("class", "link");
+
+    // scale widths and opacity of all links relative to highest-value link
+    var max = data.maxLinkValue;
+    var maxWidth = (max < 7) ? max : 7;
+    var minWidth = 1;
+    var widthRange = maxWidth - minWidth;
+    var widthFactor = (max > 1) ? widthRange/(max - 1) : 0;
+
+    links
+      .style("stroke-width", function(d) {
+        return (d.value - 1)*widthFactor + minWidth; 
+      })
+      .style("stroke-opacity", function(d) {
+        return (max > 1) ? 0.8*((d.value - 1)/(max - 1)) + 0.2 : 1;
+      });
+
+    return links;
+  }
+  
+  function renderNodes(svg, dataNodes) {
+    var nodes = svg.selectAll("circle.node")
+      .data(dataNodes)
+      .enter().append("circle")
+      .attr("class", "node")
+      .attr("r", function(d) { return radius(d); })
+      .style("fill", function(d) { return d3.rgb(d.color); });
+
+    return nodes;
+  }
+
+  function renderTexts(svg, dataNodes) {
+    var texts = svg.selectAll("text.node")
+      .data(dataNodes)
+      .enter().append("text")
+      .attr("class", "node")
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "central")
+      .text(function(d) { return d.name })
+      .style("color", textColor)
+      .attr("font-size", function(d) {
+        return (String(12*(d.degree/data.maxNodeDegree) + 8) + "px")
+      });
+
+    return texts;
+  }
+
   // expose getter/setters
 
   chart.data = function(value) {
     if (!arguments.length) return data;
     data = value;
+
+    // compute a few stats
+    data.maxLinkValue = d3.max(data.links, function(d) { return d.value; });
+    data.minNodeDegree = d3.min(data.nodes, function(d) { return d.degree; });
+    data.maxNodeDegree = d3.max(data.nodes, function(d) { return d.degree; });
+
     return chart;
   };
 
@@ -70,16 +136,11 @@ function chartNetworkForce() {
 
   // configure the d3.js force based layout using our settings
   chart.configure = function() {
-    var minDegree = 1000;
-    for (var n in data.nodes) {
-      minDegree = Math.min(minDegree, data.nodes[n].degree);
-    }
-
     // seed nodes with initial locations
     for (var n in data.nodes) {
       var halfW = width/2;
       var halfH = height/2;
-      var percent = ((minDegree + 1)/(data.nodes[n].degree + 1));
+      var percent = ((data.minNodeDegree + 1)/(data.nodes[n].degree + 1));
       var offsetX = (Math.random() - 0.5)*percent*width;
       var offsetY = (Math.random() - 0.5)*percent*height;
       data.nodes[n].x = halfW + offsetX;
@@ -106,57 +167,9 @@ function chartNetworkForce() {
     // make chart invisible until initial rendering is done
     svg.style("visibility", "hidden");
 
-    var links = svg.selectAll("line.link")
-      .data(data.links)
-      .enter().append("line")
-      .attr("class", "link");
-
-    var nodes = svg.selectAll("circle")
-      .data(data.nodes)
-      .enter().append("circle")
-      .attr("class", "node");
-
-    var texts = svg.selectAll("g")
-      .data(force.nodes())
-      .enter().append("text")
-      .attr("class", "node")
-
-    // standard colors
-    var circleColorFaded = "#cccccc";
-    var textColor = "#000000";
-    var textColorFaded = "#aaaaaa";
-    var textColorInterpol = d3.interpolateRgb(textColorFaded, textColor);
-
-    // scale all links relative to highest-value link
-    var maxLinkValue = 1;
-    links.each(function(d) { if (d.value > maxLinkValue) { maxLinkValue = d.value; } })
-    var maxLineW = (maxLinkValue < 7) ? maxLinkValue : 7;
-    var minLineW = 1;
-    var lineWRange = maxLineW - minLineW;
-    var lineWFactor = (maxLinkValue > 1) ? lineWRange/(maxLinkValue - 1) : 0;
-    links
-      .style("stroke-width", function(d) { return (d.value - 1)*lineWFactor + minLineW; })
-      .style("stroke-opacity", function(d) {
-        return (maxLinkValue > 1) ? 0.8*((d.value - 1)/(maxLinkValue - 1)) + 0.2 : 1;
-      });
-
-    // scale all circles and text labels relative to most heavily-linked node
-    var maxLinks = 0.0;
-    texts.each(function(d) { if (d.degree > maxLinks) { maxLinks = d.degree; } });
-    function radius(d) {
-      return 22*Math.sqrt(d.degree/maxLinks) + 2;
-    };
-
-    nodes
-      .attr("r", function(d) { return radius(d); })
-      .style("fill", function(d) { return d3.rgb(d.color); });
-
-    texts
-      .attr("text-anchor", "middle")
-      .attr("dominant-baseline", "central")
-      .text(function(d) { return d.name })
-      .attr("font-size", function(d) { return (String(12*(d.degree/maxLinks) + 8) + "px")})
-      .style("color", textColor);
+    var links = renderLinks(svg, data.links);
+    var nodes = renderNodes(svg, data.nodes);
+    var texts = renderTexts(svg, data.nodes);      
 
     //var time0 = Date.now();
     //var time1;
@@ -197,23 +210,38 @@ function chartNetworkForce() {
     // functions to highlight characters on mouseover and mouseout
     var highlightI = function(node, nodeIndex) {
       // partly gray out nodes that are directly linked to this one
-      nodes.filter(function(d, i) { return connected(nodeIndex, i) ? this : null; })
-        .style("fill", function(d) { color = d3.interpolateRgb(circleColorFaded, d.color); return color(0.3); });
-      texts.filter(function(d, i) { return connected(nodeIndex, i) ? this : null; })
+      nodes.filter(function(d, i) {
+        return connected(nodeIndex, i) ? this : null;
+      })
+        .style("fill", function(d) {
+          color = d3.interpolateRgb(nodeColorFaded, d.color);
+          return color(0.3); 
+        });
+      texts.filter(function(d, i) {
+        return connected(nodeIndex, i) ? this : null;
+      })
         .style("fill", textColorInterpol(0.3));
 
       // fully gray out all other nodes in the graph
-      nodes.filter(function(d, i) { return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null; })
-        .style("fill", circleColorFaded);
-      texts.filter(function(d, i) { return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null; })
+      nodes.filter(function(d, i) {
+        return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null;
+      })
+        .style("fill", nodeColorFaded);
+      texts.filter(function(d, i) {
+        return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null;
+      })
         .style("fill", textColorFaded);
 
       // reduce opacity of all links that do not have this node as a source or target
-      links.filter(function(d) { return (d.source.id != node.id && d.target.id != node.id) ? this : null; })
+      links.filter(function(d) {
+        return (d.source.id != node.id && d.target.id != node.id) ? this : null;
+      })
         .style("stroke-opacity", 0.1);
 
       // maximize opacity of all links in or out of this node
-      links.filter(function(d) { return (d.source.id == node.id || d.target.id == node.id) ? this : null; })
+      links.filter(function(d) {
+        return (d.source.id == node.id || d.target.id == node.id) ? this : null;
+      })
         .style("stroke-opacity", 1);
     }
 
@@ -227,7 +255,7 @@ function chartNetworkForce() {
 
       // restore opacity of all links
       links.style("stroke-opacity", function(d) {
-        return (maxLinkValue > 1) ? 0.8*((d.value - 1)/(maxLinkValue - 1)) + 0.2 : 1;
+        return (data.maxLinkValue > 1) ? 0.8*((d.value - 1)/(data.maxLinkValue - 1)) + 0.2 : 1;
       });
     }
 
