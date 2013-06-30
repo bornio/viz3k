@@ -108,6 +108,62 @@ function chartNetworkForce() {
     return texts;
   }
 
+  // returns true if a node is directly connected to another node by a link
+  var connected = function(i0, i1) {
+    return (data.nodes[i0].neighbors.indexOf(i1) >= 0) ? true : false;
+  }
+
+  // highlight nodes and their neighbors on mouseover
+  var highlightI = function(nodes, texts, links, node, nodeIndex) {
+    // partly gray out nodes that are directly linked to this one
+    nodes.filter(function(d, i) {
+      return connected(nodeIndex, i) ? this : null;
+    })
+      .style("fill", function(d) {
+        color = d3.interpolateRgb(nodeColorFaded, d.color);
+        return color(0.3); 
+      });
+    texts.filter(function(d, i) {
+      return connected(nodeIndex, i) ? this : null;
+    })
+      .style("fill", textColorInterpol(0.3));
+
+    // fully gray out all other nodes in the graph
+    nodes.filter(function(d, i) {
+      return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null;
+    })
+      .style("fill", nodeColorFaded);
+    texts.filter(function(d, i) {
+      return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null;
+    })
+      .style("fill", textColorFaded);
+
+    // reduce opacity of all links that do not have this node as a source or target
+    links.filter(function(d) {
+      return (d.source.id != node.id && d.target.id != node.id) ? this : null;
+    })
+      .style("stroke-opacity", 0.1);
+
+    // maximize opacity of all links in or out of this node
+    links.filter(function(d) {
+      return (d.source.id == node.id || d.target.id == node.id) ? this : null;
+    })
+      .style("stroke-opacity", 1);
+  }
+
+  var highlightO = function(nodes, texts, links, node, nodeIndex) {
+    // return all graph nodes to their standard styles
+    nodes.style("fill", function(d) { return d3.rgb(d.color); });
+
+    // return all graph texts to their standard styles
+    texts.style("fill", textColor);
+
+    // restore opacity of all links
+    links.style("stroke-opacity", function(d) {
+      return (data.maxLinkValue > 1) ? 0.8*((d.value - 1)/(data.maxLinkValue - 1)) + 0.2 : 1;
+    });
+  }
+
   // expose getter/setters
 
   chart.data = function(value) {
@@ -202,63 +258,6 @@ function chartNetworkForce() {
       //t++;
     };
 
-    // returns true if a node is directly connected to another node by a link
-    var connected = function(i, iOther) {
-      return (data.nodes[i].neighbors.indexOf(iOther) >= 0) ? true : false;
-    }
-
-    // functions to highlight characters on mouseover and mouseout
-    var highlightI = function(node, nodeIndex) {
-      // partly gray out nodes that are directly linked to this one
-      nodes.filter(function(d, i) {
-        return connected(nodeIndex, i) ? this : null;
-      })
-        .style("fill", function(d) {
-          color = d3.interpolateRgb(nodeColorFaded, d.color);
-          return color(0.3); 
-        });
-      texts.filter(function(d, i) {
-        return connected(nodeIndex, i) ? this : null;
-      })
-        .style("fill", textColorInterpol(0.3));
-
-      // fully gray out all other nodes in the graph
-      nodes.filter(function(d, i) {
-        return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null;
-      })
-        .style("fill", nodeColorFaded);
-      texts.filter(function(d, i) {
-        return (!connected(nodeIndex, i) && (d.id != node.id)) ? this : null;
-      })
-        .style("fill", textColorFaded);
-
-      // reduce opacity of all links that do not have this node as a source or target
-      links.filter(function(d) {
-        return (d.source.id != node.id && d.target.id != node.id) ? this : null;
-      })
-        .style("stroke-opacity", 0.1);
-
-      // maximize opacity of all links in or out of this node
-      links.filter(function(d) {
-        return (d.source.id == node.id || d.target.id == node.id) ? this : null;
-      })
-        .style("stroke-opacity", 1);
-    }
-
-    var highlightO = function(node, nodeIndex)
-    {
-      // return all graph nodes to their standard styles
-      nodes.style("fill", function(d) { return d3.rgb(d.color); });
-
-      // return all graph texts to their standard styles
-      texts.style("fill", textColor);
-
-      // restore opacity of all links
-      links.style("stroke-opacity", function(d) {
-        return (data.maxLinkValue > 1) ? 0.8*((d.value - 1)/(data.maxLinkValue - 1)) + 0.2 : 1;
-      });
-    }
-
     // let the rest of the page load before doing this
     setTimeout(function() {
       // disable animation in firefox due to suckage
@@ -270,8 +269,12 @@ function chartNetworkForce() {
         coolOff(force, 100);
       }
 
-      nodes.on("mouseover", function(d, i) { highlightI(d, i); });
-      nodes.on("mouseout", function(d, i) { highlightO(d, i); });
+      nodes.on("mouseover", function(d, i) {
+        highlightI(nodes, texts, links, d, i);
+      });
+      nodes.on("mouseout", function(d, i) {
+        highlightO(nodes, texts, links, d, i);
+      });
 
       update_positions();
 
